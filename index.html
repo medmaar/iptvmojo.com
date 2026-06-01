@@ -103,9 +103,9 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 @media (max-width:767px) { .my_account_memberships tbody .my-membership-detail-user-membership-actions { display:none !important; } }
 </style>
 <style id="single-bg">
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    FIXED FULL-PAGE BACKGROUND
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 html, body {
   background-image: url('images/iptv-free.jpg') !important;
   background-attachment: fixed !important;
@@ -114,82 +114,120 @@ html, body {
   background-repeat: no-repeat !important;
 }
 
-/* ═══════════════════════════════════════════════
-   SECTION OVERLAYS — semi-transparent so the
-   rink image shows through as content scrolls
-   ═══════════════════════════════════════════════ */
-
-/* Header / nav */
+/* ═══════════════════════════════════════════════════════════════
+   HEADER — near-opaque deep navy, always readable
+   ═══════════════════════════════════════════════════════════════ */
 [data-id="77383f9f"] {
-  background: rgba(8, 3, 22, 0.85) !important;
-  backdrop-filter: blur(2px);
+  background: rgba(4, 4, 22, 0.92) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
-/* Hero — lighter so the image breathes */
+/* ═══════════════════════════════════════════════════════════════
+   HERO — light gradient so the rink photo shines through
+   ═══════════════════════════════════════════════════════════════ */
 [data-id="4e04c123"] {
-  background: rgba(0, 0, 0, 0.48) !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.18) 0%,
+    rgba(10,4,45,0.62) 100%
+  ) !important;
 }
 
-/* Feature cards row */
+/* ═══════════════════════════════════════════════════════════════
+   FEATURES ROW — deep Canadian red, sports energy
+   ═══════════════════════════════════════════════════════════════ */
 [data-id="38fc1402"] {
-  background: rgba(0, 0, 0, 0.60) !important;
+  background: rgba(140, 10, 22, 0.73) !important;
 }
-[data-id="38fc1402"] .e-con-inner {
-  background: transparent !important;
-}
+[data-id="38fc1402"] .e-con-inner { background: transparent !important; }
 
-/* "Watch on all devices" */
+/* ═══════════════════════════════════════════════════════════════
+   WATCH ON DEVICES — navy-to-purple diagonal gradient, premium feel
+   ═══════════════════════════════════════════════════════════════ */
 [data-id="1d31015c"] {
-  background: rgba(8, 3, 22, 0.68) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(5,20,80,0.80) 0%,
+    rgba(70,5,110,0.80) 100%
+  ) !important;
 }
-/* Remove Elementor's own background-overlay on this section */
 [data-id="1d31015c"] .elementor-background-overlay {
   background: transparent !important;
 }
 
-/* Pricing section */
+/* ═══════════════════════════════════════════════════════════════
+   PRICING — deep violet, communicates "exclusive/premium"
+   ═══════════════════════════════════════════════════════════════ */
 [data-id="58015f5d"] {
-  background: rgba(0, 0, 0, 0.62) !important;
+  background: rgba(58, 5, 105, 0.75) !important;
 }
-[data-id="58015f5d"] .e-con-inner {
-  background: transparent !important;
-}
+[data-id="58015f5d"] .e-con-inner { background: transparent !important; }
 
-/* Free trial CTA */
+/* ═══════════════════════════════════════════════════════════════
+   FREE TRIAL CTA — teal-to-blue gradient, action/conversion vibe
+   ═══════════════════════════════════════════════════════════════ */
 [data-id="c9a6f55"] {
-  background: rgba(8, 3, 22, 0.60) !important;
+  background: linear-gradient(
+    to right,
+    rgba(5,90,75,0.78) 0%,
+    rgba(5,55,115,0.78) 100%
+  ) !important;
 }
-[data-id="c9a6f55"] .e-con-inner {
-  background: transparent !important;
-}
+[data-id="c9a6f55"] .e-con-inner { background: transparent !important; }
 
-/* Testimonials */
+/* ═══════════════════════════════════════════════════════════════
+   TESTIMONIALS — deep amber/bronze, warm and trustworthy
+   ═══════════════════════════════════════════════════════════════ */
 [data-id="5fc8ee34"] {
-  background: rgba(0, 0, 0, 0.62) !important;
+  background: rgba(115, 52, 5, 0.74) !important;
 }
 
-/* FAQ */
+/* ═══════════════════════════════════════════════════════════════
+   FAQ — deep forest green, calm and informative
+   ═══════════════════════════════════════════════════════════════ */
 [data-id="2ac1483e"] {
-  background: rgba(8, 3, 22, 0.70) !important;
+  background: rgba(8, 65, 40, 0.76) !important;
 }
-[data-id="2ac1483e"] .elementor-container {
-  background: transparent !important;
-}
+[data-id="2ac1483e"] .elementor-container { background: transparent !important; }
 
-/* Footer */
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER — near-black charcoal
+   ═══════════════════════════════════════════════════════════════ */
 [data-id="ff51e79"] {
-  background: rgba(4, 1, 14, 0.90) !important;
+  background: rgba(3, 2, 14, 0.94) !important;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
-[data-id="ff51e79"] .e-con-inner {
-  background: transparent !important;
+[data-id="ff51e79"] .e-con-inner { background: transparent !important; }
+
+/* ═══════════════════════════════════════════════════════════════
+   INNER CARDS — keep readable on their respective coloured sections
+   ═══════════════════════════════════════════════════════════════ */
+.elementskit-single-pricing {
+  background: rgba(0, 0, 0, 0.40) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  backdrop-filter: blur(4px);
+}
+.elementor-toggle-item {
+  background: rgba(0, 0, 0, 0.28) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+  margin-bottom: 4px;
+  border-radius: 6px;
+}
+.elementskit-card {
+  background: rgba(0, 0, 0, 0.30) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+  margin-bottom: 4px;
+  border-radius: 6px;
 }
 
-/* Ensure inner cards / pricing boxes keep their own backgrounds */
-.elementskit-single-pricing,
-.elementor-toggle,
-.elementskit-card {
-  background: rgba(10, 5, 30, 0.75) !important;
-  border-color: rgba(255,255,255,0.1) !important;
+/* Slight section-border visual separators */
+[data-id="38fc1402"],
+[data-id="1d31015c"],
+[data-id="58015f5d"],
+[data-id="c9a6f55"],
+[data-id="5fc8ee34"],
+[data-id="2ac1483e"] {
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 </style>
 
