@@ -113,7 +113,7 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 		<div class="elementor-element elementor-element-2eeafbb8 elementor-widget elementor-widget-image" data-id="2eeafbb8" data-element_type="widget" data-widget_type="image.default">
 		<div class="elementor-widget-container">
 			<a href="https://iptvmojo.com/">
-				<img src="images/IPTVmojo.png" alt="IPTVmojo" fetchpriority="high" style="width:250px;height:70px;object-fit:contain;background:transparent;display:block">
+				<img src="images/IPTVmojo.png" alt="IPTVmojo" fetchpriority="high" style="height:70px;width:auto;display:block;background:transparent">
 			</a>
 		</div>
 		</div>
@@ -537,7 +537,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 .mojo-nav-back{color:var(--muted);font-size:0.85rem;transition:color 0.2s}
 .mojo-nav-back:hover{color:#fff}
 /* Pricing section */
-#mojo-pricing{padding:5rem 1.5rem;background:rgba(10,5,40,0.92)}
+#mojo-pricing{padding:5rem 1.5rem;background:rgba(10,5,40,0.92);position:relative;z-index:10;isolation:isolate}
 .mojo-pricing-inner{max-width:1180px;margin:0 auto}
 .mojo-eyebrow{color:#00c8ff;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:.5rem}
 .mojo-pricing-title{color:#fff;font-size:2rem;font-weight:800;margin-bottom:.6rem}
@@ -564,13 +564,14 @@ h1,h2,h3,h4,h5{line-height:1.2}
   display:flex;gap:8px;flex-wrap:nowrap;justify-content:flex-start;
   overflow-x:auto;-webkit-overflow-scrolling:touch;
   scrollbar-width:none;padding:4px 2px 10px;
+  touch-action:pan-x;position:relative;z-index:11;pointer-events:all;
 }
 .mojo-dev-row::-webkit-scrollbar{display:none}
 .mojo-dev-btn{
   background:rgba(255,255,255,.07);border:1px solid var(--border);
   color:rgba(255,255,255,.7);padding:8px 18px;border-radius:30px;
   cursor:pointer;font-size:.82rem;font-weight:700;transition:all .2s;white-space:nowrap;
-  flex-shrink:0;
+  flex-shrink:0;pointer-events:all;touch-action:manipulation;-webkit-tap-highlight-color:rgba(253,3,34,.3);
 }
 .mojo-dev-btn:hover{background:rgba(253,3,34,.2);border-color:var(--red);color:#fff}
 .mojo-dev-btn.active{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 0 18px rgba(253,3,34,.45)}
@@ -800,6 +801,26 @@ h1,h2,h3,h4,h5{line-height:1.2}
   </div>
 </div>
 </div>
+<script>
+// Robust device button handler — re-attaches after DOM ready
+(function(){
+  function attachDevBtns(){
+    document.querySelectorAll('.mojo-dev-btn').forEach(function(btn){
+      btn.addEventListener('click',function(e){
+        e.stopPropagation();
+        selectDev(parseInt(this.getAttribute('data-dev'),10));
+      });
+      btn.addEventListener('touchend',function(e){
+        e.preventDefault();e.stopPropagation();
+        selectDev(parseInt(this.getAttribute('data-dev'),10));
+      },{passive:false});
+    });
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',attachDevBtns);
+  } else { attachDevBtns(); }
+})();
+</script>
 <script>var PRICES={
   1:[9,29,39,49],
   2:[18,50,69,89],
