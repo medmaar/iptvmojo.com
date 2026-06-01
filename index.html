@@ -113,7 +113,7 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 		<div class="elementor-element elementor-element-2eeafbb8 elementor-widget elementor-widget-image" data-id="2eeafbb8" data-element_type="widget" data-widget_type="image.default">
 		<div class="elementor-widget-container">
 			<a href="https://iptvmojo.com/">
-				<img src="images/IPTVmojo.png" alt="IPTVmojo" fetchpriority="high" style="height:56px;width:auto">
+				<img src="images/IPTVmojo.png" alt="IPTVmojo" fetchpriority="high" style="width:250px;height:70px;object-fit:contain;background:transparent;display:block">
 			</a>
 		</div>
 		</div>
@@ -542,14 +542,35 @@ h1,h2,h3,h4,h5{line-height:1.2}
 .mojo-eyebrow{color:#00c8ff;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:.5rem}
 .mojo-pricing-title{color:#fff;font-size:2rem;font-weight:800;margin-bottom:.6rem}
 .mojo-pricing-sub{color:var(--muted);font-size:.95rem}
+/* Logo background fix */
+.elementor-element-2eeafbb8,
+.elementor-element-2eeafbb8 .elementor-widget-container,
+.elementor-element-2eeafbb8 .elementor-widget-container a,
+.elementor-element-2eeafbb8 img{
+  background:transparent !important;
+  background-color:transparent !important;
+}
+/* Logo container — give 250×70 logo room */
+.elementor-element-4d3487ba{
+  min-height:80px;align-items:center;
+}
+.elementor-element-2eeafbb8 .elementor-widget-container{
+  padding:5px 0;line-height:0;
+}
 /* Device buttons */
 .mojo-dev-wrap{margin:2.5rem 0}
 .mojo-dev-label{color:rgba(255,255,255,.7);font-size:.85rem;font-weight:600;text-align:center;margin-bottom:1rem}
-.mojo-dev-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.mojo-dev-row{
+  display:flex;gap:8px;flex-wrap:nowrap;justify-content:flex-start;
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;padding:4px 2px 10px;
+}
+.mojo-dev-row::-webkit-scrollbar{display:none}
 .mojo-dev-btn{
   background:rgba(255,255,255,.07);border:1px solid var(--border);
   color:rgba(255,255,255,.7);padding:8px 18px;border-radius:30px;
   cursor:pointer;font-size:.82rem;font-weight:700;transition:all .2s;white-space:nowrap;
+  flex-shrink:0;
 }
 .mojo-dev-btn:hover{background:rgba(253,3,34,.2);border-color:var(--red);color:#fff}
 .mojo-dev-btn.active{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 0 18px rgba(253,3,34,.45)}
@@ -583,8 +604,11 @@ h1,h2,h3,h4,h5{line-height:1.2}
 .mojo-feat .ck{color:var(--green);font-weight:700;flex-shrink:0}
 .mojo-feat .st{color:var(--gold);flex-shrink:0}
 .mojo-ibo{
-  margin-top:8px;padding-top:8px;border-top:1px dashed rgba(241,196,15,.3);
+  padding:8px 10px;border-radius:8px;
+  background:linear-gradient(135deg,rgba(241,196,15,.18),rgba(241,196,15,.08));
+  border:1px solid rgba(241,196,15,.35) !important;
   color:var(--gold) !important;font-weight:700;
+  margin-bottom:8px;
 }
 /* Order button */
 .mojo-btn{
@@ -757,7 +781,8 @@ h1,h2,h3,h4,h5{line-height:1.2}
     <p class="mojo-per" id="per-1year">for 1 Device</p>
   </div>
   <ul class="mojo-feats">
-    <li class="mojo-feat"><span class="ck">✓</span>4K Quality</li>
+    <li class="mojo-feat mojo-ibo"><span class="st">⭐</span><strong>IBO Player Subscription for Free</strong></li>
+<li class="mojo-feat"><span class="ck">✓</span>4K Quality</li>
 <li class="mojo-feat"><span class="ck">✓</span>PPV, UFC, BOXING, F1, SUPERBOWL</li>
 <li class="mojo-feat"><span class="ck">✓</span>NBA, NHL, NFL Packages</li>
 <li class="mojo-feat"><span class="ck">✓</span>+50 000 Channels + Netflix</li>
@@ -767,7 +792,6 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <li class="mojo-feat"><span class="ck">✓</span>Support All Device</li>
 <li class="mojo-feat"><span class="ck">✓</span>Catch-up &amp; EPG</li>
 <li class="mojo-feat"><span class="ck">✓</span>No Freezing</li>
-<li class="mojo-feat mojo-ibo"><span class="st">⭐</span><strong>IBO Player Subscription for Free</strong></li>
   </ul>
   <a class="mojo-btn" id="btn-1year" href="order.html?dev=1&dur=1year&price=49&label=1+Year">
     Order Now →
