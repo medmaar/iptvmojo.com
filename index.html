@@ -560,10 +560,16 @@ h1,h2,h3,h4,h5{line-height:1.2}
 /* Device buttons */
 .mojo-dev-wrap{margin:2.5rem 0}
 .mojo-dev-label{color:rgba(255,255,255,.7);font-size:.85rem;font-weight:600;text-align:center;margin-bottom:1rem}
+.mojo-dev-wrap{overflow:hidden}
+.mojo-dev-scroll{
+  overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;width:100%;
+  touch-action:pan-x pan-y;
+}
+.mojo-dev-scroll::-webkit-scrollbar{display:none}
 .mojo-dev-row{
-  display:flex;gap:8px;flex-wrap:nowrap;justify-content:flex-start;
-  overflow-x:auto;-webkit-overflow-scrolling:touch;
-  scrollbar-width:none;padding:4px 2px 10px;
+  display:inline-flex;gap:8px;flex-wrap:nowrap;justify-content:flex-start;
+  padding:4px 2px 10px;min-width:100%;
   touch-action:pan-x;position:relative;z-index:11;pointer-events:all;
 }
 .mojo-dev-row::-webkit-scrollbar{display:none}
@@ -690,7 +696,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
   </div>
   <div class="mojo-dev-wrap">
     <p class="mojo-dev-label">Select Number of Connections:</p>
-    <div class="mojo-dev-row">
+    <div class="mojo-dev-scroll"><div class="mojo-dev-row">
       <button class="mojo-dev-btn active" onclick="selectDev(1)" data-dev="1">1 Device</button>
 <button class="mojo-dev-btn" onclick="selectDev(2)" data-dev="2">2 Devices</button>
 <button class="mojo-dev-btn" onclick="selectDev(3)" data-dev="3">3 Devices</button>
@@ -701,7 +707,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <button class="mojo-dev-btn" onclick="selectDev(8)" data-dev="8">8 Devices</button>
 <button class="mojo-dev-btn" onclick="selectDev(9)" data-dev="9">9 Devices</button>
 <button class="mojo-dev-btn" onclick="selectDev(10)" data-dev="10">10 Devices</button>
-    </div>
+    </div></div>
   </div>
   <div class="mojo-grid">
     
@@ -717,7 +723,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <li class="mojo-feat"><span class="ck">✓</span>PPV, UFC, BOXING, F1, SUPERBOWL</li>
 <li class="mojo-feat"><span class="ck">✓</span>NBA, NHL, NFL Packages</li>
 <li class="mojo-feat"><span class="ck">✓</span>+50 000 Channels + Netflix</li>
-<li class="mojo-feat"><span class="ck">✓</span>+120,000 Movies &amp; Series (VOD)</li>
+<li class="mojo-feat"><span class="ck">✓</span>+300,000 Movies &amp; Series (VOD)</li>
 <li class="mojo-feat"><span class="ck">✓</span>UPDATED Series and Movies (2026)</li>
 <li class="mojo-feat"><span class="ck">✓</span>100% Secure</li>
 <li class="mojo-feat"><span class="ck">✓</span>Support All Device</li>
@@ -740,7 +746,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <li class="mojo-feat"><span class="ck">✓</span>PPV, UFC, BOXING, F1, SUPERBOWL</li>
 <li class="mojo-feat"><span class="ck">✓</span>NBA, NHL, NFL Packages</li>
 <li class="mojo-feat"><span class="ck">✓</span>+50 000 Channels + Netflix</li>
-<li class="mojo-feat"><span class="ck">✓</span>+120,000 Movies &amp; Series (VOD)</li>
+<li class="mojo-feat"><span class="ck">✓</span>+300,000 Movies &amp; Series (VOD)</li>
 <li class="mojo-feat"><span class="ck">✓</span>UPDATED Series and Movies (2026)</li>
 <li class="mojo-feat"><span class="ck">✓</span>100% Secure</li>
 <li class="mojo-feat"><span class="ck">✓</span>Support All Device</li>
@@ -763,7 +769,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <li class="mojo-feat"><span class="ck">✓</span>PPV, UFC, BOXING, F1, SUPERBOWL</li>
 <li class="mojo-feat"><span class="ck">✓</span>NBA, NHL, NFL Packages</li>
 <li class="mojo-feat"><span class="ck">✓</span>+50 000 Channels + Netflix</li>
-<li class="mojo-feat"><span class="ck">✓</span>+120,000 Movies &amp; Series (VOD)</li>
+<li class="mojo-feat"><span class="ck">✓</span>+300,000 Movies &amp; Series (VOD)</li>
 <li class="mojo-feat"><span class="ck">✓</span>UPDATED Series and Movies (2026)</li>
 <li class="mojo-feat"><span class="ck">✓</span>100% Secure</li>
 <li class="mojo-feat"><span class="ck">✓</span>Support All Device</li>
@@ -787,7 +793,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <li class="mojo-feat"><span class="ck">✓</span>PPV, UFC, BOXING, F1, SUPERBOWL</li>
 <li class="mojo-feat"><span class="ck">✓</span>NBA, NHL, NFL Packages</li>
 <li class="mojo-feat"><span class="ck">✓</span>+50 000 Channels + Netflix</li>
-<li class="mojo-feat"><span class="ck">✓</span>+120,000 Movies &amp; Series (VOD)</li>
+<li class="mojo-feat"><span class="ck">✓</span>+300,000 Movies &amp; Series (VOD)</li>
 <li class="mojo-feat"><span class="ck">✓</span>UPDATED Series and Movies (2026)</li>
 <li class="mojo-feat"><span class="ck">✓</span>100% Secure</li>
 <li class="mojo-feat"><span class="ck">✓</span>Support All Device</li>
@@ -949,171 +955,203 @@ function selectDev(n){
 				<div class="elementskit-card active">
 					<div class="elementskit-card-header" id="primaryHeading-0-6f52db3">
 						<a href="#Collapse-216a1216a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-216a1216a1c63af6330c" aria-expanded="true" aria-controls="Collapse-216a1216a1c63af6330c">
-							<span class="ekit-accordion-title">What's the picture and sound quality like?</span>
+							<span class="ekit-accordion-title">What is IPTVmojo and what does it offer?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-216a1216a1c63af6330c" class="show collapse" aria-labelledby="primaryHeading-0-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Our service offers content in Full HD up to 4K, including SD, HD and 4K options.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>IPTVmojo is a premium IPTV service giving you instant access to 50,000+ live TV channels, 300,000+ movies &amp; series on demand, and premium PPV sports &mdash; all in HD and 4K quality. Plans start at just $9/month with no contracts required.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-1-6f52db3">
 						<a href="#Collapse-8e8a6926a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-8e8a6926a1c63af6330c" aria-expanded="false" aria-controls="Collapse-8e8a6926a1c63af6330c">
-							<span class="ekit-accordion-title">What types of channels and content are available?</span>
+							<span class="ekit-accordion-title">What picture and sound quality do you offer?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-8e8a6926a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-1-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Access a vast selection of Quebec, French, sports and news channels, as well as the main channels from Canada, the U.S., France and other countries.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>We stream in SD, HD, Full HD and up to 4K Ultra HD. Most premium sports channels and major live events broadcast in Full HD or 4K where available, delivering cinema-quality entertainment at home.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-2-6f52db3">
 						<a href="#Collapse-5a927306a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-5a927306a1c63af6330c" aria-expanded="false" aria-controls="Collapse-5a927306a1c63af6330c">
-							<span class="ekit-accordion-title">Can I customize my channel list?</span>
+							<span class="ekit-accordion-title">What channels and content are available?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-5a927306a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-2-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Yes, depending on your device. For example, with Formuler boxes, add favorite channels via the colored buttons on the remote control.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>You get 50,000+ live channels spanning North American, European, Middle Eastern, and international networks, plus 300,000+ movies and TV series on demand &mdash; including 2026 releases. Every plan also includes premium sports packages (NFL, NBA, NHL, UFC, PPV, F1), EPG guide, and Catch-up TV.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-3-6f52db3">
 						<a href="#Collapse-b7d286c6a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-b7d286c6a1c63af6330c" aria-expanded="false" aria-controls="Collapse-b7d286c6a1c63af6330c">
-							<span class="ekit-accordion-title">Is my device compatible?</span>
+							<span class="ekit-accordion-title">Are sports and PPV events included in all plans?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-b7d286c6a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-3-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Our subscriptions are compatible with Firestick, Formuler, Apple TV, smartphones, Smart TVs, and more.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>Yes. Every plan includes NFL, NBA, NHL, UFC, Boxing, Formula 1, Premier League, Champions League, La Liga, and more. PPV and major special events are included with all subscriptions at no extra charge &mdash; no add-ons required.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-4-6f52db3">
 						<a href="#Collapse-392103a6a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-392103a6a1c63af6330c" aria-expanded="false" aria-controls="Collapse-392103a6a1c63af6330c">
-							<span class="ekit-accordion-title">How does the system work?</span>
+							<span class="ekit-accordion-title">What devices are compatible with IPTVmojo?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-392103a6a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-4-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>With a Formuler box, installation is preconfigured. For all other devices, we send a connection guide after payment.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>IPTVmojo works on virtually any device: Amazon Firestick &amp; Fire TV, Samsung and LG Smart TVs, Android TV boxes, Apple TV, iPhone, iPad, Android phones, Windows PC, Mac, MAG boxes, NVIDIA Shield, and more. Contact us via WhatsApp before ordering if you are unsure about device compatibility.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-5-6f52db3">
 						<a href="#Collapse-afb49246a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-afb49246a1c63af6330c" aria-expanded="false" aria-controls="Collapse-afb49246a1c63af6330c">
-							<span class="ekit-accordion-title">Are there any hidden fees or subscriptions?</span>
+							<span class="ekit-accordion-title">How does setup and installation work?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-afb49246a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-5-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>No, there are no hidden costs. All our services are sold directly and transparently.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>After confirming your order you receive your login credentials by email within minutes, plus a step-by-step configuration guide tailored to your device. Our WhatsApp support team is available 24/7 to walk you through setup &mdash; most customers are up and running in under 10 minutes.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-6-6f52db3">
 						<a href="#Collapse-006ef396a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-006ef396a1c63af6330c" aria-expanded="false" aria-controls="Collapse-006ef396a1c63af6330c">
-							<span class="ekit-accordion-title">What is your refund and cancellation policy?</span>
+							<span class="ekit-accordion-title">How fast is activation after ordering?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-006ef396a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-6-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Formuler boxes include a one-year guarantee. Subscriptions are non-refundable.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>Activation is typically instant &mdash; most users receive their credentials within minutes of payment confirmation. Our team monitors orders around the clock so even late-night orders are processed quickly. If there is any delay, our support team will reach out proactively.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-7-6f52db3">
 						<a href="#Collapse-2e8a6f96a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-2e8a6f96a1c63af6330c" aria-expanded="false" aria-controls="Collapse-2e8a6f96a1c63af6330c">
-							<span class="ekit-accordion-title">What Internet speed do I need?</span>
+							<span class="ekit-accordion-title">Are there hidden fees or long-term contracts?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-2e8a6f96a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-7-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>A 30 Mb/s connection is required, 60 Mb/s is recommended.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>No hidden fees, ever. You pay the listed price and nothing else. There are no long-term contracts &mdash; pick the plan that suits you (1 month, 3 months, 6 months or 1 year) and renew only when you are ready. You are never locked in.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-8-6f52db3">
 						<a href="#Collapse-305c3e36a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-305c3e36a1c63af6330c" aria-expanded="false" aria-controls="Collapse-305c3e36a1c63af6330c">
-							<span class="ekit-accordion-title">Is the service available internationally?</span>
+							<span class="ekit-accordion-title">What Internet speed do I need?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-305c3e36a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-8-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Yes, our service is available in several countries.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>For HD streaming a stable 10 Mb/s connection is sufficient. For 4K content we recommend at least 30 Mb/s. A wired Ethernet connection or strong Wi-Fi signal will give you the smoothest experience, especially during peak-time live sports.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-9-6f52db3">
 						<a href="#Collapse-53492f16a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-53492f16a1c63af6330c" aria-expanded="false" aria-controls="Collapse-53492f16a1c63af6330c">
-							<span class="ekit-accordion-title">Do you offer customer support?</span>
+							<span class="ekit-accordion-title">Can I watch on multiple devices at the same time?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-53492f16a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-9-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Yes, 24-hour assistance is available via our chatbot.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>Each subscription includes 1 simultaneous connection by default. If you need to stream on multiple TVs at the same time simply select 2 to 10 connections using our device selector when ordering. Each additional connection is priced individually so you only pay for what you need.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-10-6f52db3">
 						<a href="#Collapse-f57bf8f6a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-f57bf8f6a1c63af6330c" aria-expanded="false" aria-controls="Collapse-f57bf8f6a1c63af6330c">
-							<span class="ekit-accordion-title">Can I terminate the service at any time?</span>
+							<span class="ekit-accordion-title">Is IPTVmojo available worldwide?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-f57bf8f6a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-10-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>You can stop at any time, but the subscription remains active for the duration you paid for, with no refund.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>Yes. IPTVmojo works in over 100 countries. As long as you have a stable internet connection you can stream your content anywhere &mdash; perfect for expats, travellers, and international households who want channels from their home country.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-11-6f52db3">
 						<a href="#Collapse-cc23f2d6a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-cc23f2d6a1c63af6330c" aria-expanded="false" aria-controls="Collapse-cc23f2d6a1c63af6330c">
-							<span class="ekit-accordion-title">Can I use the service on several televisions?</span>
+							<span class="ekit-accordion-title">What customer support do you provide?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-cc23f2d6a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-11-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Yes, but one connection is required per device at a time. For multiple TVs simultaneously, additional subscriptions are required.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>Our support team is available 24/7 via WhatsApp &mdash; real people, not bots. Whether you need help with setup, have a billing question, or experience a technical issue, we respond fast and actually resolve your problem. Customers consistently praise our support as one of the best in the IPTV industry.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-12-6f52db3">
 						<a href="#Collapse-ad908126a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-ad908126a1c63af6330c" aria-expanded="false" aria-controls="Collapse-ad908126a1c63af6330c">
-							<span class="ekit-accordion-title">Do you accept payment in Bitcoin or USDT?</span>
+							<span class="ekit-accordion-title">What payment methods do you accept?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-ad908126a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-12-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Yes, these options are available at checkout.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>We accept major credit and debit cards, PayPal, and cryptocurrency payments including Bitcoin and USDT. All transactions are secure and encrypted. Contact us via WhatsApp if you prefer an alternative payment method or need assistance completing a payment.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-13-6f52db3">
 						<a href="#Collapse-d8abf176a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-d8abf176a1c63af6330c" aria-expanded="false" aria-controls="Collapse-d8abf176a1c63af6330c">
-							<span class="ekit-accordion-title">Is there a discount if I buy several boxes?</span>
+							<span class="ekit-accordion-title">What is your refund and cancellation policy?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-d8abf176a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-13-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Yes, contact us and receive two months free with the purchase of two boxes.</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>We encourage all new customers to use our free 24-hour trial before subscribing so you can test the service risk-free. Subscriptions can be cancelled at any time but remain active until the end of the paid period. If you experience an unresolved technical issue, contact us and your case will be reviewed fairly.</p></div>
 					</div>
 				</div>
 				<div class="elementskit-card">
 					<div class="elementskit-card-header" id="primaryHeading-14-6f52db3">
 						<a href="#Collapse-ef6aed36a1c63af6330c" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-ef6aed36a1c63af6330c" aria-expanded="false" aria-controls="Collapse-ef6aed36a1c63af6330c">
-							<span class="ekit-accordion-title">Is there a sponsorship program?</span>
+							<span class="ekit-accordion-title">Do you offer a free trial?</span>
 							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
 						</a>
 					</div>
 					<div id="Collapse-ef6aed36a1c63af6330c" class="collapse" aria-labelledby="primaryHeading-14-6f52db3" data-parent="#accordion-6a1c63af6330c">
-						<div class="elementskit-card-body ekit-accordion--content"><p>Yes, if you refer a friend with your referral code, you get two months free on your subscription (on a 12-month subscription purchase).</p></div>
+						<div class="elementskit-card-body ekit-accordion--content"><p>Yes! We offer a free 24-hour trial so you can experience the full service before committing to a paid plan. Visit our free trial page and contact us via WhatsApp &mdash; no credit card required. Thousands of customers started with a free trial and never looked back.</p></div>
 					</div>
 				</div>
-				<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the picture and sound quality like?","acceptedAnswer":{"@type":"Answer","text":"<p>Our service offers content in Full HD up to 4K, including SD, HD and 4K options.<\/p>"}},{"@type":"Question","name":"What types of channels and content are available?","acceptedAnswer":{"@type":"Answer","text":"<p>Access a vast selection of Quebec, French, sports and news channels, as well as the main channels from Canada, the U.S., France and other countries.<\/p>"}},{"@type":"Question","name":"Can I customize my channel list?","acceptedAnswer":{"@type":"Answer","text":"<p>Yes, depending on your device. For example, with Formuler boxes, add favorite channels via the colored buttons on the remote control.<\/p>"}},{"@type":"Question","name":"Is my device compatible?","acceptedAnswer":{"@type":"Answer","text":"<p>Our subscriptions are compatible with Firestick, Formuler, Apple TV, smartphones, Smart TVs, and more.<\/p>"}},{"@type":"Question","name":"How does the system work?","acceptedAnswer":{"@type":"Answer","text":"<p>With a Formuler box, installation is preconfigured. For all other devices, we send a connection guide after payment.<\/p>"}},{"@type":"Question","name":"Are there any hidden fees or subscriptions?","acceptedAnswer":{"@type":"Answer","text":"<p>No, there are no hidden costs. All our services are sold directly and transparently.<\/p>"}},{"@type":"Question","name":"What is your refund and cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"<p>Formuler boxes include a one-year guarantee. Subscriptions are non-refundable.<\/p>"}},{"@type":"Question","name":"What Internet speed do I need?","acceptedAnswer":{"@type":"Answer","text":"<p>A 30 Mb\/s connection is required, 60 Mb\/s is recommended.<\/p>"}},{"@type":"Question","name":"Is the service available internationally?","acceptedAnswer":{"@type":"Answer","text":"<p>Yes, our service is available in several countries.<\/p>"}},{"@type":"Question","name":"Do you offer customer support?","acceptedAnswer":{"@type":"Answer","text":"<p>Yes, 24-hour assistance is available via our chatbot.<\/p>"}},{"@type":"Question","name":"Can I terminate the service at any time?","acceptedAnswer":{"@type":"Answer","text":"<p>You can stop at any time, but the subscription remains active for the duration you paid for, with no refund.<\/p>"}},{"@type":"Question","name":"Can I use the service on several televisions?","acceptedAnswer":{"@type":"Answer","text":"<p>Yes, but one connection is required per device at a time. For multiple TVs simultaneously, additional subscriptions are required.<\/p>"}},{"@type":"Question","name":"Do you accept payment in Bitcoin or USDT?","acceptedAnswer":{"@type":"Answer","text":"<p>Yes, these options are available at checkout.<\/p>"}},{"@type":"Question","name":"Is there a discount if I buy several boxes?","acceptedAnswer":{"@type":"Answer","text":"<p>Yes, contact us and receive two months free with the purchase of two boxes.<\/p>"}},{"@type":"Question","name":"Is there a sponsorship program?","acceptedAnswer":{"@type":"Answer","text":"<p>Yes, if you refer a friend with your referral code, you get two months free on your subscription (on a 12-month subscription purchase).<\/p>"}}]}</script>
-			</div>
-			</div>
+				<div class="elementskit-card">
+					<div class="elementskit-card-header" id="primaryHeading-15-6f52db3">
+						<a href="#Collapse-1a2b3c4d5e6f0001" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-1a2b3c4d5e6f0001" aria-expanded="false" aria-controls="Collapse-1a2b3c4d5e6f0001">
+							<span class="ekit-accordion-title">Is there a referral or sponsorship program?</span>
+							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
+						</a>
+					</div>
+					<div id="Collapse-1a2b3c4d5e6f0001" class="collapse" aria-labelledby="primaryHeading-15-6f52db3" data-parent="#accordion-6a1c63af6330c">
+						<div class="elementskit-card-body ekit-accordion--content"><p>Yes. When you refer a friend using your personal referral code and they purchase a 12-month subscription, you both benefit &mdash; you receive two free months added to your own subscription. Contact our support team via WhatsApp to get your referral code.</p></div>
+					</div>
+				</div>
+				<div class="elementskit-card">
+					<div class="elementskit-card-header" id="primaryHeading-16-6f52db3">
+						<a href="#Collapse-1a2b3c4d5e6f0002" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-1a2b3c4d5e6f0002" aria-expanded="false" aria-controls="Collapse-1a2b3c4d5e6f0002">
+							<span class="ekit-accordion-title">What is the IBO Player included with the 1-Year plan?</span>
+							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
+						</a>
+					</div>
+					<div id="Collapse-1a2b3c4d5e6f0002" class="collapse" aria-labelledby="primaryHeading-16-6f52db3" data-parent="#accordion-6a1c63af6330c">
+						<div class="elementskit-card-body ekit-accordion--content"><p>The 1-Year plan includes a free IBO Player subscription &mdash; a premium IPTV player app with a clean interface, built-in EPG guide, multi-screen support and smooth playback. This is included at no extra cost and is one of the most popular IPTV players available.</p></div>
+					</div>
+				</div>
+				<div class="elementskit-card">
+					<div class="elementskit-card-header" id="primaryHeading-17-6f52db3">
+						<a href="#Collapse-1a2b3c4d5e6f0003" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-1a2b3c4d5e6f0003" aria-expanded="false" aria-controls="Collapse-1a2b3c4d5e6f0003">
+							<span class="ekit-accordion-title">Can I use IPTVmojo alongside Netflix or Disney+?</span>
+							<div class="ekit_accordion_icon_group"><div class="ekit_accordion_normal_icon"><i class="icon icon-down-arrow1"></i></div><div class="ekit_accordion_active_icon"><i class="icon icon-up-arrow"></i></div></div>
+						</a>
+					</div>
+					<div id="Collapse-1a2b3c4d5e6f0003" class="collapse" aria-labelledby="primaryHeading-17-6f52db3" data-parent="#accordion-6a1c63af6330c">
+						<div class="elementskit-card-body ekit-accordion--content"><p>Absolutely. IPTVmojo is a standalone service that runs alongside any existing streaming app. You can use it on the same device as Netflix, Disney+, Prime Video or any other platform without conflict &mdash; it simply adds 50,000+ live channels and 300,000+ VOD titles to what you already have.</p></div>
+					</div>
+				</div>
+				<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is IPTVmojo and what does it offer?","acceptedAnswer":{"@type":"Answer","text":"IPTVmojo is a premium IPTV service with 50,000+ live TV channels, 300,000+ movies and series on demand, and premium PPV sports in HD and 4K. Plans start at $9/month, no contracts."}},{"@type":"Question","name":"What picture and sound quality do you offer?","acceptedAnswer":{"@type":"Answer","text":"We stream in SD, HD, Full HD and up to 4K Ultra HD. Most premium sports and major live events broadcast in Full HD or 4K."}},{"@type":"Question","name":"What channels and content are available?","acceptedAnswer":{"@type":"Answer","text":"50,000+ live channels and 300,000+ movies and TV series on demand, including 2026 releases, plus sports packages, EPG guide, and Catch-up TV."}},{"@type":"Question","name":"Are sports and PPV events included?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every plan includes NFL, NBA, NHL, UFC, Boxing, Formula 1, Premier League, Champions League, La Liga and more. PPV events included at no extra charge."}},{"@type":"Question","name":"What devices are compatible?","acceptedAnswer":{"@type":"Answer","text":"Firestick, Fire TV, Samsung and LG Smart TVs, Android TV, Apple TV, iPhone, iPad, Android phones, Windows PC, Mac, MAG boxes and more."}},{"@type":"Question","name":"How does setup work?","acceptedAnswer":{"@type":"Answer","text":"After ordering, credentials arrive by email within minutes along with a device-specific setup guide. WhatsApp support available 24/7."}},{"@type":"Question","name":"How fast is activation?","acceptedAnswer":{"@type":"Answer","text":"Typically instant — most users receive credentials within minutes of payment confirmation."}},{"@type":"Question","name":"Are there hidden fees or contracts?","acceptedAnswer":{"@type":"Answer","text":"No hidden fees and no long-term contracts. Pay the listed price and renew only when you want."}},{"@type":"Question","name":"What Internet speed do I need?","acceptedAnswer":{"@type":"Answer","text":"10 Mb/s for HD, 30 Mb/s recommended for 4K."}},{"@type":"Question","name":"Can I watch on multiple devices simultaneously?","acceptedAnswer":{"@type":"Answer","text":"Yes. Select 1 to 10 simultaneous connections when ordering."}},{"@type":"Question","name":"Is IPTVmojo available worldwide?","acceptedAnswer":{"@type":"Answer","text":"Yes, in over 100 countries with a stable internet connection."}},{"@type":"Question","name":"What customer support do you provide?","acceptedAnswer":{"@type":"Answer","text":"24/7 WhatsApp support with real people — not bots."}},{"@type":"Question","name":"What payment methods are accepted?","acceptedAnswer":{"@type":"Answer","text":"Credit/debit cards, PayPal, Bitcoin and USDT."}},{"@type":"Question","name":"What is your refund policy?","acceptedAnswer":{"@type":"Answer","text":"Free 24-hour trial available first. If an unresolved technical issue occurs, contact us for a fair review."}},{"@type":"Question","name":"Do you offer a free trial?","acceptedAnswer":{"@type":"Answer","text":"Yes, a free 24-hour trial with no credit card required via WhatsApp."}},{"@type":"Question","name":"Is there a referral program?","acceptedAnswer":{"@type":"Answer","text":"Yes. Refer a friend who buys a 12-month plan and you both get two free months."}},{"@type":"Question","name":"What is the IBO Player included with the 1-Year plan?","acceptedAnswer":{"@type":"Answer","text":"A free premium IPTV player app with EPG, multi-screen support and smooth playback."}},{"@type":"Question","name":"Can I use IPTVmojo alongside Netflix or Disney+?","acceptedAnswer":{"@type":"Answer","text":"Yes. IPTVmojo is standalone and runs alongside any existing streaming app on the same device."}}]}</script>
+			</div>			</div>
 		</div>
 		</div>
 	</div>
