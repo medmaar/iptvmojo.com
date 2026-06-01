@@ -102,64 +102,97 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 .my_account_memberships tbody .my-membership-detail-user-membership-actions { display:none; }
 @media (max-width:767px) { .my_account_memberships tbody .my-membership-detail-user-membership-actions { display:none !important; } }
 </style>
-
-<style id="dark-overlays">
-/* ── Hero ── */
-[data-id="4e04c123"] { position:relative !important; }
-[data-id="4e04c123"]::before {
-  content:''; position:absolute; inset:0;
-  background:rgba(0,0,0,0.52); z-index:1; pointer-events:none;
+<style id="single-bg">
+/* ═══════════════════════════════════════════════
+   FIXED FULL-PAGE BACKGROUND
+   ═══════════════════════════════════════════════ */
+html, body {
+  background-image: url('images/iptv-free.jpg') !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
 }
-[data-id="4e04c123"] > * { position:relative; z-index:2; }
 
-/* ── Features section ── */
-[data-id="38fc1402"] { position:relative !important; }
-[data-id="38fc1402"]::before {
-  content:''; position:absolute; inset:0;
-  background:rgba(0,0,0,0.65); z-index:1; pointer-events:none;
-}
-[data-id="38fc1402"] > * { position:relative; z-index:2; }
+/* ═══════════════════════════════════════════════
+   SECTION OVERLAYS — semi-transparent so the
+   rink image shows through as content scrolls
+   ═══════════════════════════════════════════════ */
 
-/* ── Watch on devices section ── */
-[data-id="1d31015c"] { position:relative !important; }
-[data-id="1d31015c"]::before {
-  content:''; position:absolute; inset:0;
-  background:rgba(0,0,0,0.60); z-index:1; pointer-events:none;
+/* Header / nav */
+[data-id="77383f9f"] {
+  background: rgba(8, 3, 22, 0.85) !important;
+  backdrop-filter: blur(2px);
 }
-[data-id="1d31015c"] .elementor-container { position:relative; z-index:2; }
 
-/* ── Pricing section ── */
-[data-id="58015f5d"] { position:relative !important; }
-[data-id="58015f5d"]::before {
-  content:''; position:absolute; inset:0;
-  background:rgba(0,0,0,0.65); z-index:1; pointer-events:none;
+/* Hero — lighter so the image breathes */
+[data-id="4e04c123"] {
+  background: rgba(0, 0, 0, 0.48) !important;
 }
-[data-id="58015f5d"] > * { position:relative; z-index:2; }
 
-/* ── Free trial CTA ── */
-[data-id="c9a6f55"] { position:relative !important; }
-[data-id="c9a6f55"]::before {
-  content:''; position:absolute; inset:0;
-  background:rgba(0,0,0,0.60); z-index:1; pointer-events:none;
+/* Feature cards row */
+[data-id="38fc1402"] {
+  background: rgba(0, 0, 0, 0.60) !important;
 }
-[data-id="c9a6f55"] > * { position:relative; z-index:2; }
+[data-id="38fc1402"] .e-con-inner {
+  background: transparent !important;
+}
 
-/* ── Testimonials ── */
-[data-id="5fc8ee34"] { position:relative !important; }
-[data-id="5fc8ee34"]::before {
-  content:''; position:absolute; inset:0;
-  background:rgba(0,0,0,0.65); z-index:1; pointer-events:none;
+/* "Watch on all devices" */
+[data-id="1d31015c"] {
+  background: rgba(8, 3, 22, 0.68) !important;
 }
-[data-id="5fc8ee34"] > * { position:relative; z-index:2; }
+/* Remove Elementor's own background-overlay on this section */
+[data-id="1d31015c"] .elementor-background-overlay {
+  background: transparent !important;
+}
 
-/* ── FAQ ── */
-[data-id="2ac1483e"] { position:relative !important; }
-[data-id="2ac1483e"]::before {
-  content:''; position:absolute; inset:0;
-  background:rgba(0,0,0,0.68); z-index:1; pointer-events:none;
+/* Pricing section */
+[data-id="58015f5d"] {
+  background: rgba(0, 0, 0, 0.62) !important;
 }
-[data-id="2ac1483e"] .elementor-container { position:relative; z-index:2; }
+[data-id="58015f5d"] .e-con-inner {
+  background: transparent !important;
+}
+
+/* Free trial CTA */
+[data-id="c9a6f55"] {
+  background: rgba(8, 3, 22, 0.60) !important;
+}
+[data-id="c9a6f55"] .e-con-inner {
+  background: transparent !important;
+}
+
+/* Testimonials */
+[data-id="5fc8ee34"] {
+  background: rgba(0, 0, 0, 0.62) !important;
+}
+
+/* FAQ */
+[data-id="2ac1483e"] {
+  background: rgba(8, 3, 22, 0.70) !important;
+}
+[data-id="2ac1483e"] .elementor-container {
+  background: transparent !important;
+}
+
+/* Footer */
+[data-id="ff51e79"] {
+  background: rgba(4, 1, 14, 0.90) !important;
+}
+[data-id="ff51e79"] .e-con-inner {
+  background: transparent !important;
+}
+
+/* Ensure inner cards / pricing boxes keep their own backgrounds */
+.elementskit-single-pricing,
+.elementor-toggle,
+.elementskit-card {
+  background: rgba(10, 5, 30, 0.75) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+}
 </style>
+
 </head>
 <body class="home wp-singular page-template-default page page-id-239 wp-embed-responsive wp-theme-hello-elementor theme-hello-elementor woocommerce-no-js non-logged-in hello-elementor-default elementor-default elementor-kit-242 elementor-page elementor-page-239 elementor-page-896">
 
@@ -292,7 +325,7 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 <div class="page-content">
 <div data-elementor-type="wp-page" data-elementor-id="239" class="elementor elementor-239" data-elementor-post-type="page">
 
-<div class="elementor-element elementor-element-4e04c123 e-con-full e-flex e-con e-parent" data-id="4e04c123" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image:url('images/free-trial-iptv.jpg');background-size:cover;background-position:center top;">
+<div class="elementor-element elementor-element-4e04c123 e-con-full e-flex e-con e-parent" data-id="4e04c123" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 <div class="elementor-element elementor-element-2798aa40 e-con-full e-flex e-con e-child" data-id="2798aa40" data-element_type="container">
 <div class="elementor-element elementor-element-6c675b43 e-con-full e-flex e-con e-child" data-id="6c675b43" data-element_type="container">
 	<div class="elementor-element elementor-element-1b5eca9 elementor-widget elementor-widget-text-editor" data-id="1b5eca9" data-element_type="widget" data-widget_type="text-editor.default">
@@ -342,7 +375,7 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 </div>
 </div>
 
-<div class="elementor-element elementor-element-38fc1402 e-flex e-con-boxed e-con e-parent" data-id="38fc1402" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image:url('images/iptv-free.jpg');background-size:cover;background-position:center;background-attachment:fixed;">
+<div class="elementor-element elementor-element-38fc1402 e-flex e-con-boxed e-con e-parent" data-id="38fc1402" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 <div class="e-con-inner">
 <div class="elementor-element elementor-element-1c0c65f7 e-con-full e-flex e-con e-child" data-id="1c0c65f7" data-element_type="container">
 <div class="elementor-element elementor-element-3464d71e e-con-full e-flex e-con e-child" data-id="3464d71e" data-element_type="container">
@@ -488,7 +521,7 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 </div>
 </div>
 
-<section class="elementor-section elementor-top-section elementor-element elementor-element-1d31015c elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1d31015c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image:url('images/iptv-with-box.jpg');background-size:cover;background-position:center;">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-1d31015c elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1d31015c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 	<div class="elementor-background-overlay"></div>
 	<div class="elementor-container elementor-column-gap-default">
 		<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2bf1c5d5 elementor-invisible" data-id="2bf1c5d5" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
@@ -522,7 +555,7 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 	</div>
 </section>
 
-<div class="elementor-element elementor-element-58015f5d e-flex e-con-boxed e-con e-parent" data-id="58015f5d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image:url('images/iptv-near-me.jpg');background-size:cover;background-position:center;background-attachment:fixed;">
+<div class="elementor-element elementor-element-58015f5d e-flex e-con-boxed e-con e-parent" data-id="58015f5d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 <div class="e-con-inner">
 <div class="elementor-element elementor-element-5e225366 e-con-full e-flex elementor-invisible e-con e-child" data-id="5e225366" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:&quot;200&quot;}">
 	<div class="elementor-element elementor-element-e5558c1 elementor-widget elementor-widget-heading" data-id="e5558c1" data-element_type="widget" data-widget_type="heading.default">
@@ -643,7 +676,7 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 </div>
 </div>
 
-<div class="elementor-element elementor-element-c9a6f55 e-flex e-con-boxed e-con e-parent" data-id="c9a6f55" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image:url('images/iptv-subscription.jpg');background-size:cover;background-position:center;">
+<div class="elementor-element elementor-element-c9a6f55 e-flex e-con-boxed e-con e-parent" data-id="c9a6f55" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 <div class="e-con-inner">
 <div class="elementor-element elementor-element-ea75cc8 e-con-full e-flex elementor-invisible e-con e-child" data-id="ea75cc8" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:&quot;200&quot;}">
 	<div class="elementor-element elementor-element-e5bc058 elementor-widget elementor-widget-heading" data-id="e5bc058" data-element_type="widget" data-widget_type="heading.default">
@@ -673,7 +706,7 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 </div>
 </div>
 
-<div class="elementor-element elementor-element-5fc8ee34 e-con-full e-flex e-con e-parent" data-id="5fc8ee34" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image:url('images/iptv-quebec.jpg');background-size:cover;background-position:center top;">
+<div class="elementor-element elementor-element-5fc8ee34 e-con-full e-flex e-con e-parent" data-id="5fc8ee34" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 <div class="elementor-element elementor-element-5c2b4523 e-flex e-con-boxed e-con e-child" data-id="5c2b4523" data-element_type="container">
 <div class="e-con-inner">
 <div class="elementor-element elementor-element-64942e81 e-con-full e-flex e-con e-child" data-id="64942e81" data-element_type="container">
@@ -717,7 +750,7 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 </div>
 </div>
 
-<section class="elementor-section elementor-top-section elementor-element elementor-element-2ac1483e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2ac1483e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image:url('images/iptv-with-box.jpg');background-size:cover;background-position:center bottom;">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-2ac1483e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2ac1483e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 <div class="elementor-container elementor-column-gap-default">
 	<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-46fd5378 elementor-invisible" data-id="46fd5378" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:20}">
 	<div class="elementor-widget-wrap elementor-element-populated">
