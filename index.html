@@ -103,120 +103,141 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 @media (max-width:767px) { .my_account_memberships tbody .my-membership-detail-user-membership-actions { display:none !important; } }
 </style>
 <style id="single-bg">
-/* ═══════════════════════════════════════════════════════
-   FIXED FULL-PAGE BACKGROUND
-   ═══════════════════════════════════════════════════════ */
+/* FIXED FULL-PAGE BACKGROUND — raw image, no overlay on body */
 html, body {
   background-image: url('images/iptv-free.jpg') !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
+  background-color: transparent !important;
 }
 
-/* ═══════════════════════════════════════════════════════
-   HEADER — near-solid, always readable
-   ═══════════════════════════════════════════════════════ */
-[data-id="77383f9f"] {
-  background: rgba(0,0,0,0.90) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+/* Clear Elementor wrapper backgrounds */
+.site-main, .page-content, .elementor,
+.elementor-239, .elementor-247, .elementor-249 {
+  background: transparent !important;
 }
 
-/* ═══════════════════════════════════════════════════════
-   HERO — lightest overlay, image shines through most
-   ═══════════════════════════════════════════════════════ */
-[data-id="4e04c123"] {
-  background: rgba(0,0,0,0.38) !important;
-}
-
-/* ═══════════════════════════════════════════════════════
-   FEATURES — noticeably darker shift, clear new section
-   ═══════════════════════════════════════════════════════ */
-[data-id="38fc1402"] {
-  background: rgba(0,0,0,0.78) !important;
-}
-[data-id="38fc1402"] .e-con-inner { background: transparent !important; }
-
-/* ═══════════════════════════════════════════════════════
-   WATCH ON DEVICES — lighter again, image re-appears
-   ═══════════════════════════════════════════════════════ */
-[data-id="1d31015c"] {
-  background: rgba(0,0,0,0.48) !important;
-}
-[data-id="1d31015c"] .elementor-background-overlay { background: transparent !important; }
-
-/* ═══════════════════════════════════════════════════════
-   PRICING — darkest content section, feels premium/heavy
-   ═══════════════════════════════════════════════════════ */
-[data-id="58015f5d"] {
-  background: rgba(0,0,0,0.84) !important;
-}
-[data-id="58015f5d"] .e-con-inner { background: transparent !important; }
-
-/* ═══════════════════════════════════════════════════════
-   FREE TRIAL CTA — lighter, open, airy call to action
-   ═══════════════════════════════════════════════════════ */
-[data-id="c9a6f55"] {
-  background: rgba(0,0,0,0.44) !important;
-}
-[data-id="c9a6f55"] .e-con-inner { background: transparent !important; }
-
-/* ═══════════════════════════════════════════════════════
-   TESTIMONIALS — darker again, focused reading zone
-   ═══════════════════════════════════════════════════════ */
-[data-id="5fc8ee34"] {
-  background: rgba(0,0,0,0.76) !important;
-}
-
-/* ═══════════════════════════════════════════════════════
-   FAQ — medium, breathes between dark sections
-   ═══════════════════════════════════════════════════════ */
-[data-id="2ac1483e"] {
-  background: rgba(0,0,0,0.52) !important;
-}
-[data-id="2ac1483e"] .elementor-container { background: transparent !important; }
-
-/* ═══════════════════════════════════════════════════════
-   FOOTER — near-solid to close the page cleanly
-   ═══════════════════════════════════════════════════════ */
-[data-id="ff51e79"] {
-  background: rgba(0,0,0,0.93) !important;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-[data-id="ff51e79"] .e-con-inner { background: transparent !important; }
-
-/* ═══════════════════════════════════════════════════════
-   INNER CARDS — subtle glass so they pop within section
-   ═══════════════════════════════════════════════════════ */
-.elementskit-single-pricing {
-  background: rgba(255,255,255,0.06) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
-  backdrop-filter: blur(6px);
-}
-.elementor-toggle-item {
-  background: rgba(255,255,255,0.05) !important;
-  border-color: rgba(255,255,255,0.10) !important;
-  margin-bottom: 4px;
-  border-radius: 6px;
-}
-.elementskit-card {
-  background: rgba(255,255,255,0.05) !important;
-  border-color: rgba(255,255,255,0.10) !important;
-  margin-bottom: 4px;
-  border-radius: 6px;
-}
-
-/* Thin separator lines between sections */
+/* SHARED SECTION SHAPE — dark rounded cards, 18px gap between them */
+[data-id="77383f9f"],
+[data-id="4e04c123"],
 [data-id="38fc1402"],
 [data-id="1d31015c"],
 [data-id="58015f5d"],
 [data-id="c9a6f55"],
 [data-id="5fc8ee34"],
+[data-id="2ac1483e"],
+[data-id="ff51e79"] {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  margin: 18px 16px !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.60) !important;
+  background-image: none !important;
+}
+
+/* HEADER */
+[data-id="77383f9f"] {
+  background: rgba(0,0,0,0.92) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* HERO — dark so text always readable */
+[data-id="4e04c123"] {
+  background: rgba(0,0,0,0.78) !important;
+}
+
+/* FEATURES */
+[data-id="38fc1402"] {
+  background: rgba(0,0,0,0.82) !important;
+}
+[data-id="38fc1402"] .e-con-inner { background: transparent !important; }
+
+/* WATCH ON DEVICES */
+[data-id="1d31015c"] {
+  background: rgba(0,0,0,0.85) !important;
+}
+[data-id="1d31015c"] .elementor-background-overlay { background: transparent !important; }
+
+/* PRICING */
+[data-id="58015f5d"] {
+  background: rgba(0,0,0,0.88) !important;
+}
+[data-id="58015f5d"] .e-con-inner { background: transparent !important; }
+
+/* FREE TRIAL CTA */
+[data-id="c9a6f55"] {
+  background: rgba(0,0,0,0.80) !important;
+}
+[data-id="c9a6f55"] .e-con-inner { background: transparent !important; }
+
+/* TESTIMONIALS */
+[data-id="5fc8ee34"] {
+  background: rgba(0,0,0,0.83) !important;
+}
+
+/* FAQ */
 [data-id="2ac1483e"] {
-  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.86) !important;
+}
+[data-id="2ac1483e"] .elementor-container { background: transparent !important; }
+
+/* FOOTER */
+[data-id="ff51e79"] {
+  background: rgba(0,0,0,0.93) !important;
+  border-top: 1px solid rgba(255,255,255,0.07) !important;
+}
+[data-id="ff51e79"] .e-con-inner { background: transparent !important; }
+
+/* INNER CARDS — frosted glass lift */
+.elementskit-single-pricing {
+  background: rgba(255,255,255,0.07) !important;
+  border: 1px solid rgba(255,255,255,0.13) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 12px !important;
+}
+.elementor-toggle-item {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.09) !important;
+  margin-bottom: 6px !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+.elementskit-card {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.09) !important;
+  margin-bottom: 6px !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+/* FEATURE ICON BOXES */
+[data-id="31f9f5c5"],
+[data-id="2c464e0e"],
+[data-id="36b76068"],
+[data-id="7607cf46"] {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  [data-id="77383f9f"],
+  [data-id="4e04c123"],
+  [data-id="38fc1402"],
+  [data-id="1d31015c"],
+  [data-id="58015f5d"],
+  [data-id="c9a6f55"],
+  [data-id="5fc8ee34"],
+  [data-id="2ac1483e"],
+  [data-id="ff51e79"] {
+    margin: 10px 8px !important;
+    border-radius: 12px !important;
+  }
 }
 </style>
-
 </head>
 <body class="home wp-singular page-template-default page page-id-239 wp-embed-responsive wp-theme-hello-elementor theme-hello-elementor woocommerce-no-js non-logged-in hello-elementor-default elementor-default elementor-kit-242 elementor-page elementor-page-239 elementor-page-896">
 
