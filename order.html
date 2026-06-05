@@ -321,69 +321,76 @@ var elementskit = { resturl: 'https://maplestreamtv.com/wp-json/elementskit/v1/'
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-emailjs.init('5NnfSkeYa9aonxpMe');
-
-function submitForm(e, formType){
+function submitForm(e, formType) {
   e.preventDefault();
+
   var btn  = document.getElementById('mojo-sub-btn');
   var err  = document.getElementById('mojo-err');
   var suc  = document.getElementById('mojo-suc');
   var area = document.getElementById('mojo-form-area');
 
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
+  btn.disabled    = true;
+  btn.textContent = 'Sending\u2026';
   err.style.display = 'none';
 
-  function fail(msg){
-    err.style.display = 'block';
-    err.textContent   = msg;
-    btn.disabled      = false;
-    btn.textContent   = 'Send Order \u2192';
+  function fail(msg) {
+    /* force visibility regardless of any CSS rule */
+    err.setAttribute('style', 'display:block!important;padding:12px 16px;background:rgba(253,3,34,.15);border:1px solid rgba(253,3,34,.5);border-radius:10px;color:#ff5060;font-size:.88rem;margin-top:1rem;white-space:pre-wrap;');
+    err.textContent = msg;
+    btn.disabled    = false;
+    btn.textContent = 'Try Again \u2192';
   }
 
-  function gv(id){
+  function gv(id) {
     var el = document.getElementById(id);
-    if(!el) return '';
+    if (!el) return '';
     var tag = el.tagName.toUpperCase();
-    return (tag==='SPAN'||tag==='DIV'||tag==='P') ? el.textContent.trim() : el.value.trim();
+    return (tag === 'SPAN' || tag === 'DIV' || tag === 'P') ? el.textContent.trim() : el.value.trim();
   }
 
-  var name     = gv('f-name')     || '';
-  var email    = gv('f-email')    || '';
-  var country  = gv('f-country')  || '';
-  var whatsapp = gv('f-whatsapp') || '';
-  var device   = gv('f-device')   || '';
-  var notes    = gv('f-notes')    || '';
-  var planDev  = gv('f-dev')      || 'Not specified';
-  var planDur  = gv('f-dur')      || 'Not specified';
-  var planPrc  = gv('f-price')    || 'Not specified';
+  var name     = gv('f-name');
+  var email    = gv('f-email');
+  var country  = gv('f-country');
+  var whatsapp = gv('f-whatsapp');
+  var device   = gv('f-device');
+  var notes    = gv('f-notes');
+  var planDev  = gv('f-dev')   || 'Not specified';
+  var planDur  = gv('f-dur')   || 'Not specified';
+  var planPrc  = gv('f-price') || 'Not specified';
 
   var params = {
-    from_name : name  || 'Anonymous',
-    from_email: email || 'support@iptvmojo.com',
-    message   : 'PLAN: ' + planDev + ' / ' + planDur + ' / $' + planPrc + '\n\n'
-              + 'Name: '     + (name     || '-') + '\n'
-              + 'Email: '    + (email    || '-') + '\n'
-              + 'Country: '  + (country  || '-') + '\n'
-              + 'WhatsApp: ' + (whatsapp || '-') + '\n'
-              + 'Device: '   + (device   || '-') + '\n'
-              + 'Notes: '    + (notes    || '-')
+    from_name  : name  || 'Anonymous',
+    from_email : email || 'support@iptvmojo.com',
+    reply_to   : email || 'support@iptvmojo.com',
+    message    : 'PLAN: ' + planDev + ' / ' + planDur + ' / $' + planPrc
+               + '\n\nName:     ' + (name     || '-')
+               + '\nEmail:    ' + (email    || '-')
+               + '\nCountry:  ' + (country  || '-')
+               + '\nWhatsApp: ' + (whatsapp || '-')
+               + '\nDevice:   ' + (device   || '-')
+               + '\nNotes:    ' + (notes    || '-')
   };
 
-  var timer = setTimeout(function(){
-    fail('Request timed out. Please email support@iptvmojo.com or contact us via WhatsApp.');
+  var timer = setTimeout(function() {
+    fail('Timed out after 20s.\nPlease email support@iptvmojo.com or contact via WhatsApp.');
   }, 20000);
 
-  emailjs.send('service_pk6jnu9', 'template_763fwro', params)
-    .then(function(){
-      clearTimeout(timer);
-      area.style.display = 'none';
-      suc.style.display  = 'block';
-    })
-    .catch(function(error){
-      clearTimeout(timer);
-      fail('Could not send (code ' + (error.status || error) + '). Please email support@iptvmojo.com.');
-    });
+  try {
+    emailjs.send('service_pk6jnu9', 'template_763fwro', params, '5NnfSkeYa9aonxpMe')
+      .then(function() {
+        clearTimeout(timer);
+        area.style.display = 'none';
+        suc.style.display  = 'block';
+      })
+      .catch(function(error) {
+        clearTimeout(timer);
+        var detail = error ? (error.status + ' ' + (error.text || '')).trim() : 'unknown';
+        fail('EmailJS error: ' + detail + '\nPlease email support@iptvmojo.com or contact via WhatsApp.');
+      });
+  } catch (ex) {
+    clearTimeout(timer);
+    fail('Script error: ' + ex.message + '\nPlease email support@iptvmojo.com or contact via WhatsApp.');
+  }
 }
 </script>
 

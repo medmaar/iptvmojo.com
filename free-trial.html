@@ -438,63 +438,69 @@ document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-emailjs.init('5NnfSkeYa9aonxpMe');
-
-function submitTrial(e){
+function submitTrial(e) {
   e.preventDefault();
-  var btn = document.getElementById('tf-btn');
-  var err = document.getElementById('tf-err');
+
+  var btn     = document.getElementById('tf-btn');
+  var err     = document.getElementById('tf-err');
   var formArea = document.getElementById('tf-form-area');
   var sucDiv   = document.getElementById('tf-suc');
 
   btn.disabled    = true;
-  btn.textContent = 'Sending...';
+  btn.textContent = 'Sending\u2026';
   err.style.display = 'none';
 
-  function fail(msg){
-    err.style.display = 'block';
-    err.textContent   = msg;
-    btn.disabled      = false;
-    btn.textContent   = '\uD83C\uDFAC Request My Free 24H Trial \u2192';
+  function fail(msg) {
+    err.setAttribute('style', 'display:block!important;padding:12px 16px;background:rgba(253,3,34,.15);border:1px solid rgba(253,3,34,.5);border-radius:10px;color:#ff5060;font-size:.85rem;margin-top:10px;white-space:pre-wrap;text-align:left;');
+    err.textContent = msg;
+    btn.disabled    = false;
+    btn.textContent = '\uD83C\uDFAC Request My Free 24H Trial \u2192';
   }
 
-  function gv(id){
+  function gv(id) {
     var el = document.getElementById(id);
-    if(!el) return '';
+    if (!el) return '';
     return el.tagName === 'SELECT' ? el.options[el.selectedIndex].value : el.value.trim();
   }
 
-  var name     = gv('tf-name')     || '';
-  var email    = gv('tf-email')    || '';
-  var whatsapp = gv('tf-whatsapp') || '';
-  var device   = gv('tf-device')   || '';
-  var notes    = gv('tf-notes')    || '';
+  var name     = gv('tf-name');
+  var email    = gv('tf-email');
+  var whatsapp = gv('tf-whatsapp');
+  var device   = gv('tf-device');
+  var notes    = gv('tf-notes');
 
   var params = {
-    from_name : name  || 'Anonymous',
-    from_email: email || 'support@iptvmojo.com',
-    message   : 'FREE TRIAL REQUEST\n\n'
-              + 'Name: '     + (name     || '-') + '\n'
-              + 'Email: '    + (email    || '-') + '\n'
-              + 'WhatsApp: ' + (whatsapp || '-') + '\n'
-              + 'Device: '   + (device   || '-') + '\n'
-              + 'Notes: '    + (notes    || '-')
+    from_name  : name  || 'Anonymous',
+    from_email : email || 'support@iptvmojo.com',
+    reply_to   : email || 'support@iptvmojo.com',
+    message    : 'FREE TRIAL REQUEST'
+               + '\n\nName:     ' + (name     || '-')
+               + '\nEmail:    ' + (email    || '-')
+               + '\nWhatsApp: ' + (whatsapp || '-')
+               + '\nDevice:   ' + (device   || '-')
+               + '\nNotes:    ' + (notes    || '-')
   };
 
-  var timer = setTimeout(function(){
-    fail('Request timed out. Please email support@iptvmojo.com or contact us via WhatsApp.');
+  var timer = setTimeout(function() {
+    fail('Timed out after 20s.\nPlease email support@iptvmojo.com or contact via WhatsApp.');
   }, 20000);
 
-  emailjs.send('service_pk6jnu9', 'template_763fwro', params)
-    .then(function(){
-      clearTimeout(timer);
-      formArea.style.display = 'none';
-      sucDiv.style.display   = 'block';
-    })
-    .catch(function(error){
-      clearTimeout(timer);
-      fail('Could not send (code ' + (error.status || error) + '). Please email support@iptvmojo.com.');
-    });
+  try {
+    emailjs.send('service_pk6jnu9', 'template_763fwro', params, '5NnfSkeYa9aonxpMe')
+      .then(function() {
+        clearTimeout(timer);
+        formArea.style.display = 'none';
+        sucDiv.style.display   = 'block';
+      })
+      .catch(function(error) {
+        clearTimeout(timer);
+        var detail = error ? (error.status + ' ' + (error.text || '')).trim() : 'unknown';
+        fail('EmailJS error: ' + detail + '\nPlease email support@iptvmojo.com or contact via WhatsApp.');
+      });
+  } catch (ex) {
+    clearTimeout(timer);
+    fail('Script error: ' + ex.message + '\nPlease email support@iptvmojo.com or contact via WhatsApp.');
+  }
 }
 </script>
 </body>
