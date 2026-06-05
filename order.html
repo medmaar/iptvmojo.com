@@ -319,7 +319,10 @@ var elementskit = { resturl: 'https://maplestreamtv.com/wp-json/elementskit/v1/'
 </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
+emailjs.init('5NnfSkeYa9aonxpMe');
+
 function submitForm(e, formType){
   e.preventDefault();
   var btn  = document.getElementById('mojo-sub-btn');
@@ -329,12 +332,13 @@ function submitForm(e, formType){
 
   btn.disabled = true;
   btn.textContent = 'Sending...';
-  if(err) err.style.display = 'none';
+  err.style.display = 'none';
 
   function fail(msg){
-    if(err){ err.style.display='block'; err.textContent=msg; }
-    btn.disabled = false;
-    btn.textContent = 'Send Order \u2192';
+    err.style.display = 'block';
+    err.textContent   = msg;
+    btn.disabled      = false;
+    btn.textContent   = 'Send Order \u2192';
   }
 
   function gv(id){
@@ -344,50 +348,42 @@ function submitForm(e, formType){
     return (tag==='SPAN'||tag==='DIV'||tag==='P') ? el.textContent.trim() : el.value.trim();
   }
 
-  var name     = gv('f-name');
-  var email    = gv('f-email');
-  var country  = gv('f-country');
-  var whatsapp = gv('f-whatsapp');
-  var device   = gv('f-device');
-  var notes    = gv('f-notes');
-  var planDev  = gv('f-dev')   || 'Not specified';
-  var planDur  = gv('f-dur')   || 'Not specified';
-  var planPrc  = gv('f-price') || 'Not specified';
+  var name     = gv('f-name')     || '';
+  var email    = gv('f-email')    || '';
+  var country  = gv('f-country')  || '';
+  var whatsapp = gv('f-whatsapp') || '';
+  var device   = gv('f-device')   || '';
+  var notes    = gv('f-notes')    || '';
+  var planDev  = gv('f-dev')      || 'Not specified';
+  var planDur  = gv('f-dur')      || 'Not specified';
+  var planPrc  = gv('f-price')    || 'Not specified';
+
+  var params = {
+    from_name : name  || 'Anonymous',
+    from_email: email || 'support@iptvmojo.com',
+    message   : 'PLAN: ' + planDev + ' / ' + planDur + ' / $' + planPrc + '\n\n'
+              + 'Name: '     + (name     || '-') + '\n'
+              + 'Email: '    + (email    || '-') + '\n'
+              + 'Country: '  + (country  || '-') + '\n'
+              + 'WhatsApp: ' + (whatsapp || '-') + '\n'
+              + 'Device: '   + (device   || '-') + '\n'
+              + 'Notes: '    + (notes    || '-')
+  };
 
   var timer = setTimeout(function(){
-    fail('Request timed out. Please contact us via WhatsApp or email info@iptvmojo.com.');
-  }, 15000);
+    fail('Request timed out. Please email support@iptvmojo.com or contact us via WhatsApp.');
+  }, 20000);
 
-  fetch('https://formsubmit.co/ajax/info@iptvmojo.com', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({
-      _subject : 'New Order \u2014 ' + planDev + ' / ' + planDur + ' \u2014 IPTVmojo',
-      _captcha : 'false',
-      _template: 'table',
-      Plan     : planDev + ' / ' + planDur + ' / $' + planPrc,
-      Name     : name     || '\u2014',
-      Email    : email    || '\u2014',
-      Country  : country  || '\u2014',
-      WhatsApp : whatsapp || '\u2014',
-      Device   : device   || '\u2014',
-      Notes    : notes    || '\u2014'
+  emailjs.send('service_pk6jnu9', 'template_763fwro', params)
+    .then(function(){
+      clearTimeout(timer);
+      area.style.display = 'none';
+      suc.style.display  = 'block';
     })
-  })
-  .then(function(res){ return res.json(); })
-  .then(function(data){
-    clearTimeout(timer);
-    if(data.success === 'true' || data.success === true){
-      if(area) area.style.display = 'none';
-      if(suc)  suc.style.display  = 'block';
-    } else {
-      fail('Submission failed. Please contact us via WhatsApp or email info@iptvmojo.com.');
-    }
-  })
-  .catch(function(ex){
-    clearTimeout(timer);
-    fail('Network error (' + ex.message + '). Please contact us via WhatsApp or email info@iptvmojo.com.');
-  });
+    .catch(function(error){
+      clearTimeout(timer);
+      fail('Could not send (code ' + (error.status || error) + '). Please email support@iptvmojo.com.');
+    });
 }
 </script>
 
