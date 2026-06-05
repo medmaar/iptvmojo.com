@@ -192,7 +192,7 @@ a{color:inherit;text-decoration:none;}
         <li>24/7 WhatsApp support</li>
         <li>Instant activation</li>
       </ul>
-      <a href="order.html?dev=1&amp;dur=1+Month&amp;price=9" id="btn1m" class="plan-btn ghost">Get 1 Month Plan</a>
+      <a href="iptv-1-month-1-connection.html" id="btn1m" class="plan-btn ghost">Get 1 Month Plan</a>
     </div>
     <!-- 6 Months -->
     <div class="plan-card">
@@ -212,7 +212,7 @@ a{color:inherit;text-decoration:none;}
         <li>All devices supported</li>
         <li>24/7 WhatsApp support</li>
       </ul>
-      <a href="order.html?dev=1&amp;dur=6+Months&amp;price=39" id="btn6m" class="plan-btn ghost">Get 6 Month Plan</a>
+      <a href="iptv-6-months-1-connection.html" id="btn6m" class="plan-btn ghost">Get 6 Month Plan</a>
     </div>
     <!-- 1 Year -->
     <div class="plan-card popular">
@@ -234,7 +234,7 @@ a{color:inherit;text-decoration:none;}
         <li>Priority 24/7 WhatsApp support</li>
         <li>Referral reward program access</li>
       </ul>
-      <a href="order.html?dev=1&amp;dur=1+Year&amp;price=49" id="btn12m" class="plan-btn">Get 1 Year Plan →</a>
+      <a href="iptv-12-months-1-connection.html" id="btn12m" class="plan-btn">Get 1 Year Plan →</a>
     </div>
   </div>
 
@@ -389,9 +389,9 @@ document.querySelectorAll('.conn-tab').forEach(tab=>{
     document.getElementById('save6m').textContent=d.s6;
     document.getElementById('save12m').textContent=d.s12;
     document.getElementById('connNote').textContent=d.note;
-    document.getElementById('btn1m').href='order.html?dev='+conn+'&dur=1+Month&price='+d.p1.replace('$','');
-    document.getElementById('btn6m').href='order.html?dev='+conn+'&dur=6+Months&price='+d.p6.replace('$','');
-    document.getElementById('btn12m').href='order.html?dev='+conn+'&dur=1+Year&price='+d.p12.replace('$','');
+    document.getElementById('btn1m').href='iptv-1-month-'+conn+(conn==='1'?'-connection':'-connections')+'.html';
+    document.getElementById('btn6m').href='iptv-6-months-'+conn+(conn==='1'?'-connection':'-connections')+'.html';
+    document.getElementById('btn12m').href='iptv-12-months-'+conn+(conn==='1'?'-connection':'-connections')+'.html';
   });
 });
 // FAQ

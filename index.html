@@ -639,7 +639,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <li class="mojo-feat"><span class="ck">✓</span>Catch-up &amp; EPG</li>
 <li class="mojo-feat"><span class="ck">✓</span>No Freezing</li>
   </ul>
-  <a class="mojo-btn" id="btn-1month" href="order.html?dev=1&dur=1month&price=9&label=1+Month">
+  <a class="mojo-btn" id="btn-1month" href="iptv-1-month-1-connection.html">
     Order Now →
   </a>
 </div>
@@ -662,7 +662,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <li class="mojo-feat"><span class="ck">✓</span>Catch-up &amp; EPG</li>
 <li class="mojo-feat"><span class="ck">✓</span>No Freezing</li>
   </ul>
-  <a class="mojo-btn" id="btn-3months" href="order.html?dev=1&dur=3months&price=29&label=3+Months">
+  <a class="mojo-btn" id="btn-3months" href="iptv-3-months-1-connection.html">
     Order Now →
   </a>
 </div>
@@ -685,7 +685,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <li class="mojo-feat"><span class="ck">✓</span>Catch-up &amp; EPG</li>
 <li class="mojo-feat"><span class="ck">✓</span>No Freezing</li>
   </ul>
-  <a class="mojo-btn" id="btn-6months" href="order.html?dev=1&dur=6months&price=39&label=6+Months">
+  <a class="mojo-btn" id="btn-6months" href="iptv-6-months-1-connection.html">
     Order Now →
   </a>
 </div>
@@ -709,7 +709,7 @@ h1,h2,h3,h4,h5{line-height:1.2}
 <li class="mojo-feat"><span class="ck">✓</span>Catch-up &amp; EPG</li>
 <li class="mojo-feat"><span class="ck">✓</span>No Freezing</li>
   </ul>
-  <a class="mojo-btn" id="btn-1year" href="order.html?dev=1&dur=1year&price=49&label=1+Year">
+  <a class="mojo-btn" id="btn-1year" href="iptv-12-months-1-connection.html">
     Order Now →
   </a>
 </div>
@@ -751,12 +751,14 @@ h1,h2,h3,h4,h5{line-height:1.2}
 var currDev=1;
 var DUR_KEYS=['1month','3months','6months','1year'];
 var DUR_LABS=['1 Month','3 Months','6 Months','1 Year'];
+var DUR_SLUGS=['1-month','3-months','6-months','12-months'];
 function selectDev(n){
   currDev=n;
   document.querySelectorAll('.mojo-dev-btn').forEach(function(b){b.classList.remove('active')});
   var a=document.querySelector('.mojo-dev-btn[data-dev="'+n+'"]');
   if(a)a.classList.add('active');
   var p=PRICES[n];
+  var cs=n===1?'-connection':'-connections';
   for(var i=0;i<DUR_KEYS.length;i++){
     var k=DUR_KEYS[i];
     var pe=document.getElementById('price-'+k);
@@ -764,7 +766,7 @@ function selectDev(n){
     var be=document.getElementById('btn-'+k);
     if(pe)pe.textContent='$'+p[i];
     if(pp)pp.textContent='for '+n+(n===1?' Device':' Devices');
-    if(be)be.href='order.html?dev='+n+'&dur='+k+'&price='+p[i]+'&label='+encodeURIComponent(DUR_LABS[i]);
+    if(be)be.href='iptv-'+DUR_SLUGS[i]+'-'+n+cs+'.html';
   }
 }
 </script>
