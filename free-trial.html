@@ -436,65 +436,65 @@ const burger=document.getElementById('burgerBtn'),menu=document.getElementById('
 burger.addEventListener('click',()=>{menu.classList.toggle('open');const s=burger.querySelectorAll('span');if(menu.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';}});
 document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement;const w=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!w)i.classList.add('open');});});
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-(function(){ emailjs.init('5NnfSkeYa9aonxpMe'); })();
-
 function submitTrial(e){
   e.preventDefault();
-  var btn=document.getElementById('tf-btn');
-  var err=document.getElementById('tf-err');
-  btn.disabled=true; btn.textContent='Sending...';
-  if(err) err.style.display='none';
+  var btn = document.getElementById('tf-btn');
+  var err = document.getElementById('tf-err');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  if(err) err.style.display = 'none';
 
   function fail(msg){
     if(err){ err.style.display='block'; err.textContent=msg; }
-    btn.disabled=false;
-    btn.textContent='\uD83C\uDFAC Request My Free 24H Trial \u2192';
+    btn.disabled = false;
+    btn.textContent = '\uD83C\uDFAC Request My Free 24H Trial \u2192';
   }
 
   function gv(id){
-    var el=document.getElementById(id);
+    var el = document.getElementById(id);
     if(!el) return '';
-    return el.tagName==='SELECT' ? el.options[el.selectedIndex].value : el.value.trim();
+    return el.tagName === 'SELECT' ? el.options[el.selectedIndex].value : el.value.trim();
   }
 
-  var name=gv('tf-name'), email=gv('tf-email'), whatsapp=gv('tf-whatsapp'),
-      device=gv('tf-device'), notes=gv('tf-notes');
-
-  var msg = '=== FREE TRIAL REQUEST ===\n\n'
-    + 'Name     : ' + (name     ||'\u2014') + '\n'
-    + 'Email    : ' + (email    ||'\u2014') + '\n'
-    + 'WhatsApp : ' + (whatsapp ||'\u2014') + '\n'
-    + 'Device   : ' + (device   ||'\u2014') + '\n'
-    + 'Notes    : ' + (notes    ||'\u2014');
-
-  var params = {
-    subject  : 'Free Trial Request \u2014 IPTVmojo',
-    message  : msg,
-    from_name: name || 'Anonymous Customer'
-  };
-  if(email) params.reply_to = email;
+  var name     = gv('tf-name');
+  var email    = gv('tf-email');
+  var whatsapp = gv('tf-whatsapp');
+  var device   = gv('tf-device');
+  var notes    = gv('tf-notes');
 
   var timer = setTimeout(function(){
     fail('Request timed out. Please email info@iptvmojo.com or contact us via WhatsApp.');
   }, 15000);
 
-  try {
-    emailjs.send('service_pk6jnu9','template_763fwro', params)
-      .then(function(){
-        clearTimeout(timer);
-        document.getElementById('tf-form-area').style.display='none';
-        document.getElementById('tf-suc').style.display='block';
-      })
-      .catch(function(e2){
-        clearTimeout(timer);
-        fail('Send failed (' + JSON.stringify(e2) + '). Please email info@iptvmojo.com.');
-      });
-  } catch(ex) {
+  fetch('https://formsubmit.co/ajax/info@iptvmojo.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject : 'Free Trial Request \u2014 IPTVmojo',
+      _captcha : 'false',
+      _template: 'table',
+      Name     : name     || '\u2014',
+      Email    : email    || '\u2014',
+      WhatsApp : whatsapp || '\u2014',
+      Device   : device   || '\u2014',
+      Notes    : notes    || '\u2014'
+    })
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){
     clearTimeout(timer);
-    fail('Mail service unavailable (' + ex.message + '). Please email info@iptvmojo.com.');
-  }
+    if(data.success === 'true' || data.success === true){
+      document.getElementById('tf-form-area').style.display = 'none';
+      document.getElementById('tf-suc').style.display = 'block';
+    } else {
+      fail('Submission failed. Please email info@iptvmojo.com or contact via WhatsApp.');
+    }
+  })
+  .catch(function(ex){
+    clearTimeout(timer);
+    fail('Network error (' + ex.message + '). Please email info@iptvmojo.com or contact via WhatsApp.');
+  });
 }
 </script>
 </body>
