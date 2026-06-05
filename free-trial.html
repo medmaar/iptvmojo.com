@@ -80,6 +80,34 @@ a{color:inherit;text-decoration:none;}
 }
 .trial-big-btn:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(253,3,34,.45);filter:brightness(1.05);}
 .trial-no-cc{text-align:center;margin-top:12px;font-size:.8rem;color:rgba(232,224,255,.4);}
+/* TRIAL FORM */
+.tf-form{margin-top:20px}
+.tf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.tf-field{margin-bottom:12px}
+.tf-input,.tf-select,.tf-textarea{
+  width:100%;padding:11px 14px;border-radius:10px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  color:#fff;font-family:inherit;font-size:.87rem;
+  transition:border-color .2s;outline:none;
+}
+.tf-input::placeholder,.tf-textarea::placeholder{color:rgba(232,224,255,.3)}
+.tf-input:focus,.tf-select:focus,.tf-textarea:focus{border-color:rgba(253,3,34,.5)}
+.tf-select option{background:#1a0438;color:#fff}
+.tf-textarea{resize:vertical;min-height:76px}
+.tf-submit{
+  display:block;width:100%;padding:15px;border-radius:14px;border:none;cursor:pointer;
+  background:var(--red);color:#fff;font-family:inherit;font-size:.98rem;font-weight:900;
+  box-shadow:0 8px 32px rgba(253,3,34,.32);transition:all .2s;margin-top:4px;
+}
+.tf-submit:hover:not(:disabled){filter:brightness(1.1);transform:translateY(-2px)}
+.tf-submit:disabled{opacity:.6;cursor:not-allowed}
+.tf-opt-note{font-size:.76rem;color:rgba(232,224,255,.38);text-align:center;margin-bottom:14px}
+.tf-success{text-align:center;padding:28px 10px;display:none}
+.tf-success-icon{font-size:2.6rem;margin-bottom:10px}
+.tf-success h3{color:#fff;font-size:1.15rem;font-weight:900;margin-bottom:8px}
+.tf-success p{font-size:.87rem;color:rgba(232,224,255,.6);line-height:1.75}
+.tf-err{font-size:.8rem;color:#ff7a8a;text-align:center;margin-top:10px;display:none}
+@media(max-width:540px){.tf-row{grid-template-columns:1fr}}
 /* HOW TO CLAIM */
 .claim-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:50px;}
 .claim-step{
@@ -203,9 +231,40 @@ a{color:inherit;text-decoration:none;}
     <div class="trial-feat"><span class="trial-feat-icon">📱</span> All Devices Supported</div>
     <div class="trial-feat"><span class="trial-feat-icon">💬</span> 24/7 WhatsApp Support</div>
   </div>
-  <a href="mailto:info@iptvmojo.com?subject=Free%2024H%20Trial%20Request&body=Hi%2C%20I%20would%20like%20to%20request%20a%20free%2024-hour%20IPTV%20trial%20for%20IPTVmojo.%20My%20device%3A%20" class="trial-big-btn">
-    🎬 Request Your Free 24H Trial Now
-  </a>
+  <div id="tf-form-area" class="tf-form">
+    <p class="tf-opt-note">All fields are optional — fill in whatever you're comfortable sharing.</p>
+    <form onsubmit="submitTrial(event)" novalidate>
+      <div class="tf-row">
+        <input class="tf-input" id="tf-name" type="text" placeholder="Your name (optional)">
+        <input class="tf-input" id="tf-email" type="text" placeholder="Email address (optional)">
+      </div>
+      <div class="tf-row">
+        <input class="tf-input" id="tf-whatsapp" type="tel" placeholder="WhatsApp number (optional)">
+        <select class="tf-select" id="tf-device">
+          <option value="">Your device (optional)</option>
+          <option>Firestick / Fire TV</option>
+          <option>Formuler / Android Box</option>
+          <option>Apple TV</option>
+          <option>Smart TV (Samsung / LG / Sony)</option>
+          <option>Android Smartphone / Tablet</option>
+          <option>iPhone / iPad</option>
+          <option>Windows PC / Mac</option>
+          <option>Mag Box / Enigma2</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="tf-field">
+        <textarea class="tf-textarea" id="tf-notes" placeholder="Anything else you'd like us to know? (optional)"></textarea>
+      </div>
+      <button class="tf-submit" id="tf-btn" type="submit">🎬 Request My Free 24H Trial →</button>
+      <div class="tf-err" id="tf-err"></div>
+    </form>
+  </div>
+  <div class="tf-success" id="tf-suc">
+    <div class="tf-success-icon">✅</div>
+    <h3>Request Received!</h3>
+    <p>We'll send your free trial credentials within a few minutes.<br>Check your email or WhatsApp soon.</p>
+  </div>
   <div class="trial-no-cc">✓ No credit card required &nbsp;&nbsp; ✓ No contracts &nbsp;&nbsp; ✓ Instant activation</div>
 </div>
 
@@ -348,7 +407,7 @@ a{color:inherit;text-decoration:none;}
   <h2>Don't Wait — Start Your Free IPTV Trial Now</h2>
   <p>Join thousands of satisfied IPTVmojo subscribers. Try the full service free for 24 hours and see why people switch from cable to IPTV every day.</p>
   <div class="btns-row">
-    <a href="mailto:info@iptvmojo.com?subject=Free%2024H%20Trial%20Request" class="btn-red">🎬 Request Free Trial</a>
+    <a href="#tf-form-area" class="btn-red">🎬 Request Free Trial</a>
     <a href="subscriptions.html" class="btn-outline">📋 View Paid Plans</a>
   </div>
 </div>
@@ -376,6 +435,41 @@ a{color:inherit;text-decoration:none;}
 const burger=document.getElementById('burgerBtn'),menu=document.getElementById('mobileMenu');
 burger.addEventListener('click',()=>{menu.classList.toggle('open');const s=burger.querySelectorAll('span');if(menu.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';}});
 document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement;const w=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!w)i.classList.add('open');});});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(function(){ emailjs.init('5NnfSkeYa9aonxpMe'); })();
+
+function submitTrial(e){
+  e.preventDefault();
+  var btn=document.getElementById('tf-btn');
+  var err=document.getElementById('tf-err');
+  btn.disabled=true; btn.textContent='Sending...'; err.style.display='none';
+  function gv(id){var el=document.getElementById(id);if(!el)return '';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
+  var name=gv('tf-name'), email=gv('tf-email'), whatsapp=gv('tf-whatsapp'), device=gv('tf-device'), notes=gv('tf-notes');
+  var msg='=== FREE TRIAL REQUEST ===\n\nPLAN:\n  Duration    : 24 Hours\n  Price       : Free\n\nCUSTOMER:\n'
+    +'  Name        : '+(name||'Not provided')+'\n'
+    +'  Email       : '+(email||'Not provided')+'\n'
+    +'  WhatsApp    : '+(whatsapp||'Not provided')+'\n'
+    +'  Device      : '+(device||'Not provided')+'\n'
+    +'  Notes       : '+(notes||'None');
+  emailjs.send('service_pk6jnu9','template_763fwro',{
+    from_name:name||'IPTVmojo Customer',from_email:email||'no-reply@iptvmojo.com',
+    reply_to:email||'',to_name:'IPTVmojo',
+    subject:'Free Trial Request - IPTVmojo',message:msg,
+    form_type:'free-trial',plan_devices:'1',plan_duration:'24 Hours',plan_price:'Free',
+    customer_name:name||'Not provided',customer_email:email||'Not provided',
+    customer_country:'Not provided',customer_whatsapp:whatsapp||'Not provided',
+    customer_device:device||'Not provided',customer_notes:notes||'None'
+  }).then(function(){
+    document.getElementById('tf-form-area').style.display='none';
+    document.getElementById('tf-suc').style.display='block';
+  },function(e2){
+    err.style.display='block';
+    err.textContent='Something went wrong. Please email info@iptvmojo.com directly. Error: '+JSON.stringify(e2);
+    btn.disabled=false; btn.textContent='🎬 Request My Free 24H Trial →';
+  });
+}
 </script>
 </body>
 </html>
