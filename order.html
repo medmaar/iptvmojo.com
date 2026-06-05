@@ -332,12 +332,18 @@ function submitForm(e, formType){
 
   btn.disabled = true;
   btn.textContent = 'Sending...';
-  err.style.display = 'none';
+  if(err) err.style.display = 'none';
+
+  function fail(msg){
+    if(err){ err.style.display='block'; err.textContent=msg; }
+    btn.disabled=false;
+    btn.textContent='Send Order \u2192';
+  }
 
   function gv(id){
-    var el = document.getElementById(id);
+    var el=document.getElementById(id);
     if(!el) return '';
-    var tag = el.tagName.toUpperCase();
+    var tag=el.tagName.toUpperCase();
     return (tag==='SPAN'||tag==='DIV'||tag==='P') ? el.textContent.trim() : el.value.trim();
   }
 
@@ -347,52 +353,45 @@ function submitForm(e, formType){
   var whatsapp = gv('f-whatsapp');
   var device   = gv('f-device');
   var notes    = gv('f-notes');
-  var planDev  = gv('f-dev')   || 'Free Trial';
-  var planDur  = gv('f-dur')   || '24 Hours';
-  var planPrc  = gv('f-price') || 'Free';
+  var planDev  = gv('f-dev')   || 'Not specified';
+  var planDur  = gv('f-dur')   || 'Not specified';
+  var planPrc  = gv('f-price') || 'Not specified';
 
-  var msg = '=== ' + formType.toUpperCase() + ' REQUEST ===\n'
-    + '\nPLAN:\n'
-    + '  Connections : ' + planDev + '\n'
-    + '  Duration    : ' + planDur + '\n'
-    + '  Price       : ' + planPrc + '\n'
-    + '\nCUSTOMER:\n'
-    + '  Name        : ' + (name     || 'Not provided') + '\n'
-    + '  Email       : ' + (email    || 'Not provided') + '\n'
-    + '  Country     : ' + (country  || 'Not provided') + '\n'
-    + '  WhatsApp    : ' + (whatsapp || 'Not provided') + '\n'
-    + '  Device      : ' + (device   || 'Not provided') + '\n'
-    + '  Notes       : ' + (notes    || 'None');
+  var msg = '=== ORDER REQUEST ===\n\n'
+    + 'PLAN: ' + planDev + ' \u2014 ' + planDur + ' \u2014 $' + planPrc + '\n\n'
+    + 'Name     : ' + (name     ||'\u2014') + '\n'
+    + 'Email    : ' + (email    ||'\u2014') + '\n'
+    + 'Country  : ' + (country  ||'\u2014') + '\n'
+    + 'WhatsApp : ' + (whatsapp ||'\u2014') + '\n'
+    + 'Device   : ' + (device   ||'\u2014') + '\n'
+    + 'Notes    : ' + (notes    ||'\u2014');
 
   var params = {
-    from_name     : name     || 'IPTVmojo Customer',
-    from_email    : email    || 'no-reply@iptvmojo.com',
-    reply_to      : email    || '',
-    to_name       : 'IPTVmojo',
-    subject       : (formType==='free-trial'?'Free Trial Request - IPTVmojo':'New Order - '+planDev+' '+planDur+' - IPTVmojo'),
-    message       : msg,
-    form_type         : formType,
-    plan_devices      : planDev,
-    plan_duration     : planDur,
-    plan_price        : planPrc,
-    customer_name     : name     || 'Not provided',
-    customer_email    : email    || 'Not provided',
-    customer_country  : country  || 'Not provided',
-    customer_whatsapp : whatsapp || 'Not provided',
-    customer_device   : device   || 'Not provided',
-    customer_notes    : notes    || 'None'
+    subject  : 'New Order \u2014 ' + planDev + ' ' + planDur + ' \u2014 IPTVmojo',
+    message  : msg,
+    from_name: name || 'Anonymous Customer'
   };
+  if(email) params.reply_to = email;
 
-  emailjs.send('service_pk6jnu9','template_763fwro',params)
-    .then(function(){
-      if(area) area.style.display='none';
-      if(suc)  suc.style.display='block';
-    }, function(err2){
-      err.style.display='block';
-      err.textContent='Something went wrong. Please try WhatsApp instead. Error: '+JSON.stringify(err2);
-      btn.disabled=false;
-      btn.textContent='Try Again';
-    });
+  var timer = setTimeout(function(){
+    fail('Request timed out. Please contact us via WhatsApp or email info@iptvmojo.com.');
+  }, 15000);
+
+  try {
+    emailjs.send('service_pk6jnu9', 'template_763fwro', params)
+      .then(function(){
+        clearTimeout(timer);
+        if(area) area.style.display='none';
+        if(suc)  suc.style.display='block';
+      })
+      .catch(function(e2){
+        clearTimeout(timer);
+        fail('Send failed (' + JSON.stringify(e2) + '). Please contact us via WhatsApp.');
+      });
+  } catch(ex) {
+    clearTimeout(timer);
+    fail('Mail service unavailable (' + ex.message + '). Please contact via WhatsApp.');
+  }
 }
 </script>
 

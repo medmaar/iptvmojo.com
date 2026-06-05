@@ -444,31 +444,57 @@ function submitTrial(e){
   e.preventDefault();
   var btn=document.getElementById('tf-btn');
   var err=document.getElementById('tf-err');
-  btn.disabled=true; btn.textContent='Sending...'; err.style.display='none';
-  function gv(id){var el=document.getElementById(id);if(!el)return '';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
-  var name=gv('tf-name'), email=gv('tf-email'), whatsapp=gv('tf-whatsapp'), device=gv('tf-device'), notes=gv('tf-notes');
-  var msg='=== FREE TRIAL REQUEST ===\n\nPLAN:\n  Duration    : 24 Hours\n  Price       : Free\n\nCUSTOMER:\n'
-    +'  Name        : '+(name||'Not provided')+'\n'
-    +'  Email       : '+(email||'Not provided')+'\n'
-    +'  WhatsApp    : '+(whatsapp||'Not provided')+'\n'
-    +'  Device      : '+(device||'Not provided')+'\n'
-    +'  Notes       : '+(notes||'None');
-  emailjs.send('service_pk6jnu9','template_763fwro',{
-    from_name:name||'IPTVmojo Customer',from_email:email||'no-reply@iptvmojo.com',
-    reply_to:email||'',to_name:'IPTVmojo',
-    subject:'Free Trial Request - IPTVmojo',message:msg,
-    form_type:'free-trial',plan_devices:'1',plan_duration:'24 Hours',plan_price:'Free',
-    customer_name:name||'Not provided',customer_email:email||'Not provided',
-    customer_country:'Not provided',customer_whatsapp:whatsapp||'Not provided',
-    customer_device:device||'Not provided',customer_notes:notes||'None'
-  }).then(function(){
-    document.getElementById('tf-form-area').style.display='none';
-    document.getElementById('tf-suc').style.display='block';
-  },function(e2){
-    err.style.display='block';
-    err.textContent='Something went wrong. Please email info@iptvmojo.com directly. Error: '+JSON.stringify(e2);
-    btn.disabled=false; btn.textContent='🎬 Request My Free 24H Trial →';
-  });
+  btn.disabled=true; btn.textContent='Sending...';
+  if(err) err.style.display='none';
+
+  function fail(msg){
+    if(err){ err.style.display='block'; err.textContent=msg; }
+    btn.disabled=false;
+    btn.textContent='\uD83C\uDFAC Request My Free 24H Trial \u2192';
+  }
+
+  function gv(id){
+    var el=document.getElementById(id);
+    if(!el) return '';
+    return el.tagName==='SELECT' ? el.options[el.selectedIndex].value : el.value.trim();
+  }
+
+  var name=gv('tf-name'), email=gv('tf-email'), whatsapp=gv('tf-whatsapp'),
+      device=gv('tf-device'), notes=gv('tf-notes');
+
+  var msg = '=== FREE TRIAL REQUEST ===\n\n'
+    + 'Name     : ' + (name     ||'\u2014') + '\n'
+    + 'Email    : ' + (email    ||'\u2014') + '\n'
+    + 'WhatsApp : ' + (whatsapp ||'\u2014') + '\n'
+    + 'Device   : ' + (device   ||'\u2014') + '\n'
+    + 'Notes    : ' + (notes    ||'\u2014');
+
+  var params = {
+    subject  : 'Free Trial Request \u2014 IPTVmojo',
+    message  : msg,
+    from_name: name || 'Anonymous Customer'
+  };
+  if(email) params.reply_to = email;
+
+  var timer = setTimeout(function(){
+    fail('Request timed out. Please email info@iptvmojo.com or contact us via WhatsApp.');
+  }, 15000);
+
+  try {
+    emailjs.send('service_pk6jnu9','template_763fwro', params)
+      .then(function(){
+        clearTimeout(timer);
+        document.getElementById('tf-form-area').style.display='none';
+        document.getElementById('tf-suc').style.display='block';
+      })
+      .catch(function(e2){
+        clearTimeout(timer);
+        fail('Send failed (' + JSON.stringify(e2) + '). Please email info@iptvmojo.com.');
+      });
+  } catch(ex) {
+    clearTimeout(timer);
+    fail('Mail service unavailable (' + ex.message + '). Please email info@iptvmojo.com.');
+  }
 }
 </script>
 </body>
