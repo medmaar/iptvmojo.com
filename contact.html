@@ -134,13 +134,13 @@ a{color:inherit;text-decoration:none;}
       <div class="contact-icon">💬</div>
       <h3>WhatsApp — Fastest Response</h3>
       <p>Send us a message on WhatsApp for instant support. Available 24 hours a day, 7 days a week — real humans, no bots. Best for setup help, order questions, and technical issues.</p>
-      <a href="https://wa.me/1XXXXXXXXXX" class="btn-red" target="_blank" rel="noopener">💬 Message on WhatsApp</a>
+      <a href="whatsapp-contact.html" class="btn-red">💬 Message on WhatsApp</a>
     </div>
     <div class="contact-card">
       <div class="contact-icon">📧</div>
       <h3>Email Support</h3>
       <p>Prefer email? Send us a message and we'll respond within a few hours. Include your order number if you have one — it helps us find your account faster.</p>
-      <a href="mailto:info@iptvmojo.com" class="btn-outline">📧 info@iptvmojo.com</a>
+      <a href="mailto:support@iptvmojo.com" class="btn-outline">📧 support@iptvmojo.com</a>
     </div>
     <div class="contact-card">
       <div class="contact-icon">🆓</div>
@@ -151,8 +151,8 @@ a{color:inherit;text-decoration:none;}
     <div class="contact-card">
       <div class="contact-icon">📋</div>
       <h3>Reseller Enquiries</h3>
-      <p>Interested in reselling IPTVmojo? We offer competitive wholesale pricing for resellers. Contact us via WhatsApp to discuss terms and pricing.</p>
-      <a href="https://wa.me/1XXXXXXXXXX" class="btn-outline" target="_blank">📋 Reseller Enquiry</a>
+      <p>Interested in reselling IPTVmojo? We offer competitive wholesale pricing, white-label options, and a full management panel. View our full reseller program for details.</p>
+      <a href="reseller.html" class="btn-outline">📋 View Reseller Program</a>
     </div>
   </div>
 
@@ -167,7 +167,7 @@ a{color:inherit;text-decoration:none;}
       <div class="form-row">
         <div class="form-field">
           <label class="form-label">First Name</label>
-          <input type="text" class="form-input" placeholder="John" required>
+          <input type="text" class="form-input" placeholder="John">
         </div>
         <div class="form-field">
           <label class="form-label">Last Name</label>
@@ -176,7 +176,7 @@ a{color:inherit;text-decoration:none;}
       </div>
       <div class="form-field">
         <label class="form-label">Email Address</label>
-        <input type="email" class="form-input" placeholder="john@example.com" required>
+        <input type="email" class="form-input" placeholder="john@example.com">
       </div>
       <div class="form-field">
         <label class="form-label">Subject</label>
@@ -192,7 +192,7 @@ a{color:inherit;text-decoration:none;}
       </div>
       <div class="form-field">
         <label class="form-label">Message</label>
-        <textarea class="form-textarea" placeholder="Describe your question or issue…" required></textarea>
+        <textarea class="form-textarea" placeholder="Describe your question or issue…"></textarea>
       </div>
       <button type="submit" class="form-submit">Send Message →</button>
       <div class="form-success" id="formSuccess">✓ Message sent! We'll get back to you within a few hours.</div>
@@ -217,7 +217,7 @@ a{color:inherit;text-decoration:none;}
   <p>Get a free 24-hour trial — no credit card, no commitment. Message us on WhatsApp to activate.</p>
   <div class="cta-btns">
     <a href="free-trial.html" class="btn-red">🎬 Get Free 24H Trial</a>
-    <a href="https://wa.me/1XXXXXXXXXX" class="btn-outline" target="_blank">💬 WhatsApp Us</a>
+    <a href="whatsapp-contact.html" class="btn-outline">💬 WhatsApp Us</a>
   </div>
 </section>
 </main>
@@ -225,7 +225,7 @@ a{color:inherit;text-decoration:none;}
   <div class="footer-top">
     <div class="footer-brand">
       <img src="images/IPTVmojo.png" alt="IPTVmojo">
-      <div class="footer-brand-text">Premium IPTV Service<br><a href="mailto:info@iptvmojo.com" style="color:rgba(232,224,255,.5);">info@iptvmojo.com</a></div>
+      <div class="footer-brand-text">Premium IPTV Service<br><a href="mailto:support@iptvmojo.com" style="color:rgba(232,224,255,.5);">support@iptvmojo.com</a></div>
     </div>
     <div class="footer-cols">
       <div class="footer-col">
@@ -257,12 +257,28 @@ a{color:inherit;text-decoration:none;}
 const burger=document.getElementById('burgerBtn'),menu=document.getElementById('mobileMenu');
 burger.addEventListener('click',()=>{menu.classList.toggle('open');const s=burger.querySelectorAll('span');if(menu.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';}});
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+emailjs.init('5NnfSkeYa9aonxpMe');
 document.getElementById('contactForm').addEventListener('submit',function(e){
   e.preventDefault();
-  this.querySelector('.form-submit').disabled=true;
-  this.querySelector('.form-submit').textContent='Sending…';
-  setTimeout(()=>{document.getElementById('formSuccess').style.display='block';},800);
+  var btn=this.querySelector('.form-submit');
+  btn.disabled=true; btn.textContent='Sending…';
+  var fields=this.querySelectorAll('input,select,textarea');
+  var params={};
+  ['from_name','last_name','from_email','subject','message'].forEach(function(k,i){
+    params[k]=fields[i]?fields[i].value:'';
+  });
+  params.to_email='support@iptvmojo.com';
+  emailjs.send('service_pk6jnu9','template_763fwro',params)
+    .then(function(){
+      document.getElementById('formSuccess').style.display='block';
+      btn.textContent='Message Sent ✓';
+    })
+    .catch(function(){
+      btn.disabled=false; btn.textContent='Send Message →';
+      alert('Something went wrong — please email us directly at support@iptvmojo.com');
+    });
 });
 document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement;const w=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!w)i.classList.add('open');});});
 </script>
