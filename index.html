@@ -102,11 +102,22 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 .my_account_memberships tbody .my-membership-detail-user-membership-actions { display:none; }
 @media (max-width:767px) { .my_account_memberships tbody .my-membership-detail-user-membership-actions { display:none !important; } }
 </style>
+<style id="mojo-critical-css">
+/* Critical above-fold styles — must be in <head> to prevent FOUC */
+body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mojo-nav{position:sticky;top:0;z-index:1000;background:rgba(20,4,56,.95);border-bottom:1px solid rgba(255,255,255,.1);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:88px;}
+.mojo-logo img{height:72px!important;width:auto!important;display:block!important;max-width:none!important;}
+.mojo-nav-links{display:flex;align-items:center;gap:6px;}
+.mojo-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.mojo-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;}
+.mojo-mobile-menu{display:none;}
+@media(max-width:768px){.mojo-nav-links{display:none!important;}.mojo-burger{display:flex!important;}}
+</style>
 </head>
 <body class="home wp-singular page-template-default page page-id-239 wp-embed-responsive wp-theme-hello-elementor theme-hello-elementor woocommerce-no-js non-logged-in hello-elementor-default elementor-default elementor-kit-242 elementor-page elementor-page-239 elementor-page-896">
 
 <nav class="mojo-nav">
-  <a href="index.html" class="mojo-logo"><img src="images/IPTVmojo.png" alt="IPTVmojo IPTV Service"></a>
+  <a href="index.html" class="mojo-logo"><img src="images/IPTVmojo.png" alt="IPTVmojo IPTV Service" style="height:72px;width:auto;display:block;max-width:none;"></a>
   <div class="mojo-nav-links">
     <a href="index.html" class="active">Home</a>
     <a href="pricing.html">Pricing</a>
@@ -417,8 +428,8 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 .rv-mini-author{font-weight:600;font-size:.8rem;display:flex;align-items:center;gap:5px;}
 /* Dots */
 .rv-dots{display:flex;justify-content:center;gap:7px;margin-top:20px;}
-.rv-dot{height:9px;border-radius:99px;border:none;cursor:pointer;padding:0;font-family:inherit;background:rgba(255,255,255,.15);transition:all .4s cubic-bezier(.34,1.56,.64,1);width:9px;}
-.rv-dot.active{background:#fd0322;width:24px;}
+.rv-dot{height:9px!important;width:9px!important;min-width:9px!important;max-width:9px!important;min-height:9px!important;border-radius:99px!important;border:none!important;cursor:pointer!important;padding:0!important;margin:0!important;background:rgba(255,255,255,.15)!important;transition:all .4s cubic-bezier(.34,1.56,.64,1)!important;display:inline-block!important;box-shadow:none!important;outline:none!important;font-size:0!important;line-height:0!important;flex-shrink:0!important;}
+.rv-dot.active{background:#fd0322!important;width:24px!important;max-width:24px!important;}
 /* Trustpilot logo SVG inline */
 .rv-tp-logo{display:flex;justify-content:center;margin-bottom:22px;}
 @media(max-width:768px){
