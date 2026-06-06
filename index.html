@@ -213,48 +213,68 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 <style>
 #mojo-sports-section{background:linear-gradient(180deg,#06030f 0%,#0d0620 50%,#06030f 100%);padding:80px 24px 90px;isolation:isolate;}
 .mss-inner{max-width:1060px;margin:0 auto;}
-/* Header */
 .mss-kicker{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#fd0322;font-weight:700;margin-bottom:14px;text-align:center;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
 .mss-h2{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px;text-align:center;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-.mss-sub{font-size:.97rem;color:rgba(232,224,255,.65);text-align:center;max-width:580px;margin:0 auto 40px;line-height:1.75;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-/* Video */
-.mss-video-wrap{position:relative;width:100%;max-width:960px;margin:0 auto 32px;border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#06030f;box-shadow:0 0 0 1px rgba(253,3,34,.25), 0 0 60px rgba(253,3,34,.12), 0 24px 80px rgba(0,0,0,.7);}
+.mss-sub{font-size:.97rem;color:rgba(232,224,255,.65);text-align:center;max-width:580px;margin:0 auto 28px;line-height:1.75;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+
+/* ── Categories row (above video, one line) ── */
+.mss-cats{display:flex;align-items:center;justify-content:center;gap:0;margin:0 auto 22px;max-width:960px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;overflow:hidden;}
+.mss-cat{display:flex;align-items:center;gap:6px;padding:11px 18px;font-size:.8rem;font-weight:700;color:rgba(232,224,255,.7);white-space:nowrap;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;border-right:1px solid rgba(255,255,255,.08);flex:1;justify-content:center;}
+.mss-cat:last-child{border-right:none;}
+.mss-cat-icon{font-size:1.1rem;flex-shrink:0;}
+@media(max-width:600px){.mss-cat{padding:9px 6px;font-size:.65rem;gap:3px;}.mss-cat-icon{font-size:.9rem;}}
+
+/* ── Video ── */
+.mss-video-wrap{position:relative;width:100%;max-width:960px;margin:0 auto 0;border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#06030f;box-shadow:0 0 0 1px rgba(253,3,34,.25),0 0 60px rgba(253,3,34,.12),0 24px 80px rgba(0,0,0,.7);}
 .mss-video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
 .mss-video-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0414,#1a0428,#06030f);}
 .mss-live-badge{position:absolute;top:16px;left:16px;z-index:3;display:flex;align-items:center;gap:6px;background:rgba(10,4,20,.8);backdrop-filter:blur(8px);border:1px solid rgba(253,3,34,.4);border-radius:8px;padding:5px 12px;font-size:.72rem;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;letter-spacing:.06em;}
 .mss-live-dot{width:7px;height:7px;border-radius:50%;background:#fd0322;animation:mss-pulse 1.4s ease-in-out infinite;flex-shrink:0;}
 @keyframes mss-pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(253,3,34,.5);}50%{opacity:.7;box-shadow:0 0 0 5px rgba(253,3,34,0);}}
-/* Video bottom bar */
 .mss-video-bar{position:absolute;bottom:0;left:0;right:0;z-index:3;background:linear-gradient(to top,rgba(6,3,15,.95) 0%,transparent 100%);padding:20px 20px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .mss-ch-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:4px 10px;font-size:.7rem;font-weight:700;color:rgba(232,224,255,.85);white-space:nowrap;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-/* Sport pills */
-.mss-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:44px;}
-.mss-pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:9px 18px;font-size:.82rem;font-weight:700;color:rgba(232,224,255,.8);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:all .2s;}
-.mss-pill:hover{background:rgba(253,3,34,.12);border-color:rgba(253,3,34,.35);color:#fff;}
-/* Feature cards */
+@media(max-width:600px){.mss-video-bar{display:none;}}
+
+/* ── Marquee ticker ── */
+.mss-ticker-wrap{width:100%;max-width:960px;margin:0 auto 40px;overflow:hidden;padding:16px 0 4px;mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);}
+.mss-ticker-track{display:flex;width:max-content;animation:mss-scroll 22s linear infinite;}
+.mss-ticker-track:hover{animation-play-state:paused;}
+@keyframes mss-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.mss-pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:9px 20px;font-size:.82rem;font-weight:700;color:rgba(232,224,255,.8);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;white-space:nowrap;margin-right:10px;flex-shrink:0;}
+
+/* ── Feature cards ── */
 .mss-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
 .mss-feat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px 20px;text-align:center;}
 .mss-feat-icon{font-size:2rem;margin-bottom:10px;}
 .mss-feat h3{font-size:.95rem;font-weight:800;color:#fff;margin-bottom:7px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
 .mss-feat p{font-size:.82rem;line-height:1.65;color:rgba(232,224,255,.6);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-/* CTA */
+
+/* ── CTA ── */
 .mss-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 .mss-btn-red{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:30px;background:#fd0322;color:#fff;font-weight:800;font-size:.92rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;box-shadow:0 6px 28px rgba(253,3,34,.35);transition:all .2s;}
 .mss-btn-red:hover{background:#c50018;transform:translateY(-2px);}
 .mss-btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:30px;border:1px solid rgba(255,255,255,.18);color:#fff;font-weight:700;font-size:.92rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:all .2s;}
 .mss-btn-outline:hover{background:rgba(255,255,255,.07);}
+
 @media(max-width:900px){.mss-feats{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.mss-feats{grid-template-columns:1fr;}.mss-h2{font-size:1.7rem;}.mss-video-bar{display:none;}}
+@media(max-width:600px){.mss-feats{grid-template-columns:1fr;}.mss-h2{font-size:1.7rem;}}
 </style>
 
 <div class="mss-inner">
 
-  <!-- Header text -->
   <p class="mss-kicker">Live Sports Coverage</p>
   <h2 class="mss-h2">Every Match. Every Event.<br>Live in HD &amp; 4K.</h2>
-  <p class="mss-sub">All sports included in every plan — no add-ons, no blackouts. From league football to PPV title fights, IPTVmojo delivers every match the moment it goes live.</p>
+  <p class="mss-sub">All sports included in every plan — no add-ons, no blackouts. From league football to PPV title fights, IPTVmojo streams every match the moment it goes live.</p>
 
-  <!-- Video -->
+  <!-- Categories row — one line above video -->
+  <div class="mss-cats">
+    <div class="mss-cat"><span class="mss-cat-icon">📺</span> Live TV</div>
+    <div class="mss-cat"><span class="mss-cat-icon">🎬</span> Films</div>
+    <div class="mss-cat"><span class="mss-cat-icon">📡</span> Series</div>
+    <div class="mss-cat"><span class="mss-cat-icon">🏆</span> Sports</div>
+  </div>
+
+  <!-- Video — 16:9 rectangle centered -->
   <div class="mss-video-wrap">
     <video autoplay muted playsinline loop
            src="IPTVmojo_IPTV_subscription.mp4"
@@ -262,7 +282,7 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
            onerror="this.style.display='none';">
     </video>
     <div id="mss-ph" class="mss-video-placeholder">
-      <div style="text-align:center;"><div style="font-size:4rem;margin-bottom:12px;">🏟️</div><p style="color:rgba(255,255,255,.4);font-size:.85rem;font-family:'Plus Jakarta Sans',sans-serif;">Loading sports stream…</p></div>
+      <div style="text-align:center;"><div style="font-size:4rem;margin-bottom:12px;">🏟️</div><p style="color:rgba(255,255,255,.4);font-size:.85rem;font-family:'Plus Jakarta Sans',sans-serif;">Loading…</p></div>
     </div>
     <div class="mss-live-badge"><span class="mss-live-dot"></span> LIVE SPORTS</div>
     <div class="mss-video-bar">
@@ -276,16 +296,36 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
     </div>
   </div>
 
-  <!-- Sport type pills -->
-  <div class="mss-pills">
-    <span class="mss-pill">⚽ Football</span>
-    <span class="mss-pill">🥊 Boxing &amp; UFC</span>
-    <span class="mss-pill">🏈 NFL &amp; NBA</span>
-    <span class="mss-pill">🏎️ Formula 1</span>
-    <span class="mss-pill">🏒 NHL &amp; Hockey</span>
-    <span class="mss-pill">🎾 Tennis</span>
-    <span class="mss-pill">🏆 Champions League</span>
-    <span class="mss-pill">💥 PPV Events</span>
+  <!-- Infinite scrolling sports ticker -->
+  <div class="mss-ticker-wrap">
+    <div class="mss-ticker-track">
+      <!-- Set 1 -->
+      <span class="mss-pill">⚽ Football</span>
+      <span class="mss-pill">🥊 Boxing &amp; UFC</span>
+      <span class="mss-pill">🏈 NFL &amp; NBA</span>
+      <span class="mss-pill">🏎️ Formula 1</span>
+      <span class="mss-pill">🏒 NHL &amp; Hockey</span>
+      <span class="mss-pill">🎾 Tennis</span>
+      <span class="mss-pill">🏆 Champions League</span>
+      <span class="mss-pill">💥 PPV Events</span>
+      <span class="mss-pill">🏉 Rugby</span>
+      <span class="mss-pill">⛳ Golf</span>
+      <span class="mss-pill">🏏 Cricket</span>
+      <span class="mss-pill">🏊 Olympics</span>
+      <!-- Set 2 — duplicate for seamless loop -->
+      <span class="mss-pill">⚽ Football</span>
+      <span class="mss-pill">🥊 Boxing &amp; UFC</span>
+      <span class="mss-pill">🏈 NFL &amp; NBA</span>
+      <span class="mss-pill">🏎️ Formula 1</span>
+      <span class="mss-pill">🏒 NHL &amp; Hockey</span>
+      <span class="mss-pill">🎾 Tennis</span>
+      <span class="mss-pill">🏆 Champions League</span>
+      <span class="mss-pill">💥 PPV Events</span>
+      <span class="mss-pill">🏉 Rugby</span>
+      <span class="mss-pill">⛳ Golf</span>
+      <span class="mss-pill">🏏 Cricket</span>
+      <span class="mss-pill">🏊 Olympics</span>
+    </div>
   </div>
 
   <!-- Feature cards -->
@@ -297,7 +337,7 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
     </div>
     <div class="mss-feat">
       <div class="mss-feat-icon">📡</div>
-      <h3>100+ Sports Channels</h3>
+      <h3>+20,000 Sports Channels</h3>
       <p>TSN, Sportsnet, ESPN, Sky Sports, beIN Sports, DAZN and more. Every league, every match day, all in one place.</p>
     </div>
     <div class="mss-feat">
