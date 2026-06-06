@@ -113,7 +113,7 @@ a{color:inherit;text-decoration:none;}
 .res-order-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
 .res-input{width:100%;background:rgba(255,255,255,.06);border:1px solid var(--border);color:#fff;padding:12px 15px;border-radius:10px;font-size:.88rem;font-family:inherit;outline:none;transition:border .2s;}
 .res-input:focus{border-color:var(--red);}
-.res-input::placeholder{color:rgba(232,224,255,.3);}
+.res-input::placeholder{color:rgba(232,224,255,.3);}select.res-input{color-scheme:dark;background-color:rgba(255,255,255,.06);}select.res-input option{background:#1a0830;color:#fff;}
 .res-submit{width:100%;padding:14px;background:var(--red);border:none;border-radius:12px;color:#fff;font-size:.95rem;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:4px;}
 .res-submit:hover{background:#c50018;transform:translateY(-2px);box-shadow:0 8px 24px rgba(253,3,34,.45);}
 .res-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
@@ -236,7 +236,7 @@ a{color:inherit;text-decoration:none;}
           <div class="res-order-fields">
             <input type="text" class="res-input" id="res_name" placeholder="Your name">
             <input type="email" class="res-input" id="res_email" placeholder="Email address">
-            <select class="res-input" id="res_country" style="appearance:none;-webkit-appearance:none;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='rgba(232,224,255,0.4)' d='M1 1l5 5 5-5'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 14px center;background-color:rgba(255,255,255,.06);padding-right:36px;">
+            <select class="res-input" id="res_country" style="appearance:none;-webkit-appearance:none;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='rgba(232,224,255,0.4)' d='M1 1l5 5 5-5'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 14px center;background-color:rgba(255,255,255,.06);padding-right:36px;color-scheme:dark;">
               <option value="" disabled selected>Your country…</option>
               <option value="Canada">Canada</option>
               <option value="United States">United States</option>
