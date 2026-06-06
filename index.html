@@ -382,6 +382,99 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 </div>
 </div>
 
+<!-- ═══════════ SPORTS SECTION ═══════════ -->
+<section id="mojo-sports-section" style="background:rgba(10,5,40,0.95);padding:0;">
+<style>
+#mojo-sports-section{isolation:isolate;}
+.mss-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
+.mss-text{padding:52px 56px 52px 32px;display:flex;flex-direction:column;justify-content:center;gap:0;}
+.mss-video{position:relative;overflow:hidden;min-height:400px;background:#06030f;}
+.mss-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.mss-video-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0414 0%,#1a0428 50%,#06030f 100%);}
+.mss-kicker{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#00c8ff;font-weight:700;margin-bottom:12px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mss-h2{font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:16px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mss-p{font-size:.92rem;line-height:1.8;color:rgba(232,224,255,.72);margin-bottom:24px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+/* Accordion */
+.mss-accordion{display:flex;flex-direction:column;gap:0;margin-bottom:28px;}
+.mss-item{border-bottom:1px solid rgba(255,255,255,.12);}
+.mss-item summary{list-style:none;padding:14px 0;cursor:pointer;font-weight:700;font-size:.95rem;color:#fff;display:flex;align-items:center;gap:12px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mss-item summary::-webkit-details-marker{display:none;}
+.mss-item summary::before{content:'›';color:#fd0322;font-size:1.3rem;font-weight:900;line-height:1;flex-shrink:0;transition:transform .25s;}
+.mss-item[open] summary::before{content:'›';transform:rotate(90deg);}
+.mss-item .mss-body{padding:4px 0 16px 26px;font-size:.88rem;line-height:1.75;color:rgba(232,224,255,.7);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mss-btn{display:inline-flex;align-items:center;padding:13px 28px;border-radius:10px;background:#fd0322;color:#fff;font-weight:800;font-size:.9rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:background .2s;}
+.mss-btn:hover{background:#c50018;}
+/* Video badge */
+.mss-badge{position:absolute;top:16px;left:16px;z-index:2;background:rgba(253,3,34,.9);color:#fff;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:6px;letter-spacing:.08em;text-transform:uppercase;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+@media(max-width:900px){
+  .mss-wrap{grid-template-columns:1fr;}
+  .mss-video{min-height:280px;order:-1;}
+  .mss-text{padding:36px 24px;}
+}
+</style>
+
+<div class="mss-wrap">
+  <!-- LEFT: Text + accordion -->
+  <div class="mss-text">
+    <p class="mss-kicker">Live Sports Coverage</p>
+    <h2 class="mss-h2">Every Match. Every Event.<br>Never Miss a Play.</h2>
+    <p class="mss-p">From weekly league football to championship boxing and PPV events — IPTVmojo streams every major sport in HD and 4K with zero blackouts. No extra sports package required.</p>
+    <div class="mss-accordion">
+      <details class="mss-item">
+        <summary>Football — Premier League, La Liga &amp; More</summary>
+        <div class="mss-body">Watch every Premier League, La Liga, Bundesliga, Serie A, Ligue 1, and Champions League match live and in HD. All fixtures, all kick-off times, zero blackouts.</div>
+      </details>
+      <details class="mss-item">
+        <summary>Boxing, UFC &amp; PPV Events</summary>
+        <div class="mss-body">Every PPV event is included in your subscription at no extra cost — heavyweight title fights, UFC cards, and major boxing nights all stream in 4K the moment they go live.</div>
+      </details>
+      <details class="mss-item">
+        <summary>NFL, NBA &amp; NHL Packages</summary>
+        <div class="mss-body">Full access to NFL Sunday games, NBA regular season and playoffs, and every NHL matchup. Dedicated sports channels so you never have to search for the game.</div>
+      </details>
+      <details class="mss-item">
+        <summary>Formula 1 &amp; Motorsport</summary>
+        <div class="mss-body">Every F1 race, qualifying session, and practice run streamed live. MotoGP, NASCAR, and WRC rallies also covered across our international sports channels.</div>
+      </details>
+      <details class="mss-item">
+        <summary>Multi-Sport All Weekend Long</summary>
+        <div class="mss-body">Tennis grand slams, golf majors, rugby internationals, cricket, and Olympic events — over 100 dedicated sports channels mean there is always a live match to watch.</div>
+      </details>
+    </div>
+    <a href="pricing.html" class="mss-btn">Subscribe →</a>
+  </div>
+
+  <!-- RIGHT: Sports video -->
+  <div class="mss-video">
+    <!--
+    ══════════════════════════════════════════════
+    VIDEO SOURCE — replace the src below with your
+    Cloudflare Stream URL (or any .mp4 / .webm URL)
+    Example Cloudflare Stream embed:
+      <iframe src="https://customer-xxxx.cloudflarestream.com/VIDEO_ID/iframe"
+              style="position:absolute;inset:0;width:100%;height:100%;border:none;"
+              allow="autoplay; fullscreen" allowfullscreen></iframe>
+    ══════════════════════════════════════════════
+    -->
+    <video autoplay muted playsinline loop
+           src="SPORTS_VIDEO_URL_HERE"
+           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+           onerror="this.style.display='none'">
+    </video>
+    <!-- Fallback shown until video is added -->
+    <div class="mss-video-placeholder" id="mss-placeholder">
+      <div style="text-align:center;padding:24px;">
+        <div style="font-size:4rem;margin-bottom:16px;">🏟️</div>
+        <p style="color:rgba(255,255,255,.5);font-size:.85rem;font-family:'Plus Jakarta Sans',sans-serif;">Sports video coming soon</p>
+      </div>
+    </div>
+    <div class="mss-badge">🔴 Live Sports</div>
+  </div>
+</div>
+</section>
+<!-- ═══════════ END SPORTS SECTION ═══════════ -->
+
+
 
 <!-- ═══════════ REVIEWS SECTION ═══════════ -->
 <section id="mojo-reviews" style="background:#0e0a28;padding:80px 16px 70px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
