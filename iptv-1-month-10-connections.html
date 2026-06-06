@@ -492,7 +492,7 @@ function submitForm(e){
   var timer=setTimeout(function(){showFallback('Timed out.');},20000);
   function showSuccess(){clearTimeout(timer);area.style.display='none';suc.style.display='block';}
   function showFallback(r){clearTimeout(timer);err.setAttribute('style','display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;');err.textContent=r+' Use WhatsApp below to order directly.';waWrap.style.display='block';btn.disabled=false;btn.textContent='Submit';}
-  fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:'service_pk6jnu9',template_id:'template_763fwro',user_id:'5NnfSkeYa9aonxpMe',template_params:{from_name:name||'Anonymous',from_email:email||'support@iptvmojo.com',reply_to:email||'support@iptvmojo.com',message:msg}})}
+  fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:'service_pk6jnu9',template_id:'template_763fwro',user_id:'5NnfSkeYa9aonxpMe',template_params:{from_name:name||'Anonymous',from_email:email||'support@iptvmojo.com',reply_to:email||'support@iptvmojo.com',subject:PLAN_INFO.split('\n')[1]||PLAN_INFO,message:msg}})}
   ).then(function(r){if(r.ok)showSuccess();else r.text().then(function(b){showFallback('Error '+r.status+': '+b.slice(0,50));});}).catch(function(ex){showFallback('Network: '+ex.message);});
 }
 const burger=document.getElementById('burgerBtn'),menu=document.getElementById('mobileMenu');
