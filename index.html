@@ -372,6 +372,287 @@ a.button.wc-backward, button.button.wc-backward { display: none !important; }
 </div>
 
 
+<!-- ═══════════ REVIEWS SECTION ═══════════ -->
+<section id="mojo-reviews" style="background:#0e0a28;padding:80px 16px 70px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
+<style>
+/* ── Reviews section ── */
+#mojo-reviews{--tp:#00b67a;--wa:#25D366;--gg:#FBBC04;--red2:#fd0322;}
+.rv-inner{max-width:1100px;margin:0 auto;}
+.rv-head{text-align:center;margin-bottom:44px;}
+.rv-kicker{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#fd0322;font-weight:700;margin-bottom:10px;}
+.rv-title{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:900;color:#fff;margin-bottom:12px;}
+.rv-title span{color:#fd0322;}
+.rv-subtitle{color:rgba(232,224,255,.55);font-size:.9rem;}
+/* Stats row */
+.rv-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:52px;}
+.rv-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:14px 24px;text-align:center;min-width:100px;}
+.rv-stat-num{font-size:1.25rem;font-weight:900;}
+.rv-stat-label{font-size:.68rem;color:rgba(232,224,255,.55);margin-top:4px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
+/* Block headers */
+.rv-block{margin-bottom:56px;}
+.rv-block-head{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:24px;}
+.rv-block-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.rv-block-name{font-weight:800;font-size:1.25rem;}
+/* Carousel wrapper */
+.rv-carousel{position:relative;overflow:hidden;}
+.rv-track-wrap{overflow:hidden;}
+.rv-track{display:flex;transition:transform .42s cubic-bezier(.25,.46,.45,.94);}
+/* Single-card (Trustpilot) */
+.rv-tp-card{min-width:100%;padding:0 4px;}
+.rv-tp-inner{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:32px 36px;box-shadow:0 8px 40px rgba(0,0,0,.4);max-width:780px;margin:0 auto;}
+.rv-stars{display:flex;gap:4px;margin-bottom:16px;}
+.rv-star-tp{width:28px;height:28px;background:#00b67a;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:700;}
+.rv-card-title{font-weight:800;font-size:1.05rem;color:#fff;margin-bottom:10px;}
+.rv-card-body{color:rgba(232,224,255,.65);line-height:1.8;font-size:.9rem;margin-bottom:18px;}
+.rv-card-author{font-weight:600;font-size:.82rem;display:flex;align-items:center;gap:6px;}
+/* Multi-card (WA + Google) */
+.rv-multi-card{min-width:100%;padding:0 4px;}
+.rv-multi-grid{display:grid;gap:18px;}
+.rv-multi-grid.cols2{grid-template-columns:repeat(2,1fr);}
+.rv-multi-grid.cols3{grid-template-columns:repeat(3,1fr);}
+.rv-mini-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:22px;box-shadow:0 6px 28px rgba(0,0,0,.32);}
+.rv-mini-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.rv-mini-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rv-mini-body{color:rgba(232,224,255,.6);line-height:1.75;font-size:.85rem;margin-bottom:12px;}
+.rv-mini-author{font-weight:600;font-size:.8rem;display:flex;align-items:center;gap:5px;}
+/* Dots */
+.rv-dots{display:flex;justify-content:center;gap:7px;margin-top:20px;}
+.rv-dot{height:9px;border-radius:99px;border:none;cursor:pointer;padding:0;font-family:inherit;background:rgba(255,255,255,.15);transition:all .4s cubic-bezier(.34,1.56,.64,1);width:9px;}
+.rv-dot.active{background:#fd0322;width:24px;}
+/* Trustpilot logo SVG inline */
+.rv-tp-logo{display:flex;justify-content:center;margin-bottom:22px;}
+@media(max-width:768px){
+  .rv-multi-grid.cols2,.rv-multi-grid.cols3{grid-template-columns:1fr;}
+  .rv-tp-inner{padding:24px 20px;}
+}
+</style>
+
+<div class="rv-inner">
+  <!-- Header -->
+  <div class="rv-head">
+    <p class="rv-kicker">Verified Reviews</p>
+    <h2 class="rv-title">What Customers Say About <span>IPTVmojo</span></h2>
+    <p class="rv-subtitle">Real feedback from Trustpilot, WhatsApp &amp; Google</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="rv-stats">
+    <div class="rv-stat"><div class="rv-stat-num" style="color:#00b67a;">5.0</div><div class="rv-stat-label">Trustpilot</div></div>
+    <div class="rv-stat"><div class="rv-stat-num" style="color:#00e5ff;">50,000+</div><div class="rv-stat-label">Customers</div></div>
+    <div class="rv-stat"><div class="rv-stat-num" style="color:#FBBC04;">4.9★</div><div class="rv-stat-label">Google</div></div>
+    <div class="rv-stat"><div class="rv-stat-num" style="color:#fd0322;">24/7</div><div class="rv-stat-label">Support</div></div>
+  </div>
+
+  <!-- ── TRUSTPILOT ── -->
+  <div class="rv-block">
+    <div class="rv-block-head">
+      <svg viewBox="0 0 260 62" width="160" height="40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 0l5.5 17H52L37.5 27.5l5.5 17L28 34 13 44.5l5.5-17L4 17h18.5z" fill="#00b67a"/>
+        <path d="M28 0l5.5 17H52L37.5 27.5 28 34V0z" fill="#005128"/>
+        <text x="60" y="22" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#ffffff">Trustpilot</text>
+        <g transform="translate(60,32)">
+          <rect x="0" y="0" width="20" height="20" rx="2" fill="#00b67a"/><rect x="24" y="0" width="20" height="20" rx="2" fill="#00b67a"/>
+          <rect x="48" y="0" width="20" height="20" rx="2" fill="#00b67a"/><rect x="72" y="0" width="20" height="20" rx="2" fill="#00b67a"/>
+          <rect x="96" y="0" width="20" height="20" rx="2" fill="#00b67a"/>
+          <text x="10" y="10" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white">★</text>
+          <text x="34" y="10" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white">★</text>
+          <text x="58" y="10" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white">★</text>
+          <text x="82" y="10" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white">★</text>
+          <text x="106" y="10" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white">★</text>
+        </g>
+      </svg>
+    </div>
+    <div class="rv-carousel">
+      <div class="rv-track-wrap"><div class="rv-track" id="tp-track">
+        <!-- TP slide 1 -->
+        <div class="rv-tp-card"><div class="rv-tp-inner">
+          <div class="rv-stars"><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div></div>
+          <p class="rv-card-title">Best IPTV I've tried — finally no buffering</p>
+          <p class="rv-card-body">I've tried at least four different IPTV providers over the past two years and none came close to IPTVmojo. Activation was fast, support answered within minutes, and live sports finally run smoothly with zero freezing. Exactly what I was looking for.</p>
+          <p class="rv-card-author" style="color:#00b67a;">— James R. <svg width="20" height="14" viewBox="0 0 20 14" style="border-radius:2px" aria-label="Canada"><rect width="20" height="14" fill="#FF0000"/><rect x="5" width="10" height="14" fill="#fff"/><polygon points="10,2 11,5.5 14.5,5.5 11.8,7.5 12.8,11 10,9 7.2,11 8.2,7.5 5.5,5.5 9,5.5" fill="#FF0000"/></svg></p>
+        </div></div>
+        <!-- TP slide 2 -->
+        <div class="rv-tp-card"><div class="rv-tp-inner">
+          <div class="rv-stars"><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div></div>
+          <p class="rv-card-title">Replaced cable completely — no regrets</p>
+          <p class="rv-card-body">Cut cable six months ago and switched to IPTVmojo. The 4K quality on live sports is incredible — better than what I had with my old provider. The 24H trial convinced me in the first hour. Setup guide was clear and support helped me in minutes.</p>
+          <p class="rv-card-author" style="color:#00b67a;">— Sarah M. <svg width="20" height="14" viewBox="0 0 20 14" style="border-radius:2px" aria-label="UK"><rect width="20" height="14" fill="#012169"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#fff" stroke-width="3"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#C8102E" stroke-width="1.5"/><path d="M10,0 V14 M0,7 H20" stroke="#fff" stroke-width="4"/><path d="M10,0 V14 M0,7 H20" stroke="#C8102E" stroke-width="2.5"/></svg></p>
+        </div></div>
+        <!-- TP slide 3 -->
+        <div class="rv-tp-card"><div class="rv-tp-inner">
+          <div class="rv-stars"><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div></div>
+          <p class="rv-card-title">50,000+ channels and everything actually works</p>
+          <p class="rv-card-body">I was skeptical at first — every IPTV service claims to have thousands of channels but half never load. IPTVmojo is different. Sports channels, international channels, everything I've tried loads perfectly. The EPG guide is a nice touch too.</p>
+          <p class="rv-card-author" style="color:#00b67a;">— Michael T. <svg width="20" height="14" viewBox="0 0 20 14" style="border-radius:2px" aria-label="USA"><rect width="20" height="14" fill="#B22234"/><rect y="1.08" width="20" height="1.08" fill="#fff"/><rect y="3.23" width="20" height="1.08" fill="#fff"/><rect y="5.38" width="20" height="1.08" fill="#fff"/><rect y="7.54" width="20" height="1.08" fill="#fff"/><rect y="9.69" width="20" height="1.08" fill="#fff"/><rect y="11.85" width="20" height="1.08" fill="#fff"/><rect width="8" height="7.54" fill="#3C3B6E"/></svg></p>
+        </div></div>
+        <!-- TP slide 4 -->
+        <div class="rv-tp-card"><div class="rv-tp-inner">
+          <div class="rv-stars"><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div></div>
+          <p class="rv-card-title">Fast activation, great quality, excellent support</p>
+          <p class="rv-card-body">From ordering to watching in under 10 minutes. Credentials arrived by email almost instantly, the setup guide was straightforward, and when I had one small question the WhatsApp support team replied in under 3 minutes. Genuinely impressive service.</p>
+          <p class="rv-card-author" style="color:#00b67a;">— Ahmed K. <svg width="20" height="14" viewBox="0 0 20 14" style="border-radius:2px"><rect width="20" height="14" fill="#000"/><rect y="4.67" width="20" height="4.67" fill="#fff"/><rect y="9.33" width="20" height="4.67" fill="#009900"/></svg></p>
+        </div></div>
+        <!-- TP slide 5 -->
+        <div class="rv-tp-card"><div class="rv-tp-inner">
+          <div class="rv-stars"><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div></div>
+          <p class="rv-card-title">The best value IPTV subscription I've found</p>
+          <p class="rv-card-body">For $49 a year you get everything — all sports, all channels, PPV included. I used to pay more than that per month with my cable company. The 1-year plan with the free IBO Player is genuinely unbeatable value. I've already referred three friends.</p>
+          <p class="rv-card-author" style="color:#00b67a;">— Pierre L. <svg width="20" height="14" viewBox="0 0 20 14" style="border-radius:2px"><rect width="7" height="14" fill="#002395"/><rect x="7" width="6" height="14" fill="#fff"/><rect x="13" width="7" height="14" fill="#ED2939"/></svg></p>
+        </div></div>
+        <!-- TP slide 6 -->
+        <div class="rv-tp-card"><div class="rv-tp-inner">
+          <div class="rv-stars"><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div><div class="rv-star-tp">★</div></div>
+          <p class="rv-card-title">Works perfectly on my Firestick and Smart TV</p>
+          <p class="rv-card-body">Set up TiviMate on my Firestick and IPTV Smarters on my Samsung TV — both work flawlessly with IPTVmojo. The support team walked me through setup on WhatsApp when I had trouble with the Samsung app. Real people, real help, fast responses.</p>
+          <p class="rv-card-author" style="color:#00b67a;">— David W. <svg width="20" height="14" viewBox="0 0 20 14" style="border-radius:2px"><rect width="20" height="14" fill="#00008B"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#fff" stroke-width="3.5"/><path d="M10,0 V14 M0,7 H20" stroke="#fff" stroke-width="5"/><path d="M10,0 V14 M0,7 H20" stroke="#00008B" stroke-width="3"/><circle cx="10" cy="7" r="3.5" fill="red" stroke="#fff" stroke-width="0"/></svg></p>
+        </div></div>
+      </div></div>
+      <div class="rv-dots" id="tp-dots"></div>
+    </div>
+  </div>
+
+  <!-- ── WHATSAPP ── -->
+  <div class="rv-block">
+    <div class="rv-block-head">
+      <div class="rv-block-icon" style="background:#25D366;">
+        <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <span class="rv-block-name" style="color:#25D366;">WhatsApp</span>
+    </div>
+    <div class="rv-carousel">
+      <div class="rv-track-wrap"><div class="rv-track" id="wa-track">
+        <!-- WA slide 1 -->
+        <div class="rv-multi-card"><div class="rv-multi-grid cols2">
+          <div class="rv-mini-card">
+            <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
+            <p class="rv-mini-body">Hey just wanted to say the service is working great 👍 Sports are smooth and no buffering so far. Appreciate the quick help with the Firestick setup yesterday, you guys are fast!</p>
+            <p class="rv-mini-author" style="color:#25D366;">— Mark W. <svg width="18" height="12" viewBox="0 0 20 14" style="border-radius:2px"><rect width="20" height="14" fill="#B22234"/><rect y="1.08" width="20" height="1.08" fill="#fff"/><rect y="3.23" width="20" height="1.08" fill="#fff"/><rect y="5.38" width="20" height="1.08" fill="#fff"/><rect y="7.54" width="20" height="1.08" fill="#fff"/><rect y="9.69" width="20" height="1.08" fill="#fff"/><rect y="11.85" width="20" height="1.08" fill="#fff"/><rect width="8" height="7.54" fill="#3C3B6E"/></svg></p>
+          </div>
+          <div class="rv-mini-card">
+            <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
+            <p class="rv-mini-body">Thanks for the quick support. Setup was easy once you walked me through it. Much better than my last IPTV — that one was always freezing on game nights. This is smooth 🙌</p>
+            <p class="rv-mini-author" style="color:#25D366;">— Daniel C. <svg width="18" height="12" viewBox="0 0 20 14" style="border-radius:2px"><rect width="20" height="14" fill="#FF0000"/><rect x="5" width="10" height="14" fill="#fff"/><polygon points="10,2 11,5.5 14.5,5.5 11.8,7.5 12.8,11 10,9 7.2,11 8.2,7.5 5.5,5.5 9,5.5" fill="#FF0000"/></svg></p>
+          </div>
+        </div></div>
+        <!-- WA slide 2 -->
+        <div class="rv-multi-card"><div class="rv-multi-grid cols2">
+          <div class="rv-mini-card">
+            <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
+            <p class="rv-mini-body">Premier League, La Liga, Champions League — everything streams in HD with no lag at all. I tried the free trial and subscribed within the hour. Brilliant service ✅</p>
+            <p class="rv-mini-author" style="color:#25D366;">— Sophie R. <svg width="18" height="12" viewBox="0 0 20 14" style="border-radius:2px"><rect width="20" height="14" fill="#012169"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#fff" stroke-width="3"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#C8102E" stroke-width="1.5"/><path d="M10,0 V14 M0,7 H20" stroke="#fff" stroke-width="4"/><path d="M10,0 V14 M0,7 H20" stroke="#C8102E" stroke-width="2.5"/></svg></p>
+          </div>
+          <div class="rv-mini-card">
+            <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
+            <p class="rv-mini-body">J'utilise le service depuis 3 mois maintenant — tout fonctionne parfaitement sur mon Apple TV. Les chaînes françaises sont toutes disponibles en HD. Le support répond en quelques minutes, c'est top 👌</p>
+            <p class="rv-mini-author" style="color:#25D366;">— Carlos M. <svg width="18" height="12" viewBox="0 0 20 14" style="border-radius:2px"><rect width="7" height="14" fill="#002395"/><rect x="7" width="6" height="14" fill="#fff"/><rect x="13" width="7" height="14" fill="#ED2939"/></svg></p>
+          </div>
+        </div></div>
+        <!-- WA slide 3 -->
+        <div class="rv-multi-card"><div class="rv-multi-grid cols2">
+          <div class="rv-mini-card">
+            <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
+            <p class="rv-mini-body">Watching the UFC PPV last night in 4K — crystal clear, zero buffering. My friends were at the bar paying $40 to watch it. I watched it at home for free as part of my subscription 😂 Incredible value.</p>
+            <p class="rv-mini-author" style="color:#25D366;">— Hassan A. <svg width="18" height="12" viewBox="0 0 20 14" style="border-radius:2px"><rect width="20" height="14" fill="#fff"/><rect y="4.67" width="20" height="4.67" fill="#000"/><circle cx="7" cy="7" r="2.5" fill="red"/></svg></p>
+          </div>
+          <div class="rv-mini-card">
+            <div class="rv-mini-head"><div class="rv-mini-avatar" style="background:#25D366;"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span style="font-weight:700;font-size:.85rem;color:#fff;">WhatsApp</span></div>
+            <p class="rv-mini-body">Been using IPTVmojo for 6 months now. The service has been rock solid — only had one small issue and support sorted it in minutes. The EPG guide works perfectly with TiviMate. Would definitely recommend 👍</p>
+            <p class="rv-mini-author" style="color:#25D366;">— Laura P. <svg width="18" height="12" viewBox="0 0 20 14" style="border-radius:2px"><rect width="20" height="14" fill="#00008B"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#fff" stroke-width="3.5"/><path d="M10,0 V14 M0,7 H20" stroke="#fff" stroke-width="5"/><path d="M10,0 V14 M0,7 H20" stroke="#00008B" stroke-width="3"/><circle cx="10" cy="7" r="3.5" fill="red"/></svg></p>
+          </div>
+        </div></div>
+      </div></div>
+      <div class="rv-dots" id="wa-dots"></div>
+    </div>
+  </div>
+
+  <!-- ── GOOGLE ── -->
+  <div class="rv-block">
+    <div class="rv-block-head">
+      <svg viewBox="0 0 260 56" width="200" height="44" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 10C15.4 10 10 15.4 10 22s5.4 12 12 12c5.6 0 10.3-3.8 11.6-9H22v-4h16.2c.2 1 .3 2 .3 3 0 8.8-5.9 15-16.5 15C10.5 39 4 32.5 4 22S10.5 5 22 5c5.6 0 10.2 2.1 13.8 5.4l-3.6 3.6C29.8 11.6 26.2 10 22 10z" fill="#4285F4"/>
+        <text x="50" y="26" font-family="Arial,sans-serif" font-weight="700" font-size="22" dominant-baseline="middle"><tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan></text>
+        <text x="50" y="46" font-family="Arial,sans-serif" font-weight="600" font-size="14" fill="rgba(255,255,255,0.55)">Reviews</text>
+        <text x="140" y="46" font-family="Arial,sans-serif" font-size="14" fill="#FBBC04">★★★★★</text>
+      </svg>
+    </div>
+    <div class="rv-carousel">
+      <div class="rv-track-wrap"><div class="rv-track" id="gg-track">
+        <!-- GG slide 1 -->
+        <div class="rv-multi-card"><div class="rv-multi-grid cols3">
+          <div class="rv-mini-card">
+            <div style="display:flex;gap:2px;margin-bottom:9px;"><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span></div>
+            <p style="font-weight:700;font-size:.88rem;color:rgba(232,224,255,.85);margin-bottom:9px;">Matthew Collins</p>
+            <p class="rv-mini-body">I've used a few IPTV services over the years and IPTVmojo is the first one that didn't disappoint after the first week. Channels load fast, sports are smooth, and quality stays consistent.</p>
+          </div>
+          <div class="rv-mini-card">
+            <div style="display:flex;gap:2px;margin-bottom:9px;"><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span></div>
+            <p style="font-weight:700;font-size:.88rem;color:rgba(232,224,255,.85);margin-bottom:9px;">Daniel Thompson</p>
+            <p class="rv-mini-body">Switched from another provider that kept buffering during live games. IPTVmojo has been much better. Streams are stable and customer service actually replies fast. Big difference.</p>
+          </div>
+          <div class="rv-mini-card">
+            <div style="display:flex;gap:2px;margin-bottom:9px;"><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span></div>
+            <p style="font-weight:700;font-size:.88rem;color:rgba(232,224,255,.85);margin-bottom:9px;">Christopher Miller</p>
+            <p class="rv-mini-body">Activation was fast and everything worked as expected. Use it mainly for live sports and movies — no major issues. Contacted support once, polite and helpful. Better than my previous service.</p>
+          </div>
+        </div></div>
+        <!-- GG slide 2 -->
+        <div class="rv-multi-card"><div class="rv-multi-grid cols3">
+          <div class="rv-mini-card">
+            <div style="display:flex;gap:2px;margin-bottom:9px;"><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span></div>
+            <p style="font-weight:700;font-size:.88rem;color:rgba(232,224,255,.85);margin-bottom:9px;">Emma Wilson</p>
+            <p class="rv-mini-body">The free trial completely sold me. Full 4K quality, all my international channels available, and the whole family can watch on different devices. Renewed straight away for a full year.</p>
+          </div>
+          <div class="rv-mini-card">
+            <div style="display:flex;gap:2px;margin-bottom:9px;"><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span></div>
+            <p style="font-weight:700;font-size:.88rem;color:rgba(232,224,255,.85);margin-bottom:9px;">Robert Harris</p>
+            <p class="rv-mini-body">Excellent service for the price. I have 3 connections for the family — everyone watches different things simultaneously and it works flawlessly. The VOD library is massive, constantly updated.</p>
+          </div>
+          <div class="rv-mini-card">
+            <div style="display:flex;gap:2px;margin-bottom:9px;"><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span><span style="color:#FBBC04;font-size:18px;">★</span></div>
+            <p style="font-weight:700;font-size:.88rem;color:rgba(232,224,255,.85);margin-bottom:9px;">Jessica Lambert</p>
+            <p class="rv-mini-body">Was worried about setup but the WhatsApp team walked me through it step by step. Now watching on my LG Smart TV and iPhone with no issues. Quality is great, especially for sports in HD.</p>
+          </div>
+        </div></div>
+      </div></div>
+      <div class="rv-dots" id="gg-dots"></div>
+    </div>
+  </div>
+
+</div><!-- /.rv-inner -->
+
+<script>
+(function(){
+  function makeCarousel(trackId, dotsId, count, autoMs) {
+    var track = document.getElementById(trackId);
+    var dotsEl = document.getElementById(dotsId);
+    var cur = 0;
+    // Build dots
+    for(var i=0;i<count;i++){
+      var d = document.createElement('button');
+      d.className = 'rv-dot' + (i===0?' active':'');
+      d.setAttribute('aria-label','Go to slide '+(i+1));
+      (function(idx){d.addEventListener('click',function(){go(idx);});})(i);
+      dotsEl.appendChild(d);
+    }
+    function go(n){
+      cur=n;
+      track.style.transform='translateX(-'+(n*100)+'%)';
+      dotsEl.querySelectorAll('.rv-dot').forEach(function(d,i){
+        d.classList.toggle('active',i===n);
+      });
+    }
+    if(autoMs){
+      setInterval(function(){go((cur+1)%count);}, autoMs);
+    }
+  }
+  makeCarousel('tp-track','tp-dots',6,6000);
+  makeCarousel('wa-track','wa-dots',3,7000);
+  makeCarousel('gg-track','gg-dots',2,8000);
+})();
+</script>
+</section>
+<!-- ═══════════ END REVIEWS ═══════════ -->
+
 
 <style id="mojo-pricing-css">
 
