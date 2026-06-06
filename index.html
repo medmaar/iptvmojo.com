@@ -207,6 +207,116 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 </div>
 </div>
 
+
+<!-- ═══════════ SPORTS SECTION ═══════════ -->
+<section id="mojo-sports-section">
+<style>
+#mojo-sports-section{background:linear-gradient(180deg,#06030f 0%,#0d0620 50%,#06030f 100%);padding:80px 24px 90px;isolation:isolate;}
+.mss-inner{max-width:1060px;margin:0 auto;}
+/* Header */
+.mss-kicker{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#fd0322;font-weight:700;margin-bottom:14px;text-align:center;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mss-h2{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px;text-align:center;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mss-sub{font-size:.97rem;color:rgba(232,224,255,.65);text-align:center;max-width:580px;margin:0 auto 40px;line-height:1.75;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+/* Video */
+.mss-video-wrap{position:relative;width:100%;max-width:960px;margin:0 auto 32px;border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#06030f;box-shadow:0 0 0 1px rgba(253,3,34,.25), 0 0 60px rgba(253,3,34,.12), 0 24px 80px rgba(0,0,0,.7);}
+.mss-video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.mss-video-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0414,#1a0428,#06030f);}
+.mss-live-badge{position:absolute;top:16px;left:16px;z-index:3;display:flex;align-items:center;gap:6px;background:rgba(10,4,20,.8);backdrop-filter:blur(8px);border:1px solid rgba(253,3,34,.4);border-radius:8px;padding:5px 12px;font-size:.72rem;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;letter-spacing:.06em;}
+.mss-live-dot{width:7px;height:7px;border-radius:50%;background:#fd0322;animation:mss-pulse 1.4s ease-in-out infinite;flex-shrink:0;}
+@keyframes mss-pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(253,3,34,.5);}50%{opacity:.7;box-shadow:0 0 0 5px rgba(253,3,34,0);}}
+/* Video bottom bar */
+.mss-video-bar{position:absolute;bottom:0;left:0;right:0;z-index:3;background:linear-gradient(to top,rgba(6,3,15,.95) 0%,transparent 100%);padding:20px 20px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.mss-ch-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:4px 10px;font-size:.7rem;font-weight:700;color:rgba(232,224,255,.85);white-space:nowrap;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+/* Sport pills */
+.mss-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:44px;}
+.mss-pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:9px 18px;font-size:.82rem;font-weight:700;color:rgba(232,224,255,.8);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:all .2s;}
+.mss-pill:hover{background:rgba(253,3,34,.12);border-color:rgba(253,3,34,.35);color:#fff;}
+/* Feature cards */
+.mss-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
+.mss-feat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px 20px;text-align:center;}
+.mss-feat-icon{font-size:2rem;margin-bottom:10px;}
+.mss-feat h3{font-size:.95rem;font-weight:800;color:#fff;margin-bottom:7px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mss-feat p{font-size:.82rem;line-height:1.65;color:rgba(232,224,255,.6);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+/* CTA */
+.mss-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.mss-btn-red{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:30px;background:#fd0322;color:#fff;font-weight:800;font-size:.92rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;box-shadow:0 6px 28px rgba(253,3,34,.35);transition:all .2s;}
+.mss-btn-red:hover{background:#c50018;transform:translateY(-2px);}
+.mss-btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:30px;border:1px solid rgba(255,255,255,.18);color:#fff;font-weight:700;font-size:.92rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:all .2s;}
+.mss-btn-outline:hover{background:rgba(255,255,255,.07);}
+@media(max-width:900px){.mss-feats{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.mss-feats{grid-template-columns:1fr;}.mss-h2{font-size:1.7rem;}.mss-video-bar{display:none;}}
+</style>
+
+<div class="mss-inner">
+
+  <!-- Header text -->
+  <p class="mss-kicker">Live Sports Coverage</p>
+  <h2 class="mss-h2">Every Match. Every Event.<br>Live in HD &amp; 4K.</h2>
+  <p class="mss-sub">All sports included in every plan — no add-ons, no blackouts. From league football to PPV title fights, IPTVmojo delivers every match the moment it goes live.</p>
+
+  <!-- Video -->
+  <div class="mss-video-wrap">
+    <video autoplay muted playsinline loop
+           src="IPTVmojo_IPTV_subscription.mp4"
+           oncanplay="var p=document.getElementById('mss-ph');if(p)p.style.display='none';"
+           onerror="this.style.display='none';">
+    </video>
+    <div id="mss-ph" class="mss-video-placeholder">
+      <div style="text-align:center;"><div style="font-size:4rem;margin-bottom:12px;">🏟️</div><p style="color:rgba(255,255,255,.4);font-size:.85rem;font-family:'Plus Jakarta Sans',sans-serif;">Loading sports stream…</p></div>
+    </div>
+    <div class="mss-live-badge"><span class="mss-live-dot"></span> LIVE SPORTS</div>
+    <div class="mss-video-bar">
+      <span class="mss-ch-pill">⚽ Premier League</span>
+      <span class="mss-ch-pill">🥊 UFC &amp; Boxing</span>
+      <span class="mss-ch-pill">🏈 NFL</span>
+      <span class="mss-ch-pill">🏀 NBA</span>
+      <span class="mss-ch-pill">🏒 NHL</span>
+      <span class="mss-ch-pill">🏎️ Formula 1</span>
+      <span class="mss-ch-pill">🏆 Champions League</span>
+    </div>
+  </div>
+
+  <!-- Sport type pills -->
+  <div class="mss-pills">
+    <span class="mss-pill">⚽ Football</span>
+    <span class="mss-pill">🥊 Boxing &amp; UFC</span>
+    <span class="mss-pill">🏈 NFL &amp; NBA</span>
+    <span class="mss-pill">🏎️ Formula 1</span>
+    <span class="mss-pill">🏒 NHL &amp; Hockey</span>
+    <span class="mss-pill">🎾 Tennis</span>
+    <span class="mss-pill">🏆 Champions League</span>
+    <span class="mss-pill">💥 PPV Events</span>
+  </div>
+
+  <!-- Feature cards -->
+  <div class="mss-feats">
+    <div class="mss-feat">
+      <div class="mss-feat-icon">🏆</div>
+      <h3>PPV Included Free</h3>
+      <p>Every PPV event — boxing title fights, UFC cards, major specials — is included in all plans at zero extra cost.</p>
+    </div>
+    <div class="mss-feat">
+      <div class="mss-feat-icon">📡</div>
+      <h3>100+ Sports Channels</h3>
+      <p>TSN, Sportsnet, ESPN, Sky Sports, beIN Sports, DAZN and more. Every league, every match day, all in one place.</p>
+    </div>
+    <div class="mss-feat">
+      <div class="mss-feat-icon">⚡</div>
+      <h3>Zero Blackouts</h3>
+      <p>No regional blocks, no out-of-market restrictions. Watch any game from anywhere in the world in HD and 4K.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="mss-cta">
+    <a href="pricing.html" class="mss-btn-red">📋 View Plans →</a>
+    <a href="free-trial.html" class="mss-btn-outline">🎬 Try Free 24H</a>
+  </div>
+
+</div>
+</section>
+<!-- ═══════════ END SPORTS SECTION ═══════════ -->
+
 <div class="elementor-element elementor-element-38fc1402 e-flex e-con-boxed e-con e-parent" data-id="38fc1402" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 <div class="e-con-inner">
 <div class="elementor-element elementor-element-1c0c65f7 e-con-full e-flex e-con e-child" data-id="1c0c65f7" data-element_type="container">
@@ -382,97 +492,6 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 </div>
 </div>
 
-<!-- ═══════════ SPORTS SECTION ═══════════ -->
-<section id="mojo-sports-section" style="background:rgba(10,5,40,0.95);padding:0;">
-<style>
-#mojo-sports-section{isolation:isolate;}
-.mss-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
-.mss-text{padding:52px 56px 52px 32px;display:flex;flex-direction:column;justify-content:center;gap:0;}
-.mss-video{position:relative;overflow:hidden;min-height:400px;background:#06030f;}
-.mss-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-.mss-video-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0414 0%,#1a0428 50%,#06030f 100%);}
-.mss-kicker{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#00c8ff;font-weight:700;margin-bottom:12px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-.mss-h2{font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:16px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-.mss-p{font-size:.92rem;line-height:1.8;color:rgba(232,224,255,.72);margin-bottom:24px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-/* Accordion */
-.mss-accordion{display:flex;flex-direction:column;gap:0;margin-bottom:28px;}
-.mss-item{border-bottom:1px solid rgba(255,255,255,.12);}
-.mss-item summary{list-style:none;padding:14px 0;cursor:pointer;font-weight:700;font-size:.95rem;color:#fff;display:flex;align-items:center;gap:12px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-.mss-item summary::-webkit-details-marker{display:none;}
-.mss-item summary::before{content:'›';color:#fd0322;font-size:1.3rem;font-weight:900;line-height:1;flex-shrink:0;transition:transform .25s;}
-.mss-item[open] summary::before{content:'›';transform:rotate(90deg);}
-.mss-item .mss-body{padding:4px 0 16px 26px;font-size:.88rem;line-height:1.75;color:rgba(232,224,255,.7);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-.mss-btn{display:inline-flex;align-items:center;padding:13px 28px;border-radius:10px;background:#fd0322;color:#fff;font-weight:800;font-size:.9rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:background .2s;}
-.mss-btn:hover{background:#c50018;}
-/* Video badge */
-.mss-badge{position:absolute;top:16px;left:16px;z-index:2;background:rgba(253,3,34,.9);color:#fff;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:6px;letter-spacing:.08em;text-transform:uppercase;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-@media(max-width:900px){
-  .mss-wrap{grid-template-columns:1fr;}
-  .mss-video{min-height:280px;order:-1;}
-  .mss-text{padding:36px 24px;}
-}
-</style>
-
-<div class="mss-wrap">
-  <!-- LEFT: Text + accordion -->
-  <div class="mss-text">
-    <p class="mss-kicker">Live Sports Coverage</p>
-    <h2 class="mss-h2">Every Match. Every Event.<br>Never Miss a Play.</h2>
-    <p class="mss-p">From weekly league football to championship boxing and PPV events — IPTVmojo streams every major sport in HD and 4K with zero blackouts. No extra sports package required.</p>
-    <div class="mss-accordion">
-      <details class="mss-item">
-        <summary>Football — Premier League, La Liga &amp; More</summary>
-        <div class="mss-body">Watch every Premier League, La Liga, Bundesliga, Serie A, Ligue 1, and Champions League match live and in HD. All fixtures, all kick-off times, zero blackouts.</div>
-      </details>
-      <details class="mss-item">
-        <summary>Boxing, UFC &amp; PPV Events</summary>
-        <div class="mss-body">Every PPV event is included in your subscription at no extra cost — heavyweight title fights, UFC cards, and major boxing nights all stream in 4K the moment they go live.</div>
-      </details>
-      <details class="mss-item">
-        <summary>NFL, NBA &amp; NHL Packages</summary>
-        <div class="mss-body">Full access to NFL Sunday games, NBA regular season and playoffs, and every NHL matchup. Dedicated sports channels so you never have to search for the game.</div>
-      </details>
-      <details class="mss-item">
-        <summary>Formula 1 &amp; Motorsport</summary>
-        <div class="mss-body">Every F1 race, qualifying session, and practice run streamed live. MotoGP, NASCAR, and WRC rallies also covered across our international sports channels.</div>
-      </details>
-      <details class="mss-item">
-        <summary>Multi-Sport All Weekend Long</summary>
-        <div class="mss-body">Tennis grand slams, golf majors, rugby internationals, cricket, and Olympic events — over 100 dedicated sports channels mean there is always a live match to watch.</div>
-      </details>
-    </div>
-    <a href="pricing.html" class="mss-btn">Subscribe →</a>
-  </div>
-
-  <!-- RIGHT: Sports video -->
-  <div class="mss-video">
-    <!--
-    ══════════════════════════════════════════════
-    VIDEO SOURCE — replace the src below with your
-    Cloudflare Stream URL (or any .mp4 / .webm URL)
-    Example Cloudflare Stream embed:
-      <iframe src="https://customer-xxxx.cloudflarestream.com/VIDEO_ID/iframe"
-              style="position:absolute;inset:0;width:100%;height:100%;border:none;"
-              allow="autoplay; fullscreen" allowfullscreen></iframe>
-    ══════════════════════════════════════════════
-    -->
-    <video autoplay muted playsinline loop
-           src="IPTVmojo_IPTV_subscription.mp4"
-           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
-           oncanplay="document.getElementById('mss-placeholder').style.display='none'" onerror="this.style.display='none'">
-    </video>
-    <!-- Fallback shown until video is added -->
-    <div class="mss-video-placeholder" id="mss-placeholder">
-      <div style="text-align:center;padding:24px;">
-        <div style="font-size:4rem;margin-bottom:16px;">🏟️</div>
-        <p style="color:rgba(255,255,255,.5);font-size:.85rem;font-family:'Plus Jakarta Sans',sans-serif;">Sports video coming soon</p>
-      </div>
-    </div>
-    <div class="mss-badge">🔴 Live Sports</div>
-  </div>
-</div>
-</section>
-<!-- ═══════════ END SPORTS SECTION ═══════════ -->
 
 
 
