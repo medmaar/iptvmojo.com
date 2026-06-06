@@ -434,8 +434,7 @@ a{color:inherit;text-decoration:none;}
               <option value="Zambia">Zambia</option>
               <option value="Zimbabwe">Zimbabwe</option>
             </select>
-            <input type="tel" class="res-input" id="res_phone" placeholder="WhatsApp number (optional)">
-            <input type="text" class="res-input" id="res_business" placeholder="Business name (optional)">
+            <input type="tel" class="res-input" id="res_phone" placeholder="WhatsApp number">
           </div>
           <button type="submit" class="res-submit" id="resSubmit">Submit Reseller Order →</button>
         </form>
@@ -622,8 +621,7 @@ document.getElementById('resellerForm').addEventListener('submit', function(e) {
                 'Name: ' + (document.getElementById('res_name').value||'—') + '\n' +
                 'Email: ' + (document.getElementById('res_email').value||'—') + '\n' +
                 'Country: ' + (document.getElementById('res_country').value||'—') + '\n' +
-                'WhatsApp: ' + (document.getElementById('res_phone').value||'—') + '\n' +
-                'Business: ' + (document.getElementById('res_business').value||'—'),
+                'WhatsApp: ' + (document.getElementById('res_phone').value||'—') + '\n' +,
     to_email:   'support@iptvmojo.com'
   };
   emailjs.send('service_pk6jnu9', 'template_763fwro', params)
