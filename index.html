@@ -217,15 +217,18 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 .mss-h2{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px;text-align:center;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
 .mss-sub{font-size:.97rem;color:rgba(232,224,255,.65);text-align:center;max-width:580px;margin:0 auto 28px;line-height:1.75;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
 
-/* ── Categories row (above video, one line) ── */
-.mss-cats{display:flex;align-items:center;justify-content:center;gap:0;margin:0 auto 22px;max-width:960px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;overflow:hidden;}
-.mss-cat{display:flex;align-items:center;gap:6px;padding:11px 18px;font-size:.8rem;font-weight:700;color:rgba(232,224,255,.7);white-space:nowrap;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;border-right:1px solid rgba(255,255,255,.08);flex:1;justify-content:center;}
-.mss-cat:last-child{border-right:none;}
-.mss-cat-icon{font-size:1.1rem;flex-shrink:0;}
-@media(max-width:600px){.mss-cat{padding:9px 6px;font-size:.65rem;gap:3px;}.mss-cat-icon{font-size:.9rem;}}
+/* ── Feature bar — one line above video ── */
+.mss-feat-bar{display:grid;grid-template-columns:repeat(4,1fr);max-width:960px;margin:0 auto 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:16px;overflow:hidden;}
+.mss-fb-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px 12px;border-right:1px solid rgba(255,255,255,.08);transition:background .2s;}
+.mss-fb-item:last-child{border-right:none;}
+.mss-fb-item:hover{background:rgba(253,3,34,.06);}
+.mss-fb-icon{color:#fd0322;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.mss-fb-icon svg{width:28px;height:28px;fill:currentColor;}
+.mss-fb-label{font-size:.82rem;font-weight:800;color:#fff;white-space:nowrap;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+@media(max-width:600px){.mss-fb-icon svg{width:22px;height:22px;}.mss-fb-label{font-size:.68rem;}.mss-fb-item{padding:14px 6px;gap:5px;}}
 
 /* ── Video ── */
-.mss-video-wrap{position:relative;width:100%;max-width:960px;margin:0 auto 0;border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#06030f;box-shadow:0 0 0 1px rgba(253,3,34,.25),0 0 60px rgba(253,3,34,.12),0 24px 80px rgba(0,0,0,.7);}
+.mss-video-wrap{position:relative;width:100%;max-width:960px;margin:0 auto 0;border-radius:0 0 20px 20px;overflow:hidden;aspect-ratio:16/9;background:#06030f;box-shadow:0 0 0 1px rgba(253,3,34,.25),0 0 60px rgba(253,3,34,.12),0 24px 80px rgba(0,0,0,.7);}
 .mss-video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
 .mss-video-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0414,#1a0428,#06030f);}
 .mss-live-badge{position:absolute;top:16px;left:16px;z-index:3;display:flex;align-items:center;gap:6px;background:rgba(10,4,20,.8);backdrop-filter:blur(8px);border:1px solid rgba(253,3,34,.4);border-radius:8px;padding:5px 12px;font-size:.72rem;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;letter-spacing:.06em;}
@@ -266,15 +269,35 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
   <h2 class="mss-h2">Every Match. Every Event.<br>Live in HD &amp; 4K.</h2>
   <p class="mss-sub">All sports included in every plan — no add-ons, no blackouts. From league football to PPV title fights, IPTVmojo streams every match the moment it goes live.</p>
 
-  <!-- Categories row — one line above video -->
-  <div class="mss-cats">
-    <div class="mss-cat"><span class="mss-cat-icon">📺</span> Live TV</div>
-    <div class="mss-cat"><span class="mss-cat-icon">🎬</span> Films</div>
-    <div class="mss-cat"><span class="mss-cat-icon">📡</span> Series</div>
-    <div class="mss-cat"><span class="mss-cat-icon">🏆</span> Sports</div>
+  <!-- Feature bar — one horizontal line above the video -->
+  <div class="mss-feat-bar">
+    <div class="mss-fb-item">
+      <div class="mss-fb-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zM9 8v8l8-4z"/></svg>
+      </div>
+      <span class="mss-fb-label">Live TV</span>
+    </div>
+    <div class="mss-fb-item">
+      <div class="mss-fb-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>
+      </div>
+      <span class="mss-fb-label">Films</span>
+    </div>
+    <div class="mss-fb-item">
+      <div class="mss-fb-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+      </div>
+      <span class="mss-fb-label">Series</span>
+    </div>
+    <div class="mss-fb-item">
+      <div class="mss-fb-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 5h-2V3H7v2H5C3.9 5 3 5.9 3 7v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.93C5.99 10.59 5 9.41 5 8zm14 0c0 1.41-.99 2.59-2 2.93V7h2v1z"/></svg>
+      </div>
+      <span class="mss-fb-label">Sports</span>
+    </div>
   </div>
 
-  <!-- Video — 16:9 rectangle centered -->
+  <!-- Video — 16:9 rectangle, top corners flush with feature bar -->
   <div class="mss-video-wrap">
     <video autoplay muted playsinline loop
            src="IPTVmojo_IPTV_subscription.mp4"
@@ -299,7 +322,6 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
   <!-- Infinite scrolling sports ticker -->
   <div class="mss-ticker-wrap">
     <div class="mss-ticker-track">
-      <!-- Set 1 -->
       <span class="mss-pill">⚽ Football</span>
       <span class="mss-pill">🥊 Boxing &amp; UFC</span>
       <span class="mss-pill">🏈 NFL &amp; NBA</span>
@@ -312,7 +334,6 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
       <span class="mss-pill">⛳ Golf</span>
       <span class="mss-pill">🏏 Cricket</span>
       <span class="mss-pill">🏊 Olympics</span>
-      <!-- Set 2 — duplicate for seamless loop -->
       <span class="mss-pill">⚽ Football</span>
       <span class="mss-pill">🥊 Boxing &amp; UFC</span>
       <span class="mss-pill">🏈 NFL &amp; NBA</span>
@@ -333,17 +354,17 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
     <div class="mss-feat">
       <div class="mss-feat-icon">🏆</div>
       <h3>PPV Included Free</h3>
-      <p>Every PPV event — boxing title fights, UFC cards, major specials — is included in all plans at zero extra cost.</p>
+      <p>Every PPV event — boxing title fights, UFC cards, major specials — included in all plans at zero extra cost.</p>
     </div>
     <div class="mss-feat">
       <div class="mss-feat-icon">📡</div>
       <h3>+20,000 Sports Channels</h3>
-      <p>TSN, Sportsnet, ESPN, Sky Sports, beIN Sports, DAZN and more. Every league, every match day, all in one place.</p>
+      <p>TSN, Sportsnet, ESPN, Sky Sports, beIN Sports, DAZN and more. Every league, every match day.</p>
     </div>
     <div class="mss-feat">
       <div class="mss-feat-icon">⚡</div>
       <h3>Zero Blackouts</h3>
-      <p>No regional blocks, no out-of-market restrictions. Watch any game from anywhere in the world in HD and 4K.</p>
+      <p>No regional blocks, no restrictions. Watch any game from anywhere in the world in HD and 4K.</p>
     </div>
   </div>
 
