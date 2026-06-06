@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IPTV Reseller Program — IPTVmojo | Wholesale Pricing & White-Label</title>
-<meta name="description" content="Become an IPTVmojo IPTV reseller. Wholesale pricing, white-label support, reseller panel, and 50,000+ channels to offer your clients. No minimum order.">
+<title>IPTV Reseller Program — IPTVmojo | From $23/Connection/Year</title>
+<meta name="description" content="Become an IPTVmojo IPTV reseller. Plans from $300/year (10 connections) to $2,300/year (100 connections). White-label, reseller panel, 50,000+ channels. No minimums.">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta property="og:title" content="IPTV Reseller Program — IPTVmojo">
-<meta property="og:description" content="IPTVmojo reseller program — wholesale pricing, white-label branding, reseller panel, and 24/7 backend support.">
+<meta property="og:title" content="IPTV Reseller Program — IPTVmojo | From $23/Connection">
+<meta property="og:description" content="Start your IPTV business with IPTVmojo. Reseller plans: 10 connections $300/yr, 50 connections $1,250/yr, 100 connections $2,300/yr. White-label panel included.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://iptvmojo.com/reseller.html">
 <link rel="canonical" href="https://iptvmojo.com/reseller.html">
@@ -82,24 +82,67 @@ a{color:inherit;text-decoration:none;}
 @media(max-width:768px){.mojo-nav-links,.mojo-nav .mojo-nav-cta{display:none;}.mojo-burger{display:flex;}.footer-cols{gap:24px;}}
 </style>
 <style>
-.reseller-features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:60px;}
+/* Hero badges */
+.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;font-size:.87rem;color:rgba(232,224,255,.75);margin-top:8px;}
+.hero-badge-tick{color:#25D366;font-weight:800;}
+
+/* Pricing plans */
+.res-pricing-section{padding:80px 0;border-bottom:1px solid var(--border);}
+.res-plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px;}
+.res-plan-card{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.1);border-radius:20px;padding:32px 24px;cursor:pointer;text-align:center;transition:all .25s;position:relative;outline:none;}
+.res-plan-card:hover{border-color:rgba(253,3,34,.35);background:rgba(253,3,34,.05);}
+.res-plan-card.selected{border-color:var(--red);background:linear-gradient(135deg,rgba(253,3,34,.1),rgba(100,0,60,.08));box-shadow:0 0 28px rgba(253,3,34,.22);}
+.res-plan-tier{display:inline-block;background:rgba(255,255,255,.08);color:rgba(232,224,255,.55);font-size:.68rem;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:14px;}
+.res-plan-card.selected .res-plan-tier{background:rgba(253,3,34,.2);color:var(--red);}
+.res-popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:.68rem;font-weight:800;padding:4px 14px;border-radius:999px;white-space:nowrap;}
+.res-plan-price{font-size:2.2rem;font-weight:900;color:#fff;margin:12px 0 3px;line-height:1;}
+.res-plan-per{font-size:.75rem;color:rgba(232,224,255,.45);margin-bottom:14px;}
+.res-plan-conns{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:14px;}
+.res-plan-per-conn{display:inline-block;background:rgba(255,255,255,.07);color:rgba(232,224,255,.65);font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:6px;margin-bottom:18px;}
+.res-plan-card.selected .res-plan-per-conn{background:rgba(253,3,34,.12);color:rgba(253,3,34,.9);}
+.res-plan-select{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);color:rgba(232,224,255,.55);padding:8px 20px;border-radius:999px;font-size:.82rem;font-weight:700;transition:all .2s;}
+.res-plan-card.selected .res-plan-select{background:var(--red);color:#fff;box-shadow:0 4px 14px rgba(253,3,34,.4);}
+.res-plan-hint{text-align:center;font-size:.82rem;color:rgba(232,224,255,.35);margin-bottom:0;}
+
+/* Order panel */
+.res-order-panel{max-height:0;overflow:hidden;transition:max-height .5s ease,opacity .3s;opacity:0;}
+.res-order-panel.visible{max-height:600px;opacity:1;margin-top:32px;}
+.res-order-card{background:linear-gradient(135deg,rgba(253,3,34,.08),rgba(100,0,60,.06));border:1px solid rgba(253,3,34,.3);border-radius:18px;padding:28px 32px;}
+.res-order-summary{font-size:.88rem;color:rgba(232,224,255,.7);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08);}
+.res-order-summary strong{color:#fff;}
+.res-order-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
+.res-input{width:100%;background:rgba(255,255,255,.06);border:1px solid var(--border);color:#fff;padding:12px 15px;border-radius:10px;font-size:.88rem;font-family:inherit;outline:none;transition:border .2s;}
+.res-input:focus{border-color:var(--red);}
+.res-input::placeholder{color:rgba(232,224,255,.3);}
+.res-submit{width:100%;padding:14px;background:var(--red);border:none;border-radius:12px;color:#fff;font-size:.95rem;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;margin-top:4px;}
+.res-submit:hover{background:#c50018;transform:translateY(-2px);box-shadow:0 8px 24px rgba(253,3,34,.45);}
+.res-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.res-success{display:none;text-align:center;padding:22px;background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.25);border-radius:12px;color:#2ecc71;font-weight:700;margin-top:14px;font-size:.9rem;}
+
+/* Features */
+.reseller-features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:0;}
 .res-feat-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px 28px;text-align:center;transition:all .25s;}
 .res-feat-card:hover{transform:translateY(-4px);border-color:rgba(253,3,34,.3);}
-.res-feat-icon{font-size:2.6rem;margin-bottom:16px;}
-.res-feat-card h3{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:10px;}
-.res-feat-card p{font-size:.85rem;line-height:1.7;color:rgba(232,224,255,.65);}
-.how-steps{display:flex;flex-direction:column;gap:14px;margin-bottom:60px;}
-.how-step{display:flex;gap:20px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 28px;transition:all .2s;}
+.res-feat-icon{font-size:2.4rem;margin-bottom:14px;}
+.res-feat-card h3{font-size:1rem;font-weight:800;color:#fff;margin-bottom:9px;}
+.res-feat-card p{font-size:.84rem;line-height:1.7;color:rgba(232,224,255,.65);}
+
+/* How steps */
+.how-steps{display:flex;flex-direction:column;gap:14px;margin-bottom:0;}
+.how-step{display:flex;gap:20px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 28px;transition:border .2s;}
 .how-step:hover{border-color:rgba(253,3,34,.2);}
-.how-num{color:var(--red);font-weight:900;font-size:1.5rem;opacity:.5;min-width:40px;flex-shrink:0;line-height:1.2;}
-.how-step h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:7px;}
-.how-step p{font-size:.85rem;line-height:1.65;color:rgba(232,224,255,.65);}
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:60px;}
+.how-num{color:var(--red);font-weight:900;font-size:1.4rem;opacity:.5;min-width:40px;flex-shrink:0;line-height:1.3;}
+.how-step h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:6px;}
+.how-step p{font-size:.84rem;line-height:1.65;color:rgba(232,224,255,.65);}
+
+/* Why grid */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:0;}
 .why-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 18px;}
-.why-card h3{font-size:.9rem;font-weight:700;color:var(--red);margin-bottom:8px;}
-.why-card p{font-size:.82rem;line-height:1.65;color:rgba(232,224,255,.65);}
-@media(max-width:960px){.reseller-features-grid{grid-template-columns:1fr 1fr;}.why-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:600px){.reseller-features-grid{grid-template-columns:1fr;}.why-grid{grid-template-columns:1fr;}.how-step{flex-direction:row;}}
+.why-card h3{font-size:.88rem;font-weight:700;color:var(--red);margin-bottom:7px;}
+.why-card p{font-size:.81rem;line-height:1.65;color:rgba(232,224,255,.65);}
+
+@media(max-width:900px){.res-plans-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto;}.reseller-features-grid{grid-template-columns:1fr 1fr;}.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.reseller-features-grid{grid-template-columns:1fr;}.why-grid{grid-template-columns:1fr;}.res-order-fields{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -124,156 +167,193 @@ a{color:inherit;text-decoration:none;}
 <main id="content">
 <div class="page-hero wrap">
   <div class="page-hero-kicker">IPTV Reseller Program</div>
-  <h1>Become an IPTV Reseller <span>with IPTVmojo</span></h1>
-  <p>Start your own IPTV business with IPTVmojo's reseller program. Wholesale pricing, white-label support, and a powerful management panel — everything you need to build a profitable IPTV business.</p>
+  <h1>Start Your IPTV Business <span>with IPTVmojo</span></h1>
+  <p>Wholesale pricing, white-label support, and a powerful management panel — everything you need to build a profitable IPTV reselling business.</p>
   <div class="page-hero-btns">
-    <a href="mailto:support@iptvmojo.com?subject=IPTV%20Reseller%20Inquiry" class="btn-red">Start Your IPTV Business →</a>
-    <a href="whatsapp-contact.html" class="btn-outline">💬 WhatsApp Us</a>
+    <a href="#reseller-plans" class="btn-red">View Reseller Plans →</a>
+    <a href="whatsapp-contact.html" class="btn-outline">💬 Talk to Us First</a>
+  </div>
+  <div class="hero-badges">
+    <span><span class="hero-badge-tick">✓</span> No minimums</span>
+    <span><span class="hero-badge-tick">✓</span> White-label panel</span>
+    <span><span class="hero-badge-tick">✓</span> 99.9% uptime</span>
+    <span><span class="hero-badge-tick">✓</span> Setup within minutes</span>
   </div>
 </div>
 
 <div class="wrap">
 
-  <!-- FEATURES -->
-  <div class="sec-head">
-    <div class="sec-kicker">What You Get</div>
-    <h2 class="sec-title">Everything You Need to Resell IPTV</h2>
-    <p class="sec-sub">A complete reseller infrastructure — no technical setup required on your end.</p>
+  <!-- PRICING PLANS -->
+  <div id="reseller-plans" class="res-pricing-section">
+    <div class="sec-head">
+      <div class="sec-kicker">Reseller Pricing — 1 Year</div>
+      <h2 class="sec-title">Choose Your Reseller Plan</h2>
+      <p class="sec-sub">All plans include 1 full year of access, a full reseller panel, and 24/7 support. The more connections you buy, the lower your per-connection cost.</p>
+    </div>
+    <div class="res-plans-grid">
+
+      <!-- STARTER -->
+      <div class="res-plan-card" data-plan="Starter — 10 Connections" data-price="$300/year" onclick="selectPlan(this)">
+        <span class="res-plan-tier">Starter</span>
+        <div class="res-plan-price">$300</div>
+        <div class="res-plan-per">per year · billed once</div>
+        <div class="res-plan-conns">10 Connections</div>
+        <div class="res-plan-per-conn">$30 / connection</div>
+        <div class="res-plan-select">Select Plan</div>
+      </div>
+
+      <!-- MOST POPULAR -->
+      <div class="res-plan-card" data-plan="Most Popular — 50 Connections" data-price="$1,250/year" onclick="selectPlan(this)">
+        <span class="res-popular-badge">⭐ Most Popular</span>
+        <div style="height:12px;"></div>
+        <div class="res-plan-price">$1,250</div>
+        <div class="res-plan-per">per year · billed once</div>
+        <div class="res-plan-conns">50 Connections</div>
+        <div class="res-plan-per-conn">$25 / connection</div>
+        <div class="res-plan-select">Select Plan</div>
+      </div>
+
+      <!-- BEST VALUE -->
+      <div class="res-plan-card" data-plan="Best Value — 100 Connections" data-price="$2,300/year" onclick="selectPlan(this)">
+        <span class="res-plan-tier">Best Value</span>
+        <div class="res-plan-price">$2,300</div>
+        <div class="res-plan-per">per year · billed once</div>
+        <div class="res-plan-conns">100 Connections</div>
+        <div class="res-plan-per-conn">$23 / connection</div>
+        <div class="res-plan-select">Select Plan</div>
+      </div>
+
+    </div>
+    <p class="res-plan-hint">↑ Select a plan above to place your order</p>
+
+    <!-- ORDER PANEL (shown after plan selection) -->
+    <div class="res-order-panel" id="orderPanel">
+      <div class="res-order-card">
+        <div class="res-order-summary">
+          Selected plan: <strong id="selectedPlanName">—</strong> &nbsp;·&nbsp; <strong id="selectedPlanPrice" style="color:var(--red);">—</strong>
+        </div>
+        <form id="resellerForm">
+          <div class="res-order-fields">
+            <input type="text" class="res-input" id="res_name" placeholder="Your name">
+            <input type="email" class="res-input" id="res_email" placeholder="Email address">
+            <input type="tel" class="res-input" id="res_phone" placeholder="WhatsApp number (optional)">
+            <input type="text" class="res-input" id="res_business" placeholder="Business name (optional)">
+          </div>
+          <button type="submit" class="res-submit" id="resSubmit">Submit Reseller Order →</button>
+        </form>
+        <div class="res-success" id="resSuccess">✓ Order received! We'll contact you within minutes to confirm and get your panel set up.</div>
+      </div>
+    </div>
   </div>
-  <div class="reseller-features-grid">
-    <div class="res-feat-card">
-      <div class="res-feat-icon">💰</div>
-      <h3>Wholesale Pricing</h3>
-      <p>Get deeply discounted subscription credits to resell to your clients. The more you buy, the more you save — with no minimum order requirements.</p>
+
+  <!-- FEATURES -->
+  <div style="padding:80px 0;border-bottom:1px solid var(--border);">
+    <div class="sec-head">
+      <div class="sec-kicker">What You Get</div>
+      <h2 class="sec-title">Everything You Need to Resell IPTV</h2>
     </div>
-    <div class="res-feat-card">
-      <div class="res-feat-icon">🏷️</div>
-      <h3>Your Own Brand</h3>
-      <p>White-label our service under your own brand name. Your clients see your branding, your pricing, and your identity — powered by IPTVmojo's infrastructure.</p>
-    </div>
-    <div class="res-feat-card">
-      <div class="res-feat-icon">⚡</div>
-      <h3>Fast Panel Access</h3>
-      <p>Manage all your clients from a single reseller dashboard. Create accounts, set expiry dates, monitor connections, and top up credits instantly.</p>
-    </div>
-    <div class="res-feat-card">
-      <div class="res-feat-icon">📡</div>
-      <h3>50,000+ Channels</h3>
-      <p>Your clients get the full IPTVmojo library — 50,000+ live channels, 300,000+ movies and series, and all sports &amp; PPV events included.</p>
-    </div>
-    <div class="res-feat-card">
-      <div class="res-feat-icon">🌍</div>
-      <h3>Global Coverage</h3>
-      <p>Serve clients anywhere in the world. IPTVmojo works in 100+ countries with no geographic restrictions on your reseller account.</p>
-    </div>
-    <div class="res-feat-card">
-      <div class="res-feat-icon">🔒</div>
-      <h3>99.9% Uptime</h3>
-      <p>Your clients get the same reliable infrastructure all IPTVmojo subscribers use. No downtime headaches to manage on your end.</p>
+    <div class="reseller-features-grid">
+      <div class="res-feat-card">
+        <div class="res-feat-icon">💰</div>
+        <h3>Wholesale Pricing</h3>
+        <p>Get deeply discounted subscription credits to resell to your clients. The more you buy, the lower your per-connection cost — from $30 down to $23 per connection per year.</p>
+      </div>
+      <div class="res-feat-card">
+        <div class="res-feat-icon">🏷️</div>
+        <h3>Your Own Brand</h3>
+        <p>White-label our service under your own brand name. Your clients see your branding and your pricing — powered invisibly by IPTVmojo's infrastructure.</p>
+      </div>
+      <div class="res-feat-card">
+        <div class="res-feat-icon">⚡</div>
+        <h3>Fast Reseller Panel</h3>
+        <p>Manage all your clients from a single dashboard. Create accounts, set expiry dates, monitor connections, and top up credits instantly in real time.</p>
+      </div>
+      <div class="res-feat-card">
+        <div class="res-feat-icon">📡</div>
+        <h3>50,000+ Channels</h3>
+        <p>Your clients get the full IPTVmojo library — 50,000+ live channels, 300,000+ VOD, and all sports &amp; PPV events at no extra cost.</p>
+      </div>
+      <div class="res-feat-card">
+        <div class="res-feat-icon">🌍</div>
+        <h3>Global Coverage</h3>
+        <p>Serve clients in 100+ countries with no geographic restrictions. IPTVmojo streams work worldwide — perfect for diverse international audiences.</p>
+      </div>
+      <div class="res-feat-card">
+        <div class="res-feat-icon">🔒</div>
+        <h3>99.9% Uptime</h3>
+        <p>Your clients get the same rock-solid infrastructure all IPTVmojo subscribers use. We handle all technical maintenance so you never have to.</p>
+      </div>
     </div>
   </div>
 
   <!-- HOW IT WORKS -->
-  <div class="sec-head">
-    <div class="sec-kicker">Process</div>
-    <h2 class="sec-title">How the Reseller Program Works</h2>
-  </div>
-  <div class="how-steps">
-    <div class="how-step">
-      <span class="how-num">01</span>
-      <div>
-        <h3>Contact Us to Apply</h3>
-        <p>Email <a href="mailto:support@iptvmojo.com?subject=IPTV%20Reseller%20Inquiry" style="color:var(--red);">support@iptvmojo.com</a> or message us on WhatsApp with your reseller inquiry. We respond within minutes with pricing and programme details.</p>
-      </div>
+  <div style="padding:80px 0;border-bottom:1px solid var(--border);">
+    <div class="sec-head">
+      <div class="sec-kicker">Process</div>
+      <h2 class="sec-title">How the Reseller Program Works</h2>
     </div>
-    <div class="how-step">
-      <span class="how-num">02</span>
-      <div>
-        <h3>Purchase Credits</h3>
-        <p>Buy a credit package at wholesale rates. Credits are used to create and renew your clients' subscriptions at whatever duration and connection count they need.</p>
+    <div class="how-steps">
+      <div class="how-step">
+        <span class="how-num">01</span>
+        <div><h3>Pick Your Plan</h3><p>Choose the reseller plan that fits your business size above — 10, 50, or 100 connections per year. You can scale up to a larger plan at any time.</p></div>
       </div>
-    </div>
-    <div class="how-step">
-      <span class="how-num">03</span>
-      <div>
-        <h3>Access Your Reseller Panel</h3>
-        <p>Log into your dedicated reseller dashboard to manage all client accounts — create, suspend, renew, and monitor in real time from a single interface.</p>
+      <div class="how-step">
+        <span class="how-num">02</span>
+        <div><h3>Submit Your Order</h3><p>Fill in your details in the order form and submit. We confirm your order via WhatsApp or email within minutes and arrange payment.</p></div>
       </div>
-    </div>
-    <div class="how-step">
-      <span class="how-num">04</span>
-      <div>
-        <h3>Set Your Own Prices</h3>
-        <p>You control your retail pricing completely. Sell subscriptions at whatever margin works for your business — there are no restrictions on what you charge clients.</p>
+      <div class="how-step">
+        <span class="how-num">03</span>
+        <div><h3>Access Your Reseller Panel</h3><p>Log into your dedicated reseller dashboard to manage all client accounts — create, suspend, renew, and monitor everything in real time.</p></div>
       </div>
-    </div>
-    <div class="how-step">
-      <span class="how-num">05</span>
-      <div>
-        <h3>Scale and Earn</h3>
-        <p>Grow your client base with IPTVmojo's reliable 99.9% uptime infrastructure backing your brand. The more clients you serve, the better your wholesale rates.</p>
+      <div class="how-step">
+        <span class="how-num">04</span>
+        <div><h3>Set Your Own Prices</h3><p>You control what you charge clients. With connections starting from just $23/year each, there's plenty of room to build strong margins.</p></div>
+      </div>
+      <div class="how-step">
+        <span class="how-num">05</span>
+        <div><h3>Scale and Earn</h3><p>Grow your client base backed by IPTVmojo's 99.9% uptime infrastructure. When you outgrow your plan, upgrading is a single conversation away.</p></div>
       </div>
     </div>
   </div>
 
   <!-- WHY RESELL -->
-  <div class="sec-head">
-    <div class="sec-kicker">Why IPTVmojo</div>
-    <h2 class="sec-title">Why Resell IPTVmojo?</h2>
-  </div>
-  <div class="why-grid">
-    <div class="why-card">
-      <h3>Growing Market</h3>
-      <p>Millions of people are cutting cable worldwide. The IPTV market is growing rapidly — now is the perfect time to build a client base.</p>
+  <div style="padding:80px 0;border-bottom:1px solid var(--border);">
+    <div class="sec-head">
+      <div class="sec-kicker">Why IPTVmojo</div>
+      <h2 class="sec-title">Why Resell IPTVmojo?</h2>
     </div>
-    <div class="why-card">
-      <h3>Recurring Revenue</h3>
-      <p>Subscription renewals mean predictable monthly income. Retain clients with a reliable service they love and build a sustainable business.</p>
-    </div>
-    <div class="why-card">
-      <h3>No Infrastructure Costs</h3>
-      <p>We handle all servers, content delivery, and backend maintenance. You focus entirely on sales and customer relationships.</p>
-    </div>
-    <div class="why-card">
-      <h3>24/7 Backend Support</h3>
-      <p>Our technical team supports the infrastructure around the clock so your clients always have a smooth streaming experience.</p>
-    </div>
-    <div class="why-card">
-      <h3>No Minimum Order</h3>
-      <p>Start small and scale up. There is no large minimum order requirement — buy what you need and expand as your client base grows.</p>
-    </div>
-    <div class="why-card">
-      <h3>White-Label Ready</h3>
-      <p>Brand the service as your own. Your clients see your name, your pricing, and your identity — we are invisible in the background.</p>
-    </div>
-    <div class="why-card">
-      <h3>Instant Activation</h3>
-      <p>Create new client accounts instantly from your panel — no waiting, no manual processing. Clients are live within seconds of you creating their account.</p>
-    </div>
-    <div class="why-card">
-      <h3>Premium Content</h3>
-      <p>Offer your clients 50,000+ channels, 300,000+ VOD, and all sports &amp; PPV — a content library that justifies premium pricing.</p>
+    <div class="why-grid">
+      <div class="why-card"><h3>Growing Market</h3><p>Millions of people worldwide are cutting cable. The IPTV market is expanding rapidly — an ideal time to build a recurring client base.</p></div>
+      <div class="why-card"><h3>Recurring Revenue</h3><p>Annual subscription renewals create predictable income. Retain clients with a service they love and your earnings compound every renewal cycle.</p></div>
+      <div class="why-card"><h3>No Infrastructure Costs</h3><p>We manage all servers, content delivery, and backend maintenance. You focus on sales and relationships — zero technical overhead.</p></div>
+      <div class="why-card"><h3>24/7 Reseller Support</h3><p>Our technical team supports the infrastructure around the clock so your clients always have a smooth experience and you always have someone to call.</p></div>
+      <div class="why-card"><h3>White-Label Ready</h3><p>Your brand, your pricing, your identity — IPTVmojo's infrastructure stays invisible. Build equity in your own brand from day one.</p></div>
+      <div class="why-card"><h3>Instant Activation</h3><p>Create new client accounts directly from your panel in seconds — no waiting, no manual steps, no delays. Clients are live the moment you activate them.</p></div>
+      <div class="why-card"><h3>Competitive Per-Connection Cost</h3><p>At $23–$30 per connection per year, there's strong margin potential. Retail at $4–9/month per client and earn significantly on every renewal.</p></div>
+      <div class="why-card"><h3>Premium Content Library</h3><p>Sell access to 50,000+ channels, 300,000+ VOD, and all sports &amp; PPV. A content library this deep justifies strong retail pricing.</p></div>
     </div>
   </div>
 
   <!-- FAQ -->
-  <div class="sec-head"><div class="sec-kicker">FAQ</div><h2 class="sec-title">Reseller Questions</h2></div>
-  <div class="faq-list">
-    <div class="faq-item"><div class="faq-q">How do I become an IPTVmojo reseller? <span class="faq-icon">+</span></div><div class="faq-a">Contact us via email at support@iptvmojo.com or WhatsApp with a reseller enquiry. We'll reply within minutes with current wholesale pricing and programme details. There is no complex application — just get in touch and we'll set you up.</div></div>
-    <div class="faq-item"><div class="faq-q">What is the minimum order for resellers? <span class="faq-icon">+</span></div><div class="faq-a">There is no large minimum order. We offer flexible reseller packages to suit any starting volume. Contact us for current wholesale pricing tailored to your expected volume.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I use my own brand name? <span class="faq-icon">+</span></div><div class="faq-a">Yes — white-label is fully supported. Your clients interact with your brand name and your pricing. IPTVmojo's infrastructure powers everything in the background without being visible to your clients.</div></div>
-    <div class="faq-item"><div class="faq-q">How does the reseller panel work? <span class="faq-icon">+</span></div><div class="faq-a">You get access to a dedicated reseller dashboard where you can create new client accounts, set expiry dates, monitor active connections, and top up credits. Everything is managed from one place in real time.</div></div>
-    <div class="faq-item"><div class="faq-q">What support do resellers get? <span class="faq-icon">+</span></div><div class="faq-a">Resellers get priority WhatsApp support from our technical team. We help with panel setup, troubleshooting client issues, and any backend questions. Your clients' experience is our shared priority.</div></div>
+  <div style="padding:80px 0 60px;">
+    <div class="sec-head"><div class="sec-kicker">FAQ</div><h2 class="sec-title">Reseller Questions</h2></div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">What exactly is included in each reseller plan? <span class="faq-icon">+</span></div><div class="faq-a">Every plan includes 1 full year of access for the stated number of simultaneous connections, a dedicated reseller panel, white-label support, and 24/7 backend support. All connections include the full IPTVmojo library: 50,000+ channels, 300,000+ VOD, and all sports &amp; PPV.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I start with 10 connections and upgrade later? <span class="faq-icon">+</span></div><div class="faq-a">Yes. You can upgrade your plan at any time. Contact us via WhatsApp or email and we'll arrange the upgrade with the remaining time on your current plan taken into account.</div></div>
+      <div class="faq-item"><div class="faq-q">Do I need technical knowledge to manage the panel? <span class="faq-icon">+</span></div><div class="faq-a">No technical background is required. The reseller panel is straightforward — creating accounts, setting expiry dates, and monitoring connections are all done with a few clicks. We walk you through it when you get access.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I use my own brand name with my clients? <span class="faq-icon">+</span></div><div class="faq-a">Yes — white-label is fully supported. Your clients interact entirely under your brand. IPTVmojo remains invisible in the background.</div></div>
+      <div class="faq-item"><div class="faq-q">What payment methods are accepted for reseller plans? <span class="faq-icon">+</span></div><div class="faq-a">We accept credit/debit cards, PayPal, Bitcoin, USDT, and bank transfer. Contact us via email or WhatsApp after submitting your order and we'll arrange payment.</div></div>
+    </div>
   </div>
 
 </div>
 
 <section class="cta-section">
-  <h2>Ready to Start Your IPTV Business?</h2>
-  <p>Contact us today to get started as an IPTVmojo reseller. We'll walk you through the programme and get your panel set up quickly.</p>
+  <h2>Questions Before Ordering?</h2>
+  <p>Contact us on WhatsApp or email — we respond within minutes and can walk you through the programme before you commit.</p>
   <div class="cta-btns">
-    <a href="mailto:support@iptvmojo.com?subject=IPTV%20Reseller%20Inquiry" class="btn-red">📧 Email Us to Apply →</a>
-    <a href="whatsapp-contact.html" class="btn-outline">💬 WhatsApp Us</a>
+    <a href="whatsapp-contact.html" class="btn-red">💬 WhatsApp Us</a>
+    <a href="mailto:support@iptvmojo.com?subject=IPTV%20Reseller%20Inquiry" class="btn-outline">📧 Email Us →</a>
   </div>
   <p style="font-size:.8rem;color:rgba(232,224,255,.3);margin-top:18px;">support@iptvmojo.com · We respond within minutes</p>
 </section>
@@ -314,7 +394,52 @@ a{color:inherit;text-decoration:none;}
 const burger=document.getElementById('burgerBtn'),menu=document.getElementById('mobileMenu');
 burger.addEventListener('click',()=>{menu.classList.toggle('open');const s=burger.querySelectorAll('span');if(menu.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';}});
 </script>
-<script>document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement;const w=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!w)i.classList.add('open');});});</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init('5NnfSkeYa9aonxpMe');
+
+var selectedPlan = '';
+function selectPlan(card) {
+  document.querySelectorAll('.res-plan-card').forEach(function(c){ c.classList.remove('selected'); });
+  card.classList.add('selected');
+  selectedPlan = card.getAttribute('data-plan');
+  var price = card.getAttribute('data-price');
+  document.getElementById('selectedPlanName').textContent = selectedPlan;
+  document.getElementById('selectedPlanPrice').textContent = price;
+  var panel = document.getElementById('orderPanel');
+  panel.classList.add('visible');
+  setTimeout(function(){ panel.scrollIntoView({behavior:'smooth',block:'nearest'}); }, 100);
+}
+
+document.getElementById('resellerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('resSubmit');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  var params = {
+    from_name:  document.getElementById('res_name').value  || 'Not provided',
+    from_email: document.getElementById('res_email').value || 'Not provided',
+    subject:    'Reseller Order: ' + selectedPlan,
+    message:    'Reseller order request:\n' +
+                'Plan: ' + selectedPlan + '\n' +
+                'Name: ' + (document.getElementById('res_name').value||'—') + '\n' +
+                'Email: ' + (document.getElementById('res_email').value||'—') + '\n' +
+                'WhatsApp: ' + (document.getElementById('res_phone').value||'—') + '\n' +
+                'Business: ' + (document.getElementById('res_business').value||'—'),
+    to_email:   'support@iptvmojo.com'
+  };
+  emailjs.send('service_pk6jnu9', 'template_763fwro', params)
+    .then(function() {
+      document.getElementById('resSuccess').style.display = 'block';
+      btn.style.display = 'none';
+    })
+    .catch(function() {
+      btn.disabled = false; btn.textContent = 'Submit Reseller Order →';
+      alert('Something went wrong — please email support@iptvmojo.com directly.');
+    });
+});
+
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement;const w=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!w)i.classList.add('open');});});
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"790d5bd1f00140f2a41fc2194d24aba5","r":1}' crossorigin="anonymous"></script>
 </body>
 </html>
