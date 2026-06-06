@@ -378,98 +378,77 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 </div>
 <!-- ═══════════ END MOVIES TITLE ═══════════ -->
 
-<div class="elementor-element elementor-element-38fc1402 e-flex e-con-boxed e-con e-parent" data-id="38fc1402" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-<div class="e-con-inner">
-<div class="elementor-element elementor-element-2e91bd08 e-con-full e-flex e-con e-child" data-id="2e91bd08" data-element_type="container">
-<div class="elementor-element elementor-element-4bbef316 e-con-full e-flex elementor-invisible e-con e-child" data-id="4bbef316" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:20,&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;IPTVmojo_buy_iptv_subscription.mp4&quot;,&quot;background_privacy_mode&quot;:&quot;yes&quot;,&quot;background_play_on_mobile&quot;:&quot;yes&quot;}">
-<div class="elementor-background-video-container" aria-hidden="true">
-<video class="elementor-background-video-hosted" autoplay muted playsinline loop src="IPTVmojo_buy_iptv_subscription.mp4"></video>
+<!-- ═══════════ MOVIES SECTION ═══════════ -->
+<section id="mojo-movies-section">
+<style>
+#mojo-movies-section{background:linear-gradient(180deg,#06030f 0%,#050318 50%,#06030f 100%);padding:0 24px 90px;isolation:isolate;}
+.mms-inner{max-width:1060px;margin:0 auto;}
+
+/* Video — identical sizing to sports */
+.mms-video-wrap{position:relative;width:100%;max-width:960px;margin:0 auto 0;border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#06030f;box-shadow:0 0 0 1px rgba(0,200,255,.2),0 0 60px rgba(0,200,255,.08),0 24px 80px rgba(0,0,0,.7);}
+.mms-video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.mms-badge{position:absolute;top:16px;left:16px;z-index:3;display:flex;align-items:center;gap:6px;background:rgba(5,3,24,.85);backdrop-filter:blur(8px);border:1px solid rgba(0,200,255,.35);border-radius:8px;padding:5px 12px;font-size:.72rem;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;letter-spacing:.06em;}
+
+/* Stats bar below video */
+.mms-stats{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);background:rgba(0,200,255,.04);border:1px solid rgba(0,200,255,.12);border-top:none;border-radius:0 0 20px 20px;overflow:hidden;}
+.mms-stat{padding:22px 20px;text-align:center;border-right:1px solid rgba(0,200,255,.1);}
+.mms-stat:last-child{border-right:none;}
+.mms-stat-num{font-size:1.6rem;font-weight:900;color:#00c8ff;line-height:1;margin-bottom:6px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mms-stat-label{font-size:.78rem;font-weight:600;color:rgba(232,224,255,.6);text-transform:uppercase;letter-spacing:.08em;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+
+/* VOD description */
+.mms-desc{max-width:960px;margin:28px auto 0;text-align:center;padding:0 12px;}
+.mms-desc p{font-size:.97rem;color:rgba(232,224,255,.65);line-height:1.85;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mms-desc strong{color:#00c8ff;font-weight:800;}
+
+/* CTA */
+.mms-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px;}
+.mms-btn-cyan{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:30px;background:linear-gradient(135deg,#0078c8,#00c8ff);color:#fff;font-weight:800;font-size:.92rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;box-shadow:0 6px 28px rgba(0,200,255,.25);transition:all .2s;}
+.mms-btn-cyan:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(0,200,255,.35);}
+.mms-btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:30px;border:1px solid rgba(255,255,255,.18);color:#fff;font-weight:700;font-size:.92rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:all .2s;}
+.mms-btn-outline:hover{background:rgba(255,255,255,.07);}
+
+@media(max-width:600px){.mms-stats{grid-template-columns:1fr;}.mms-stat{border-right:none;border-bottom:1px solid rgba(0,200,255,.1);}.mms-stat:last-child{border-bottom:none;}}
+</style>
+
+<div class="mms-inner">
+
+  <!-- Video -->
+  <div class="mms-video-wrap">
+    <video autoplay muted playsinline loop src="IPTVmojo_buy_iptv_subscription.mp4"></video>
+    <div class="mms-badge">🎬 ON DEMAND</div>
+  </div>
+
+  <!-- Stats bar — flush below video -->
+  <div class="mms-stats">
+    <div class="mms-stat">
+      <div class="mms-stat-num">300,000+</div>
+      <div class="mms-stat-label">Movies &amp; Series</div>
+    </div>
+    <div class="mms-stat">
+      <div class="mms-stat-num">4K HDR</div>
+      <div class="mms-stat-label">Ultra HD Quality</div>
+    </div>
+    <div class="mms-stat">
+      <div class="mms-stat-num">Daily</div>
+      <div class="mms-stat-label">New VOD Releases</div>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="mms-desc">
+    <p>Over <strong>300,000 movies and series</strong> available on demand — from the latest blockbuster releases to timeless classics, cult favourites, and complete TV series. Our VOD library is updated <strong>every single day</strong> with the newest titles the moment they drop. Hollywood, Bollywood, European cinema, documentaries, kids content — <strong>it is all here, in 4K HDR, with no buffering and no waiting.</strong> This is your personal cinema, open 24/7.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="mms-cta">
+    <a href="pricing.html" class="mms-btn-cyan">🎬 Browse Plans →</a>
+    <a href="free-trial.html" class="mms-btn-outline">▶ Try Free 24H</a>
+  </div>
+
 </div>
-</div>
-<div class="elementor-element elementor-element-227b134d e-con-full e-flex e-con e-child" data-id="227b134d" data-element_type="container">
-<div class="elementor-element elementor-element-38ddc82c e-con-full e-flex elementor-invisible e-con e-child" data-id="38ddc82c" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:20}">
-	<div class="elementor-element elementor-element-10744470 elementor-widget elementor-widget-heading" data-id="10744470" data-element_type="widget" data-widget_type="heading.default">
-	<div class="elementor-widget-container"><h5 class="elementor-heading-title elementor-size-default">The ultimate TV experience</h5></div>
-	</div>
-	<div class="elementor-element elementor-element-5d8ee858 elementor-widget elementor-widget-heading" data-id="5d8ee858" data-element_type="widget" data-widget_type="heading.default">
-	<div class="elementor-widget-container"><h2 class="elementor-heading-title elementor-size-default">A world of entertainment at your fingertips</h2></div>
-	</div>
-	<div class="elementor-element elementor-element-3a921ddb elementor-widget elementor-widget-heading" data-id="3a921ddb" data-element_type="widget" data-widget_type="heading.default">
-	<div class="elementor-widget-container"><p class="elementor-heading-title elementor-size-default">Enjoy an unparalleled TV experience with our Internet TV service. We offer access to all the most popular Canadian and international channels, keeping you connected to the news, entertainment and content you love, wherever you are.</p></div>
-	</div>
-</div>
-<div class="elementor-element elementor-element-355dc9c8 e-con-full e-flex elementor-invisible e-con e-child" data-id="355dc9c8" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:20}">
-	<div class="elementor-element elementor-element-7a879b90 elementor-widget elementor-widget-toggle" data-id="7a879b90" data-element_type="widget" data-widget_type="toggle.default">
-	<div class="elementor-widget-container">
-		<div class="elementor-toggle">
-			<div class="elementor-toggle-item">
-				<h4 id="elementor-tab-title-2051" class="elementor-tab-title" data-tab="1" role="button" aria-controls="elementor-tab-content-2051" aria-expanded="false">
-					<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
-						<span class="elementor-toggle-icon-closed"><svg class="e-font-icon-svg e-fas-chevron-right" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span>
-						<span class="elementor-toggle-icon-opened"><svg class="elementor-toggle-icon-opened e-font-icon-svg e-fas-chevron-up" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></span>
-					</span>
-					<a class="elementor-toggle-title" tabindex="0">Live TV</a>
-				</h4>
-				<div id="elementor-tab-content-2051" class="elementor-tab-content elementor-clearfix" data-tab="1" role="region" aria-labelledby="elementor-tab-title-2051"><p>Enjoy <strong>50,000+ live channels</strong>, including local and international channels. Watch your favorite programs in high definition, from news and entertainment to movies and live events. With our Internet TV service, access a smooth and flexible TV experience, wherever you are, on all your devices.</p></div>
-			</div>
-			<div class="elementor-toggle-item">
-				<h4 id="elementor-tab-title-2052" class="elementor-tab-title" data-tab="2" role="button" aria-controls="elementor-tab-content-2052" aria-expanded="false">
-					<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
-						<span class="elementor-toggle-icon-closed"><svg class="e-font-icon-svg e-fas-chevron-right" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span>
-						<span class="elementor-toggle-icon-opened"><svg class="elementor-toggle-icon-opened e-font-icon-svg e-fas-chevron-up" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></span>
-					</span>
-					<a class="elementor-toggle-title" tabindex="0">Films and series in 4K</a>
-				</h4>
-				<div id="elementor-tab-content-2052" class="elementor-tab-content elementor-clearfix" data-tab="2" role="region" aria-labelledby="elementor-tab-title-2052"><p>Immerse yourself in an immersive cinematic universe with thousands of films and series available in 4K. From the latest blockbusters to timeless classics, our library is growing every day to suit your every taste.</p></div>
-			</div>
-			<div class="elementor-toggle-item">
-				<h4 id="elementor-tab-title-2053" class="elementor-tab-title" data-tab="3" role="button" aria-controls="elementor-tab-content-2053" aria-expanded="false">
-					<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
-						<span class="elementor-toggle-icon-closed"><svg class="e-font-icon-svg e-fas-chevron-right" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span>
-						<span class="elementor-toggle-icon-opened"><svg class="elementor-toggle-icon-opened e-font-icon-svg e-fas-chevron-up" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></span>
-					</span>
-					<a class="elementor-toggle-title" tabindex="0">Live sportswear</a>
-				</h4>
-				<div id="elementor-tab-content-2053" class="elementor-tab-content elementor-clearfix" data-tab="3" role="region" aria-labelledby="elementor-tab-title-2053"><p>Never miss a match again! Whether it's field hockey, soccer, tennis or other sports, our Internet TV service lets you follow your favorite sporting events live, wherever you are.</p></div>
-			</div>
-			<div class="elementor-toggle-item">
-				<h4 id="elementor-tab-title-2054" class="elementor-tab-title" data-tab="4" role="button" aria-controls="elementor-tab-content-2054" aria-expanded="false">
-					<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
-						<span class="elementor-toggle-icon-closed"><svg class="e-font-icon-svg e-fas-chevron-right" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span>
-						<span class="elementor-toggle-icon-opened"><svg class="elementor-toggle-icon-opened e-font-icon-svg e-fas-chevron-up" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></span>
-					</span>
-					<a class="elementor-toggle-title" tabindex="0">Quebec content</a>
-				</h4>
-				<div id="elementor-tab-content-2054" class="elementor-tab-content elementor-clearfix" data-tab="4" role="region" aria-labelledby="elementor-tab-title-2054"><p>As a local service, we celebrate <strong>Quebec cinema and series</strong>. Discover or rediscover the best Quebec-produced films and series, right on your TV.</p></div>
-			</div>
-			<div class="elementor-toggle-item">
-				<h4 id="elementor-tab-title-2055" class="elementor-tab-title" data-tab="5" role="button" aria-controls="elementor-tab-content-2055" aria-expanded="false">
-					<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
-						<span class="elementor-toggle-icon-closed"><svg class="e-font-icon-svg e-fas-chevron-right" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span>
-						<span class="elementor-toggle-icon-opened"><svg class="elementor-toggle-icon-opened e-font-icon-svg e-fas-chevron-up" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></span>
-					</span>
-					<a class="elementor-toggle-title" tabindex="0">Simplicity and flexibility</a>
-				</h4>
-				<div id="elementor-tab-content-2055" class="elementor-tab-content elementor-clearfix" data-tab="5" role="region" aria-labelledby="elementor-tab-title-2055"><p>With our Internet TV service, enjoy intuitive navigation, high image quality and multi-screen access. Watch your favorite content on your TV, computer, tablet or smartphone, without compromising on quality.</p></div>
-			</div>
-		</div>
-	</div>
-	</div>
-</div>
-<div class="elementor-element elementor-element-47cfa8fb e-con-full e-flex e-con e-child" data-id="47cfa8fb" data-element_type="container">
-	<div class="elementor-element elementor-element-1eaefbb1 elementor-tablet-align-center elementor-widget elementor-widget-button" data-id="1eaefbb1" data-element_type="widget" data-widget_type="button.default">
-	<div class="elementor-widget-container">
-		<div class="elementor-button-wrapper">
-			<a class="elementor-button elementor-button-link elementor-size-sm" href="order.html">
-				<span class="elementor-button-content-wrapper"><span class="elementor-button-text">Subscribe</span></span>
-			</a>
-		</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-</div>
+</section>
+<!-- ═══════════ END MOVIES SECTION ═══════════ -->
 <div class="elementor-element elementor-element-62bd241 e-con-full e-flex e-con e-child" data-id="62bd241" data-element_type="container">
 <div class="elementor-element elementor-element-dabae1e e-con-full e-flex e-con e-child" data-id="dabae1e" data-element_type="container">
 <div class="elementor-element elementor-element-2df9930 e-con-full elementor-hidden-desktop e-flex elementor-invisible e-con e-child" data-id="2df9930" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:20}">
