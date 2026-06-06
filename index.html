@@ -209,36 +209,66 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 
 
 <!-- ═══════════ FEATURE BAR ═══════════ -->
-<div id="mojo-feat-bar" style="background:#0a0414;padding:0 24px;">
-  <div style="max-width:960px;margin:0 auto;">
-<!-- Feature bar — one horizontal line above the video -->
+<div id="mojo-feat-bar">
+<style>
+#mojo-feat-bar{background:#0a0414;padding:60px 24px 0;}
+.mfb-wrap{max-width:1060px;margin:0 auto;}
+
+/* ── Hero headline ── */
+.mfb-header{text-align:center;margin-bottom:40px;}
+.mfb-live-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.35);border-radius:30px;padding:7px 18px;font-size:.75rem;font-weight:800;color:#fd0322;letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mfb-live-dot{width:7px;height:7px;border-radius:50%;background:#fd0322;animation:mfb-pulse 1.4s ease-in-out infinite;flex-shrink:0;}
+@keyframes mfb-pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(253,3,34,.6);}50%{opacity:.7;box-shadow:0 0 0 6px rgba(253,3,34,0);}}
+.mfb-h1{font-size:clamp(3.2rem,9vw,7.5rem);font-weight:900;line-height:.95;letter-spacing:-.02em;margin-bottom:24px;background:linear-gradient(135deg,#ff2244 0%,#ff6030 40%,#fff 70%,#ff2244 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:mfb-shine 4s linear infinite;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;text-transform:uppercase;}
+@keyframes mfb-shine{0%{background-position:0% center;}100%{background-position:200% center;}}
+.mfb-tagline{font-size:clamp(1rem,2.2vw,1.35rem);font-weight:700;color:#fff;line-height:1.5;max-width:780px;margin:0 auto 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mfb-sub{font-size:clamp(.85rem,1.5vw,1rem);color:rgba(232,224,255,.6);line-height:1.8;max-width:680px;margin:0 auto;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mfb-sub strong{color:#fd0322;font-weight:800;}
+
+/* ── Feature bar ── */
+.mss-feat-bar{display:grid;grid-template-columns:repeat(4,1fr);max-width:1060px;margin:40px auto 0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-bottom:none;overflow:hidden;}
+.mss-fb-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px 12px;border-right:1px solid rgba(255,255,255,.08);transition:background .2s;}
+.mss-fb-item:last-child{border-right:none;}
+.mss-fb-item:hover{background:rgba(253,3,34,.06);}
+.mss-fb-icon{color:#fd0322;display:flex;align-items:center;justify-content:center;}
+.mss-fb-icon svg{width:28px;height:28px;fill:currentColor;}
+.mss-fb-label{font-size:.82rem;font-weight:800;color:#fff;white-space:nowrap;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+@media(max-width:600px){.mss-fb-icon svg{width:22px;height:22px;}.mss-fb-label{font-size:.68rem;}.mss-fb-item{padding:14px 6px;gap:5px;}}
+</style>
+
+<div class="mfb-wrap">
+
+  <!-- Headline block -->
+  <div class="mfb-header">
+    <div style="display:flex;justify-content:center;margin-bottom:20px;">
+      <div class="mfb-live-badge"><span class="mfb-live-dot"></span> Live Now — 50,000+ Channels</div>
+    </div>
+    <h2 class="mfb-h1">Live Sports</h2>
+    <p class="mfb-tagline">Your couch just became the best seat in the stadium.</p>
+    <p class="mfb-sub">Every Premier League goal. Every UFC knockout. Every F1 pole position. Every PPV event — <strong>included free</strong>. Streaming live in crystal-clear 4K the second the whistle blows. <strong>No blackouts. No add-ons. No compromises.</strong> This is what sport was always meant to look like.</p>
+  </div>
+
+  <!-- Feature bar -->
   <div class="mss-feat-bar">
     <div class="mss-fb-item">
-      <div class="mss-fb-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zM9 8v8l8-4z"/></svg>
-      </div>
+      <div class="mss-fb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zM9 8v8l8-4z"/></svg></div>
       <span class="mss-fb-label">Live TV</span>
     </div>
     <div class="mss-fb-item">
-      <div class="mss-fb-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>
-      </div>
+      <div class="mss-fb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg></div>
       <span class="mss-fb-label">Films</span>
     </div>
     <div class="mss-fb-item">
-      <div class="mss-fb-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
-      </div>
+      <div class="mss-fb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg></div>
       <span class="mss-fb-label">Series</span>
     </div>
     <div class="mss-fb-item">
-      <div class="mss-fb-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 5h-2V3H7v2H5C3.9 5 3 5.9 3 7v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.93C5.99 10.59 5 9.41 5 8zm14 0c0 1.41-.99 2.59-2 2.93V7h2v1z"/></svg>
-      </div>
+      <div class="mss-fb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 5h-2V3H7v2H5C3.9 5 3 5.9 3 7v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.93C5.99 10.59 5 9.41 5 8zm14 0c0 1.41-.99 2.59-2 2.93V7h2v1z"/></svg></div>
       <span class="mss-fb-label">Sports</span>
     </div>
   </div>
-  </div>
+
+</div>
 </div>
 <!-- ═══════════ END FEATURE BAR ═══════════ -->
 
