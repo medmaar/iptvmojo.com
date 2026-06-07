@@ -112,6 +112,10 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 .mojo-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;}
 .mojo-mobile-menu{display:none;}
 @media(max-width:768px){.mojo-nav-links{display:none!important;}.mojo-burger{display:flex!important;}}
+
+/* ── Elementor static-site fix: reveal all hidden animated elements ── */
+.elementor-invisible{visibility:visible!important;opacity:1!important;animation:none!important;}
+.elementor-invisible.elementor-widget{visibility:visible!important;}
 </style>
 </head>
 <body class="home wp-singular page-template-default page page-id-239 wp-embed-responsive wp-theme-hello-elementor theme-hello-elementor woocommerce-no-js non-logged-in hello-elementor-default elementor-default elementor-kit-242 elementor-page elementor-page-239 elementor-page-896">
@@ -1903,6 +1907,15 @@ burger.addEventListener('click',()=>{menu.classList.toggle('open');const s=burge
   // cursor style
   el.style.cursor = 'grab';
 })();
+</script>
+
+<script>
+// Static site fix: Elementor animation observer never fires without WP
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.elementor-invisible').forEach(function(el){
+    el.classList.remove('elementor-invisible');
+  });
+});
 </script>
 </body>
 </html>
