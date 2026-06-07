@@ -151,9 +151,9 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 	<style>
 	@keyframes hero-brand-shine{0%{background-position:0% center;}100%{background-position:200% center;}}
 	.hero-brand-title{
-	  font-size:clamp(4rem,11vw,9.5rem);
+	  font-size:clamp(2.6rem,5.5vw,4.8rem);
 	  font-weight:900;
-	  line-height:.9;
+	  line-height:.95;
 	  letter-spacing:-.03em;
 	  background:linear-gradient(135deg,#ff2244 0%,#ff7040 30%,#ffffff 55%,#ff7040 75%,#ff2244 100%);
 	  background-size:200% auto;
@@ -163,11 +163,29 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 	  animation:hero-brand-shine 3.5s linear infinite;
 	  font-family:'Plus Jakarta Sans','DM Sans',sans-serif;
 	  text-transform:uppercase;
-	  margin:0 0 4px;
+	  margin:0 0 18px;
 	  display:block;
+	  white-space:nowrap;
 	}
+	.hero-brand-stats{display:flex;flex-direction:column;gap:8px;margin:0;}
+	.hero-brand-stat{display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+	.hero-brand-stat-num{font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:900;color:#fff;}
+	.hero-brand-stat-label{font-size:clamp(.75rem,1.4vw,1rem);font-weight:600;color:rgba(232,224,255,.55);text-transform:uppercase;letter-spacing:.06em;}
+	.hero-brand-stat-sep{width:3px;height:3px;border-radius:50%;background:#fd0322;flex-shrink:0;}
 	</style>
 	<span class="hero-brand-title">IPTVmojo</span>
+	<div class="hero-brand-stats">
+	  <div class="hero-brand-stat">
+	    <span class="hero-brand-stat-num">50,000+</span>
+	    <span class="hero-brand-stat-sep"></span>
+	    <span class="hero-brand-stat-label">Live Channels</span>
+	  </div>
+	  <div class="hero-brand-stat">
+	    <span class="hero-brand-stat-num">300,000+</span>
+	    <span class="hero-brand-stat-sep"></span>
+	    <span class="hero-brand-stat-label">Movies &amp; Series</span>
+	  </div>
+	</div>
 	</div>
 	</div>
 	<div class="elementor-element elementor-element-10c7168 elementor-headline--style-rotate elementor-widget elementor-widget-animated-headline" data-id="10c7168" data-element_type="widget" data-settings="{&quot;headline_style&quot;:&quot;rotate&quot;,&quot;animation_type&quot;:&quot;blinds&quot;,&quot;rotating_text&quot;:&quot;LIVE TV\nFILMS\nSERIES\nSPORT\n&quot;,&quot;rotate_iteration_delay&quot;:1000,&quot;loop&quot;:&quot;yes&quot;}" data-widget_type="animated-headline.default">
