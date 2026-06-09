@@ -291,10 +291,16 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     const fp=document.getElementById('rf-friend-phone').value.trim();
     btn.disabled=true;btn.textContent='Sending…';msg.className='form-msg';
     emailjs.send('service_pk6jnu9','template_763fwro',{
-      your_name:yn||'Not provided',your_phone:yp,
-      friend_name:fn,friend_phone:fp,
-      to_email:'support@iptvmojo.com',
-      message:'Referral from '+(yn||yp)+'. Friend: '+fn+' ('+fp+')'
+      name:     yn||'Not provided',
+      phone:    yp||'Not provided',
+      email:    'Referral submission',
+      country:  'Friend: '+fn+' | WhatsApp: '+(fp||'Not provided'),
+      device:   'N/A',
+      plan:     'Referral',
+      message:  'Referral from '+(yn||'Not provided')+' ('+yp+').
+Friend name: '+fn+'.
+Friend WhatsApp: '+fp+'.',
+      to_email: 'support@iptvmojo.com'
     }).then(()=>{
       msg.className='form-msg success';
       msg.textContent='✅ Referral submitted! We\'ll verify and credit your account within 24 hours.';
