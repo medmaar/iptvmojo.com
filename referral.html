@@ -102,6 +102,20 @@ a{color:inherit;text-decoration:none;}
 .footer-copy{font-size:.78rem;color:rgba(232,224,255,.3);text-align:center;border-top:1px solid var(--border);padding-top:20px;}
 
 @media(max-width:820px){.two-col{grid-template-columns:1fr;}.footer-cols{gap:24px;}}
+
+/* SUCCESS OVERLAY */
+.success-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,2,25,.92);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px;}
+.success-overlay.show{display:flex;animation:ovFade .35s ease;}
+@keyframes ovFade{from{opacity:0;}to{opacity:1;}}
+.success-card{background:rgba(255,255,255,.06);border:1px solid rgba(34,197,94,.3);border-radius:24px;padding:48px 36px;text-align:center;max-width:480px;width:100%;animation:cardPop .4s cubic-bezier(.34,1.56,.64,1);}
+@keyframes cardPop{from{transform:scale(.85);opacity:0;}to{transform:scale(1);opacity:1;}}
+.success-icon{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#16a34a,#22c55e);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 0 40px rgba(34,197,94,.35);}
+.success-icon svg{width:48px;height:48px;}
+.success-card h2{font-size:1.6rem;font-weight:900;color:#fff;margin-bottom:10px;line-height:1.2;}
+.success-card p{font-size:.92rem;line-height:1.75;color:rgba(232,224,255,.7);margin-bottom:6px;}
+.success-card p strong{color:#4ade80;}
+.success-close{margin-top:28px;padding:12px 32px;border-radius:30px;border:none;background:linear-gradient(180deg,#22c55e,#16a34a);color:#fff;font-size:.9rem;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(34,197,94,.3);transition:all .2s;}
+.success-close:hover{transform:translateY(-2px);}
 </style>
 </head>
 <body>
@@ -126,6 +140,20 @@ a{color:inherit;text-decoration:none;}
 </div>
 
 <main>
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h2>Referral Submitted!</h2>
+    <p>We'll contact <strong id="successFriendName">your friend</strong> to activate their subscription.</p>
+    <p>Once confirmed, <strong>your 12 free months</strong> will be added to your account.</p>
+    <p style="margin-top:14px;font-size:.82rem;color:rgba(232,224,255,.45);">We'll message you back on WhatsApp to confirm your bonus.</p>
+    <button class="success-close" id="successClose">Got it!</button>
+  </div>
+</div>
+
 
   <!-- ── FORM ── -->
   <section class="form-section">
@@ -282,35 +310,48 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 <script>
 (function(){
   emailjs.init('5NnfSkeYa9aonxpMe');
-  const btn=document.getElementById('rfSubmitBtn');
-  const msg=document.getElementById('rfMsg');
-  btn.addEventListener('click',function(){
-    const yn=document.getElementById('rf-your-name').value.trim();
-    const yp=document.getElementById('rf-your-phone').value.trim();
-    const fn=document.getElementById('rf-friend-name').value.trim();
-    const fp=document.getElementById('rf-friend-phone').value.trim();
-    btn.disabled=true;btn.textContent='Sending…';msg.className='form-msg';
-    emailjs.send('service_pk6jnu9','template_763fwro',{
-      name:     yn||'Not provided',
-      phone:    yp||'Not provided',
-      email:    'Referral submission',
-      country:  'Friend: '+fn+' | WhatsApp: '+(fp||'Not provided'),
-      device:   'N/A',
-      plan:     'Referral',
-      message:  'Referral from '+(yn||'Not provided')+' ('+yp+').
-Friend name: '+fn+'.
-Friend WhatsApp: '+fp+'.',
-      to_email: 'support@iptvmojo.com'
-    }).then(()=>{
-      msg.className='form-msg success';
-      msg.textContent='✅ Referral submitted! We\'ll verify and credit your account within 24 hours.';
-      btn.textContent='Submitted ✓';
-      ['rf-your-name','rf-your-phone','rf-friend-name','rf-friend-phone'].forEach(id=>{document.getElementById(id).value='';});
-    }).catch(()=>{
-      msg.className='form-msg error';
-      msg.textContent='Something went wrong. Please try via WhatsApp instead.';
-      btn.textContent='Submit Referral';btn.disabled=false;
+  var btn = document.getElementById('rfSubmitBtn');
+  var overlay = document.getElementById('successOverlay');
+  var friendSpan = document.getElementById('successFriendName');
+
+  btn.addEventListener('click', function(){
+    var yn = document.getElementById('rf-your-name').value.trim();
+    var yp = document.getElementById('rf-your-phone').value.trim();
+    var fn = document.getElementById('rf-friend-name').value.trim();
+    var fp = document.getElementById('rf-friend-phone').value.trim();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    emailjs.send(
+      'service_pk6jnu9',
+      'template_763fwro',
+      {
+        name:    yn  || 'Not provided',
+        phone:   yp  || 'Not provided',
+        email:   'Referral submission',
+        country: 'Friend: ' + (fn||'N/A') + ' | WA: ' + (fp||'N/A'),
+        device:  'N/A',
+        plan:    'Referral Program',
+        message: 'From: ' + (yn||'N/A') + ' (' + (yp||'N/A') + ') | Friend: ' + (fn||'N/A') + ' (' + (fp||'N/A') + ')',
+        to_email:'support@iptvmojo.com'
+      }
+    ).then(function(){
+      friendSpan.textContent = fn || 'your friend';
+      overlay.classList.add('show');
+      ['rf-your-name','rf-your-phone','rf-friend-name','rf-friend-phone'].forEach(function(id){document.getElementById(id).value='';});
+      btn.textContent = 'Submit Referral';
+      btn.disabled = false;
+    }).catch(function(){
+      btn.textContent = 'Submit Referral';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or contact us via WhatsApp.');
     });
+  });
+
+  document.getElementById('successClose').addEventListener('click', function(){
+    overlay.classList.remove('show');
+  });
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) overlay.classList.remove('show');
   });
 })();
 </script>
