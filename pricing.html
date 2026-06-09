@@ -16,7 +16,7 @@
 <style>
 :root{--red:#fd0322;--border:rgba(255,255,255,.1);--text:#e8e0ff;--purple:#140438;--card:rgba(255,255,255,.04);}
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{background:#140438;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;}
+html,body{background:#140c20;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;}
 a{color:inherit;text-decoration:none;}
 .mojo-nav{position:sticky;top:0;z-index:1000;background:rgba(20,4,56,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:88px;}
 .mojo-logo img{height:72px;width:auto;display:block;}
@@ -45,59 +45,16 @@ a{color:inherit;text-decoration:none;}
 .btn-red:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(253,3,34,.35);}
 .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:30px;border:1px solid var(--border);color:#fff!important;font-weight:700;font-size:.88rem;transition:all .2s;}
 .btn-outline:hover{background:rgba(255,255,255,.07);}
-/* CONNECTIONS TOGGLE */
-.conn-selector{text-align:center;margin:0 0 40px;}
-.conn-selector h3{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:14px;}
-.conn-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
-.conn-tab{padding:8px 16px;border-radius:10px;font-size:.82rem;font-weight:700;border:1px solid var(--border);color:rgba(232,224,255,.65);cursor:pointer;transition:all .2s;background:transparent;}
-.conn-tab.active{background:var(--red);border-color:var(--red);color:#fff;}
-.conn-note{font-size:.78rem;color:rgba(232,224,255,.45);margin-top:8px;}
-/* PLANS GRID */
-.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:50px;}
-.plan-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:30px 22px;display:flex;flex-direction:column;position:relative;transition:all .25s;}
-.plan-card:hover{transform:translateY(-4px);border-color:rgba(253,3,34,.25);}
-.plan-card.popular{border-color:var(--red);background:linear-gradient(145deg,rgba(253,3,34,.07),rgba(20,4,56,.8));}
-.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:.72rem;font-weight:800;padding:4px 14px;border-radius:999px;white-space:nowrap;}
-.plan-tag{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,224,255,.45);margin-bottom:8px;}
-.plan-name{font-size:1.25rem;font-weight:900;color:#fff;margin-bottom:4px;}
-.plan-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px;}
-.plan-price{font-size:2.8rem;font-weight:900;color:var(--red);line-height:1;}
-.plan-price-period{font-size:.9rem;color:rgba(232,224,255,.5);}
-.plan-monthly{font-size:.8rem;color:rgba(232,224,255,.5);margin-bottom:10px;}
-.plan-save{display:inline-block;background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.3);border-radius:6px;padding:3px 10px;font-size:.72rem;font-weight:800;color:#2ecc71;margin-bottom:14px;}
-.plan-divider{height:1px;background:var(--border);margin:14px 0;}
-.plan-features{list-style:none;display:flex;flex-direction:column;gap:9px;flex:1;margin-bottom:20px;}
-.plan-features li{display:flex;align-items:flex-start;gap:9px;font-size:.85rem;color:rgba(232,224,255,.8);}
-.plan-features li::before{content:'✓';color:var(--red);font-weight:900;flex-shrink:0;margin-top:1px;}
-.plan-btn{display:block;padding:14px;border-radius:14px;text-align:center;font-size:.9rem;font-weight:800;background:var(--red);color:#fff!important;margin-top:auto;}
-.plan-btn.ghost{background:transparent;border:1px solid var(--border);color:rgba(232,224,255,.85)!important;}
-.plan-btn:hover{filter:brightness(1.1);}
+
+
 /* SECTION HEADERS */
 .sec-head{text-align:center;margin-bottom:36px;}
 .sec-kicker{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px;}
 .sec-title{font-size:clamp(22px,3vw,36px);font-weight:900;color:#fff;margin-bottom:10px;}
 .sec-sub{font-size:.9rem;line-height:1.75;color:rgba(232,224,255,.65);max-width:580px;margin:0 auto;}
-/* COMPARISON TABLE */
-.comp-table-wrap{overflow-x:auto;margin-bottom:60px;}
-.comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.85rem;}
-.comp-table th{padding:14px 18px;text-align:left;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,224,255,.5);background:rgba(255,255,255,.03);}
-.comp-table th:first-child{border-radius:12px 0 0 0;}
-.comp-table th:last-child{border-radius:0 12px 0 0;}
-.comp-table td{padding:14px 18px;border-top:1px solid var(--border);color:rgba(232,224,255,.82);vertical-align:middle;}
-.comp-table td:first-child{font-weight:600;color:#fff;}
-.comp-table tr:hover td{background:rgba(255,255,255,.02);}
-.comp-check{color:#2ecc71;font-weight:900;}
-.comp-x{color:rgba(232,224,255,.25);}
-.comp-table .highlight th{color:#fff;background:rgba(253,3,34,.12);}
-/* INCLUDED */
-.included-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:50px;}
-.inc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;}
-.inc-icon{font-size:1.8rem;margin-bottom:10px;}
-.inc-card h4{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
-.inc-card p{font-size:.78rem;color:rgba(232,224,255,.6);line-height:1.55;}
-/* PAYMENT */
-.payment-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:50px;}
-.pay-badge{padding:10px 18px;border-radius:12px;background:var(--card);border:1px solid var(--border);font-size:.88rem;font-weight:700;color:#fff;}
+
+
+
 /* FAQ */
 .faq-list{display:flex;flex-direction:column;gap:10px;margin-bottom:60px;}
 .faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
@@ -155,10 +112,10 @@ a{color:inherit;text-decoration:none;}
   <div class="mojo-burger" id="burgerBtn" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
 <div class="mojo-mobile-menu" id="mobileMenu">
-  <a href="index.html">🏠 Home</a>
-  <a href="pricing.html" class="active">📋 Pricing</a>
-  <a href="how-it-works.html">⚙️ How It Works</a>
-  <a href="about.html">ℹ️ About</a>
+  <a href="index.html">Home</a>
+  <a href="pricing.html" class="active">Pricing</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="about.html">About</a>
   <a href="free-trial.html" class="mojo-nav-cta">🎬 Free Trial 24H</a>
 </div>
 
@@ -725,6 +682,28 @@ document.querySelectorAll('.conn-tab').forEach(tab=>{
 });
 // FAQ
 document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement;const w=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!w)i.classList.add('open');});});
+</script>
+
+<script>
+// Drag-to-scroll for device buttons
+(function(){
+  var el = document.querySelector('.mojo-dev-scroll');
+  if(!el) return;
+  var isDragging = false, startX = 0, scrollLeft = 0;
+  el.addEventListener('mousedown', function(e){
+    isDragging = true; startX = e.pageX - el.offsetLeft;
+    scrollLeft = el.scrollLeft; el.style.cursor='grabbing'; e.preventDefault();
+  });
+  el.addEventListener('mouseleave', function(){ isDragging=false; el.style.cursor=''; });
+  el.addEventListener('mouseup',    function(){ isDragging=false; el.style.cursor=''; });
+  el.addEventListener('mousemove',  function(e){
+    if(!isDragging) return;
+    e.preventDefault();
+    var x = e.pageX - el.offsetLeft;
+    el.scrollLeft = scrollLeft - (x - startX) * 1.2;
+  });
+  el.style.cursor = 'grab';
+})();
 </script>
 </body>
 </html>
