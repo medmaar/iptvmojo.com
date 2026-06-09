@@ -332,13 +332,13 @@ document.querySelectorAll('.faq-q').forEach(q=>{
       'service_pk6jnu9',
       'template_763fwro',
       {
-        name:    yn  || 'Not provided',
-        phone:   yp  || 'Not provided',
-        email:   'Referral submission',
-        country: 'Friend: ' + (fn||'N/A') + ' | WA: ' + (fp||'N/A'),
-        device:  'N/A',
-        plan:    'Referral Program',
-        message: 'From: ' + (yn||'N/A') + ' (' + (yp||'N/A') + ') | Friend: ' + (fn||'N/A') + ' (' + (fp||'N/A') + ')',
+        name:    yn || 'Not provided',
+        phone:   (yn ? yn + ' — ' : '') + (yp || 'Not provided'),
+        email:   '',
+        country: (fn ? fn + ' — ' : '') + (fp || 'Not provided'),
+        device:  '',
+        plan:    '',
+        message: '',
         to_email:'support@iptvmojo.com'
       }
     ).then(function(){
