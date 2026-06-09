@@ -647,42 +647,7 @@ function selectDev(n){
   </div>
 </footer>
 
-<script>
-// Mobile menu
-const burger=document.getElementById('burgerBtn'),menu=document.getElementById('mobileMenu');
-burger.addEventListener('click',()=>{menu.classList.toggle('open');const s=burger.querySelectorAll('span');if(menu.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';}});
 
-// Connections pricing
-const pricing = {
-  '1': {p1:'$9',p6:'$39',p12:'$49',n1:'1 connection · Billed once',n6:'≈ $6.50/mo · 1 connection · Save 27%',n12:'≈ $4.08/mo · 1 connection · Save 55%',s6:'Save 27% vs monthly',s12:'Save 55% + IBO Player Free',note:'1 connection — perfect for a single TV or device'},
-  '2': {p1:'$15',p6:'$65',p12:'$85',n1:'2 connections · Billed once',n6:'≈ $10.83/mo · 2 connections',n12:'≈ $7.08/mo · 2 connections',s6:'Save 28% vs monthly',s12:'Save 53% + IBO Player Free',note:'2 connections — two screens streaming simultaneously'},
-  '3': {p1:'$22',p6:'$95',p12:'$120',n1:'3 connections · Billed once',n6:'≈ $15.83/mo · 3 connections',n12:'≈ $10/mo · 3 connections',s6:'Save 28% vs monthly',s12:'Save 55% + IBO Player Free',note:'3 connections — ideal for small households'},
-  '5': {p1:'$35',p6:'$155',p12:'$195',n1:'5 connections · Billed once',n6:'≈ $25.83/mo · 5 connections',n12:'≈ $16.25/mo · 5 connections',s6:'Save 26% vs monthly',s12:'Save 54% + IBO Player Free',note:'5 connections — great for larger families'},
-  '10': {p1:'$65',p6:'$290',p12:'$360',n1:'10 connections · Billed once',n6:'≈ $48.33/mo · 10 connections',n12:'≈ $30/mo · 10 connections',s6:'Save 26% vs monthly',s12:'Save 54% + IBO Player Free',note:'10 connections — perfect for resellers or large households'}
-};
-document.querySelectorAll('.conn-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.conn-tab').forEach(t=>t.classList.remove('active'));
-    tab.classList.add('active');
-    const d=pricing[tab.dataset.conn];
-    const conn=tab.dataset.conn;
-    document.getElementById('price1m').textContent=d.p1;
-    document.getElementById('price6m').textContent=d.p6;
-    document.getElementById('price12m').textContent=d.p12;
-    document.getElementById('note1m').textContent=d.n1;
-    document.getElementById('note6m').textContent=d.n6;
-    document.getElementById('note12m').textContent=d.n12;
-    document.getElementById('save6m').textContent=d.s6;
-    document.getElementById('save12m').textContent=d.s12;
-    document.getElementById('connNote').textContent=d.note;
-    document.getElementById('btn1m').href='iptv-1-month-'+conn+(conn==='1'?'-connection':'-connections')+'.html';
-    document.getElementById('btn6m').href='iptv-6-months-'+conn+(conn==='1'?'-connection':'-connections')+'.html';
-    document.getElementById('btn12m').href='iptv-12-months-'+conn+(conn==='1'?'-connection':'-connections')+'.html';
-  });
-});
-// FAQ
-document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement;const w=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!w)i.classList.add('open');});});
-</script>
 
 <script>
 // Drag-to-scroll for device buttons
