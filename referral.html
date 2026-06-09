@@ -289,11 +289,6 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     const yp=document.getElementById('rf-your-phone').value.trim();
     const fn=document.getElementById('rf-friend-name').value.trim();
     const fp=document.getElementById('rf-friend-phone').value.trim();
-    if(!yp||!fn||!fp){
-      msg.className='form-msg error';
-      msg.textContent='Please fill in your WhatsApp number and your friend\'s details.';
-      return;
-    }
     btn.disabled=true;btn.textContent='Sending…';msg.className='form-msg';
     emailjs.send('service_pk6jnu9','template_763fwro',{
       your_name:yn||'Not provided',your_phone:yp,
@@ -316,3 +311,4 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"790d5bd1f00140f2a41fc2194d24aba5","r":1}' crossorigin="anonymous"></script>
 </body>
 </html>
+
