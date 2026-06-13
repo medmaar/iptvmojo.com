@@ -493,12 +493,11 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 .mms-channels-strip{width:100%;padding:20px 0 28px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06);}
 .mms-ch-label{text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.35);margin:0 0 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
 .mms-ch-overflow{overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,black 3%,black 97%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 3%,black 97%,transparent 100%);}
-/* LEFT-TO-RIGHT: starts at -50% goes to 0 */
-.mms-ch-track{display:flex;align-items:center;gap:20px;width:max-content;animation:mms-ch-ltr 22s linear infinite;}
+.mms-ch-track{display:flex;align-items:center;gap:16px;width:max-content;animation:mms-ch-ltr 28s linear infinite;}
 @keyframes mms-ch-ltr{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
-/* Transparent cards — black bg on logos disappears via lighten blend */
-.mms-ch-track .mbr-item{background:transparent;border:none;box-shadow:none;padding:8px 14px;}
-.mms-ch-track .mbr-item img{mix-blend-mode:lighten;max-height:44px;max-width:130px;}
+/* White cards — logo black backgrounds vanish, clean professional look */
+.mms-ch-track .mbr-item{background:#fff;border:none;box-shadow:0 4px 16px rgba(0,0,0,.25);border-radius:14px;padding:10px 18px;min-width:140px;height:68px;display:flex;align-items:center;justify-content:center;}
+.mms-ch-track .mbr-item img{max-height:40px;max-width:120px;width:auto;height:auto;object-fit:contain;display:block;}
 
 /* ── Movies poster carousel — RIGHT-TO-LEFT (opposite direction) ── */
 .mms-poster-section{max-width:960px;margin:0 auto 0;padding:0 24px;}
