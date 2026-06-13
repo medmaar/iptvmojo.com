@@ -496,6 +496,9 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 /* LEFT-TO-RIGHT: starts at -50% goes to 0 */
 .mms-ch-track{display:flex;align-items:center;gap:20px;width:max-content;animation:mms-ch-ltr 22s linear infinite;}
 @keyframes mms-ch-ltr{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
+/* Transparent cards — black bg on logos disappears via lighten blend */
+.mms-ch-track .mbr-item{background:transparent;border:none;box-shadow:none;padding:8px 14px;}
+.mms-ch-track .mbr-item img{mix-blend-mode:lighten;max-height:44px;max-width:130px;}
 
 /* ── Movies poster carousel — RIGHT-TO-LEFT (opposite direction) ── */
 .mms-poster-section{max-width:960px;margin:0 auto 0;padding:0 24px;}
