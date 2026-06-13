@@ -442,7 +442,43 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
     </div>
   </div>
 
+  <!-- ── Channels stats + description ── -->
+  <style>
+  .mss-stats{max-width:960px;margin:36px auto 0;display:grid;grid-template-columns:repeat(3,1fr);background:rgba(253,3,34,.04);border:1px solid rgba(253,3,34,.18);border-radius:20px;overflow:hidden;}
+  .mss-stat-item{padding:22px 20px;text-align:center;border-right:1px solid rgba(253,3,34,.12);}
+  .mss-stat-item:last-child{border-right:none;}
+  .mss-stat-num{font-size:1.6rem;font-weight:900;color:#fd0322;line-height:1;margin-bottom:6px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+  .mss-stat-lbl{font-size:.78rem;font-weight:600;color:rgba(232,224,255,.6);text-transform:uppercase;letter-spacing:.08em;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+  .mss-ch-desc{max-width:960px;margin:28px auto 0;text-align:center;padding:0 24px;}
+  .mss-ch-desc p{font-size:.97rem;color:rgba(232,224,255,.65);line-height:1.85;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+  .mss-ch-desc strong{color:#fd0322;font-weight:800;}
+  .mss-ch-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px;margin-bottom:10px;}
+  @media(max-width:600px){.mss-stats{grid-template-columns:1fr;}.mss-stat-item{border-right:none;border-bottom:1px solid rgba(253,3,34,.12);}.mss-stat-item:last-child{border-bottom:none;}}
+  </style>
 
+  <div class="mss-stats">
+    <div class="mss-stat-item">
+      <div class="mss-stat-num">50,000+</div>
+      <div class="mss-stat-lbl">Live Channels</div>
+    </div>
+    <div class="mss-stat-item">
+      <div class="mss-stat-num">HD &amp; 4K</div>
+      <div class="mss-stat-lbl">Crystal Clear Quality</div>
+    </div>
+    <div class="mss-stat-item">
+      <div class="mss-stat-num">24/7</div>
+      <div class="mss-stat-lbl">Always Live</div>
+    </div>
+  </div>
+
+  <div class="mss-ch-desc">
+    <p>Over <strong>50,000 live channels</strong> from every corner of the world — news, sports, entertainment, kids, and more, all streaming in HD and 4K with <strong>zero buffering</strong>. Catch every Premier League match, every UFC card, every NBA game and every PPV event the moment it goes live. Plus <strong>full EPG guide and catch-up TV</strong> so you never miss a moment.</p>
+  </div>
+
+  <div class="mss-ch-cta">
+    <a href="pricing.html" class="mss-btn-red">🔴 Browse Plans →</a>
+    <a href="free-trial.html" class="mss-btn-outline">▶ Try Free 24H</a>
+  </div>
 
 </div>
 </section>
