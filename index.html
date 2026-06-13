@@ -467,15 +467,10 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 <!-- ═══════════ MOVIES SECTION ═══════════ -->
 <section id="mojo-movies-section">
 <style>
-#mojo-movies-section{background:#140c20;padding:0 24px 90px;isolation:isolate;}
-.mms-inner{max-width:1060px;margin:0 auto;}
+#mojo-movies-section{background:#140c20;padding:0 0 90px;isolation:isolate;}
+.mms-inner{max-width:1060px;margin:0 auto;padding:0 24px;}
 
-/* Video — identical sizing to sports */
-.mms-video-wrap{position:relative;width:100%;max-width:960px;margin:0 auto 0;border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#140c20;box-shadow:0 0 0 1px rgba(0,200,255,.2),0 0 60px rgba(0,200,255,.08),0 24px 80px rgba(0,0,0,.7);}
-.mms-video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-.mms-badge{position:absolute;top:16px;left:16px;z-index:3;display:flex;align-items:center;gap:6px;background:rgba(5,3,24,.85);backdrop-filter:blur(8px);border:1px solid rgba(0,200,255,.35);border-radius:8px;padding:5px 12px;font-size:.72rem;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;letter-spacing:.06em;}
-
-/* Stats bar below video */
+/* Stats bar */
 .mms-stats{max-width:960px;margin:28px auto 0;display:grid;grid-template-columns:repeat(3,1fr);background:rgba(0,200,255,.04);border:1px solid rgba(0,200,255,.12);border-radius:20px;overflow:hidden;}
 .mms-stat{padding:22px 20px;text-align:center;border-right:1px solid rgba(0,200,255,.1);}
 .mms-stat:last-child{border-right:none;}
@@ -488,76 +483,83 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 .mms-desc strong{color:#00c8ff;font-weight:800;}
 
 /* CTA */
-.mms-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px;}
+.mms-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px;padding:0 24px;}
 .mms-btn-cyan{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:30px;background:linear-gradient(135deg,#0078c8,#00c8ff);color:#fff;font-weight:800;font-size:.92rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;box-shadow:0 6px 28px rgba(0,200,255,.25);transition:all .2s;}
 .mms-btn-cyan:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(0,200,255,.35);}
 .mms-btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:30px;border:1px solid rgba(255,255,255,.18);color:#fff;font-weight:700;font-size:.92rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:all .2s;}
 .mms-btn-outline:hover{background:rgba(255,255,255,.07);}
 
-@media(max-width:600px){.mms-stats{grid-template-columns:1fr;}.mms-stat{border-right:none;border-bottom:1px solid rgba(0,200,255,.1);}.mms-stat:last-child{border-bottom:none;}}
+/* ── Edge-to-edge streaming channels strip ── */
+.mms-channels-strip{width:100%;padding:20px 0 28px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06);}
+.mms-ch-label{text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.35);margin:0 0 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+.mms-ch-overflow{overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,black 3%,black 97%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 3%,black 97%,transparent 100%);}
+/* LEFT-TO-RIGHT: starts at -50% goes to 0 */
+.mms-ch-track{display:flex;align-items:center;gap:20px;width:max-content;animation:mms-ch-ltr 22s linear infinite;}
+@keyframes mms-ch-ltr{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
+
+/* ── Movies poster carousel — RIGHT-TO-LEFT (opposite direction) ── */
+.mms-poster-section{max-width:960px;margin:0 auto 0;padding:0 24px;}
+.mms-poster-overflow{overflow:hidden;border-radius:16px;mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);}
+/* RIGHT-TO-LEFT: starts at 0 goes to -50% */
+.mms-poster-track{display:flex;gap:14px;width:max-content;animation:mms-poster-rtl 35s linear infinite;}
+@keyframes mms-poster-rtl{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.mms-poster{flex:0 0 auto;width:170px;border-radius:14px;overflow:hidden;border:1px solid rgba(0,200,255,.15);box-shadow:0 8px 28px rgba(0,0,0,.5);transition:transform .2s,box-shadow .2s;}
+.mms-poster:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 16px 40px rgba(0,200,255,.2);}
+.mms-poster img{width:100%;height:240px;object-fit:cover;display:block;}
+@media(max-width:600px){.mms-stats{grid-template-columns:1fr;}.mms-stat{border-right:none;border-bottom:1px solid rgba(0,200,255,.1);}.mms-stat:last-child{border-bottom:none;}.mms-poster{width:130px;}.mms-poster img{height:185px;}}
 </style>
+
+<!-- ── STREAMING CHANNELS STRIP — edge to edge, scrolls left → right ── -->
+<div class="mms-channels-strip">
+  <p class="mms-ch-label">Available on Netflix, Hulu, Canal+ &amp; More</p>
+  <div class="mms-ch-overflow">
+    <div class="mms-ch-track">
+      <div class="mbr-item"><img src="https://logo.clearbit.com/netflix.com" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png'" alt="Netflix"></div>
+      <div class="mbr-item"><img src="https://logo.clearbit.com/hulu.com" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/200px-Hulu_Logo.svg.png'" alt="Hulu"></div>
+      <div class="mbr-item"><img src="images/channels/prime-video.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/prime-video.png'" alt="Prime Video"></div>
+      <div class="mbr-item"><img src="images/channels/canal.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/canal-.png'" alt="Canal+"></div>
+      <div class="mbr-item"><img src="images/channels/fox.webp" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/FOX.webp'" alt="FOX"></div>
+      <div class="mbr-item"><img src="images/channels/hbo-max.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/hbo-max.png'" alt="HBO Max"></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="mbr-item"><img src="https://logo.clearbit.com/netflix.com" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png'" alt="Netflix"></div>
+      <div class="mbr-item"><img src="https://logo.clearbit.com/hulu.com" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/200px-Hulu_Logo.svg.png'" alt="Hulu"></div>
+      <div class="mbr-item"><img src="images/channels/prime-video.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/prime-video.png'" alt="Prime Video"></div>
+      <div class="mbr-item"><img src="images/channels/canal.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/canal-.png'" alt="Canal+"></div>
+      <div class="mbr-item"><img src="images/channels/fox.webp" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/FOX.webp'" alt="FOX"></div>
+      <div class="mbr-item"><img src="images/channels/hbo-max.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/hbo-max.png'" alt="HBO Max"></div>
+    </div>
+  </div>
+</div>
 
 <div class="mms-inner">
 
-  <!-- Channels Carousel -->
-  <div class="mms-carousel-block" style="margin-bottom:20px;">
-    <p style="text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.35);margin:0 0 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;">50,000+ Live Channels</p>
-    <div style="overflow:hidden;border-radius:16px;mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);">
-      <div class="mbr-track">
-        <div class="mbr-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/340px-Netflix_2015_logo.svg.png" alt="Netflix"></div>
-        <div class="mbr-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/320px-Hulu_Logo.svg.png" alt="Hulu"></div>
-        <div class="mbr-item"><img src="images/channels/prime-video.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/prime-video.png'" alt="Prime Video"></div>
-        <div class="mbr-item"><img src="images/channels/canal.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/canal-.png'" alt="Canal+"></div>
-        <div class="mbr-item"><img src="images/channels/fox.webp" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/FOX.webp'" alt="FOX"></div>
-        <div class="mbr-item"><img src="images/channels/hbo-max.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/hbo-max.png'" alt="HBO Max"></div>
-        <!-- Duplicate for seamless loop -->
-        <div class="mbr-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/340px-Netflix_2015_logo.svg.png" alt="Netflix"></div>
-        <div class="mbr-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/320px-Hulu_Logo.svg.png" alt="Hulu"></div>
-        <div class="mbr-item"><img src="images/channels/prime-video.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/prime-video.png'" alt="Prime Video"></div>
-        <div class="mbr-item"><img src="images/channels/canal.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/canal-.png'" alt="Canal+"></div>
-        <div class="mbr-item"><img src="images/channels/fox.webp" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/FOX.webp'" alt="FOX"></div>
-        <div class="mbr-item"><img src="images/channels/hbo-max.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/hbo-max.png'" alt="HBO Max"></div>
+  <!-- VOD Poster carousel — scrolls right → left -->
+  <div class="mms-poster-section" style="margin-top:28px;">
+    <p style="text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.35);margin:0 0 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;">300,000+ Movies &amp; Series</p>
+    <div class="mms-poster-overflow">
+      <div class="mms-poster-track">
+        <div class="mms-poster"><img src="images/vod/poster-1.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-2.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-3.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-4.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-5.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-6.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-7.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-8.jpg" loading="lazy" alt="Movie poster"></div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="mms-poster"><img src="images/vod/poster-1.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-2.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-3.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-4.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-5.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-6.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-7.jpg" loading="lazy" alt="Movie poster"></div>
+        <div class="mms-poster"><img src="images/vod/poster-8.jpg" loading="lazy" alt="Movie poster"></div>
       </div>
     </div>
   </div>
 
-  <!-- VOD Poster carousel -->
-    <div class="mms-poster-section">
-      <p style="text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.35);margin:0 0 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;">300,000+ Movies &amp; Series</p>
-      <style>
-      .mms-poster-section{max-width:960px;margin:0 auto 0;}
-      .mms-poster-overflow{overflow:hidden;border-radius:16px;mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);}
-      .mms-poster-track{display:flex;gap:14px;width:max-content;animation:mms-poster-scroll 35s linear infinite;}
-      @keyframes mms-poster-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-      .mms-poster{flex:0 0 auto;width:170px;border-radius:14px;overflow:hidden;border:1px solid rgba(0,200,255,.15);box-shadow:0 8px 28px rgba(0,0,0,.5);transition:transform .2s,box-shadow .2s;}
-      .mms-poster:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 16px 40px rgba(0,200,255,.2);}
-      .mms-poster img{width:100%;height:240px;object-fit:cover;display:block;}
-      @media(max-width:600px){.mms-poster{width:130px;}.mms-poster img{height:185px;}}
-      </style>
-      <div class="mms-poster-overflow">
-        <div class="mms-poster-track">
-          <div class="mms-poster"><img src="images/vod/poster-1.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-2.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-3.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-4.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-5.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-6.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-7.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-8.jpg" loading="lazy" alt="Movie poster"></div>
-          <!-- Duplicate set for seamless loop -->
-          <div class="mms-poster"><img src="images/vod/poster-1.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-2.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-3.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-4.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-5.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-6.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-7.jpg" loading="lazy" alt="Movie poster"></div>
-          <div class="mms-poster"><img src="images/vod/poster-8.jpg" loading="lazy" alt="Movie poster"></div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Stats bar — flush below video -->
+  <!-- Stats bar -->
   <div class="mms-stats">
     <div class="mms-stat">
       <div class="mms-stat-num">300,000+</div>
@@ -578,7 +580,6 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
     <p>Over <strong>300,000 movies and series</strong> available on demand — from the latest blockbuster releases to timeless classics, cult favourites, and complete TV series. Our VOD library is updated <strong>every single day</strong> with the newest titles the moment they drop. Hollywood, Bollywood, European cinema, documentaries, kids content — <strong>it is all here, in 4K HDR, with no buffering and no waiting.</strong> This is your personal cinema, open 24/7.</p>
   </div>
 
-  
   </div>
 
   <!-- CTA -->
@@ -587,7 +588,6 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
     <a href="free-trial.html" class="mms-btn-outline">▶ Try Free 24H</a>
   </div>
 
-</div>
 </section>
 <!-- ═══════════ END MOVIES SECTION ═══════════ -->
 
