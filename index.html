@@ -654,21 +654,59 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
 
 
 <!-- ═══════════ DEVICES SECTION ═══════════ -->
-<section id="mojo-devices-section" style="background:#140c20;padding:60px 24px 70px;border-top:1px solid rgba(255,255,255,.06);">
+<!-- ═══════════ DEVICES SECTION ═══════════ -->
+<section id="mojo-devices-section" style="background:#0e0820;padding:80px 0 90px;border-top:1px solid rgba(255,255,255,.06);">
 <style>
-#mojo-devices-section .mds-inner{max-width:1060px;margin:0 auto;}
-#mojo-devices-section h2{text-align:center;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:900;color:#fff;margin-bottom:32px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-#mojo-devices-section .mds-wrap{position:relative;overflow:hidden;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);padding:22px 16px;mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);}
+#mojo-devices-section{text-align:center;}
+#mojo-devices-section .mds-inner{max-width:1060px;margin:0 auto;padding:0 24px;}
+#mojo-devices-section .mds-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.3);border-radius:30px;padding:7px 18px;font-size:.75rem;font-weight:800;color:#fd0322;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+#mojo-devices-section h2{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+#mojo-devices-section .mds-sub{font-size:.97rem;color:rgba(232,224,255,.6);line-height:1.8;max-width:640px;margin:0 auto 44px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+
+/* Banner image — screen blend removes black background */
+#mojo-devices-section .mds-banner{max-width:960px;margin:0 auto 44px;padding:0 24px;}
+#mojo-devices-section .mds-banner img{width:100%;display:block;border-radius:20px;mix-blend-mode:screen;border:1px solid rgba(253,3,34,.15);box-shadow:0 0 60px rgba(253,3,34,.08),0 24px 60px rgba(0,0,0,.5);}
+
+/* Scrolling carousel */
+#mojo-devices-section .mds-carousel-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.3);margin:0 0 18px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
+#mojo-devices-section .mds-wrap{position:relative;overflow:hidden;padding:16px 0;mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);}
 #mojo-devices-section .mds-track{display:flex;align-items:center;gap:16px;width:max-content;animation:mds-scroll 28s linear infinite;}
 @keyframes mds-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 #mojo-devices-section .mds-item{flex:0 0 auto;background:#fff;border:1px solid rgba(239,68,68,.18);border-radius:14px;padding:12px 16px;display:flex;align-items:center;justify-content:center;min-height:72px;min-width:140px;transition:transform .15s,box-shadow .15s;}
 #mojo-devices-section .mds-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(253,3,34,.18);}
 #mojo-devices-section .mds-item img{max-height:42px;max-width:130px;width:auto;height:auto;display:block;object-fit:contain;}
+
+/* Badges */
+#mojo-devices-section .mds-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:36px 24px 40px;}
+#mojo-devices-section .mds-badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;white-space:nowrap;}
+
+/* CTA */
+#mojo-devices-section .mds-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+#mojo-devices-section .mds-btn-red{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:30px;background:#fd0322;color:#fff;font-weight:800;font-size:.95rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;box-shadow:0 6px 28px rgba(253,3,34,.4);transition:all .2s;}
+#mojo-devices-section .mds-btn-red:hover{background:#c50018;transform:translateY(-2px);}
+#mojo-devices-section .mds-btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:30px;border:1px solid rgba(255,255,255,.2);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:all .2s;}
+#mojo-devices-section .mds-btn-outline:hover{background:rgba(255,255,255,.07);}
+
 @media(max-width:600px){#mojo-devices-section .mds-item{min-width:115px;min-height:60px;padding:10px 12px;}#mojo-devices-section .mds-item img{max-height:34px;}}
 </style>
+
 <div class="mds-inner">
+  <div class="mds-kicker">📱 Universal Compatibility</div>
   <h2>Works on All Your Devices</h2>
-  <div class="mds-wrap">
+  <p class="mds-sub">No new hardware needed. IPTVmojo runs on everything you already own — phones, smart TVs, tablets, boxes and computers. Set up in minutes, watch on any screen.</p>
+</div>
+
+<!-- Device logos banner — screen blend removes black bg -->
+<div class="mds-banner">
+  <img src="images/devices-banner.png" alt="IPTVmojo compatible devices: Fire TV, Samsung Smart TV, iOS, IPTV Smarters, Xbox, MagBox, Android, Windows, NVIDIA Shield, Android TV" loading="lazy">
+</div>
+
+<!-- Scrolling device carousel -->
+<div class="mds-inner">
+  <p class="mds-carousel-label">All compatible devices</p>
+</div>
+<div style="overflow:hidden;padding:0;">
+  <div class="mds-wrap" style="max-width:none;">
     <div class="mds-track">
       <div class="mds-item"><img src="images/devices/android-phone.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/android-phone.png'" alt="Android Phone" loading="lazy"></div>
       <div class="mds-item"><img src="images/devices/ios-devices.png" onerror="this.src='https://mojo4k.com/wp-content/uploads/2024/12/ios-devices.png'" alt="iOS" loading="lazy"></div>
@@ -706,58 +744,29 @@ body{margin:0;padding:0;background:#0a0414;font-family:'Plus Jakarta Sans','DM S
     </div>
   </div>
 </div>
+
+<div class="mds-badges">
+  <span class="mds-badge">🔥 Fire TV &amp; Firestick</span>
+  <span class="mds-badge">📺 Samsung &amp; LG Smart TV</span>
+  <span class="mds-badge">🍎 iPhone &amp; iPad</span>
+  <span class="mds-badge">🤖 Android Phone &amp; Tablet</span>
+  <span class="mds-badge">📺 Android TV</span>
+  <span class="mds-badge">🎮 Xbox</span>
+  <span class="mds-badge">🛡️ NVIDIA Shield</span>
+  <span class="mds-badge">🖥️ Windows &amp; Mac</span>
+  <span class="mds-badge">📦 MAG &amp; Infomir Boxes</span>
+  <span class="mds-badge">🌐 Web Browser</span>
+  <span class="mds-badge">🎬 IPTV Smarters Pro</span>
+  <span class="mds-badge">📡 Any M3U Player</span>
+</div>
+
+<div class="mds-cta">
+  <a href="pricing.html" class="mds-btn-red">Get Started Now →</a>
+  <a href="free-trial.html" class="mds-btn-outline">▶ Try Free 24H</a>
+</div>
+
 </section>
 <!-- ═══════════ END DEVICES SECTION ═══════════ -->
-
-<!-- ═══════════ ALL DEVICES COMPATIBILITY ═══════════ -->
-<section id="mojo-all-devices" style="background:#0e0820;padding:80px 24px 90px;border-top:1px solid rgba(255,255,255,.06);">
-<style>
-#mojo-all-devices .ad-inner{max-width:1060px;margin:0 auto;text-align:center;}
-#mojo-all-devices .ad-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.3);border-radius:30px;padding:7px 18px;font-size:.75rem;font-weight:800;color:#fd0322;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-#mojo-all-devices h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-#mojo-all-devices h2 span{background:linear-gradient(90deg,#fd0322,#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-#mojo-all-devices .ad-sub{font-size:1rem;color:rgba(232,224,255,.6);line-height:1.8;max-width:680px;margin:0 auto 44px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-#mojo-all-devices .ad-image-wrap{position:relative;max-width:960px;margin:0 auto 44px;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(253,3,34,.2),0 0 80px rgba(253,3,34,.1),0 32px 80px rgba(0,0,0,.7);}
-#mojo-all-devices .ad-image-wrap img{width:100%;display:block;border-radius:24px;}
-#mojo-all-devices .ad-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:44px;}
-#mojo-all-devices .ad-badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:9px 20px;font-size:.82rem;font-weight:700;color:rgba(232,224,255,.8);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;white-space:nowrap;}
-#mojo-all-devices .ad-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-#mojo-all-devices .ad-btn-red{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:30px;background:#fd0322;color:#fff;font-weight:800;font-size:.95rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;box-shadow:0 6px 28px rgba(253,3,34,.4);transition:all .2s;}
-#mojo-all-devices .ad-btn-red:hover{background:#c50018;transform:translateY(-2px);}
-#mojo-all-devices .ad-btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:30px;border:1px solid rgba(255,255,255,.2);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;transition:all .2s;}
-#mojo-all-devices .ad-btn-outline:hover{background:rgba(255,255,255,.07);}
-</style>
-<div class="ad-inner">
-  <div class="ad-kicker">📱 Universal Compatibility</div>
-  <h2>Works on <span>Every Device</span> You Own</h2>
-  <p class="ad-sub">No new hardware. No complicated setup. IPTVmojo runs on everything you already have — fire it up in minutes and start watching instantly on any screen in your home.</p>
-
-  <div class="ad-image-wrap">
-    <img src="images/devices-banner.png" alt="IPTVmojo works on Fire TV Stick, Samsung Smart TV, iOS, IPTV Smarters, Xbox, MagBox, Android, WebPlayer, NVIDIA Shield, Windows, Android TV" loading="lazy">
-  </div>
-
-  <div class="ad-badges">
-    <span class="ad-badge">🔥 Amazon Fire TV &amp; Firestick</span>
-    <span class="ad-badge">📺 Samsung &amp; LG Smart TV</span>
-    <span class="ad-badge">🍎 iPhone &amp; iPad (iOS)</span>
-    <span class="ad-badge">🤖 Android Phone &amp; Tablet</span>
-    <span class="ad-badge">📺 Android TV</span>
-    <span class="ad-badge">🎮 Xbox</span>
-    <span class="ad-badge">🛡️ NVIDIA Shield</span>
-    <span class="ad-badge">🖥️ Windows PC &amp; Mac</span>
-    <span class="ad-badge">📦 MAG &amp; Infomir Boxes</span>
-    <span class="ad-badge">🌐 Web Browser Player</span>
-    <span class="ad-badge">🎬 IPTV Smarters Pro</span>
-    <span class="ad-badge">📡 Any M3U Player</span>
-  </div>
-
-  <div class="ad-cta">
-    <a href="pricing.html" class="ad-btn-red">Get Started Now →</a>
-    <a href="free-trial.html" class="ad-btn-outline">▶ Try Free 24H</a>
-  </div>
-</div>
-</section>
-<!-- ═══════════ END ALL DEVICES COMPATIBILITY ═══════════ -->
 
 <!-- ═══════════ REVIEWS SECTION ═══════════ -->
 <section id="mojo-reviews" style="background:#140c20;padding:80px 16px 70px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
