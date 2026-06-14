@@ -313,21 +313,52 @@ a{text-decoration:none;color:inherit}
 <script>
 function submitTrial(e) {
   e.preventDefault();
-  var btn=document.getElementById('tf-btn'), err=document.getElementById('tf-err'),
-      suc=document.getElementById('tf-suc'), area=document.getElementById('tf-form-area');
-  btn.disabled=true; btn.textContent='Activating trial…';
-  err.style.display='none';
+  var btn=document.getElementById('tf-btn'),
+      err=document.getElementById('tf-err'),
+      suc=document.getElementById('tf-suc'),
+      area=document.getElementById('tf-form-area');
+
+  // Always reset state before each attempt
+  btn.disabled=true;
+  btn.textContent='Activating trial…';
+  err.style.cssText='display:none!important';
+
   function gv(id){var el=document.getElementById(id);if(!el)return '';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
+  function reset(msg){
+    btn.disabled=false;
+    btn.textContent='Get Free Trial →';
+    err.style.cssText='display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;';
+    err.textContent=msg;
+  }
+
   var name=gv('tf-name'), email=gv('tf-email'), country=gv('tf-country'),
       wa=gv('tf-whatsapp'), dev=gv('tf-device'), notes=gv('tf-notes');
-  if(!name||!email){err.setAttribute('style','display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;');err.textContent='Please enter your name and email.';btn.disabled=false;btn.textContent='Get Free Trial →';return;}
-  fetch('https://iptv-trial-iptvmojo.medmaar.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,country:country,device:dev,whatsapp:wa,notes:notes})})
+
+  // Only block if truly empty — accept anything else
+  if(!name.trim()||!email.trim()){reset('Please enter your name and email address.');return;}
+
+  var timer=setTimeout(function(){reset('Request timed out. Please try again.');},25000);
+
+  fetch('https://iptv-trial-iptvmojo.medmaar.workers.dev',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name:name,email:email,country:country,device:dev,whatsapp:wa,notes:notes})
+  })
   .then(function(r){return r.json();})
   .then(function(d){
-    if(d.success){area.style.display='none';suc.style.display='block';suc.innerHTML='<h3>✅ Trial Activated!</h3><p>Your login credentials have been sent to <strong>'+email+'</strong>.<br>Check your inbox (and spam folder just in case).</p>';}
-    else{err.setAttribute('style','display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;');err.textContent='Something went wrong. Please try again or contact us on WhatsApp.';btn.disabled=false;btn.textContent='Get Free Trial →';}
+    clearTimeout(timer);
+    if(d.success){
+      area.style.display='none';
+      suc.style.display='block';
+      suc.innerHTML='<h3>✅ Trial Activated!</h3><p>Your login credentials have been sent to <strong>'+email+'</strong>.<br>Check your inbox (and spam folder just in case).</p>';
+    } else {
+      reset('Something went wrong. Please try again.');
+    }
   })
-  .catch(function(ex){err.setAttribute('style','display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;');err.textContent='Network error. Please try again.';btn.disabled=false;btn.textContent='Get Free Trial →';});
+  .catch(function(){
+    clearTimeout(timer);
+    reset('Network error. Please check your connection and try again.');
+  });
 }
 // // Burger
 const burger=document.getElementById('burgerBtn'),menu=document.getElementById('mobileMenu');
