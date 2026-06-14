@@ -352,7 +352,7 @@ function submitTrial(e) {
       suc.style.display='block';
       suc.innerHTML='<h3>✅ Trial Activated!</h3><p>Your login credentials have been sent to <strong>'+email+'</strong>.<br>Check your inbox (and spam folder just in case).</p>';
     } else {
-      reset('Something went wrong. Please try again.');
+      reset('Error: '+(d.error||'unknown — check Cloudflare Worker logs'));
     }
   })
   .catch(function(){
