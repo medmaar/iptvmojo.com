@@ -311,27 +311,25 @@ a{text-decoration:none;color:inherit}
 </footer>
 
 <script>
-var WA_NUMBER = 'YOUR_WHATSAPP_NUMBER';
-
 function submitTrial(e) {
   e.preventDefault();
   var btn=document.getElementById('tf-btn'), err=document.getElementById('tf-err'),
-      suc=document.getElementById('tf-suc'), area=document.getElementById('tf-form-area'),
-      waWrap=document.getElementById('tf-wa-wrap'), waLink=document.getElementById('tf-wa-link');
-  btn.disabled=true; btn.textContent='Sending…';
-  err.style.display='none'; waWrap.style.display='none';
+      suc=document.getElementById('tf-suc'), area=document.getElementById('tf-form-area');
+  btn.disabled=true; btn.textContent='Activating trial…';
+  err.style.display='none';
   function gv(id){var el=document.getElementById(id);if(!el)return '';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
   var name=gv('tf-name'), email=gv('tf-email'), country=gv('tf-country'),
       wa=gv('tf-whatsapp'), dev=gv('tf-device'), notes=gv('tf-notes');
-  var msg='IPTVmojo Free Trial Request\nName: '+(name||'-')+'\nEmail: '+(email||'-')+'\nCountry: '+(country||'-')+'\nWhatsApp: '+(wa||'-')+'\nDevice: '+(dev||'-')+'\nNotes: '+(notes||'-');
-  waLink.href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
-  var timer=setTimeout(function(){showFallback('Timed out.');},20000);
-  function showSuccess(){clearTimeout(timer);area.style.display='none';suc.style.display='block';}
-  function showFallback(r){clearTimeout(timer);err.setAttribute('style','display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;');err.textContent=r+' Use WhatsApp below to request your trial directly.';waWrap.style.display='block';btn.disabled=false;btn.textContent='Submit';}
-  fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:'service_pk6jnu9',template_id:'template_763fwro',user_id:'5NnfSkeYa9aonxpMe',template_params:{site_name:'IPTVmojo',plan:'Free Trial - 24 Hours',name:name||'Anonymous',from_name:name||'Anonymous',from_email:email||'support@iptvmojo.com',reply_to:email||'support@iptvmojo.com',phone:wa||'-',country:country||'-',device:dev||'-',message:msg}})})
-  .then(function(r){if(r.ok)showSuccess();else r.text().then(function(b){showFallback('Error '+r.status+': '+b.slice(0,50));});}).catch(function(ex){showFallback('Network: '+ex.message);});
+  if(!name||!email){err.setAttribute('style','display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;');err.textContent='Please enter your name and email.';btn.disabled=false;btn.textContent='Get Free Trial →';return;}
+  fetch('https://iptv-trial-iptvmojo.medmaar.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,country:country,device:dev,whatsapp:wa,notes:notes})})
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.success){area.style.display='none';suc.style.display='block';suc.innerHTML='<h3>✅ Trial Activated!</h3><p>Your login credentials have been sent to <strong>'+email+'</strong>.<br>Check your inbox (and spam folder just in case).</p>';}
+    else{err.setAttribute('style','display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;');err.textContent='Something went wrong. Please try again or contact us on WhatsApp.';btn.disabled=false;btn.textContent='Get Free Trial →';}
+  })
+  .catch(function(ex){err.setAttribute('style','display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;');err.textContent='Network error. Please try again.';btn.disabled=false;btn.textContent='Get Free Trial →';});
 }
-// Burger
+// // Burger
 const burger=document.getElementById('burgerBtn'),menu=document.getElementById('mobileMenu');
 burger.addEventListener('click',()=>{menu.classList.toggle('open');const s=burger.querySelectorAll('span');if(menu.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';}});
 // FAQ
