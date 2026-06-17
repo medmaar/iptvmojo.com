@@ -1,5 +1,5 @@
 /**
- * IPTV Mojo — Free Trial Worker
+ * IPTV Mojo — Free Trial Worker v2
  * - Creates IPTV line via Activation Panel (USA - All, sub=99)
  * - Sends welcome + reminder (T-4h) + follow-up (T=0) emails
  * - KV storage for cron-based follow-ups
