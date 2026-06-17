@@ -19,7 +19,20 @@ jobs:
           CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
           WORKER_NAME: iptv-trial-iptvmojo
         run: |
-          METADATA='{"main_module":"worker.js","compatibility_date":"2024-01-01","bindings":[{"type":"kv_namespace","name":"TRIALS","namespace_id":"41eacf5f19ba4601abb403d498661743"}]}'
+          METADATA=$(cat <<'METADATA'
+          {
+            "main_module": "worker.js",
+            "compatibility_date": "2024-01-01",
+            "bindings": [
+              {
+                "type": "kv_namespace",
+                "name": "TRIALS",
+                "namespace_id": "41eacf5f19ba4601abb403d498661743"
+              }
+            ]
+          }
+          METADATA
+          )
           RESULT=$(curl -s -X PUT \
             "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}" \
             -H "Authorization: Bearer ${CF_TOKEN}" \
@@ -29,7 +42,7 @@ jobs:
 import sys, json
 d = json.load(sys.stdin)
 if d.get('success'):
-    print('Worker deployed OK')
+    print('Worker deployed OK:', d['result'].get('id',''))
 else:
     print('FAILED:', d.get('errors'))
     exit(1)
@@ -48,5 +61,5 @@ else:
             -d '[{"cron": "0 * * * *"}]' | python3 -c "
 import sys, json
 d = json.load(sys.stdin)
-print('Cron set OK' if d.get('success') else 'Cron warning: ' + str(d.get('errors')))
+print('Cron OK' if d.get('success') else 'Cron warn: ' + str(d.get('errors')))
 "
