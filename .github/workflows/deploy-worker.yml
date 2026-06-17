@@ -39,14 +39,14 @@ jobs:
             -F "metadata=${METADATA};type=application/json" \
             -F "worker.js=@worker/worker.js;type=application/javascript+module")
           echo "$RESULT" | python3 -c "
-import sys, json
-d = json.load(sys.stdin)
-if d.get('success'):
-    print('Worker deployed OK:', d['result'].get('id',''))
-else:
-    print('FAILED:', d.get('errors'))
-    exit(1)
-"
+          import sys, json
+          d = json.load(sys.stdin)
+          if d.get('success'):
+              print('Worker deployed OK:', d['result'].get('id', 'OK'))
+          else:
+              print('FAILED:', d.get('errors'))
+              exit(1)
+          "
 
       - name: Set Cron Trigger
         env:
@@ -59,7 +59,7 @@ else:
             -H "Authorization: Bearer ${CF_TOKEN}" \
             -H "Content-Type: application/json" \
             -d '[{"cron": "0 * * * *"}]' | python3 -c "
-import sys, json
-d = json.load(sys.stdin)
-print('Cron OK' if d.get('success') else 'Cron warn: ' + str(d.get('errors')))
-"
+          import sys, json
+          d = json.load(sys.stdin)
+          print('Cron OK' if d.get('success') else 'Cron warn: ' + str(d.get('errors')))
+          "
