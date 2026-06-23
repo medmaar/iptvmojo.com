@@ -279,7 +279,7 @@ async function handleFetch(request, env) {
     await env.TRIALS.put(
       `trial:${email}`,
       JSON.stringify({ name, email, username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false }),
-      { expirationTtl: 4 * 24 * 60 * 60 }
+      { expirationTtl: 30 * 24 * 60 * 60 }
     );
 
     return jsonRes({ success: true });
@@ -307,7 +307,7 @@ async function handleScheduled(env) {
       try {
         await sendEmail(email, "⏳ Your IPTV Mojo Trial Expires in 4 Hours", reminderEmail(name, username, password, m3uUrl));
         trial.reminder_sent = true;
-        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 4 * 24 * 60 * 60 });
+        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Reminder → ${email}`);
       } catch (e) { console.error(`[cron] Reminder failed ${email}:`, e.message); }
     }
@@ -316,7 +316,7 @@ async function handleScheduled(env) {
       try {
         await sendEmail(email, "Your IPTV Mojo Trial Has Ended — Come Back Anytime 🎬", followupEmail(name));
         trial.followup_sent = true;
-        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 4 * 24 * 60 * 60 });
+        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Follow-up → ${email}`);
       } catch (e) { console.error(`[cron] Follow-up failed ${email}:`, e.message); }
     }
