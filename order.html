@@ -332,10 +332,8 @@ var elementskit = { resturl: 'https://maplestreamtv.com/wp-json/elementskit/v1/'
 
 <script>
 /* ── REPLACE WITH YOUR WHATSAPP NUMBER (digits only, no + or spaces, e.g. 12125551234) ── */
-var WA_NUMBER = 'YOUR_WHATSAPP_NUMBER';
-
 function buildWaLink(text) {
-  return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+  return '/go/wa?msg=' + encodeURIComponent(text);
 }
 
 function submitForm(e, formType) {

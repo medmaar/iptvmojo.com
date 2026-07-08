@@ -476,7 +476,6 @@ a{text-decoration:none;color:inherit}
   <div class="footer-copy">© 2025 IPTVmojo. All rights reserved.</div>
 </footer>
 <script>
-var WA_NUMBER='YOUR_WHATSAPP_NUMBER';
 var PLAN_INFO='IPTVmojo Order\nPlan: 3 Months / 4 Connections / $100';
 function submitForm(e){
   e.preventDefault();
@@ -488,7 +487,7 @@ function submitForm(e){
   function gv(id){var el=document.getElementById(id);if(!el)return '';return el.tagName==='SELECT'?el.options[el.selectedIndex].value:el.value.trim();}
   var name=gv('f-name'),email=gv('f-email'),country=gv('f-country'),wa=gv('f-whatsapp'),dev=gv('f-device'),notes=gv('f-notes');
   var msg=PLAN_INFO+'\nName: '+(name||'-')+'\nEmail: '+(email||'-')+'\nCountry: '+(country||'-')+'\nWhatsApp: '+(wa||'-')+'\nDevice: '+(dev||'-')+'\nNotes: '+(notes||'-');
-  waLink.href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
+  waLink.href='/go/wa?msg='+encodeURIComponent(msg);
   var timer=setTimeout(function(){showFallback('Timed out.');},20000);
   function showSuccess(){clearTimeout(timer);area.style.display='none';suc.style.display='block';}
   function showFallback(r){clearTimeout(timer);err.setAttribute('style','display:block!important;padding:12px;background:rgba(253,3,34,.12);border:1px solid rgba(253,3,34,.4);border-radius:10px;color:#ff6070;font-size:.83rem;margin-top:10px;');err.textContent=r+' Use WhatsApp below to order directly.';waWrap.style.display='block';btn.disabled=false;btn.textContent='Submit';}
