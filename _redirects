@@ -1,0 +1,3 @@
+# Retired WhatsApp callback-form page -> direct WhatsApp redirect
+/whatsapp-contact.html  /go/wa  301
+/whatsapp-contact       /go/wa  301
