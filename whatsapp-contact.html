@@ -110,6 +110,12 @@ a{color:inherit;text-decoration:none;}
 .wa-success p{font-size:.87rem;color:rgba(232,224,255,.7);}
 .wa-privacy{font-size:.76rem;color:rgba(232,224,255,.35);text-align:center;margin-top:16px;line-height:1.6;}
 </style>
+<style>
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,0.45);animation:sd-wa-pulse 2.6s ease-in-out infinite;transition:transform .2s ease;text-decoration:none;}
+.whatsapp-float:hover{transform:scale(1.08);}
+@keyframes sd-wa-pulse{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,0.45),0 0 0 0 rgba(37,211,102,0.55);}50%{box-shadow:0 8px 22px rgba(0,0,0,0.45),0 0 0 10px rgba(37,211,102,0);}}
+@media (max-width:600px){.whatsapp-float{width:52px;height:52px;right:16px;bottom:16px;}}
+</style>
 </head>
 <body>
 <nav class="mojo-nav">
@@ -447,5 +453,8 @@ document.getElementById('waForm').addEventListener('submit',function(e){
 });
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"790d5bd1f00140f2a41fc2194d24aba5","r":1}' crossorigin="anonymous"></script>
+<a href="/go/wa?msg=Hi%2C+I%27m+interested+in+IPTVmojo" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 0 0 4.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 0 1-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+</a>
 </body>
 </html>
