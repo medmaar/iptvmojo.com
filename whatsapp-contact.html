@@ -456,5 +456,85 @@ document.getElementById('waForm').addEventListener('submit',function(e){
 <a href="/go/wa?msg=Hi%2C+I%27m+interested+in+IPTVmojo" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
   <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 0 0 4.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 0 1-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
 </a>
+<style>
+.sales-banner{position:fixed;left:18px;bottom:18px;z-index:79;max-width:266px;display:flex;align-items:center;gap:11px;padding:11px 30px 11px 11px;border-radius:12px;background:#ffffff;border:1px solid rgba(0,0,0,0.06);box-shadow:0 16px 34px -12px rgba(0,0,0,0.45),0 2px 6px rgba(0,0,0,0.08);transform:translateY(140%);opacity:0;transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s cubic-bezier(.4,0,.2,1);}
+.sales-banner.show{transform:translateY(0);opacity:1;}
+.sales-banner-icon{flex-shrink:0;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#FFE9A8 0%,#DFAD05 100%);box-shadow:0 0 0 2px rgba(223,173,5,0.15);}
+.sales-banner-title{font-weight:700;font-size:12.5px;line-height:1.35;color:#1A1A1A;}
+.sales-banner-title b{font-weight:800;}
+.sales-banner-text{font-size:10.5px;color:#8A8A8A;margin-top:2px;display:flex;align-items:center;gap:4px;}
+.sales-banner-text::before{content:"";width:6px;height:6px;border-radius:50%;background:#2ECC71;display:inline-block;flex-shrink:0;}
+.sales-banner-close{position:absolute;top:6px;right:8px;background:none;border:none;color:#B8B8B8;font-size:14px;line-height:1;cursor:pointer;padding:3px;}
+.sales-banner-close:hover{color:#666;}
+@media (max-width:600px){.sales-banner{left:12px;bottom:12px;max-width:calc(100% - 96px);padding:10px 26px 10px 10px;}}
+</style>
+<div class="sales-banner" id="salesBanner">
+  <button class="sales-banner-close" id="salesBannerClose" aria-label="Close">&times;</button>
+  <div class="sales-banner-icon">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+      <path d="M6 7h12l-1 12.5a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 7z" stroke="#1A1400" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="#1A1400" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M9.5 12.5l1.8 1.8L14.8 11" stroke="#1A1400" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="sales-banner-body">
+    <div class="sales-banner-title" id="salesBannerTitle">New purchase</div>
+    <div class="sales-banner-text" id="salesBannerText">just now</div>
+  </div>
+</div>
+<script>
+(function(){
+  var banner = document.getElementById('salesBanner');
+  var closeBtn = document.getElementById('salesBannerClose');
+  var titleEl = document.getElementById('salesBannerTitle');
+  var textEl = document.getElementById('salesBannerText');
+  if(!banner || !titleEl || !textEl) return;
+  if(sessionStorage.getItem('ipm_sales_banner_dismissed') === '1') return;
+
+  var names = ["Michael", "James", "David", "John", "Robert", "Daniel", "Matthew", "Andrew", "Joshua", "Christopher", "Emma", "Olivia", "Sophia", "Isabella", "Emily", "Ava", "Mia", "Abigail", "Madison", "Chloe"];
+  var cities = ["New York", "Los Angeles", "Chicago", "Houston", "Toronto", "Miami", "Dallas", "Atlanta", "Vancouver", "Phoenix", "Philadelphia", "San Diego", "Montreal", "Seattle", "Denver", "Boston", "Calgary", "Las Vegas", "Orlando", "Austin"];
+  var plans = ["1-Month Plan", "3-Month Plan", "3-Month Plan", "6-Month Plan", "6-Month Plan", "12-Month Plan", "12-Month Plan", "12-Month Plan", "12-Month Plan", "12-Month Plan"];
+  var timeAgo = ["just now", "2 minutes ago", "5 minutes ago", "9 minutes ago"];
+
+  function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
+
+  var dismissed = false;
+  var lastName = null;
+  var timers = [];
+  function setT(fn, ms){ var id = setTimeout(fn, ms); timers.push(id); return id; }
+
+  function nextNotification(){
+    var name = pick(names);
+    while(name === lastName){ name = pick(names); }
+    lastName = name;
+    var city = pick(cities);
+    var plan = pick(plans);
+    titleEl.innerHTML = '<b>' + name + '</b> from ' + city + ' just purchased a ' + plan;
+    textEl.textContent = pick(timeAgo);
+  }
+
+  function cycle(){
+    if(dismissed) return;
+    nextNotification();
+    banner.classList.add('show');
+    setT(function(){
+      if(dismissed) return;
+      banner.classList.remove('show');
+      setT(cycle, 3000);
+    }, 5000);
+  }
+
+  setT(cycle, 2000 + Math.floor(Math.random() * 2000));
+
+  if(closeBtn){
+    closeBtn.addEventListener('click', function(){
+      dismissed = true;
+      banner.classList.remove('show');
+      sessionStorage.setItem('ipm_sales_banner_dismissed', '1');
+      timers.forEach(clearTimeout);
+    });
+  }
+})();
+</script>
 </body>
 </html>
