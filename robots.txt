@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /order
+Disallow: /whatsapp-contact
+Disallow: /referral
+
+Sitemap: https://iptvmojo.com/sitemap.xml
