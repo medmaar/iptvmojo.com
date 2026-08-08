@@ -1,3 +1,56 @@
 # Retired WhatsApp callback-form page -> direct WhatsApp redirect
 /whatsapp-contact.html  /go/wa  301
 /whatsapp-contact       /go/wa  301
+
+# Old WordPress social-share placeholder URLs → homepage (301)
+/*/YOUR_FACEBOOK_URL_HERE  /  301
+/*/YOUR_YOUTUBE_URL_HERE  /  301
+/*/YOUR_INSTAGRAM_URL_HERE  /  301
+/*/YOUR_TWITTER_URL_HERE  /  301
+/*/YOUR_X_URL_HERE  /  301
+/*/YOUR_TIKTOK_URL_HERE  /  301
+/*/YOUR_TELEGRAM_URL_HERE  /  301
+/*/YOUR_WHATSAPP_URL_HERE  /  301
+
+# Old WordPress blog post URLs → blog page (301)
+/xtreme-hd-iptv-a-comprehensive-guide-for-2024/*  /blog  301
+/1-month-5-devices-iptv-service-in-florida-usa/*  /  301
+/6-months-2-devices-iptv-subscription-without-cable/*  /  301
+/6-months-3-devices-iptv-subscription-in-buffalo-usa/*  /  301
+/6-months-4-devices-iptv-service-in-miami-usa/*  /  301
+/6-months-affordable-iptv-subscription-guide/*  /  301
+/buy-iptv-subscription-for-beginners-1-year-4-devices/*  /  301
+/free-trial-iptv-service-in-aurora-usa/*  /free-trial  301
+/1-month-3-devices/*  /  301
+/contact-us-iptvmojo-customer-service/*  /contact  301
+/installation-guides-iptvmojo-installation/*  /how-it-works  301
+/channels-list/*  /  301
+/about-us-iptv-subscription-in-austin-usa/*  /about  301
+/iptv-purchase-1-year-3-devices/*  /pricing  301
+/buy-iptv-subscription-for-beginners-*  /  301
+/pt/*  /  301
+/es/*  /  301
+/de/*  /  301
+/fr/*  /  301
+
+# Old .html and trailing slash variants → clean URL (301)
+/pricing.html  /pricing  301
+/privacy-policy.html  /privacy-policy  301
+/terms-and-conditions.html  /terms-and-conditions  301
+/refund-policy.html  /refund-policy  301
+/referral.html  /referral  301
+/reseller.html  /reseller  301
+/index.html  /  301
+/pricing/  /pricing  301
+/privacy-policy/  /privacy-policy  301
+/terms-and-conditions/  /terms-and-conditions  301
+/refund-policy/  /refund-policy  301
+/referral/  /referral  301
+/contact/  /contact  301
+/about/  /about  301
+/blog/  /blog  301
+/channels-list/  /  301
+/faq/  /  301
+/1-month/  /  301
+/1-year/  /  301
+/6-months-5-devices/  /  301
