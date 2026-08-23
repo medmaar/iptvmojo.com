@@ -8,7 +8,6 @@
 const API_BASE    = "https://activationpanel.ru/api/api.php";
 const API_KEY     = "35cf68cc83a3a82e1a0ac5361c7b6105";
 const HOST        = "http://mag.trexlive.me";
-const RESEND_KEY  = "re_5BHS4WZe_EbSST7w5RdUzbHEDKWAkAwaB";
 const FROM_EMAIL  = "IPTV Mojo <support@iptvmojo.com>";
 const ADMIN_EMAIL = "support@iptvmojo.com";
 const SITE_URL    = "https://iptvmojo.com";
@@ -204,6 +203,7 @@ function adminEmail(name, email, country, device, whatsapp, notes, username, pas
 // ── fetch handler ─────────────────────────────────────────────────────────────
 
 async function handleFetch(request, env) {
+  const RESEND_KEY = env.RESEND_KEY;
   if (request.method === "OPTIONS") {
     return new Response(null, { headers: {
       "Access-Control-Allow-Origin": "*",
@@ -310,6 +310,7 @@ async function handleFetch(request, env) {
 // ── cron handler ──────────────────────────────────────────────────────────────
 
 async function handleScheduled(env) {
+  const RESEND_KEY = env.RESEND_KEY;
   const now = Date.now();
   const FOUR_HOURS = 4 * 60 * 60 * 1000;
   const _keysRaw = await env.TRIALS.get('__keys__') || '[]';
