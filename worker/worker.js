@@ -7,7 +7,7 @@
 
 const API_BASE    = "https://activationpanel.ru/api/api.php";
 const API_KEY     = "35cf68cc83a3a82e1a0ac5361c7b6105";
-const HOST        = "http://terry.thecontentnest.com";
+const HOST        = "http://mag.trexlive.me";
 const RESEND_KEY  = "re_5BHS4WZe_EbSST7w5RdUzbHEDKWAkAwaB";
 const FROM_EMAIL  = "IPTV Mojo <support@iptvmojo.com>";
 const ADMIN_EMAIL = "support@iptvmojo.com";
