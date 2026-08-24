@@ -1,0 +1,34 @@
+name: Clear RESEND_KEY from other CF Workers
+on:
+  workflow_dispatch:
+
+jobs:
+  clear-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete RESEND_KEY from all non-iptvmojo workers
+        run: |
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-flimmerkanal/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-flimmerkanal" || echo "FAIL: iptv-trial-flimmerkanal"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-mojo4ktv/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-mojo4ktv" || echo "FAIL: iptv-trial-mojo4ktv"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-buyiptvnorway/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-buyiptvnorway" || echo "FAIL: iptv-trial-buyiptvnorway"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-maplestreamtv/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-maplestreamtv" || echo "FAIL: iptv-trial-maplestreamtv"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-mojo4kfr/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-mojo4kfr" || echo "FAIL: iptv-trial-mojo4kfr"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-norgesiptv/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-norgesiptv" || echo "FAIL: iptv-trial-norgesiptv"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-maple4k/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-maple4k" || echo "FAIL: iptv-trial-maple4k"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-streambleu/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-streambleu" || echo "FAIL: iptv-trial-streambleu"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-maplehd/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-maplehd" || echo "FAIL: iptv-trial-maplehd"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-mojo4kde/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-mojo4kde" || echo "FAIL: iptv-trial-mojo4kde"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-iptvvde/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-iptvvde" || echo "FAIL: iptv-trial-iptvvde"
+          curl -s -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/workers/scripts/iptv-trial-streamdeutschland/secrets/RESEND_KEY" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" && echo "Cleared: iptv-trial-streamdeutschland" || echo "FAIL: iptv-trial-streamdeutschland"
