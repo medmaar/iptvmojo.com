@@ -270,11 +270,11 @@ async function handleFetch(request, env) {
 
     // 4. Welcome email
     step = "email_client";
-    await sendEmail(email, "Your IPTV Mojo Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl, RESEND_KEY));
+    await sendEmail(email, "Your IPTV Mojo Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
 
     // 5. Admin notification
     step = "email_admin";
-    await sendEmail(ADMIN_EMAIL, `Automation / iptvmojo.com / trial / ${name} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl, RESEND_KEY));
+    await sendEmail(ADMIN_EMAIL, `Automation / iptvmojo.com / trial / ${name} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), RESEND_KEY);
 
     // 6. Store in KV (TTL 4 days)
     step = "kv_store";
@@ -325,7 +325,7 @@ async function handleScheduled(env) {
 
     if (!reminder_sent && now >= expiry - FOUR_HOURS && now < expiry) {
       try {
-        await sendEmail(email, "⏳ Your IPTV Mojo Trial Expires in 4 Hours", reminderEmail(name, username, password, m3uUrl, RESEND_KEY));
+        await sendEmail(email, "⏳ Your IPTV Mojo Trial Expires in 4 Hours", reminderEmail(name, username, password, m3uUrl), RESEND_KEY);
         trial.reminder_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Reminder → ${email}`);
@@ -334,7 +334,7 @@ async function handleScheduled(env) {
 
     if (!followup_sent && now >= expiry) {
       try {
-        await sendEmail(email, "Your IPTV Mojo Trial Has Ended — Come Back Anytime 🎬", followupEmail(name, RESEND_KEY));
+        await sendEmail(email, "Your IPTV Mojo Trial Has Ended — Come Back Anytime 🎬", followupEmail(name), RESEND_KEY);
         trial.followup_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Follow-up → ${email}`);
