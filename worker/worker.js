@@ -29,10 +29,10 @@ async function apiGet(params) {
   return { status: res.status, text: await res.text() };
 }
 
-async function sendEmail(to, subject, html) {
+async function sendEmail(to, subject, html, resendKey) {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
-    headers: { Authorization: `Bearer ${RESEND_KEY}`, "Content-Type": "application/json" },
+    headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({ from: FROM_EMAIL, to, subject, html }),
   });
   if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
@@ -270,11 +270,11 @@ async function handleFetch(request, env) {
 
     // 4. Welcome email
     step = "email_client";
-    await sendEmail(email, "Your IPTV Mojo Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl));
+    await sendEmail(email, "Your IPTV Mojo Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl, RESEND_KEY));
 
     // 5. Admin notification
     step = "email_admin";
-    await sendEmail(ADMIN_EMAIL, `Automation / iptvmojo.com / trial / ${name} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl));
+    await sendEmail(ADMIN_EMAIL, `Automation / iptvmojo.com / trial / ${name} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl, RESEND_KEY));
 
     // 6. Store in KV (TTL 4 days)
     step = "kv_store";
@@ -325,7 +325,7 @@ async function handleScheduled(env) {
 
     if (!reminder_sent && now >= expiry - FOUR_HOURS && now < expiry) {
       try {
-        await sendEmail(email, "⏳ Your IPTV Mojo Trial Expires in 4 Hours", reminderEmail(name, username, password, m3uUrl));
+        await sendEmail(email, "⏳ Your IPTV Mojo Trial Expires in 4 Hours", reminderEmail(name, username, password, m3uUrl, RESEND_KEY));
         trial.reminder_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Reminder → ${email}`);
@@ -334,7 +334,7 @@ async function handleScheduled(env) {
 
     if (!followup_sent && now >= expiry) {
       try {
-        await sendEmail(email, "Your IPTV Mojo Trial Has Ended — Come Back Anytime 🎬", followupEmail(name));
+        await sendEmail(email, "Your IPTV Mojo Trial Has Ended — Come Back Anytime 🎬", followupEmail(name, RESEND_KEY));
         trial.followup_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Follow-up → ${email}`);
