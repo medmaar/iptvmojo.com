@@ -3,4 +3,16 @@ Allow: /
 Disallow: /order
 Disallow: /whatsapp-contact
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://iptvmojo.com/sitemap.xml
