@@ -55,6 +55,12 @@
 /1-year/  /  301
 /6-months-5-devices/  /  301
 
+# Duplicate-content consolidation: subscriptions.html was a near-duplicate of
+# pricing.html (same intent, same numbers, zero internal links pointing to it) -> merge
+/subscriptions  /pricing  301
+/subscriptions.html  /pricing  301
+/subscriptions/  /pricing  301
+
 # Short aliases for common searches -> canonical long-slug pages (301)
 /tivimate  /tivimate-setup-guide  301
 /smarters  /iptv-smarters-pro-setup-guide  301
