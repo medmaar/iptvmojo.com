@@ -1,7 +1,7 @@
 /**
- * IPTV Mojo — Free Trial Worker v2
- * - Creates IPTV line via Activation Panel (USA - All, sub=99)
- * - Sends welcome + reminder (T-4h) + follow-up (T=0) emails
+ * IPTV Mojo — Free Trial Worker v3
+ * - Creates IPTV line via Activation Panel (USA - All, sub=99 demo)
+ * - Sends welcome email instantly + reminder (T-4h) + follow-up (T=0)
  * - KV storage for cron-based follow-ups
  */
 
@@ -11,6 +11,7 @@ const HOST        = "http://line.truthdaily.me";
 const FROM_EMAIL  = "IPTV Mojo <support@iptvmojo.com>";
 const ADMIN_EMAIL = "support@iptvmojo.com";
 const SITE_URL    = "https://iptvmojo.com";
+const SITE_NAME   = "iptvmojo.com";
 const PACK_NAME   = "USA - All";
 const WA_NUMBER   = "17828026280";
 
@@ -45,10 +46,6 @@ async function sendEmail(to, subject, html, resendKey, inReplyTo = null) {
   if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
   const data = await res.json();
   return data.id || null;
-}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: FROM_EMAIL, to, subject, html }),
-  });
-  if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
 }
 
 // ── email layout ──────────────────────────────────────────────────────────────
@@ -229,11 +226,12 @@ async function handleFetch(request, env) {
     const u = new URL(request.url);
     if (u.searchParams.has("debug")) {
       const bq = await apiGet({ action: "bouquet" });
+      const ri = await apiGet({ action: "reseller_info" });
       // Zero list ops: read __keys__ index instead of kv.list()
       const _kr = await env.TRIALS.get('__keys__') || '[]';
       const _ke = JSON.parse(_kr);
       const trials = { keys: _ke.map(e => ({ name: 'trial:' + e })) };
-      return jsonRes({ bouquet: bq.text.slice(0,400), kv_keys: trials.keys.length });
+      return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: trials.keys.length });
     }
     return new Response("IPTV Mojo Trial Worker — OK", { status: 200 });
   }
@@ -253,17 +251,17 @@ async function handleFetch(request, env) {
     const bqRes = await apiGet({ action: "bouquet" });
     let packId = "all";
     if (bqRes.text.trim().startsWith("[") || bqRes.text.trim().startsWith("{")) {
-      const arr = JSON.parse(bqRes.text);
-      const list = Array.isArray(arr) ? arr : Object.values(arr);
-      const pkg = list.find(b => (b.name || "").trim().toLowerCase() === PACK_NAME.toLowerCase());
+      const list = JSON.parse(bqRes.text);
+      const arr = Array.isArray(list) ? list : Object.values(list);
+      const pkg = arr.find(b => (b.name || "").trim().toLowerCase() === PACK_NAME.toLowerCase());
       if (pkg) packId = pkg.id;
     }
 
-    // 2. Create demo M3U
+    // 2. Create demo M3U (sub=99 = demo ticket)
     step = "create_demo";
     const crRes = await apiGet({
       action: "new", type: "m3u", sub: "99", pack: packId,
-      note: `Trial / iptvmojo.com / ${email} | ${whatsapp || ""}`,
+      notes: `Trial / ${SITE_NAME} / ${email} | ${whatsapp || ""}`,
     });
     if (!crRes.text.trim().startsWith("[") && !crRes.text.trim().startsWith("{")) {
       throw new Error(`Panel non-JSON: ${crRes.text.slice(0, 200)}`);
@@ -281,20 +279,12 @@ async function handleFetch(request, env) {
     try { const u = new URL(rawUrl); username = u.searchParams.get("username") || ""; password = u.searchParams.get("password") || ""; } catch {}
     const m3uUrl = `${HOST}/get.php?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&type=m3u_plus&output=ts`;
 
-    // 4. Welcome email
-    step = "email_client";
-    const welcomeEmailId = await sendEmail(email, "Your IPTV Mojo Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
-
-    // 5. Admin notification
-    step = "email_admin";
-    await sendEmail(ADMIN_EMAIL, `Automation / iptvmojo.com / trial / ${name} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), RESEND_KEY);
-
-    // 6. Store in KV (TTL 4 days)
+    // 4. Store in KV FIRST (so trial is always recorded even if email fails)
     step = "kv_store";
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     await env.TRIALS.put(
       `trial:${email}`,
-      JSON.stringify({ name, email, whatsapp, site: 'iptvmojo.com', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: welcomeEmailId || null, created_at: Date.now() }),
+      JSON.stringify({ name, email, whatsapp, site: SITE_NAME, username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: null, created_at: Date.now() }),
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
     // Update __keys__ index (read op, not list op — keeps KV list quota safe)
@@ -305,12 +295,27 @@ async function handleFetch(request, env) {
         await env.TRIALS.put('__keys__', JSON.stringify(_existingKeys), { expirationTtl: 90 * 24 * 60 * 60 });
       }
     } catch(_) {}
-    // Notify central KV reader (single-key design, no list ops)
-    const _kvBody = JSON.stringify({ name, email, whatsapp, site: 'iptvmojo.com', phone: whatsapp, created_at: Date.now() });
+    // Notify central KV reader
+    const _kvBody = JSON.stringify({ name, email, whatsapp, site: SITE_NAME, phone: whatsapp, created_at: Date.now() });
     const _kvPost = () => fetch('https://iptv-kv-reader.medmaar.workers.dev/add',
       { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: _kvBody });
     try { await _kvPost(); }
     catch(_) { try { await new Promise(r => setTimeout(r, 1500)); await _kvPost(); } catch(__) {} }
+
+    // 5. Welcome email (instant, with real credentials)
+    step = "email_client";
+    const welcomeEmailId = await sendEmail(email, "Your IPTV Mojo Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
+    if (welcomeEmailId) {
+      try {
+        const _t = JSON.parse(await env.TRIALS.get(`trial:${email}`) || '{}');
+        _t.welcome_email_id = welcomeEmailId;
+        await env.TRIALS.put(`trial:${email}`, JSON.stringify(_t), { expirationTtl: 30 * 24 * 60 * 60 });
+      } catch (_) {}
+    }
+
+    // 6. Admin notification
+    step = "email_admin";
+    await sendEmail(ADMIN_EMAIL, `Automation / ${SITE_NAME} / trial / ${name} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), RESEND_KEY);
 
     return jsonRes({ success: true });
 
