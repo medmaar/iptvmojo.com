@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IPTVmojo Referral — Refer a Friend, Get 1 Year Free</title>
-<meta name="description" content="Refer a friend to IPTVmojo and get 12 free months added to your subscription. Submit your referral in seconds.">
+<title>IPTVmojo Referral — Refer a Friend, Get 6 Months Free</title>
+<meta name="description" content="Refer a friend to IPTVmojo and get 6 free months added to your subscription when they buy a 12-month plan. Submit your referral in seconds.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://iptvmojo.com/referral">
 <link rel="alternate" hreflang="en-us" href="https://iptvmojo.com/referral">
@@ -125,15 +125,15 @@ a{color:inherit;text-decoration:none;}
 @keyframes sd-wa-pulse{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,0.45),0 0 0 0 rgba(37,211,102,0.55);}50%{box-shadow:0 8px 22px rgba(0,0,0,0.45),0 0 0 10px rgba(37,211,102,0);}}
 @media (max-width:600px){.whatsapp-float{width:52px;height:52px;right:16px;bottom:16px;}}
 </style>
-<meta property="og:title" content="IPTVmojo Referral — Refer a Friend, Get 1 Year Free">
-<meta property="og:description" content="Refer a friend to IPTVmojo and get 12 free months added to your subscription. Submit your referral in seconds.">
+<meta property="og:title" content="IPTVmojo Referral — Refer a Friend, Get 6 Months Free">
+<meta property="og:description" content="Refer a friend to IPTVmojo and get 6 free months added to your subscription when they buy a 12-month plan. Submit your referral in seconds.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://iptvmojo.com/referral">
 <meta property="og:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@iptvmojo">
-<meta name="twitter:title" content="IPTVmojo Referral — Refer a Friend, Get 1 Year Free">
-<meta name="twitter:description" content="Refer a friend to IPTVmojo and get 12 free months added to your subscription. Submit your referral in seconds.">
+<meta name="twitter:title" content="IPTVmojo Referral — Refer a Friend, Get 6 Months Free">
+<meta name="twitter:description" content="Refer a friend to IPTVmojo and get 6 free months added to your subscription when they buy a 12-month plan. Submit your referral in seconds.">
 <meta name="twitter:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
 
 <script type="application/ld+json">
@@ -179,46 +179,52 @@ a{color:inherit;text-decoration:none;}
   ]
 }
 </script>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "When do the bonus months get added?",
+      "name": "How does the IPTVmojo referral program work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Within 24 hours of your friend's 1-year payment being confirmed by our team."
+        "text": "Fill in the form with your details and your friend’s. When your friend buys a 12-month plan and their payment is verified, we add 6 months free to your subscription."
       }
     },
     {
       "@type": "Question",
-      "name": "What if my friend buys a shorter plan?",
+      "name": "Who counts as a valid referral?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The reward only applies when your friend purchases a 1-year plan. Shorter plans do not qualify."
+        "text": "Your friend must be a new IPTVmojo customer who has not used the service before, and must buy a 12-month plan."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I refer more than one person?",
+      "name": "Is there a limit to how many friends I can refer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — unlimited referrals. Each approved referral adds 12 more months to your account."
+        "text": "No. Every successful referral adds another 6 free months to your subscription."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I confirm my referral was credited?",
+      "name": "When do I receive my 6 free months?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Contact us on WhatsApp or at support@iptvmojo.com and we'll confirm your updated expiry date."
+        "text": "As soon as your friend’s payment is verified. We contact you on WhatsApp or email to confirm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I refer someone by WhatsApp instead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Please use the form on this page. It sends us every detail we need in one go, so your referral is recorded correctly."
       }
     }
   ]
-}
-</script>
+}</script>
 </head>
 <body>
 
@@ -246,121 +252,107 @@ a{color:inherit;text-decoration:none;}
 </div>
 
 <main>
-<!-- SUCCESS OVERLAY -->
-<div class="success-overlay" id="successOverlay">
-  <div class="success-card">
-    <div class="success-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-    </div>
-    <h2>Referral Submitted!</h2>
-    <p>We'll contact <strong id="successFriendName">your friend</strong> to activate their subscription.</p>
-    <p>Once confirmed, <strong>your 12 free months</strong> will be added to your account.</p>
-    <p style="margin-top:14px;font-size:.82rem;color:rgba(232,224,255,.45);">We'll message you back on WhatsApp to confirm your bonus.</p>
-    <button class="success-close" id="successClose">Got it!</button>
-  </div>
+<style>
+.rfx{--rfx-text:#eef0f6;--rfx-head:#ffffff;--rfx-muted:#a4aaba;--rfx-label:#dfe3ec;--rfx-panel:#160a33;--rfx-line:rgba(255,255,255,.14);--rfx-in:rgba(255,255,255,.04);--rfx-ph:#6b7183;--rfx-a1:#fd0322;--rfx-a2:#a78bfa;--rfx-num:#0b0c12;--rfx-cta:linear-gradient(120deg,#fd0322 0%,#c50018 55%,#7c3aed 100%);--rfx-glow:0 18px 50px -12px rgba(253,3,34,.55);color:var(--rfx-text);font-family:inherit;text-align:left}
+.rfx *,.rfx *::before,.rfx *::after{box-sizing:border-box}
+.rfx-wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.rfx-hero{text-align:center;padding:48px 0 28px}
+.rfx-kicker{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--rfx-a2);margin-bottom:12px}
+.rfx-hero h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.1;font-weight:900;color:var(--rfx-head);margin:0 0 14px}
+.rfx-hero p{color:var(--rfx-muted);font-size:1.05rem;line-height:1.65;max-width:560px;margin:0 auto}
+.rfx-grad{background:linear-gradient(115deg,var(--rfx-a1),var(--rfx-a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.rfx-card{border-radius:28px;padding:clamp(22px,4vw,40px);background:var(--rfx-panel);border:1px solid var(--rfx-line);box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.rfx-card.rfx-is-done{border-color:rgba(34,197,94,.55);box-shadow:0 0 0 1px rgba(34,197,94,.25),0 30px 80px -20px rgba(34,197,94,.35)}
+.rfx-card h2{font-size:26px;font-weight:800;color:var(--rfx-head);margin:0 0 6px;line-height:1.2}
+.rfx-req{color:var(--rfx-muted);margin:0 0 20px;font-size:15px}
+.rfx-group{--acc:var(--rfx-a1);border:1px solid var(--rfx-line);border-top:3px solid var(--acc);border-radius:18px;padding:18px 18px 20px;margin:0 0 16px;min-width:0;background:linear-gradient(180deg,color-mix(in srgb,var(--acc) 10%,transparent),transparent 70%)}
+.rfx-group--f{--acc:var(--rfx-a2)}
+.rfx-group legend{display:flex;align-items:center;gap:12px;padding:0;margin:0 0 16px;float:left;width:100%}
+.rfx-num{width:32px;height:32px;flex:none;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;color:var(--rfx-num);background:var(--acc)}
+.rfx-group legend b{display:block;font-size:17px;font-weight:800;color:var(--rfx-head);line-height:1.2}
+.rfx-group legend small{display:block;color:var(--rfx-muted);font-size:13px;margin-top:2px}
+.rfx-fields{clear:both;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.rfx-field{display:grid;gap:7px;min-width:0}
+.rfx-field--full{grid-column:1/-1}
+.rfx-field label{font-size:13.5px;font-weight:600;color:var(--rfx-label)}
+.rfx-in{width:100%;height:52px;padding:0 16px;border-radius:14px;background:var(--rfx-in);border:1px solid var(--rfx-line);color:var(--rfx-text);font-size:15.5px;font-family:inherit;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;margin:0}
+.rfx-in::placeholder{color:var(--rfx-ph)}
+.rfx-in:focus{border-color:var(--rfx-a2);box-shadow:0 0 0 4px color-mix(in srgb,var(--rfx-a2) 18%,transparent)}
+.rfx-in[aria-invalid=true]{border-color:#ff2d4a;box-shadow:0 0 0 4px rgba(255,45,74,.12)}
+.rfx-err{font-size:12.5px;color:#ff5a6e}
+.rfx-err:empty{display:none}
+.rfx-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.rfx-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:22px;padding:18px 24px;border:0;border-radius:999px;background:var(--rfx-cta);color:#fff;font:inherit;font-weight:800;font-size:17px;cursor:pointer;box-shadow:var(--rfx-glow);transition:transform .2s,filter .2s}
+.rfx-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.rfx-btn[disabled]{opacity:.7;cursor:wait;transform:none}
+.rfx-msg{margin-top:12px;padding:12px 16px;border-radius:12px;background:rgba(255,45,74,.1);border:1px solid rgba(255,45,74,.35);color:#ff5a6e;font-size:14px}
+.rfx-msg[hidden],.rfx-done[hidden],.rfx-form[hidden]{display:none!important}
+.rfx-done{text-align:center;padding:12px 0}
+.rfx-check{width:72px;height:72px;margin:0 auto 18px;border-radius:50%;background:#22c55e;display:grid;place-items:center;color:#fff;font-size:38px;font-weight:900;box-shadow:0 12px 40px -8px rgba(34,197,94,.6)}
+.rfx-done p{color:var(--rfx-muted);font-size:15.5px;line-height:1.7;max-width:460px;margin:0 auto 22px}
+.rfx-done p b{color:var(--rfx-head)}
+.rfx-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.rfx-row a,.rfx-row button{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font:inherit;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer}
+.rfx-wa{background:#25D366;color:#fff!important;border:0}
+.rfx-ghost{background:transparent;color:var(--rfx-head);border:1px solid var(--rfx-line)}
+.rfx-sec{padding:56px 0 8px}
+.rfx-sec-head{text-align:center;margin-bottom:26px}
+.rfx-sec-head span{display:block;font-size:.8rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--rfx-a2);margin-bottom:10px}
+.rfx-sec-head h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:var(--rfx-head);margin:0;line-height:1.15}
+.rfx-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:rfx}
+.rfx-step{position:relative;border-radius:22px;padding:24px 22px;background:var(--rfx-panel);border:1px solid var(--rfx-line)}
+.rfx-step::before{counter-increment:rfx;content:counter(rfx);display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--rfx-cta);color:#fff;font-weight:900;margin-bottom:14px}
+.rfx-step h3{font-size:18px;font-weight:800;color:var(--rfx-head);margin:0 0 6px}
+.rfx-step p{color:var(--rfx-muted);font-size:15px;line-height:1.6;margin:0}
+.rfx-rules{margin-top:22px;border-radius:22px;padding:24px 26px;background:var(--rfx-panel);border:1px solid var(--rfx-line)}
+.rfx-rules h2{font-size:22px;font-weight:800;color:var(--rfx-head);margin:0 0 12px}
+.rfx-rules ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rfx-rules li{position:relative;padding-left:30px;color:var(--rfx-text);font-size:15.5px;line-height:1.55}
+.rfx-rules li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--rfx-a2);color:var(--rfx-num);font-size:12px;font-weight:900;display:grid;place-items:center;margin-top:1px}
+@media(max-width:760px){.rfx-steps{grid-template-columns:1fr}}
+@media(max-width:520px){.rfx-fields{grid-template-columns:1fr}.rfx-group{padding:16px 14px 18px}}
+</style>
+<div class="rfx" id="referral">
+<div class="rfx-wrap"><header class="rfx-hero"><span class="rfx-kicker">Referral program</span><h1>Refer a friend, <span class="rfx-grad">get 6 months free</span></h1><p>Fill in the form below. When your friend subscribes for a year, you get 6 months free.</p></header></div>
+<div class="rfx-wrap"><div class="rfx-card" id="referral-form">
+<form class="rfx-form" novalidate>
+<h2>Submit a referral</h2><p class="rfx-req">All fields are required.</p>
+<div class="rfx-hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<fieldset class="rfx-group rfx-group--r"><legend><span class="rfx-num">1</span><span><b>Your details</b><small>The person referring</small></span></legend><div class="rfx-fields"><div class="rfx-field"><label for="rfx-r-name">Name</label><input class="rfx-in" id="rfx-r-name" name="r_name" type="text" autocomplete="name" placeholder="E.g. John Smith" required><span class="rfx-err"></span></div><div class="rfx-field"><label for="rfx-r-phone">Phone (WhatsApp)</label><input class="rfx-in" id="rfx-r-phone" name="r_phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="E.g. +1 300 400 5000" required><span class="rfx-err"></span></div><div class="rfx-field rfx-field--full"><label for="rfx-r-email">Email</label><input class="rfx-in" id="rfx-r-email" name="r_email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required><span class="rfx-err"></span></div></div></fieldset>
+<fieldset class="rfx-group rfx-group--f"><legend><span class="rfx-num">2</span><span><b>Your friend’s details</b><small>The new customer you’re referring</small></span></legend><div class="rfx-fields"><div class="rfx-field"><label for="rfx-f-name">Name</label><input class="rfx-in" id="rfx-f-name" name="f_name" type="text" autocomplete="off" placeholder="E.g. Mike Brown" required><span class="rfx-err"></span></div><div class="rfx-field"><label for="rfx-f-phone">Phone (WhatsApp)</label><input class="rfx-in" id="rfx-f-phone" name="f_phone" type="tel" inputmode="tel" autocomplete="off" placeholder="E.g. +1 245 852 4100" required><span class="rfx-err"></span></div><div class="rfx-field rfx-field--full"><label for="rfx-f-email">Email</label><input class="rfx-in" id="rfx-f-email" name="f_email" type="email" inputmode="email" autocomplete="off" placeholder="friend@example.com" required><span class="rfx-err"></span></div></div></fieldset>
+<div class="rfx-msg" role="alert" hidden></div>
+<button class="rfx-btn" type="submit"><span class="rfx-btn-t">Submit referral</span> <span aria-hidden="true">→</span></button>
+</form>
+<div class="rfx-done" role="status" tabindex="-1" hidden>
+<div class="rfx-check" aria-hidden="true">✓</div>
+<h2>Referral received!</h2><p>Thank you! We’ve got your referral. As soon as your friend’s 12-month plan is paid, we’ll add <b>6 months free</b> to your account and let you know on WhatsApp.</p>
+<div class="rfx-row"><a class="rfx-wa" href="/go/wa?msg=Hi%2C+I+just+submitted+an+IPTVmojo+referral" target="_blank" rel="noopener">Confirm on WhatsApp</a><button class="rfx-ghost" type="button" data-rfx-again>Refer another friend</button></div>
+</div></div></div>
+<div class="rfx-wrap" style="max-width:1080px"><section class="rfx-sec"><div class="rfx-sec-head"><span>How it works</span><h2>3 steps to 6 free months</h2></div>
+<div class="rfx-steps"><div class="rfx-step"><h3>Fill in the form</h3><p>Enter your details and your friend’s: name, phone and email.</p></div><div class="rfx-step"><h3>Your friend subscribes</h3><p>They buy any 12-month IPTVmojo plan.</p></div><div class="rfx-step"><h3>You get 6 months free</h3><p>Once their payment is verified, we add 6 months to your account.</p></div></div>
+<div class="rfx-rules"><h2>Rules</h2><ul><li>Your friend must be a new IPTVmojo customer.</li><li>Your friend must buy a 12-month plan.</li><li>You get +6 months free after their payment is verified.</li><li>No limit — every successful referral adds another 6 months.</li></ul></div></section></div>
 </div>
-
-
-  <!-- ── FORM ── -->
-  <section class="form-section">
-    <div class="form-card">
-      <div class="form-heading">
-        <h1>Refer a Friend,<br><span>Get 1 Year Free</span></h1>
-        <p>Your friend buys a 1-year plan → you get 12 months free.</p>
-      </div>
-      <div class="form-box">
-        <div class="form-group">
-          <label class="form-label" for="rf-your-name">Your Name</label>
-          <input type="text" id="rf-your-name" class="form-input" placeholder="John" autocomplete="given-name">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="rf-your-phone">Your WhatsApp Number</label>
-          <input type="tel" id="rf-your-phone" class="form-input" placeholder="+1 300 400 5000" autocomplete="tel">
-        </div>
-        <div class="form-sep"><span>Your Friend</span></div>
-        <div class="form-group">
-          <label class="form-label" for="rf-friend-name">Friend's Name</label>
-          <input type="text" id="rf-friend-name" class="form-input" placeholder="Mike">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="rf-friend-phone">Friend's WhatsApp Number</label>
-          <input type="tel" id="rf-friend-phone" class="form-input" placeholder="+1 245 852 4100">
-        </div>
-        <button type="button" class="form-submit" id="rfSubmitBtn">Submit Referral</button>
-        <div class="form-msg" id="rfMsg"></div>
-      </div>
-      <p class="form-hint">Friend must be a new customer on a 1-year plan.</p>
-    </div>
-  </section>
-
-  <div class="page-divider"></div>
-
-  <!-- ── BELOW FOLD ── -->
-  <div class="below-fold">
-
-    <!-- WhatsApp alternative -->
-    <div class="section" style="padding-top:28px;">
-      <div class="wa-strip">
-        <p>Prefer to submit your referral over WhatsApp? Our team will handle it for you.</p>
-        <a href="/go/wa?msg=Hi%2C+I%27m+interested+in+IPTVmojo" class="wa-btn">Contact via WhatsApp</a>
-      </div>
-    </div>
-
-    <!-- Rules + Rewards -->
-    <div class="section">
-      <div class="sec-kicker">Program Details</div>
-      <h2 class="sec-title">Rules &amp; Rewards</h2>
-      <div class="two-col">
-        <div class="info-box">
-          <div class="info-box-title">Referral Rules</div>
-          <ul class="rules-list">
-            <li>Friend must purchase at least a 1-year IPTVmojo subscription.</li>
-            <li>Friend must be a new customer who has never used IPTVmojo before.</li>
-            <li>You must have an active subscription to receive the bonus months.</li>
-            <li>Bonus is credited after their payment is verified — usually within 24 hours.</li>
-            <li>Referrals are unlimited — each approved one adds another 12 months.</li>
-          </ul>
-        </div>
-        <div class="benefit-cards">
-          <div class="bc">
-            <span class="bc-k">Reward</span>
-            <div class="bc-t">1 referral = 12 free months</div>
-            <p class="bc-d">One full year added to your account per approved referral.</p>
-          </div>
-          <div class="bc">
-            <span class="bc-k">No Limit</span>
-            <div class="bc-t">Refer as many as you want</div>
-            <p class="bc-d">No cap — every successful referral earns another bonus year.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FAQ -->
-    <div class="section">
-      <div class="sec-kicker">FAQ</div>
-      <h2 class="sec-title">Common Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-q">When do the bonus months get added?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Within 24 hours of your friend's 1-year payment being confirmed by our team.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">What if my friend buys a shorter plan?<span class="faq-icon">+</span></div>
-          <div class="faq-a">The reward only applies when your friend purchases a 1-year plan. Shorter plans do not qualify.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Can I refer more than one person?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Yes — unlimited referrals. Each approved referral adds 12 more months to your account.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">How do I confirm my referral was credited?<span class="faq-icon">+</span></div>
-          <div class="faq-a">Contact us on WhatsApp or at support@iptvmojo.com and we'll confirm your updated expiry date.</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+<script>(function(){var C={"service": "service_pk6jnu9", "template": "template_763fwro", "key": "5NnfSkeYa9aonxpMe", "site": "IPTVmojo", "subj": "New referral", "plan": "Referral program — 6 months free", "referrer": "REFERRER", "friend": "FRIEND", "lname": "Name", "lphone": "Phone (WhatsApp)", "lemail": "Email", "sending": "Sending…", "submit": "Submit referral", "err_req": "Please fill in this field.", "err_email": "Please enter a valid email.", "err_phone": "Please enter a valid phone number.", "fail": "Something went wrong. Please try again or message us on WhatsApp.", "extra": {"to_email": "support@iptvmojo.com"}};
+var root=document.getElementById('referral-form');if(!root)return;var f=root.querySelector('.rfx-form'),done=root.querySelector('.rfx-done'),msg=root.querySelector('.rfx-msg'),btn=f.querySelector('.rfx-btn'),bt=btn.querySelector('.rfx-btn-t');
+function chk(i){var v=i.value.trim(),m='';if(!v)m=C.err_req;else if(i.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))m=C.err_email;else if(i.type==='tel'&&v.replace(/\D/g,'').length<6)m=C.err_phone;
+i.setAttribute('aria-invalid',m?'true':'false');var s=i.parentNode.querySelector('.rfx-err');if(s)s.textContent=m;return !m;}
+var ins=[].slice.call(f.querySelectorAll('.rfx-in'));ins.forEach(function(i){i.addEventListener('input',function(){if(i.getAttribute('aria-invalid')==='true')chk(i);});i.addEventListener('blur',function(){if(i.value)chk(i);});});
+function g(n){return f.elements[n].value.trim();}
+f.addEventListener('submit',function(ev){ev.preventDefault();msg.hidden=true;var ok=true,first=null;ins.forEach(function(i){if(!chk(i)){ok=false;first=first||i;}});if(!ok){first.focus();return;}
+if(f.elements.website&&f.elements.website.value){f.hidden=true;done.hidden=false;return;}
+btn.disabled=true;bt.textContent=C.sending;
+var m=C.referrer+'\n'+C.lname+': '+g('r_name')+'\n'+C.lphone+': '+g('r_phone')+'\n'+C.lemail+': '+g('r_email')+'\n\n'+C.friend+'\n'+C.lname+': '+g('f_name')+'\n'+C.lphone+': '+g('f_phone')+'\n'+C.lemail+': '+g('f_email');
+var p={site_name:C.site,subject:C.subj+' – '+C.site+': '+g('r_name')+' → '+g('f_name'),plan:C.plan,name:g('r_name'),full_name:g('r_name'),from_name:g('r_name'),email:g('r_email'),from_email:g('r_email'),reply_to:g('r_email'),phone:g('r_phone'),whatsapp:g('r_phone'),country:'—',device:'—',
+friend_name:g('f_name'),friend_phone:g('f_phone'),friend_email:g('f_email'),message:m,time:new Date().toLocaleString()};for(var k in C.extra)p[k]=C.extra[k];
+fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:C.service,template_id:C.template,user_id:C.key,template_params:p})})
+.then(function(r){if(!r.ok)throw new Error('EmailJS '+r.status);f.reset();f.hidden=true;done.hidden=false;root.classList.add('rfx-is-done');done.focus();})
+.catch(function(e){console.error('Referral send failed',e);msg.textContent=C.fail;msg.hidden=false;})
+.then(function(){btn.disabled=false;bt.textContent=C.submit;});});
+root.querySelector('[data-rfx-again]').addEventListener('click',function(){done.hidden=true;f.hidden=false;root.classList.remove('rfx-is-done');ins.forEach(function(i){i.removeAttribute('aria-invalid');});f.elements.r_name.focus();});
+})();</script>
+<style>.rfx-faq{max-width:760px;margin:0 auto;padding:48px 16px 64px}.rfx-faq h2{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:900;color:var(--rfx-head);text-align:center;margin:0 0 22px}
+.rfx-faq details{border:1px solid var(--rfx-line);background:var(--rfx-panel);border-radius:16px;padding:0 20px;margin:0 0 10px}.rfx-faq summary{cursor:pointer;font-weight:700;color:var(--rfx-head);padding:16px 0;font-size:16px;list-style:none}
+.rfx-faq summary::-webkit-details-marker{display:none}.rfx-faq summary::after{content:"+";float:right;color:var(--rfx-a2);font-weight:900}.rfx-faq details[open] summary::after{content:"–"}.rfx-faq p{color:var(--rfx-muted);line-height:1.7;margin:0 0 16px;font-size:15px}</style><div class="rfx" style=""><section class="rfx-faq"><h2>Frequently asked questions</h2><details><summary>How does the IPTVmojo referral program work?</summary><p>Fill in the form with your details and your friend’s. When your friend buys a 12-month plan and their payment is verified, we add 6 months free to your subscription.</p></details><details><summary>Who counts as a valid referral?</summary><p>Your friend must be a new IPTVmojo customer who has not used the service before, and must buy a 12-month plan.</p></details><details><summary>Is there a limit to how many friends I can refer?</summary><p>No. Every successful referral adds another 6 free months to your subscription.</p></details><details><summary>When do I receive my 6 free months?</summary><p>As soon as your friend’s payment is verified. We contact you on WhatsApp or email to confirm.</p></details><details><summary>Can I refer someone by WhatsApp instead?</summary><p>Please use the form on this page. It sends us every detail we need in one go, so your referral is recorded correctly.</p></details></section></div>
 </main>
 
 <footer class="mojo-footer">
@@ -446,55 +438,7 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   });
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-(function(){
-  emailjs.init('5NnfSkeYa9aonxpMe');
-  var btn = document.getElementById('rfSubmitBtn');
-  var overlay = document.getElementById('successOverlay');
-  var friendSpan = document.getElementById('successFriendName');
 
-  btn.addEventListener('click', function(){
-    var yn = document.getElementById('rf-your-name').value.trim();
-    var yp = document.getElementById('rf-your-phone').value.trim();
-    var fn = document.getElementById('rf-friend-name').value.trim();
-    var fp = document.getElementById('rf-friend-phone').value.trim();
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    emailjs.send(
-      'service_pk6jnu9',
-      'template_763fwro',
-      {
-        name:    yn || 'Not provided',
-        phone:   (yn ? yn + ' — ' : '') + (yp || 'Not provided'),
-        email:   '',
-        country: (fn ? fn + ' — ' : '') + (fp || 'Not provided'),
-        device:  '',
-        plan:    'Referral Program',
-        message: '',
-        to_email:'support@iptvmojo.com'
-      }
-    ).then(function(){
-      friendSpan.textContent = fn || 'your friend';
-      overlay.classList.add('show');
-      ['rf-your-name','rf-your-phone','rf-friend-name','rf-friend-phone'].forEach(function(id){document.getElementById(id).value='';});
-      btn.textContent = 'Submit Referral';
-      btn.disabled = false;
-    }).catch(function(){
-      btn.textContent = 'Submit Referral';
-      btn.disabled = false;
-      alert('Something went wrong. Please try again or contact us via WhatsApp.');
-    });
-  });
-
-  document.getElementById('successClose').addEventListener('click', function(){
-    overlay.classList.remove('show');
-  });
-  overlay.addEventListener('click', function(e){
-    if(e.target === overlay) overlay.classList.remove('show');
-  });
-})();
-</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"790d5bd1f00140f2a41fc2194d24aba5","r":1}' crossorigin="anonymous"></script>
 <a href="/go/wa?msg=Hi%2C+I%27m+interested+in+IPTVmojo" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
   <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 0 0 4.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 0 1-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
