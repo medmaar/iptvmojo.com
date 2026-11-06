@@ -129,7 +129,12 @@
 /cloudstream-alternative.html  /cloudstream-alternative  301
 /cloudstream-alternative/  /cloudstream-alternative  301
 
+/smarters-player-lite-setup-guide.html  /smarters-player-lite-setup-guide  301
+/smarters-player-lite-setup-guide/  /smarters-player-lite-setup-guide  301
+
 # Short aliases for keyword-cluster pages (301)
+/smarters-lite  /smarters-player-lite-setup-guide  301
+/smarters-player-lite  /smarters-player-lite-setup-guide  301
 /lg  /iptv-lg-smart-tv  301
 /webos  /iptv-lg-smart-tv  301
 /smart-tv  /iptv-smart-tv  301
