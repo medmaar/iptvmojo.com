@@ -11,6 +11,9 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://iptvmojo.com/iptv-chromecast-google-tv">
 <meta property="og:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="IPTVmojo IPTV subscription on a smart TV">
 <meta property="og:site_name" content="IPTVmojo">
 <meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://iptvmojo.com/iptv-chromecast-google-tv">
@@ -22,7 +25,9 @@
 <meta name="twitter:description" content="How to watch IPTV on Chromecast with Google TV, the Google TV Streamer and older cast-only Chromecasts. Best apps (TiviMate, Smarters), casting tips and fixes.">
 <meta name="twitter:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"></noscript>
 <link rel="icon" href="/images/IPTVmojo.png" type="image/png">
 <style>
 :root{--red:#fd0322;--border:rgba(255,255,255,.1);--text:#e8e0ff;--purple:#140438;--card:rgba(255,255,255,.04);--gold:#f1c40f;--green:#2ecc71;--muted:rgba(232,224,255,.55);}
@@ -104,12 +109,14 @@ img{max-width:100%;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:56px;}
 .inc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;}
 .inc-card h4{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.inc-card h3{margin:0;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
 .inc-card p{font-size:.8rem;color:rgba(232,224,255,.6);line-height:1.55;}
 .inc-icon{font-size:1.7rem;margin-bottom:10px;display:block;}
 .steps{counter-reset:step;display:flex;flex-direction:column;gap:14px;max-width:780px;margin:0 auto 50px;}
 .step{display:flex;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
 .step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
 .step h4{color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
+.step h3{margin:0;color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
 .step p{color:rgba(232,224,255,.68);font-size:.84rem;line-height:1.6;}
 .comp-table-wrap{overflow-x:auto;margin-bottom:56px;max-width:900px;margin-left:auto;margin-right:auto;}
 .comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.85rem;}
@@ -288,7 +295,7 @@ img{max-width:100%;}
 </head>
 <body>
 <nav class="mojo-nav">
-  <a href="/" class="mojo-logo"><img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo IPTV Service"></a>
+  <a href="/" class="mojo-logo"><img src="/images/iptvmojo-logo.png" width="72" height="72" alt="IPTVmojo IPTV Service"></a>
   <div class="mojo-nav-links">
     <a href="/">Home</a>
     <a href="/pricing">Pricing</a>
@@ -327,11 +334,11 @@ img{max-width:100%;}
 <nav class="toc" aria-label="On this page"><strong>On this page</strong><ol><li><a href="#models">Which Chromecast do you have?</a></li><li><a href="#setup">Google TV setup</a></li><li><a href="#cast">Casting from a phone</a></li><li><a href="#tips">Performance tips</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 <div class="sec-head"><div class="sec-kicker">Setup</div><h2 class="sec-title" id="setup">Chromecast with Google TV: 5-Minute Setup</h2></div>
 <div class="steps">
-<div class="step"><div class="step-num">1</div><div><h4>Open the Play Store</h4><p>From the Google TV home screen go to <em>Apps → Search for apps</em>.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><h4>Install TiviMate or IPTV Smarters Pro</h4><p>Both are listed in the Play Store for Google TV. TiviMate gives the best TV-guide layout; Smarters is simpler and identical to the phone app.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><h4>Choose Xtream Codes login</h4><p>Open the app, select <em>Add playlist → Xtream Codes</em> (TiviMate) or <em>Login with Xtream Codes API</em> (Smarters).</p></div></div>
-<div class="step"><div class="step-num">4</div><div><h4>Enter your IPTVmojo details</h4><p>Type the server URL, username and password from your welcome email exactly as written. Use the Google TV mobile app as a keyboard to save time.</p></div></div>
-<div class="step"><div class="step-num">5</div><div><h4>Let the guide load</h4><p>Channels and EPG download automatically. The first load takes a minute; after that it is instant.</p></div></div>
+<div class="step"><div class="step-num">1</div><div><h3>Open the Play Store</h3><p>From the Google TV home screen go to <em>Apps → Search for apps</em>.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><h3>Install TiviMate or IPTV Smarters Pro</h3><p>Both are listed in the Play Store for Google TV. TiviMate gives the best TV-guide layout; Smarters is simpler and identical to the phone app.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><h3>Choose Xtream Codes login</h3><p>Open the app, select <em>Add playlist → Xtream Codes</em> (TiviMate) or <em>Login with Xtream Codes API</em> (Smarters).</p></div></div>
+<div class="step"><div class="step-num">4</div><div><h3>Enter your IPTVmojo details</h3><p>Type the server URL, username and password from your welcome email exactly as written. Use the Google TV mobile app as a keyboard to save time.</p></div></div>
+<div class="step"><div class="step-num">5</div><div><h3>Let the guide load</h3><p>Channels and EPG download automatically. The first load takes a minute; after that it is instant.</p></div></div>
 </div>
 <div class="sec-head"><div class="sec-kicker">Models</div><h2 class="sec-title" id="models">Which Chromecast Do You Have?</h2></div>
 <div class="comp-table-wrap"><table class="comp-table">
@@ -412,7 +419,7 @@ img{max-width:100%;}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo">
+        <img loading="lazy" decoding="async" src="/images/iptvmojo-logo.png" width="44" height="44" alt="IPTVmojo">
         <div class="footer-brand-text">
           Premium IPTV Service<br>
           <a href="mailto:support@iptvmojo.com">support@iptvmojo.com</a>

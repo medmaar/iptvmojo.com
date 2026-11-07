@@ -14,7 +14,9 @@
 <link rel="alternate" hreflang="en-us" href="https://iptvmojo.com/how-it-works">
 <link rel="alternate" hreflang="x-default" href="https://iptvmojo.com/how-it-works">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"></noscript>
 <style>
 :root{--red:#fd0322;--border:rgba(255,255,255,.1);--text:#e8e0ff;--purple:#140438;--card:rgba(255,255,255,.04);}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -105,6 +107,7 @@ a{color:inherit;text-decoration:none;}
 .app-card:hover{border-color:rgba(253,3,34,.3);transform:translateY(-3px);}
 .app-icon{font-size:1.8rem;margin-bottom:8px;}
 .app-card h4{font-size:.88rem;font-weight:800;color:#fff;margin-bottom:4px;}
+.app-card h3{margin:0;font-size:.88rem;font-weight:800;color:#fff;margin-bottom:4px;}
 .app-card p{font-size:.76rem;color:rgba(232,224,255,.55);}
 .app-badge{display:inline-block;margin-top:6px;padding:2px 8px;border-radius:4px;font-size:.65rem;font-weight:800;background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.3);color:#2ecc71;}
 /* REQUIREMENTS */
@@ -112,6 +115,7 @@ a{color:inherit;text-decoration:none;}
 .req-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 18px;}
 .req-icon{font-size:1.6rem;margin-bottom:10px;}
 .req-card h4{font-size:.95rem;font-weight:800;color:#fff;margin-bottom:6px;}
+.req-card h3{margin:0;font-size:.95rem;font-weight:800;color:#fff;margin-bottom:6px;}
 .req-card p{font-size:.83rem;line-height:1.65;color:rgba(232,224,255,.65);}
 /* FAQ */
 .faq-list{display:flex;flex-direction:column;gap:10px;margin-bottom:60px;}
@@ -161,6 +165,9 @@ a{color:inherit;text-decoration:none;}
 @media (max-width:600px){.whatsapp-float{width:52px;height:52px;right:16px;bottom:16px;}}
 </style>
 <meta property="og:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="IPTVmojo IPTV subscription on a smart TV">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@iptvmojo">
 <meta name="twitter:title" content="How IPTVmojo Works — IPTV Setup Guide in 4 Simple Steps">
@@ -253,7 +260,7 @@ a{color:inherit;text-decoration:none;}
 </head>
 <body>
 <nav class="mojo-nav">
-  <a href="/" class="mojo-logo"><img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo IPTV Service"></a>
+  <a href="/" class="mojo-logo"><img src="/images/iptvmojo-logo.png" width="72" height="72" alt="IPTVmojo IPTV Service"></a>
   <div class="mojo-nav-links">
     <a href="/">Home</a>
     <a href="/pricing">Pricing</a>
@@ -480,14 +487,14 @@ a{color:inherit;text-decoration:none;}
   <p class="sec-sub">All these apps are free to download and fully compatible with IPTVmojo's Xtream Codes and M3U format.</p>
 </div>
 <div class="apps-grid">
-  <div class="app-card"><h4>TiviMate</h4><p>Best overall Android TV app. Beautiful EPG, multi-screen support.</p><span class="app-badge">Android / Firestick</span></div>
-  <div class="app-card"><h4>IPTV Smarters Pro</h4><p>Powerful, cross-platform. Great for all device types.</p><span class="app-badge">All Platforms</span></div>
-  <div class="app-card"><h4>Perfect Player</h4><p>Clean interface, excellent EPG, ideal for Android TV.</p><span class="app-badge">Android</span></div>
-  <div class="app-card"><h4>GSE Smart IPTV</h4><p>Best choice for iPhone, iPad, and Apple TV users.</p><span class="app-badge">iOS / Apple TV</span></div>
-  <div class="app-card"><h4>SS IPTV</h4><p>Samsung Smart TV native app — no extra hardware needed.</p><span class="app-badge">Samsung TV</span></div>
-  <div class="app-card"><h4>VLC Media Player</h4><p>Universal player for Windows and Mac — free forever.</p><span class="app-badge">PC / Mac</span></div>
-  <div class="app-card"><h4>Kodi + PVR IPTV</h4><p>Advanced open-source player for power users.</p><span class="app-badge">All Platforms</span></div>
-  <div class="app-card"><h4>IBO Player</h4><p>Premium app — included free with IPTVmojo yearly plan.</p><span class="app-badge">Android / iOS </span></div>
+  <div class="app-card"><h3>TiviMate</h3><p>Best overall Android TV app. Beautiful EPG, multi-screen support.</p><span class="app-badge">Android / Firestick</span></div>
+  <div class="app-card"><h3>IPTV Smarters Pro</h3><p>Powerful, cross-platform. Great for all device types.</p><span class="app-badge">All Platforms</span></div>
+  <div class="app-card"><h3>Perfect Player</h3><p>Clean interface, excellent EPG, ideal for Android TV.</p><span class="app-badge">Android</span></div>
+  <div class="app-card"><h3>GSE Smart IPTV</h3><p>Best choice for iPhone, iPad, and Apple TV users.</p><span class="app-badge">iOS / Apple TV</span></div>
+  <div class="app-card"><h3>SS IPTV</h3><p>Samsung Smart TV native app — no extra hardware needed.</p><span class="app-badge">Samsung TV</span></div>
+  <div class="app-card"><h3>VLC Media Player</h3><p>Universal player for Windows and Mac — free forever.</p><span class="app-badge">PC / Mac</span></div>
+  <div class="app-card"><h3>Kodi + PVR IPTV</h3><p>Advanced open-source player for power users.</p><span class="app-badge">All Platforms</span></div>
+  <div class="app-card"><h3>IBO Player</h3><p>Premium app — included free with IPTVmojo yearly plan.</p><span class="app-badge">Android / iOS </span></div>
 </div>
 
 <!-- REQUIREMENTS -->
@@ -496,9 +503,9 @@ a{color:inherit;text-decoration:none;}
   <h2 class="sec-title">What You Need for the Best IPTV Experience</h2>
 </div>
 <div class="req-grid">
-  <div class="req-card"><h4>Internet Speed</h4><p>Minimum 15 Mbps for HD. Recommended 30 Mbps for reliable HD. 50+ Mbps for 4K or multiple simultaneous streams.</p></div>
-  <div class="req-card"><h4>Compatible Device</h4><p>Any device manufactured after 2018 will work well. Firestick 4K, Android TV box, or a modern Smart TV are the best choices for TV use.</p></div>
-  <div class="req-card"><h4>Email Address</h4><p>Your activation credentials (M3U URL or Xtream Codes login) are sent by email within minutes of payment. A valid email is required.</p></div>
+  <div class="req-card"><h3>Internet Speed</h3><p>Minimum 15 Mbps for HD. Recommended 30 Mbps for reliable HD. 50+ Mbps for 4K or multiple simultaneous streams.</p></div>
+  <div class="req-card"><h3>Compatible Device</h3><p>Any device manufactured after 2018 will work well. Firestick 4K, Android TV box, or a modern Smart TV are the best choices for TV use.</p></div>
+  <div class="req-card"><h3>Email Address</h3><p>Your activation credentials (M3U URL or Xtream Codes login) are sent by email within minutes of payment. A valid email is required.</p></div>
 </div>
 
 <!-- FAQ -->
@@ -540,7 +547,7 @@ a{color:inherit;text-decoration:none;}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo">
+        <img loading="lazy" decoding="async" src="/images/iptvmojo-logo.png" width="44" height="44" alt="IPTVmojo">
         <div class="footer-brand-text">
           Premium IPTV Service<br>
           <a href="mailto:support@iptvmojo.com">support@iptvmojo.com</a>

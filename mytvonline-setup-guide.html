@@ -4,13 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MyTVOnline 3 &amp; 2 Setup Guide for Formuler (2026) | IPTVmojo</title>
-<meta name="description" content="Step-by-step MyTVOnline setup on Formuler boxes: add IPTVmojo with Xtream Codes or Portal (MAC), enable EPG and catch-up, record to USB and fix common MyTVOnline errors.">
+<meta name="description" content="MyTVOnline setup on Formuler boxes: add IPTVmojo with Xtream Codes or Portal (MAC), enable EPG and catch-up, record to USB and fix common errors.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:title" content="MyTVOnline 3 &amp; 2 Setup Guide for Formuler (2026) | IPTVmojo">
-<meta property="og:description" content="Step-by-step MyTVOnline setup on Formuler boxes: add IPTVmojo with Xtream Codes or Portal (MAC), enable EPG and catch-up, record to USB and fix common MyTVOnline errors.">
+<meta property="og:description" content="MyTVOnline setup on Formuler boxes: add IPTVmojo with Xtream Codes or Portal (MAC), enable EPG and catch-up, record to USB and fix common errors.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://iptvmojo.com/mytvonline-setup-guide">
 <meta property="og:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="IPTVmojo IPTV subscription on a smart TV">
 <meta property="og:site_name" content="IPTVmojo">
 <meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://iptvmojo.com/mytvonline-setup-guide">
@@ -19,10 +22,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@iptvmojo">
 <meta name="twitter:title" content="MyTVOnline 3 &amp; 2 Setup Guide for Formuler (2026) | IPTVmojo">
-<meta name="twitter:description" content="Step-by-step MyTVOnline setup on Formuler boxes: add IPTVmojo with Xtream Codes or Portal (MAC), enable EPG and catch-up, record to USB and fix common MyTVOnline errors.">
+<meta name="twitter:description" content="MyTVOnline setup on Formuler boxes: add IPTVmojo with Xtream Codes or Portal (MAC), enable EPG and catch-up, record to USB and fix common errors.">
 <meta name="twitter:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"></noscript>
 <link rel="icon" href="/images/IPTVmojo.png" type="image/png">
 <style>
 :root{--red:#fd0322;--border:rgba(255,255,255,.1);--text:#e8e0ff;--purple:#140438;--card:rgba(255,255,255,.04);--gold:#f1c40f;--green:#2ecc71;--muted:rgba(232,224,255,.55);}
@@ -104,12 +109,14 @@ img{max-width:100%;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:56px;}
 .inc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;}
 .inc-card h4{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.inc-card h3{margin:0;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
 .inc-card p{font-size:.8rem;color:rgba(232,224,255,.6);line-height:1.55;}
 .inc-icon{font-size:1.7rem;margin-bottom:10px;display:block;}
 .steps{counter-reset:step;display:flex;flex-direction:column;gap:14px;max-width:780px;margin:0 auto 50px;}
 .step{display:flex;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
 .step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
 .step h4{color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
+.step h3{margin:0;color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
 .step p{color:rgba(232,224,255,.68);font-size:.84rem;line-height:1.6;}
 .comp-table-wrap{overflow-x:auto;margin-bottom:56px;max-width:900px;margin-left:auto;margin-right:auto;}
 .comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.85rem;}
@@ -291,7 +298,7 @@ img{max-width:100%;}
 </head>
 <body>
 <nav class="mojo-nav">
-  <a href="/" class="mojo-logo"><img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo IPTV Service"></a>
+  <a href="/" class="mojo-logo"><img src="/images/iptvmojo-logo.png" width="72" height="72" alt="IPTVmojo IPTV Service"></a>
   <div class="mojo-nav-links">
     <a href="/">Home</a>
     <a href="/pricing">Pricing</a>
@@ -330,11 +337,11 @@ img{max-width:100%;}
 <nav class="toc" aria-label="On this page"><strong>On this page</strong><ol><li><a href="#setup">Setup steps</a></li><li><a href="#xtream-vs-portal">Xtream vs Portal</a></li><li><a href="#features">Features worth enabling</a></li><li><a href="#fixes">Fixes</a></li><li><a href="#faq">Questions</a></li></ol></nav>
 <div class="sec-head"><div class="sec-kicker">Setup</div><h2 class="sec-title" id="setup">Add IPTVmojo to MyTVOnline</h2></div>
 <div class="steps">
-<div class="step"><div class="step-num">1</div><div><h4>Update MyTVOnline</h4><p>On the Formuler home screen open the Formuler market or updater and install any MyTVOnline update first. Version 3 (MYTVOnline 3) ships on current Z11-series boxes.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><h4>Open MyTVOnline and add a connection</h4><p>Choose <em>Add Portal / Add Connection</em>. You'll be asked for a name and the connection type.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><h4>Pick Xtream Codes (recommended)</h4><p>Enter the server URL, username and password exactly as in your IPTVmojo email. Portal logins aren't part of the standard welcome email, so check with support before choosing that type.</p></div></div>
-<div class="step"><div class="step-num">4</div><div><h4>Save and let it sync</h4><p>MyTVOnline downloads channels, EPG and VOD. The first sync can take a couple of minutes on large lineups.</p></div></div>
-<div class="step"><div class="step-num">5</div><div><h4>Organise your favourites</h4><p>Use the group editor to hide categories you don't watch. With 50,000+ channels, this makes daily use much faster.</p></div></div>
+<div class="step"><div class="step-num">1</div><div><h3>Update MyTVOnline</h3><p>On the Formuler home screen open the Formuler market or updater and install any MyTVOnline update first. Version 3 (MYTVOnline 3) ships on current Z11-series boxes.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><h3>Open MyTVOnline and add a connection</h3><p>Choose <em>Add Portal / Add Connection</em>. You'll be asked for a name and the connection type.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><h3>Pick Xtream Codes (recommended)</h3><p>Enter the server URL, username and password exactly as in your IPTVmojo email. Portal logins aren't part of the standard welcome email, so check with support before choosing that type.</p></div></div>
+<div class="step"><div class="step-num">4</div><div><h3>Save and let it sync</h3><p>MyTVOnline downloads channels, EPG and VOD. The first sync can take a couple of minutes on large lineups.</p></div></div>
+<div class="step"><div class="step-num">5</div><div><h3>Organise your favourites</h3><p>Use the group editor to hide categories you don't watch. With 50,000+ channels, this makes daily use much faster.</p></div></div>
 </div>
 <div class="sec-head"><div class="sec-kicker">Login type</div><h2 class="sec-title" id="xtream-vs-portal">Xtream Codes vs Portal in MyTVOnline</h2></div>
 <div class="comp-table-wrap"><table class="comp-table">
@@ -417,7 +424,7 @@ img{max-width:100%;}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo">
+        <img loading="lazy" decoding="async" src="/images/iptvmojo-logo.png" width="44" height="44" alt="IPTVmojo">
         <div class="footer-brand-text">
           Premium IPTV Service<br>
           <a href="mailto:support@iptvmojo.com">support@iptvmojo.com</a>

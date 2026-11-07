@@ -11,6 +11,9 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://iptvmojo.com/iptv-quebec">
 <meta property="og:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="IPTVmojo IPTV subscription on a smart TV">
 <meta property="og:site_name" content="IPTVmojo">
 <meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://iptvmojo.com/iptv-quebec">
@@ -22,7 +25,9 @@
 <meta name="twitter:description" content="IPTV au Québec avec TVA, Radio-Canada, RDS et plus, plus 50,000+ chaînes anglophones. 4K, VOD illimité, essai gratuit 24h.">
 <meta name="twitter:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"></noscript>
 <link rel="icon" href="/images/IPTVmojo.png" type="image/png">
 <style>
 :root{--red:#fd0322;--border:rgba(255,255,255,.1);--text:#e8e0ff;--purple:#140438;--card:rgba(255,255,255,.04);--gold:#f1c40f;--green:#2ecc71;--muted:rgba(232,224,255,.55);}
@@ -104,12 +109,14 @@ img{max-width:100%;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:56px;}
 .inc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;}
 .inc-card h4{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.inc-card h3{margin:0;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
 .inc-card p{font-size:.8rem;color:rgba(232,224,255,.6);line-height:1.55;}
 .inc-icon{font-size:1.7rem;margin-bottom:10px;display:block;}
 .steps{counter-reset:step;display:flex;flex-direction:column;gap:14px;max-width:780px;margin:0 auto 50px;}
 .step{display:flex;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
 .step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
 .step h4{color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
+.step h3{margin:0;color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
 .step p{color:rgba(232,224,255,.68);font-size:.84rem;line-height:1.6;}
 .comp-table-wrap{overflow-x:auto;margin-bottom:56px;max-width:900px;margin-left:auto;margin-right:auto;}
 .comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.85rem;}
@@ -240,7 +247,7 @@ img{max-width:100%;}
 </head>
 <body>
 <nav class="mojo-nav">
-  <a href="/" class="mojo-logo"><img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo IPTV Service"></a>
+  <a href="/" class="mojo-logo"><img src="/images/iptvmojo-logo.png" width="72" height="72" alt="IPTVmojo IPTV Service"></a>
   <div class="mojo-nav-links">
     <a href="/">Home</a>
     <a href="/pricing">Pricing</a>
@@ -281,10 +288,10 @@ img{max-width:100%;}
   <h2 class="sec-title">Fait pour les Foyers Québécois</h2>
 </div>
 <div class="card-grid">
-  <div class="inc-card"><h4>Chaînes Francophones</h4><p>TVA, Radio-Canada, RDS, Canal Vie et plus, en direct et en rattrapage.</p></div>
-  <div class="inc-card"><h4>Hockey &amp; Sports</h4><p>RDS et forfaits NHL inclus — suivez les Canadiens de Montréal sans coût supplémentaire.</p></div>
-  <div class="inc-card"><h4>Chaînes Anglophones</h4><p>Plus de 50 000 chaînes internationales en anglais et dans d&#39;autres langues.</p></div>
-  <div class="inc-card"><h4>VOD Bilingue</h4><p>300 000+ films et séries, mis à jour chaque semaine, en français et en anglais.</p></div>
+  <div class="inc-card"><h3>Chaînes Francophones</h3><p>TVA, Radio-Canada, RDS, Canal Vie et plus, en direct et en rattrapage.</p></div>
+  <div class="inc-card"><h3>Hockey &amp; Sports</h3><p>RDS et forfaits NHL inclus — suivez les Canadiens de Montréal sans coût supplémentaire.</p></div>
+  <div class="inc-card"><h3>Chaînes Anglophones</h3><p>Plus de 50 000 chaînes internationales en anglais et dans d&#39;autres langues.</p></div>
+  <div class="inc-card"><h3>VOD Bilingue</h3><p>300 000+ films et séries, mis à jour chaque semaine, en français et en anglais.</p></div>
 </div>
 
 <h2 style="text-align:center;font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:16px;">Pourquoi choisir IPTVmojo au Québec</h2>
@@ -353,7 +360,7 @@ img{max-width:100%;}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo">
+        <img loading="lazy" decoding="async" src="/images/iptvmojo-logo.png" width="44" height="44" alt="IPTVmojo">
         <div class="footer-brand-text">
           Premium IPTV Service<br>
           <a href="mailto:support@iptvmojo.com">support@iptvmojo.com</a>
