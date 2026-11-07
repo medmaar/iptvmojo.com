@@ -263,7 +263,7 @@ img{max-width:100%;}
   </div>
 </div>
 <div class="wrap" style="padding-bottom:20px;">
-<div class="tldr"><strong>Quick answer:</strong> Jellyfin has genuinely solid built-in Live TV support for M3U playlists. Plex supports IPTV only through unofficial plugins with mixed reliability. Stremio isn&#39;t really built for live TV playlists at all. For most people, a dedicated app like TiviMate or IPTV Smarters Pro remains the simplest, most reliable option.</p></div>
+<div class="tldr"><strong>Quick answer:</strong> Jellyfin has genuinely solid built-in Live TV support for M3U playlists. Plex supports IPTV only through unofficial plugins with mixed reliability. Stremio isn&#39;t really built for live TV playlists at all. For most people, a dedicated app like TiviMate or IPTV Smarters Pro remains the simplest, most reliable option.</div>
 
 <div class="sec-head"><div class="sec-kicker">Comparison</div><h2 class="sec-title">Live TV Support by Platform</h2></div>
 <div class="comp-table-wrap">
@@ -285,6 +285,17 @@ img{max-width:100%;}
   <a href="/blog/m3u-playlist-explained">M3U Playlists Explained</a>
   <a href="/tivimate-setup-guide">TiviMate Setup</a>
   <a href="/iptv-devices">All Device Guides</a>
+</div>
+<div class="prose" data-seo="deep"><h2>How to add IPTVmojo to Jellyfin Live TV</h2>
+<ol>
+<li>In the Jellyfin dashboard, open <strong>Live TV</strong> and add a <strong>Tuner Device</strong>.</li>
+<li>Choose <strong>M3U Tuner</strong> and paste the M3U link from your IPTVmojo welcome email.</li>
+<li>Add a <strong>TV Guide Data Provider</strong> of type XMLTV and paste the EPG link from the same email.</li>
+<li>Map channels if needed, then refresh the guide data. Live TV now appears in every Jellyfin client.</li>
+</ol>
+<p>Each Jellyfin client that plays a channel uses one IPTVmojo connection, so pick a <a href="/pricing">plan with enough connections</a> for the number of people watching at once. Jellyfin's own <a href="https://jellyfin.org/docs/" target="_blank" rel="noopener">documentation</a> explains tuner and transcoding settings in more depth.</p>
+<h3>Plex and Stremio in practice</h3>
+<p>Plex's built-in Live TV is designed for antenna tuners such as HDHomeRun, so IPTV needs third-party bridges that break after updates. Stremio focuses on on-demand content through add-ons. For live channels, a dedicated player like <a href="/tivimate-setup-guide">TiviMate</a> or <a href="/iptv-smarters-pro-setup-guide">IPTV Smarters Pro</a> is far more reliable. Test your setup with the <a href="/free-trial">free 24-hour trial</a> before choosing a plan.</p>
 </div>
 <div class="sec-head"><div class="sec-kicker">FAQ</div><h2 class="sec-title">Media Server Questions</h2></div>
 <div class="faq-list">
