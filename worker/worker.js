@@ -610,7 +610,7 @@ async function handleFetch(request, env) {
     step = "create_demo";
     const crRes = await apiGet({
       action: "new", type: "m3u", sub: "99", pack: packId,
-      notes: `Trial / ${SITE_NAME} / ${email} | ${whatsapp || ""}`,
+      note: `Trial / ${SITE_NAME} / ${email} | ${whatsapp || ""}`, notes: `Trial / ${SITE_NAME} / ${email} | ${whatsapp || ""}`,
     });
     if (!crRes.text.trim().startsWith("[") && !crRes.text.trim().startsWith("{")) {
       throw new Error(`Panel non-JSON: ${crRes.text.slice(0, 200)}`);
