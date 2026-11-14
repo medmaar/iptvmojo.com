@@ -74,7 +74,7 @@
 /roku  /iptv-roku  301
 /firestick  /iptv-firestick-setup  301
 /samsung-tv  /iptv-samsung-smart-tv  301
-/lg-tv  /iptv-samsung-smart-tv  301
+/lg-tv  /iptv-lg-smart-tv  301
 /apple-tv  /iptv-apple-tv-iphone  301
 /android-box  /iptv-android-tv-box  301
 /vlc  /iptv-pc-mac-vlc  301
@@ -104,3 +104,60 @@
 /gse  /implayer-gse-ott-navigator-setup-guide  301
 /implayer  /implayer-gse-ott-navigator-setup-guide  301
 /ott-navigator  /implayer-gse-ott-navigator-setup-guide  301
+
+# Keyword-cluster pages (2026-11): .html and trailing-slash variants -> clean URL (301)
+/iptv-lg-smart-tv.html  /iptv-lg-smart-tv  301
+/iptv-lg-smart-tv/  /iptv-lg-smart-tv  301
+/iptv-smart-tv.html  /iptv-smart-tv  301
+/iptv-smart-tv/  /iptv-smart-tv  301
+/iptv-chromecast-google-tv.html  /iptv-chromecast-google-tv  301
+/iptv-chromecast-google-tv/  /iptv-chromecast-google-tv  301
+/tivimate-premium.html  /tivimate-premium  301
+/tivimate-premium/  /tivimate-premium  301
+/smartone-set-iptv-ssiptv-setup-guide.html  /smartone-set-iptv-ssiptv-setup-guide  301
+/smartone-set-iptv-ssiptv-setup-guide/  /smartone-set-iptv-ssiptv-setup-guide  301
+/mytvonline-setup-guide.html  /mytvonline-setup-guide  301
+/mytvonline-setup-guide/  /mytvonline-setup-guide  301
+/iptv-player.html  /iptv-player  301
+/iptv-player/  /iptv-player  301
+/iptv-providers.html  /iptv-providers  301
+/iptv-providers/  /iptv-providers  301
+/cheap-iptv.html  /cheap-iptv  301
+/cheap-iptv/  /cheap-iptv  301
+/iptv-enigma2-receiver.html  /iptv-enigma2-receiver  301
+/iptv-enigma2-receiver/  /iptv-enigma2-receiver  301
+/cloudstream-alternative.html  /cloudstream-alternative  301
+/cloudstream-alternative/  /cloudstream-alternative  301
+
+/smarters-player-lite-setup-guide.html  /smarters-player-lite-setup-guide  301
+/smarters-player-lite-setup-guide/  /smarters-player-lite-setup-guide  301
+
+# Short aliases for keyword-cluster pages (301)
+/smarters-lite  /smarters-player-lite-setup-guide  301
+/smarters-player-lite  /smarters-player-lite-setup-guide  301
+/lg  /iptv-lg-smart-tv  301
+/webos  /iptv-lg-smart-tv  301
+/smart-tv  /iptv-smart-tv  301
+/hisense  /iptv-smart-tv  301
+/vidaa  /iptv-smart-tv  301
+/sony-tv  /iptv-smart-tv  301
+/chromecast  /iptv-chromecast-google-tv  301
+/google-tv  /iptv-chromecast-google-tv  301
+/tivimate-pro  /tivimate-premium  301
+/ibo-player  /smartone-set-iptv-ssiptv-setup-guide  301
+/set-iptv  /smartone-set-iptv-ssiptv-setup-guide  301
+/smartone  /smartone-set-iptv-ssiptv-setup-guide  301
+/ss-iptv  /smartone-set-iptv-ssiptv-setup-guide  301
+/ssiptv  /smartone-set-iptv-ssiptv-setup-guide  301
+/mytvonline  /mytvonline-setup-guide  301
+/player  /iptv-player  301
+/players  /iptv-player  301
+/m3u-player  /iptv-player  301
+/providers  /iptv-providers  301
+/iptv-provider  /iptv-providers  301
+/iptv-server  /iptv-providers  301
+/cheap  /cheap-iptv  301
+/lifetime-iptv  /cheap-iptv  301
+/enigma2  /iptv-enigma2-receiver  301
+/cloudstream  /cloudstream-alternative  301
+/cloud-stream  /cloudstream-alternative  301
