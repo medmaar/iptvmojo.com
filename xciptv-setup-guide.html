@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>XCIPTV Setup Guide for IPTVmojo | 2026</title>
+<title>XCIPTV (XC IPTV) Setup Guide 2026 — Firestick &amp; Android</title>
 <meta name="description" content="How to set up XCIPTV with IPTVmojo in minutes. A fast alternative to TiviMate for Android and Firestick. Step-by-step instructions, plus troubleshooting tips.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="XCIPTV Setup Guide for IPTVmojo | 2026">
+<meta property="og:title" content="XCIPTV (XC IPTV) Setup Guide 2026 — Firestick &amp; Android">
 <meta property="og:description" content="How to set up XCIPTV with IPTVmojo in minutes. A fast alternative to TiviMate for Android and Firestick. Step-by-step instructions, plus troubleshooting tips.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://iptvmojo.com/xciptv-setup-guide">
 <meta property="og:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="IPTVmojo IPTV subscription on a smart TV">
 <meta property="og:site_name" content="IPTVmojo">
 <meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://iptvmojo.com/xciptv-setup-guide">
@@ -18,11 +21,13 @@
 <link rel="alternate" hreflang="x-default" href="https://iptvmojo.com/xciptv-setup-guide">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@iptvmojo">
-<meta name="twitter:title" content="XCIPTV Setup Guide for IPTVmojo | 2026">
+<meta name="twitter:title" content="XCIPTV (XC IPTV) Setup Guide 2026 — Firestick &amp; Android">
 <meta name="twitter:description" content="How to set up XCIPTV with IPTVmojo in minutes. A fast alternative to TiviMate for Android and Firestick. Step-by-step instructions, plus troubleshooting tips.">
 <meta name="twitter:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"></noscript>
 <link rel="icon" href="/images/IPTVmojo.png" type="image/png">
 <style>
 :root{--red:#fd0322;--border:rgba(255,255,255,.1);--text:#e8e0ff;--purple:#140438;--card:rgba(255,255,255,.04);--gold:#f1c40f;--green:#2ecc71;--muted:rgba(232,224,255,.55);}
@@ -104,12 +109,14 @@ img{max-width:100%;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:56px;}
 .inc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;}
 .inc-card h4{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.inc-card h3{margin:0;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
 .inc-card p{font-size:.8rem;color:rgba(232,224,255,.6);line-height:1.55;}
 .inc-icon{font-size:1.7rem;margin-bottom:10px;display:block;}
 .steps{counter-reset:step;display:flex;flex-direction:column;gap:14px;max-width:780px;margin:0 auto 50px;}
 .step{display:flex;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
 .step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
 .step h4{color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
+.step h3{margin:0;color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
 .step p{color:rgba(232,224,255,.68);font-size:.84rem;line-height:1.6;}
 .comp-table-wrap{overflow-x:auto;margin-bottom:56px;max-width:900px;margin-left:auto;margin-right:auto;}
 .comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.85rem;}
@@ -141,7 +148,7 @@ img{max-width:100%;}
   "description": "How to set up XCIPTV with IPTVmojo in minutes. A fast alternative to TiviMate for Android and Firestick. Step-by-step instructions, plus troubleshooting tips.",
   "inLanguage": "en-US",
   "datePublished": "2026-01-01",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-11-06",
   "isPartOf": {
     "@type": "WebSite",
     "name": "iptvmojo.com",
@@ -216,6 +223,14 @@ img{max-width:100%;}
         "@type": "Answer",
         "text": "Yes — since Formuler devices run Android, any Android IPTV app including XCIPTV installs the same way. See our Formuler Z11 Pro Max guide."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Is XC IPTV the same as Xtream Codes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not exactly. XCIPTV is a player app; Xtream Codes is the login method (server, username, password) it and many other apps use."
+      }
     }
   ]
 }
@@ -224,56 +239,82 @@ img{max-width:100%;}
 </head>
 <body>
 <nav class="mojo-nav">
-  <a href="/" class="mojo-logo"><img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo IPTV Service"></a>
+  <a href="/" class="mojo-logo"><img src="/images/iptvmojo-logo.png" width="72" height="72" alt="IPTVmojo IPTV Service"></a>
   <div class="mojo-nav-links">
     <a href="/">Home</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/best-iptv.html">Best IPTV</a>
-    <a href="/iptv-devices.html">Devices</a>
-    <a href="/how-it-works.html">How It Works</a>
-    <a href="/about.html">About</a>
-    <a href="/free-trial.html" class="mojo-nav-cta">Free Trial 24H</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/best-iptv">Best IPTV</a>
+    <a href="/iptv-devices">Devices</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/about">About</a>
+    <a href="/free-trial" class="mojo-nav-cta">Free Trial 24H</a>
   </div>
   <div class="mojo-burger" id="burgerBtn" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
 <div class="mojo-mobile-menu" id="mobileMenu">
   <a href="/">Home</a>
-  <a href="/pricing.html">Pricing</a>
-  <a href="/best-iptv.html">Best IPTV</a>
-  <a href="/iptv-devices.html">Devices</a>
-  <a href="/how-it-works.html">How It Works</a>
-  <a href="/about.html">About</a>
-  <a href="/free-trial.html" class="mojo-nav-cta">Free Trial 24H</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/best-iptv">Best IPTV</a>
+  <a href="/iptv-devices">Devices</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/about">About</a>
+  <a href="/free-trial" class="mojo-nav-cta">Free Trial 24H</a>
 </div>
 <main id="content">
 
-<div class="breadcrumb"><a href="index.html">IPTVmojo</a> / <a href="iptv-devices.html">Devices & Apps</a> / <span>XCIPTV</span></div>
+<div class="breadcrumb"><a href="/">IPTVmojo</a> / <a href="/iptv-devices">Devices & Apps</a> / <span>XCIPTV</span></div>
 <div class="page-hero wrap">
   <div class="page-hero-kicker">IPTV App</div>
   <h1>XCIPTV <span>Setup Guide</span> for IPTVmojo</h1>
   <p>XCIPTV is a fast, lightweight IPTV player for Android and Firestick — a solid alternative to TiviMate with a similar feature set.</p>
   <div class="page-hero-btns">
-    <a href="free-trial.html" class="btn-red">Try Free for 24H</a>
-    <a href="iptv-devices.html" class="btn-outline">All Device Guides</a>
+    <a href="/free-trial" class="btn-red">Try Free for 24H</a>
+    <a href="/iptv-devices" class="btn-outline">All Device Guides</a>
   </div>
 </div>
 <div class="wrap" style="padding-bottom:20px;">
 
 <div class="sec-head"><div class="sec-kicker">Setup</div><h2 class="sec-title">Step-by-Step</h2></div>
 <div class="steps">
-<div class="step"><div class="step-num">1</div><div><h4>Install XCIPTV</h4><p>Download XCIPTV from the Google Play Store, or sideload it on Firestick via the Downloader app.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><h4>Open the app and select &quot;Add Playlist&quot;</h4><p>Choose &quot;Xtream Codes&quot; login for the fastest setup with catch-up support.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><h4>Enter your IPTVmojo credentials</h4><p>Input the server URL, username, and password from your welcome email exactly as provided.</p></div></div>
-<div class="step"><div class="step-num">4</div><div><h4>Wait for channels to sync, then browse</h4><p>XCIPTV will load your channel list, EPG, and VOD library — use the side menu to switch between Live, Movies, and Series.</p></div></div>
+<div class="step"><div class="step-num">1</div><div><h3>Install XCIPTV</h3><p>Download XCIPTV from the Google Play Store, or sideload it on Firestick via the Downloader app.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><h3>Open the app and select &quot;Add Playlist&quot;</h3><p>Choose &quot;Xtream Codes&quot; login for the fastest setup with catch-up support.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><h3>Enter your IPTVmojo credentials</h3><p>Input the server URL, username, and password from your welcome email exactly as provided.</p></div></div>
+<div class="step"><div class="step-num">4</div><div><h3>Wait for channels to sync, then browse</h3><p>XCIPTV will load your channel list, EPG, and VOD library — use the side menu to switch between Live, Movies, and Series.</p></div></div>
+</div>
+
+<div class="prose">
+<h2>XC IPTV vs XCIPTV vs Xtream Codes</h2>
+<p><strong>XCIPTV</strong> (also written XC IPTV) is a player app for Android and Fire TV. <strong>Xtream Codes</strong> is the login method it uses: server URL, username and password. Many people searching "XC IPTV" want the login type, which TiviMate, Smarters and IBO Player all support too. See <a href="/blog/what-is-xtream-codes">what is Xtream Codes</a>.</p>
+<h2>Is XCIPTV good on Samsung TV?</h2>
+<p>XCIPTV is an Android app, so it isn't available on Samsung's Tizen TVs. On Samsung, use IBO Player or Smart IPTV. See the <a href="/iptv-samsung-smart-tv">Samsung guide</a>.</p>
 </div>
 
 <div class="related-links">
-<a href="tivimate-setup-guide.html">TiviMate (Alternative)</a>
-<a href="iptv-extreme-setup-guide.html">IPTV Extreme</a>
-<a href="iptv-firestick-setup.html">Firestick Setup</a>
-<a href="iptv-devices.html">← All Devices</a>
+<a href="/tivimate-setup-guide">TiviMate (Alternative)</a>
+<a href="/iptv-extreme-setup-guide">IPTV Extreme</a>
+<a href="/iptv-firestick-setup">Firestick Setup</a>
+<a href="/iptv-devices">← All Devices</a>
+<a href="/iptv-player">Best IPTV Player</a>
 </div>
 
+<div class="prose" data-seo="deep"><h2>Where XCIPTV runs and how it compares</h2>
+<p>XCIPTV is an Android player built around the Xtream Codes login. It runs on Android phones and tablets, Android TV and Google TV boxes, and Amazon Firestick, where you install it with the Downloader app. It does not run natively on iPhone, Apple TV, Samsung or LG TVs. On those devices, use <a href="/iptv-smarters-pro-setup-guide">IPTV Smarters Pro</a> or one of the apps in our <a href="/iptv-samsung-smart-tv">Samsung</a> and <a href="/iptv-lg-smart-tv">LG</a> guides.</p>
+<table>
+<tr><th>Feature</th><th>XCIPTV</th><th>TiviMate</th></tr>
+<tr><td>Login</td><td>Xtream Codes, M3U</td><td>Xtream Codes, M3U</td></tr>
+<tr><td>Guide grid</td><td>Basic</td><td>Cable-style</td></tr>
+<tr><td>Cost</td><td>Free</td><td>Free, Premium optional</td></tr>
+</table>
+
+<h2>Fixing common XCIPTV problems</h2>
+<ul>
+<li><strong>"Invalid username or password"</strong>: check for a space at the end of the username, and confirm the server URL includes the port number exactly as written in your welcome email.</li>
+<li><strong>TV guide is empty</strong>: open Settings, then EPG, and force a refresh. The guide can take a few minutes on first load.</li>
+<li><strong>Video freezes but audio continues</strong>: switch the player in XCIPTV settings (for example between the built-in player and VLC) and test again.</li>
+<li><strong>App closes on start</strong>: clear the app's cache in your device's Android settings, then log in again.</li>
+</ul>
+<p>If a channel still buffers, run through our <a href="/blog/fix-iptv-buffering">IPTV buffering checklist</a> or message support on WhatsApp, which is open 24/7.</p>
+</div>
 <div class="sec-head"><div class="sec-kicker">FAQ</div><h2 class="sec-title">XCIPTV Questions</h2></div>
 <div class="faq-list">
   <div class="faq-item">
@@ -290,7 +331,11 @@ img{max-width:100%;}
   </div>
   <div class="faq-item">
     <div class="faq-q">Can I use XCIPTV on a Formuler box? <span class="faq-icon">+</span></div>
-    <div class="faq-a">Yes — since Formuler devices run Android, any Android IPTV app including XCIPTV installs the same way. See our <a href="formuler-z11-pro-max-setup-guide.html">Formuler Z11 Pro Max guide</a>.</div>
+    <div class="faq-a">Yes — since Formuler devices run Android, any Android IPTV app including XCIPTV installs the same way. See our <a href="/formuler-z11-pro-max-setup-guide">Formuler Z11 Pro Max guide</a>.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Is XC IPTV the same as Xtream Codes? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Not exactly. XCIPTV is a player app; Xtream Codes is the login method (server, username, password) it and many other apps use.</div>
   </div>
 </div>
 
@@ -299,8 +344,8 @@ img{max-width:100%;}
   <h2>Get Your Credentials and Start Watching</h2>
   <p>Try IPTVmojo free for 24 hours, then follow the steps above to get set up on XCIPTV.</p>
   <div class="cta-btns">
-    <a href="free-trial.html" class="btn-red">Get Free 24H Trial</a>
-    <a href="pricing.html" class="btn-outline">View Pricing</a>
+    <a href="/free-trial" class="btn-red">Get Free 24H Trial</a>
+    <a href="/pricing" class="btn-outline">View Pricing</a>
   </div>
 </section>
 
@@ -309,7 +354,7 @@ img{max-width:100%;}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo">
+        <img loading="lazy" decoding="async" src="/images/iptvmojo-logo.png" width="44" height="44" alt="IPTVmojo">
         <div class="footer-brand-text">
           Premium IPTV Service<br>
           <a href="mailto:support@iptvmojo.com">support@iptvmojo.com</a>
@@ -319,52 +364,55 @@ img{max-width:100%;}
         <div class="footer-col">
           <h5>Service</h5>
           <a href="/">Home</a>
-          <a href="/pricing.html">Pricing</a>
-          <a href="/free-trial.html">Free Trial</a>
-          <a href="/how-it-works.html">How It Works</a>
-          <a href="/reseller.html">Reseller</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/free-trial">Free Trial</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/reseller">Reseller</a>
         </div>
         <div class="footer-col">
           <h5>Popular Guides</h5>
-          <a href="/tivimate-setup-guide.html">TiviMate Setup</a>
-          <a href="/iptv-smarters-pro-setup-guide.html">IPTV Smarters Pro</a>
-          <a href="/iptv-firestick-setup.html">Firestick Setup</a>
-          <a href="/iptv-samsung-smart-tv.html">Samsung &amp; LG TV</a>
-          <a href="/formuler-iptv-boxes-guide.html">Formuler Boxes</a>
-          <a href="/kodi-iptv-setup.html">Kodi Setup</a>
+          <a href="/tivimate-setup-guide">TiviMate Setup</a>
+          <a href="/iptv-smarters-pro-setup-guide">IPTV Smarters Pro</a>
+          <a href="/iptv-firestick-setup">Firestick Setup</a>
+          <a href="/iptv-samsung-smart-tv">Samsung TV</a>
+          <a href="/iptv-lg-smart-tv">LG TV</a>
+          <a href="/formuler-iptv-boxes-guide">Formuler Boxes</a>
+          <a href="/kodi-iptv-setup">Kodi Setup</a>
         </div>
         <div class="footer-col">
           <h5>Compare &amp; Explore</h5>
-          <a href="/best-iptv.html">Best IPTV</a>
-          <a href="/iptv-alternatives.html">IPTV Alternatives</a>
-          <a href="/iptv-canada.html">IPTV Canada</a>
-          <a href="/iptv-quebec.html">IPTV Qu&eacute;bec</a>
-          <a href="/iptv-4k.html">IPTV in 4K</a>
-          <a href="/iptv-near-me.html">IPTV Near Me</a>
+          <a href="/best-iptv">Best IPTV</a>
+          <a href="/iptv-alternatives">IPTV Alternatives</a>
+          <a href="/iptv-providers">IPTV Providers</a>
+          <a href="/cheap-iptv">Cheap IPTV</a>
+          <a href="/iptv-canada">IPTV Canada</a>
+          <a href="/iptv-quebec">IPTV Qu&eacute;bec</a>
+          <a href="/iptv-4k">IPTV in 4K</a>
+          <a href="/iptv-near-me">IPTV Near Me</a>
         </div>
         <div class="footer-col">
           <h5>IPTV Guides</h5>
-          <a href="/blog/what-is-iptv.html">What Is IPTV?</a>
-          <a href="/blog/is-iptv-legal.html">Is IPTV Legal?</a>
-          <a href="/blog/m3u-playlist-explained.html">M3U Explained</a>
-          <a href="/blog/best-free-iptv-apps-2026.html">Best Free IPTV Apps</a>
-          <a href="/blog/fix-iptv-buffering.html">Fix Buffering</a>
-          <a href="/blog/iptv-faq.html">IPTV FAQ</a>
+          <a href="/blog/what-is-iptv">What Is IPTV?</a>
+          <a href="/blog/is-iptv-legal">Is IPTV Legal?</a>
+          <a href="/blog/m3u-playlist-explained">M3U Explained</a>
+          <a href="/blog/best-free-iptv-apps-2026">Best Free IPTV Apps</a>
+          <a href="/blog/fix-iptv-buffering">Fix Buffering</a>
+          <a href="/blog/iptv-faq">IPTV FAQ</a>
         </div>
         <div class="footer-col">
           <h5>Company</h5>
-          <a href="/about.html">About Us</a>
-          <a href="/contact.html">Contact Us</a>
-          <a href="/blog.html">Blog</a>
-          <a href="/referral.html">Referral Program</a>
+          <a href="/about">About Us</a>
+          <a href="/contact">Contact Us</a>
+          <a href="/blog">Blog</a>
+          <a href="/referral">Referral Program</a>
           <a href="/go/wa?msg=Hi%2C+I%27m+interested+in+IPTVmojo">WhatsApp Support</a>
         </div>
         <div class="footer-col">
           <h5>Legal</h5>
-          <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
-          <a href="/refund-policy.html">Refund Policy</a>
-          <a href="/dmca.html">DMCA Notice</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+          <a href="/refund-policy">Refund Policy</a>
+          <a href="/dmca">DMCA Notice</a>
         </div>
       </div>
     </div>
