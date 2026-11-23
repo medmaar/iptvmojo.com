@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MAG Box &amp; STBEmu Setup Guide for IPTVmojo | 2026</title>
+<title>MAG Box &amp; STBEmu Pro IPTV Guide 2026 — MAG 254, 322, 424, 524</title>
 <meta name="description" content="How to set up MAG Box &amp; STBEmu with IPTVmojo in minutes. Covers the Portal/Stalker login method. Step-by-step instructions, plus troubleshooting tips.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="MAG Box &amp; STBEmu Setup Guide for IPTVmojo | 2026">
+<meta property="og:title" content="MAG Box &amp; STBEmu Pro IPTV Guide 2026 — MAG 254, 322, 424, 524">
 <meta property="og:description" content="How to set up MAG Box &amp; STBEmu with IPTVmojo in minutes. Covers the Portal/Stalker login method. Step-by-step instructions, plus troubleshooting tips.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://iptvmojo.com/mag-box-stbemu-setup-guide">
 <meta property="og:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="IPTVmojo IPTV subscription on a smart TV">
 <meta property="og:site_name" content="IPTVmojo">
 <meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://iptvmojo.com/mag-box-stbemu-setup-guide">
@@ -18,11 +21,13 @@
 <link rel="alternate" hreflang="x-default" href="https://iptvmojo.com/mag-box-stbemu-setup-guide">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@iptvmojo">
-<meta name="twitter:title" content="MAG Box &amp; STBEmu Setup Guide for IPTVmojo | 2026">
+<meta name="twitter:title" content="MAG Box &amp; STBEmu Pro IPTV Guide 2026 — MAG 254, 322, 424, 524">
 <meta name="twitter:description" content="How to set up MAG Box &amp; STBEmu with IPTVmojo in minutes. Covers the Portal/Stalker login method. Step-by-step instructions, plus troubleshooting tips.">
 <meta name="twitter:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"></noscript>
 <link rel="icon" href="/images/IPTVmojo.png" type="image/png">
 <style>
 :root{--red:#fd0322;--border:rgba(255,255,255,.1);--text:#e8e0ff;--purple:#140438;--card:rgba(255,255,255,.04);--gold:#f1c40f;--green:#2ecc71;--muted:rgba(232,224,255,.55);}
@@ -104,12 +109,14 @@ img{max-width:100%;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:56px;}
 .inc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;}
 .inc-card h4{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.inc-card h3{margin:0;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
 .inc-card p{font-size:.8rem;color:rgba(232,224,255,.6);line-height:1.55;}
 .inc-icon{font-size:1.7rem;margin-bottom:10px;display:block;}
 .steps{counter-reset:step;display:flex;flex-direction:column;gap:14px;max-width:780px;margin:0 auto 50px;}
 .step{display:flex;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
 .step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
 .step h4{color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
+.step h3{margin:0;color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
 .step p{color:rgba(232,224,255,.68);font-size:.84rem;line-height:1.6;}
 .comp-table-wrap{overflow-x:auto;margin-bottom:56px;max-width:900px;margin-left:auto;margin-right:auto;}
 .comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.85rem;}
@@ -141,7 +148,7 @@ img{max-width:100%;}
   "description": "How to set up MAG Box & STBEmu with IPTVmojo in minutes. Covers the Portal/Stalker login method. Step-by-step instructions, plus troubleshooting tips.",
   "inLanguage": "en-US",
   "datePublished": "2026-01-01",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-11-06",
   "isPartOf": {
     "@type": "WebSite",
     "name": "iptvmojo.com",
@@ -216,6 +223,22 @@ img{max-width:100%;}
         "@type": "Answer",
         "text": "Not necessary — a standard Firestick or Android box running TiviMate or IPTV Smarters Pro with your Xtream Codes login is the simplest, most fully-supported path. See our device guides for those options."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What is STBEmu Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The paid version of STBEmu, an Android app that emulates a MAG box. It removes ads and adds options, but still needs a Portal login."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which MAG box is best for IPTV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Current 4K models like the MAG 524 or 424 handle modern H.265 streams. Older MAG 250/254 boxes can't play 4K or HEVC channels."
+      }
     }
   ]
 }
@@ -224,62 +247,79 @@ img{max-width:100%;}
 </head>
 <body>
 <nav class="mojo-nav">
-  <a href="/" class="mojo-logo"><img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo IPTV Service"></a>
+  <a href="/" class="mojo-logo"><img src="/images/iptvmojo-logo.png" width="72" height="72" alt="IPTVmojo IPTV Service"></a>
   <div class="mojo-nav-links">
     <a href="/">Home</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/best-iptv.html">Best IPTV</a>
-    <a href="/iptv-devices.html">Devices</a>
-    <a href="/how-it-works.html">How It Works</a>
-    <a href="/about.html">About</a>
-    <a href="/free-trial.html" class="mojo-nav-cta">Free Trial 24H</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/best-iptv">Best IPTV</a>
+    <a href="/iptv-devices">Devices</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/about">About</a>
+    <a href="/free-trial" class="mojo-nav-cta">Free Trial 24H</a>
   </div>
   <div class="mojo-burger" id="burgerBtn" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
 <div class="mojo-mobile-menu" id="mobileMenu">
   <a href="/">Home</a>
-  <a href="/pricing.html">Pricing</a>
-  <a href="/best-iptv.html">Best IPTV</a>
-  <a href="/iptv-devices.html">Devices</a>
-  <a href="/how-it-works.html">How It Works</a>
-  <a href="/about.html">About</a>
-  <a href="/free-trial.html" class="mojo-nav-cta">Free Trial 24H</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/best-iptv">Best IPTV</a>
+  <a href="/iptv-devices">Devices</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/about">About</a>
+  <a href="/free-trial" class="mojo-nav-cta">Free Trial 24H</a>
 </div>
 <main id="content">
 
-<div class="breadcrumb"><a href="index.html">IPTVmojo</a> / <a href="iptv-devices.html">Devices & Apps</a> / <span>MAG Box &amp; STBEmu</span></div>
+<div class="breadcrumb"><a href="/">IPTVmojo</a> / <a href="/iptv-devices">Devices & Apps</a> / <span>MAG Box &amp; STBEmu</span></div>
 <div class="page-hero wrap">
   <div class="page-hero-kicker">Portal / Stalker</div>
   <h1>MAG Box &amp; STBEmu <span>Setup Guide</span> for IPTVmojo</h1>
   <p>MAG boxes (like the MAG 250 and 254) use a different login method than TiviMate or Smarters Pro — a &quot;Portal&quot; URL instead of M3U or Xtream Codes. STBEmu and Nanomid let you emulate a MAG box on Android. Here&#39;s how it works.</p>
   <div class="page-hero-btns">
-    <a href="free-trial.html" class="btn-red">Try Free for 24H</a>
-    <a href="iptv-devices.html" class="btn-outline">All Device Guides</a>
+    <a href="/free-trial" class="btn-red">Try Free for 24H</a>
+    <a href="/iptv-devices" class="btn-outline">All Device Guides</a>
   </div>
 </div>
 <div class="wrap" style="padding-bottom:20px;">
 <div class="sec-head"><div class="sec-kicker">Setup</div><h2 class="sec-title">Step-by-Step</h2></div>
 <div class="steps">
-<div class="step"><div class="step-num">1</div><div><h4>Understand the Portal login method</h4><p>MAG boxes and their emulator apps (STBEmu, Nanomid) connect using a Portal URL and a device MAC address, rather than the M3U or Xtream Codes logins used by TiviMate or Smarters Pro.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><h4>Choose your setup: physical MAG box or STBEmu app</h4><p>If you own a physical MAG 250/254, you&#39;ll configure it directly. If not, install STBEmu or Nanomid from the Google Play Store to emulate one on any Android device.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><h4>Enter your Portal URL and MAC address</h4><p>IPTVmojo primarily issues M3U/Xtream Codes credentials rather than Portal-based logins — contact support to confirm Portal compatibility for your specific setup before relying on this method.</p></div></div>
-<div class="step"><div class="step-num">4</div><div><h4>Prefer M3U or Xtream Codes instead</h4><p>For the smoothest experience with IPTVmojo, we generally recommend <a href="tivimate-setup-guide.html">TiviMate</a> or <a href="iptv-smarters-pro-setup-guide.html">IPTV Smarters Pro</a> using the Xtream Codes login sent in your welcome email.</p></div></div>
+<div class="step"><div class="step-num">1</div><div><h3>Understand the Portal login method</h3><p>MAG boxes and their emulator apps (STBEmu, Nanomid) connect using a Portal URL and a device MAC address, rather than the M3U or Xtream Codes logins used by TiviMate or Smarters Pro.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><h3>Choose your setup: physical MAG box or STBEmu app</h3><p>If you own a physical MAG 250/254, you&#39;ll configure it directly. If not, install STBEmu or Nanomid from the Google Play Store to emulate one on any Android device.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><h3>Enter your Portal URL and MAC address</h3><p>IPTVmojo primarily issues M3U/Xtream Codes credentials rather than Portal-based logins — contact support to confirm Portal compatibility for your specific setup before relying on this method.</p></div></div>
+<div class="step"><div class="step-num">4</div><div><h3>Prefer M3U or Xtream Codes instead</h3><p>For the smoothest experience with IPTVmojo, we generally recommend <a href="/tivimate-setup-guide">TiviMate</a> or <a href="/iptv-smarters-pro-setup-guide">IPTV Smarters Pro</a> using the Xtream Codes login sent in your welcome email.</p></div></div>
 </div>
+<div class="prose">
+<h2>MAG box models at a glance</h2>
+<table>
+<tr><th>Model</th><th>Generation</th><th>Notes for IPTV</th></tr>
+<tr><td>MAG 250 / 254 / 256</td><td>Older HD</td><td>Still common, but they can't play 4K and most can't decode H.265 channels</td></tr>
+<tr><td>MAG 322 / 324</td><td>HD with H.265</td><td>Good budget HD boxes</td></tr>
+<tr><td>MAG 410</td><td>4K Android-based</td><td>Runs Android apps as well as the portal</td></tr>
+<tr><td>MAG 420 / 424 / 425A</td><td>4K Linux</td><td>Fast 4K portal boxes</td></tr>
+<tr><td>MAG 520 / 524</td><td>Current 4K Linux</td><td>Most recent mainstream models</td></tr>
+</table>
+<p>Model suffixes such as "w1" and "w3" indicate built-in Wi-Fi modules. All MAG boxes are made by Infomir.</p>
+<h2>STBEmu Pro vs STBEmu (free)</h2>
+<p>STBEmu turns an Android phone, tablet, Fire TV or Android box into a virtual MAG box. The free version shows ads and has fewer options; <strong>STBEmu Pro</strong> is a paid unlock with no ads and more customisation. Both need a Portal URL and an authorised MAC address. Since IPTVmojo's standard logins are Xtream Codes and M3U, most Android users get a better experience with <a href="/tivimate-setup-guide">TiviMate</a> or Smarters.</p>
+</div>
+
 <div class="related-links">
-<a href="blog/m3u-playlist-explained.html">M3U & Xtream Codes Explained</a>
-<a href="tivimate-setup-guide.html">TiviMate (Recommended)</a>
-<a href="contact.html">Contact Support</a>
-<a href="iptv-devices.html">← All Devices</a>
+<a href="/blog/m3u-playlist-explained">M3U & Xtream Codes Explained</a>
+<a href="/tivimate-setup-guide">TiviMate (Recommended)</a>
+<a href="/contact">Contact Support</a>
+<a href="/iptv-devices">← All Devices</a>
+<a href="/mytvonline-setup-guide">MyTVOnline</a>
+<a href="/iptv-enigma2-receiver">Enigma2 Receivers</a>
 </div>
 <div class="sec-head"><div class="sec-kicker">FAQ</div><h2 class="sec-title">MAG Box &amp; STBEmu Questions</h2></div>
 <div class="faq-list">
   <div class="faq-item">
     <div class="faq-q">What&#39;s the difference between M3U, Xtream Codes, and Portal logins? <span class="faq-icon">+</span></div>
-    <div class="faq-a">They&#39;re three different ways an app connects to an IPTV service. M3U is a single playlist link; Xtream Codes uses a server URL plus username/password; Portal (used by MAG boxes and STBEmu) uses a portal URL tied to a device&#39;s MAC address. See our <a href="blog/m3u-playlist-explained.html">M3U explainer</a> for more on the first two.</div>
+    <div class="faq-a">They&#39;re three different ways an app connects to an IPTV service. M3U is a single playlist link; Xtream Codes uses a server URL plus username/password; Portal (used by MAG boxes and STBEmu) uses a portal URL tied to a device&#39;s MAC address. See our <a href="/blog/m3u-playlist-explained">M3U explainer</a> for more on the first two.</div>
   </div>
   <div class="faq-item">
     <div class="faq-q">Does IPTVmojo support Portal/Stalker logins for MAG boxes? <span class="faq-icon">+</span></div>
-    <div class="faq-a">IPTVmojo&#39;s standard credentials are M3U and Xtream Codes based. If you specifically need Portal-based access for a MAG box or STBEmu, contact <a href="contact.html">support</a> to confirm current compatibility before purchasing.</div>
+    <div class="faq-a">IPTVmojo&#39;s standard credentials are M3U and Xtream Codes based. If you specifically need Portal-based access for a MAG box or STBEmu, contact <a href="/contact">support</a> to confirm current compatibility before purchasing.</div>
   </div>
   <div class="faq-item">
     <div class="faq-q">What is STBEmu? <span class="faq-icon">+</span></div>
@@ -287,7 +327,7 @@ img{max-width:100%;}
   </div>
   <div class="faq-item">
     <div class="faq-q">Should I buy a MAG box specifically for IPTVmojo? <span class="faq-icon">+</span></div>
-    <div class="faq-a">Not necessary — a standard Firestick or Android box running TiviMate or IPTV Smarters Pro with your Xtream Codes login is the simplest, most fully-supported path. See our <a href="iptv-devices.html">device guides</a> for those options.</div>
+    <div class="faq-a">Not necessary — a standard Firestick or Android box running TiviMate or IPTV Smarters Pro with your Xtream Codes login is the simplest, most fully-supported path. See our <a href="/iptv-devices">device guides</a> for those options.</div>
   </div>  <div class="faq-item">
     <div class="faq-q">What is Infomir, and how does it relate to MAG boxes? <span class="faq-icon">+</span></div>
     <div class="faq-a">Infomir is the manufacturer behind the MAG line of set-top boxes (including the MAG 250, MAG 254, and MAG 322), which is why you'll see the brand referred to as either &quot;MAG&quot; or &quot;Infomir MAG.&quot;</div>
@@ -296,7 +336,14 @@ img{max-width:100%;}
     <div class="faq-q">Are there other MAG-style or Portal-compatible boxes besides the official MAG line? <span class="faq-icon">+</span></div>
     <div class="faq-a">Yes — devices like Amiko, Dreamlink, and various Android boxes running STBEmu or Nanomid can emulate the same Portal login method without being an official Infomir MAG box.</div>
   </div>
-
+  <div class="faq-item">
+    <div class="faq-q">What is STBEmu Pro? <span class="faq-icon">+</span></div>
+    <div class="faq-a">The paid version of STBEmu, an Android app that emulates a MAG box. It removes ads and adds options, but still needs a Portal login.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Which MAG box is best for IPTV? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Current 4K models like the MAG 524 or 424 handle modern H.265 streams. Older MAG 250/254 boxes can't play 4K or HEVC channels.</div>
+  </div>
 </div>
 
 </div>
@@ -304,8 +351,8 @@ img{max-width:100%;}
   <h2>Get Your Credentials and Start Watching</h2>
   <p>Try IPTVmojo free for 24 hours, then follow the steps above to get set up on MAG Box &amp; STBEmu.</p>
   <div class="cta-btns">
-    <a href="free-trial.html" class="btn-red">Get Free 24H Trial</a>
-    <a href="pricing.html" class="btn-outline">View Pricing</a>
+    <a href="/free-trial" class="btn-red">Get Free 24H Trial</a>
+    <a href="/pricing" class="btn-outline">View Pricing</a>
   </div>
 </section>
 
@@ -314,7 +361,7 @@ img{max-width:100%;}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo">
+        <img loading="lazy" decoding="async" src="/images/iptvmojo-logo.png" width="44" height="44" alt="IPTVmojo">
         <div class="footer-brand-text">
           Premium IPTV Service<br>
           <a href="mailto:support@iptvmojo.com">support@iptvmojo.com</a>
@@ -324,52 +371,55 @@ img{max-width:100%;}
         <div class="footer-col">
           <h5>Service</h5>
           <a href="/">Home</a>
-          <a href="/pricing.html">Pricing</a>
-          <a href="/free-trial.html">Free Trial</a>
-          <a href="/how-it-works.html">How It Works</a>
-          <a href="/reseller.html">Reseller</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/free-trial">Free Trial</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/reseller">Reseller</a>
         </div>
         <div class="footer-col">
           <h5>Popular Guides</h5>
-          <a href="/tivimate-setup-guide.html">TiviMate Setup</a>
-          <a href="/iptv-smarters-pro-setup-guide.html">IPTV Smarters Pro</a>
-          <a href="/iptv-firestick-setup.html">Firestick Setup</a>
-          <a href="/iptv-samsung-smart-tv.html">Samsung &amp; LG TV</a>
-          <a href="/formuler-iptv-boxes-guide.html">Formuler Boxes</a>
-          <a href="/kodi-iptv-setup.html">Kodi Setup</a>
+          <a href="/tivimate-setup-guide">TiviMate Setup</a>
+          <a href="/iptv-smarters-pro-setup-guide">IPTV Smarters Pro</a>
+          <a href="/iptv-firestick-setup">Firestick Setup</a>
+          <a href="/iptv-samsung-smart-tv">Samsung TV</a>
+          <a href="/iptv-lg-smart-tv">LG TV</a>
+          <a href="/formuler-iptv-boxes-guide">Formuler Boxes</a>
+          <a href="/kodi-iptv-setup">Kodi Setup</a>
         </div>
         <div class="footer-col">
           <h5>Compare &amp; Explore</h5>
-          <a href="/best-iptv.html">Best IPTV</a>
-          <a href="/iptv-alternatives.html">IPTV Alternatives</a>
-          <a href="/iptv-canada.html">IPTV Canada</a>
-          <a href="/iptv-quebec.html">IPTV Qu&eacute;bec</a>
-          <a href="/iptv-4k.html">IPTV in 4K</a>
-          <a href="/iptv-near-me.html">IPTV Near Me</a>
+          <a href="/best-iptv">Best IPTV</a>
+          <a href="/iptv-alternatives">IPTV Alternatives</a>
+          <a href="/iptv-providers">IPTV Providers</a>
+          <a href="/cheap-iptv">Cheap IPTV</a>
+          <a href="/iptv-canada">IPTV Canada</a>
+          <a href="/iptv-quebec">IPTV Qu&eacute;bec</a>
+          <a href="/iptv-4k">IPTV in 4K</a>
+          <a href="/iptv-near-me">IPTV Near Me</a>
         </div>
         <div class="footer-col">
           <h5>IPTV Guides</h5>
-          <a href="/blog/what-is-iptv.html">What Is IPTV?</a>
-          <a href="/blog/is-iptv-legal.html">Is IPTV Legal?</a>
-          <a href="/blog/m3u-playlist-explained.html">M3U Explained</a>
-          <a href="/blog/best-free-iptv-apps-2026.html">Best Free IPTV Apps</a>
-          <a href="/blog/fix-iptv-buffering.html">Fix Buffering</a>
-          <a href="/blog/iptv-faq.html">IPTV FAQ</a>
+          <a href="/blog/what-is-iptv">What Is IPTV?</a>
+          <a href="/blog/is-iptv-legal">Is IPTV Legal?</a>
+          <a href="/blog/m3u-playlist-explained">M3U Explained</a>
+          <a href="/blog/best-free-iptv-apps-2026">Best Free IPTV Apps</a>
+          <a href="/blog/fix-iptv-buffering">Fix Buffering</a>
+          <a href="/blog/iptv-faq">IPTV FAQ</a>
         </div>
         <div class="footer-col">
           <h5>Company</h5>
-          <a href="/about.html">About Us</a>
-          <a href="/contact.html">Contact Us</a>
-          <a href="/blog.html">Blog</a>
-          <a href="/referral.html">Referral Program</a>
+          <a href="/about">About Us</a>
+          <a href="/contact">Contact Us</a>
+          <a href="/blog">Blog</a>
+          <a href="/referral">Referral Program</a>
           <a href="/go/wa?msg=Hi%2C+I%27m+interested+in+IPTVmojo">WhatsApp Support</a>
         </div>
         <div class="footer-col">
           <h5>Legal</h5>
-          <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
-          <a href="/refund-policy.html">Refund Policy</a>
-          <a href="/dmca.html">DMCA Notice</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+          <a href="/refund-policy">Refund Policy</a>
+          <a href="/dmca">DMCA Notice</a>
         </div>
       </div>
     </div>

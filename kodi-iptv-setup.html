@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kodi Setup Guide for IPTVmojo | 2026</title>
+<title>Kodi IPTV Setup 2026 — Add M3U &amp; Live TV to Kodi | IPTVmojo</title>
 <meta name="description" content="How to set up Kodi with IPTVmojo in minutes. Add IPTVmojo via the PVR IPTV Simple Client. Step-by-step instructions, plus troubleshooting tips.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="Kodi Setup Guide for IPTVmojo | 2026">
+<meta property="og:title" content="Kodi IPTV Setup 2026 — Add M3U &amp; Live TV to Kodi | IPTVmojo">
 <meta property="og:description" content="How to set up Kodi with IPTVmojo in minutes. Add IPTVmojo via the PVR IPTV Simple Client. Step-by-step instructions, plus troubleshooting tips.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://iptvmojo.com/kodi-iptv-setup">
 <meta property="og:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="IPTVmojo IPTV subscription on a smart TV">
 <meta property="og:site_name" content="IPTVmojo">
 <meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://iptvmojo.com/kodi-iptv-setup">
@@ -18,11 +21,13 @@
 <link rel="alternate" hreflang="x-default" href="https://iptvmojo.com/kodi-iptv-setup">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@iptvmojo">
-<meta name="twitter:title" content="Kodi Setup Guide for IPTVmojo | 2026">
+<meta name="twitter:title" content="Kodi IPTV Setup 2026 — Add M3U &amp; Live TV to Kodi | IPTVmojo">
 <meta name="twitter:description" content="How to set up Kodi with IPTVmojo in minutes. Add IPTVmojo via the PVR IPTV Simple Client. Step-by-step instructions, plus troubleshooting tips.">
 <meta name="twitter:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"></noscript>
 <link rel="icon" href="/images/IPTVmojo.png" type="image/png">
 <style>
 :root{--red:#fd0322;--border:rgba(255,255,255,.1);--text:#e8e0ff;--purple:#140438;--card:rgba(255,255,255,.04);--gold:#f1c40f;--green:#2ecc71;--muted:rgba(232,224,255,.55);}
@@ -104,12 +109,14 @@ img{max-width:100%;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:56px;}
 .inc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;}
 .inc-card h4{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.inc-card h3{margin:0;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
 .inc-card p{font-size:.8rem;color:rgba(232,224,255,.6);line-height:1.55;}
 .inc-icon{font-size:1.7rem;margin-bottom:10px;display:block;}
 .steps{counter-reset:step;display:flex;flex-direction:column;gap:14px;max-width:780px;margin:0 auto 50px;}
 .step{display:flex;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
 .step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
 .step h4{color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
+.step h3{margin:0;color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
 .step p{color:rgba(232,224,255,.68);font-size:.84rem;line-height:1.6;}
 .comp-table-wrap{overflow-x:auto;margin-bottom:56px;max-width:900px;margin-left:auto;margin-right:auto;}
 .comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.85rem;}
@@ -141,7 +148,7 @@ img{max-width:100%;}
   "description": "How to set up Kodi with IPTVmojo in minutes. Add IPTVmojo via the PVR IPTV Simple Client. Step-by-step instructions, plus troubleshooting tips.",
   "inLanguage": "en-US",
   "datePublished": "2026-01-01",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-11-06",
   "isPartOf": {
     "@type": "WebSite",
     "name": "iptvmojo.com",
@@ -216,6 +223,14 @@ img{max-width:100%;}
         "@type": "Answer",
         "text": "Yes, Kodi is available on Firestick via sideloading, and the same PVR IPTV Simple Client setup applies there too."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best way to watch IPTV on Kodi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the official PVR IPTV Simple Client add-on with your M3U link and EPG URL. It gives you Kodi's built-in TV guide and channel list."
+      }
     }
   ]
 }
@@ -234,6 +249,24 @@ img{max-width:100%;}
       "position": 1,
       "name": "Open Kodi and go to Add-ons",
       "text": "From the Kodi home screen, select the Add-ons icon, then the add-on browser (the open box icon)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Install \"PVR IPTV Simple Client\"",
+      "text": "Go to My Add-ons > PVR clients > PVR IPTV Simple Client, and enable it."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Configure the add-on with your M3U URL",
+      "text": "Open the add-on's settings, select \"Remote path\" as the M3U playlist type, and paste your IPTVmojo playlist URL from your welcome email."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Enable the PVR client and restart Kodi",
+      "text": "Confirm the settings, restart Kodi, and your channels will appear under the Kodi \"TV\" section."
     }
   ]
 }
@@ -241,56 +274,81 @@ img{max-width:100%;}
 </head>
 <body>
 <nav class="mojo-nav">
-  <a href="/" class="mojo-logo"><img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo IPTV Service"></a>
+  <a href="/" class="mojo-logo"><img src="/images/iptvmojo-logo.png" width="72" height="72" alt="IPTVmojo IPTV Service"></a>
   <div class="mojo-nav-links">
     <a href="/">Home</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/best-iptv.html">Best IPTV</a>
-    <a href="/iptv-devices.html">Devices</a>
-    <a href="/how-it-works.html">How It Works</a>
-    <a href="/about.html">About</a>
-    <a href="/free-trial.html" class="mojo-nav-cta">Free Trial 24H</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/best-iptv">Best IPTV</a>
+    <a href="/iptv-devices">Devices</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/about">About</a>
+    <a href="/free-trial" class="mojo-nav-cta">Free Trial 24H</a>
   </div>
   <div class="mojo-burger" id="burgerBtn" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
 <div class="mojo-mobile-menu" id="mobileMenu">
   <a href="/">Home</a>
-  <a href="/pricing.html">Pricing</a>
-  <a href="/best-iptv.html">Best IPTV</a>
-  <a href="/iptv-devices.html">Devices</a>
-  <a href="/how-it-works.html">How It Works</a>
-  <a href="/about.html">About</a>
-  <a href="/free-trial.html" class="mojo-nav-cta">Free Trial 24H</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/best-iptv">Best IPTV</a>
+  <a href="/iptv-devices">Devices</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/about">About</a>
+  <a href="/free-trial" class="mojo-nav-cta">Free Trial 24H</a>
 </div>
 <main id="content">
 
-<div class="breadcrumb"><a href="index.html">IPTVmojo</a> / <a href="iptv-devices.html">Devices & Apps</a> / <span>Kodi</span></div>
+<div class="breadcrumb"><a href="/">IPTVmojo</a> / <a href="/iptv-devices">Devices & Apps</a> / <span>Kodi</span></div>
 <div class="page-hero wrap">
   <div class="page-hero-kicker">Media Center</div>
   <h1>Kodi <span>Setup Guide</span> for IPTVmojo</h1>
   <p>Add IPTVmojo to Kodi using the built-in PVR IPTV Simple Client add-on — a good option if Kodi is already your main media center.</p>
   <div class="page-hero-btns">
-    <a href="free-trial.html" class="btn-red">Try Free for 24H</a>
-    <a href="iptv-devices.html" class="btn-outline">All Device Guides</a>
+    <a href="/free-trial" class="btn-red">Try Free for 24H</a>
+    <a href="/iptv-devices" class="btn-outline">All Device Guides</a>
   </div>
 </div>
 <div class="wrap" style="padding-bottom:20px;">
 
 <div class="sec-head"><div class="sec-kicker">Setup</div><h2 class="sec-title">Step-by-Step</h2></div>
 <div class="steps">
-<div class="step"><div class="step-num">1</div><div><h4>Open Kodi and go to Add-ons</h4><p>From the Kodi home screen, select the Add-ons icon, then the add-on browser (the open box icon).</p></div></div>
-<div class="step"><div class="step-num">2</div><div><h4>Install &quot;PVR IPTV Simple Client&quot;</h4><p>Go to My Add-ons &gt; PVR clients &gt; PVR IPTV Simple Client, and enable it.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><h4>Configure the add-on with your M3U URL</h4><p>Open the add-on&#39;s settings, select &quot;Remote path&quot; as the M3U playlist type, and paste your IPTVmojo playlist URL from your welcome email.</p></div></div>
-<div class="step"><div class="step-num">4</div><div><h4>Enable the PVR client and restart Kodi</h4><p>Confirm the settings, restart Kodi, and your channels will appear under the Kodi &quot;TV&quot; section.</p></div></div>
+<div class="step"><div class="step-num">1</div><div><h3>Open Kodi and go to Add-ons</h3><p>From the Kodi home screen, select the Add-ons icon, then the add-on browser (the open box icon).</p></div></div>
+<div class="step"><div class="step-num">2</div><div><h3>Install &quot;PVR IPTV Simple Client&quot;</h3><p>Go to My Add-ons &gt; PVR clients &gt; PVR IPTV Simple Client, and enable it.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><h3>Configure the add-on with your M3U URL</h3><p>Open the add-on&#39;s settings, select &quot;Remote path&quot; as the M3U playlist type, and paste your IPTVmojo playlist URL from your welcome email.</p></div></div>
+<div class="step"><div class="step-num">4</div><div><h3>Enable the PVR client and restart Kodi</h3><p>Confirm the settings, restart Kodi, and your channels will appear under the Kodi &quot;TV&quot; section.</p></div></div>
+</div>
+
+<div class="prose">
+<h2>Adding the TV guide (EPG) in Kodi</h2>
+<p>In the <em>PVR IPTV Simple Client</em> settings, open the <em>EPG</em> tab and paste the XMLTV guide link from your IPTVmojo email if one is provided. Restart Kodi and the <em>TV → Guide</em> view fills in. Set <em>EPG time shift</em> if times are off.</p>
+<h2>Kodi tips for live TV</h2>
+<ul>
+<li>Enable <em>Settings → Player → Videos → Adjust display refresh rate</em> for smoother sports.</li>
+<li>Keep only one IPTV client enabled to avoid duplicate channel lists.</li>
+<li>Avoid add-ons from unknown repositories. They break often and can be unsafe.</li>
+</ul>
 </div>
 
 <div class="related-links">
-<a href="tivimate-setup-guide.html">TiviMate (Alternative)</a>
-<a href="iptv-firestick-setup.html">Firestick Setup</a>
-<a href="iptv-devices.html">All Devices</a>
-<a href="iptv-devices.html">← All Devices</a>
+<a href="/tivimate-setup-guide">TiviMate (Alternative)</a>
+<a href="/iptv-firestick-setup">Firestick Setup</a>
+<a href="/iptv-devices">All Devices</a>
+<a href="/iptv-devices">← All Devices</a>
 </div>
 
+<div class="prose" data-seo="deep"><h2>Is Kodi the right IPTV player for you?</h2>
+<p>Kodi is a free, open-source media centre that runs on Windows, Mac, Linux, Android, Firestick and Raspberry Pi. With the official PVR IPTV Simple Client add-on it can play any M3U playlist with a full TV guide. It suits people who already use Kodi for their own media library. If you only want live TV, a dedicated app such as <a href="/tivimate-setup-guide">TiviMate</a> is quicker to set up.</p>
+<h3>Official sources only</h3>
+<p>Download Kodi from <a href="https://kodi.tv/download" target="_blank" rel="noopener">kodi.tv</a> or your device's official app store, and install PVR IPTV Simple Client from the official Kodi repository. The add-on's settings are documented on the <a href="https://kodi.wiki/view/Add-on:PVR_IPTV_Simple_Client" target="_blank" rel="noopener">Kodi wiki</a>. Avoid "pre-loaded" Kodi builds: they are often outdated and can include add-ons from unknown sources.</p>
+
+<h3>Fixing common Kodi IPTV issues</h3>
+<ul>
+<li><strong>"No PVR client enabled"</strong>: open Add-ons, My add-ons, PVR clients, and make sure PVR IPTV Simple Client is enabled.</li>
+<li><strong>Channels load but no guide</strong>: paste the XMLTV EPG link from your welcome email into the add-on's EPG settings, then clear data under Settings, PVR and Live TV, Guide.</li>
+<li><strong>Stuttering video</strong>: in Player settings, enable hardware acceleration, or try a lighter skin on older devices.</li>
+<li><strong>Playlist changes not showing</strong>: set the add-on to refresh the M3U on start, or restart Kodi.</li>
+</ul>
+<p>Kodi on a <a href="/iptv-firestick-setup">Firestick</a> or <a href="/iptv-android-tv-box">Android TV box</a> works best with a wired connection or strong 5 GHz Wi-Fi. Try it with the <a href="/free-trial">free 24-hour trial</a> before choosing a <a href="/pricing">plan</a>.</p>
+</div>
 <div class="sec-head"><div class="sec-kicker">FAQ</div><h2 class="sec-title">Kodi Questions</h2></div>
 <div class="faq-list">
   <div class="faq-item">
@@ -303,7 +361,7 @@ img{max-width:100%;}
   </div>
   <div class="faq-item">
     <div class="faq-q">Is Kodi better than TiviMate for IPTVmojo? <span class="faq-icon">+</span></div>
-    <div class="faq-a">Kodi is a good choice if you&#39;re already using it as your main media center for other content. If IPTV is your primary use case, <a href="tivimate-setup-guide.html">TiviMate</a> generally offers a smoother, more purpose-built live TV interface.</div>
+    <div class="faq-a">Kodi is a good choice if you&#39;re already using it as your main media center for other content. If IPTV is your primary use case, <a href="/tivimate-setup-guide">TiviMate</a> generally offers a smoother, more purpose-built live TV interface.</div>
   </div>
   <div class="faq-item">
     <div class="faq-q">Can I use Kodi on Firestick as well? <span class="faq-icon">+</span></div>
@@ -312,7 +370,10 @@ img{max-width:100%;}
     <div class="faq-q">Is this the same as 'kodi live tv'? <span class="faq-icon">+</span></div>
     <div class="faq-a">Yes — what people usually mean by &quot;Kodi live TV&quot; or &quot;Kodi IPTV&quot; is exactly this setup: the built-in PVR IPTV Simple Client add-on pointed at your M3U playlist and EPG.</div>
   </div>
-
+  <div class="faq-item">
+    <div class="faq-q">What is the best way to watch IPTV on Kodi? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Use the official PVR IPTV Simple Client add-on with your M3U link and EPG URL. It gives you Kodi's built-in TV guide and channel list.</div>
+  </div>
 </div>
 
 </div>
@@ -320,8 +381,8 @@ img{max-width:100%;}
   <h2>Get Your Credentials and Start Watching</h2>
   <p>Try IPTVmojo free for 24 hours, then follow the steps above to get set up on Kodi.</p>
   <div class="cta-btns">
-    <a href="free-trial.html" class="btn-red">Get Free 24H Trial</a>
-    <a href="pricing.html" class="btn-outline">View Pricing</a>
+    <a href="/free-trial" class="btn-red">Get Free 24H Trial</a>
+    <a href="/pricing" class="btn-outline">View Pricing</a>
   </div>
 </section>
 
@@ -330,7 +391,7 @@ img{max-width:100%;}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo">
+        <img loading="lazy" decoding="async" src="/images/iptvmojo-logo.png" width="44" height="44" alt="IPTVmojo">
         <div class="footer-brand-text">
           Premium IPTV Service<br>
           <a href="mailto:support@iptvmojo.com">support@iptvmojo.com</a>
@@ -340,52 +401,55 @@ img{max-width:100%;}
         <div class="footer-col">
           <h5>Service</h5>
           <a href="/">Home</a>
-          <a href="/pricing.html">Pricing</a>
-          <a href="/free-trial.html">Free Trial</a>
-          <a href="/how-it-works.html">How It Works</a>
-          <a href="/reseller.html">Reseller</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/free-trial">Free Trial</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/reseller">Reseller</a>
         </div>
         <div class="footer-col">
           <h5>Popular Guides</h5>
-          <a href="/tivimate-setup-guide.html">TiviMate Setup</a>
-          <a href="/iptv-smarters-pro-setup-guide.html">IPTV Smarters Pro</a>
-          <a href="/iptv-firestick-setup.html">Firestick Setup</a>
-          <a href="/iptv-samsung-smart-tv.html">Samsung &amp; LG TV</a>
-          <a href="/formuler-iptv-boxes-guide.html">Formuler Boxes</a>
-          <a href="/kodi-iptv-setup.html">Kodi Setup</a>
+          <a href="/tivimate-setup-guide">TiviMate Setup</a>
+          <a href="/iptv-smarters-pro-setup-guide">IPTV Smarters Pro</a>
+          <a href="/iptv-firestick-setup">Firestick Setup</a>
+          <a href="/iptv-samsung-smart-tv">Samsung TV</a>
+          <a href="/iptv-lg-smart-tv">LG TV</a>
+          <a href="/formuler-iptv-boxes-guide">Formuler Boxes</a>
+          <a href="/kodi-iptv-setup">Kodi Setup</a>
         </div>
         <div class="footer-col">
           <h5>Compare &amp; Explore</h5>
-          <a href="/best-iptv.html">Best IPTV</a>
-          <a href="/iptv-alternatives.html">IPTV Alternatives</a>
-          <a href="/iptv-canada.html">IPTV Canada</a>
-          <a href="/iptv-quebec.html">IPTV Qu&eacute;bec</a>
-          <a href="/iptv-4k.html">IPTV in 4K</a>
-          <a href="/iptv-near-me.html">IPTV Near Me</a>
+          <a href="/best-iptv">Best IPTV</a>
+          <a href="/iptv-alternatives">IPTV Alternatives</a>
+          <a href="/iptv-providers">IPTV Providers</a>
+          <a href="/cheap-iptv">Cheap IPTV</a>
+          <a href="/iptv-canada">IPTV Canada</a>
+          <a href="/iptv-quebec">IPTV Qu&eacute;bec</a>
+          <a href="/iptv-4k">IPTV in 4K</a>
+          <a href="/iptv-near-me">IPTV Near Me</a>
         </div>
         <div class="footer-col">
           <h5>IPTV Guides</h5>
-          <a href="/blog/what-is-iptv.html">What Is IPTV?</a>
-          <a href="/blog/is-iptv-legal.html">Is IPTV Legal?</a>
-          <a href="/blog/m3u-playlist-explained.html">M3U Explained</a>
-          <a href="/blog/best-free-iptv-apps-2026.html">Best Free IPTV Apps</a>
-          <a href="/blog/fix-iptv-buffering.html">Fix Buffering</a>
-          <a href="/blog/iptv-faq.html">IPTV FAQ</a>
+          <a href="/blog/what-is-iptv">What Is IPTV?</a>
+          <a href="/blog/is-iptv-legal">Is IPTV Legal?</a>
+          <a href="/blog/m3u-playlist-explained">M3U Explained</a>
+          <a href="/blog/best-free-iptv-apps-2026">Best Free IPTV Apps</a>
+          <a href="/blog/fix-iptv-buffering">Fix Buffering</a>
+          <a href="/blog/iptv-faq">IPTV FAQ</a>
         </div>
         <div class="footer-col">
           <h5>Company</h5>
-          <a href="/about.html">About Us</a>
-          <a href="/contact.html">Contact Us</a>
-          <a href="/blog.html">Blog</a>
-          <a href="/referral.html">Referral Program</a>
+          <a href="/about">About Us</a>
+          <a href="/contact">Contact Us</a>
+          <a href="/blog">Blog</a>
+          <a href="/referral">Referral Program</a>
           <a href="/go/wa?msg=Hi%2C+I%27m+interested+in+IPTVmojo">WhatsApp Support</a>
         </div>
         <div class="footer-col">
           <h5>Legal</h5>
-          <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
-          <a href="/refund-policy.html">Refund Policy</a>
-          <a href="/dmca.html">DMCA Notice</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+          <a href="/refund-policy">Refund Policy</a>
+          <a href="/dmca">DMCA Notice</a>
         </div>
       </div>
     </div>

@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Smart IPTV Setup Guide for IPTVmojo | 2026</title>
+<title>Smart IPTV (SIPTV) Setup Guide 2026 — Upload Your M3U List</title>
 <meta name="description" content="How to set up Smart IPTV with IPTVmojo in minutes. The standard app for Samsung &amp; LG smart TVs. Step-by-step instructions, plus troubleshooting tips.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="Smart IPTV Setup Guide for IPTVmojo | 2026">
+<meta property="og:title" content="Smart IPTV (SIPTV) Setup Guide 2026 — Upload Your M3U List">
 <meta property="og:description" content="How to set up Smart IPTV with IPTVmojo in minutes. The standard app for Samsung &amp; LG smart TVs. Step-by-step instructions, plus troubleshooting tips.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://iptvmojo.com/smart-iptv-setup-guide">
 <meta property="og:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="IPTVmojo IPTV subscription on a smart TV">
 <meta property="og:site_name" content="IPTVmojo">
 <meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://iptvmojo.com/smart-iptv-setup-guide">
@@ -18,11 +21,13 @@
 <link rel="alternate" hreflang="x-default" href="https://iptvmojo.com/smart-iptv-setup-guide">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@iptvmojo">
-<meta name="twitter:title" content="Smart IPTV Setup Guide for IPTVmojo | 2026">
+<meta name="twitter:title" content="Smart IPTV (SIPTV) Setup Guide 2026 — Upload Your M3U List">
 <meta name="twitter:description" content="How to set up Smart IPTV with IPTVmojo in minutes. The standard app for Samsung &amp; LG smart TVs. Step-by-step instructions, plus troubleshooting tips.">
 <meta name="twitter:image" content="https://iptvmojo.com/images/iptv-subscription.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"></noscript>
 <link rel="icon" href="/images/IPTVmojo.png" type="image/png">
 <style>
 :root{--red:#fd0322;--border:rgba(255,255,255,.1);--text:#e8e0ff;--purple:#140438;--card:rgba(255,255,255,.04);--gold:#f1c40f;--green:#2ecc71;--muted:rgba(232,224,255,.55);}
@@ -104,12 +109,14 @@ img{max-width:100%;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:56px;}
 .inc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;}
 .inc-card h4{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.inc-card h3{margin:0;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:5px;}
 .inc-card p{font-size:.8rem;color:rgba(232,224,255,.6);line-height:1.55;}
 .inc-icon{font-size:1.7rem;margin-bottom:10px;display:block;}
 .steps{counter-reset:step;display:flex;flex-direction:column;gap:14px;max-width:780px;margin:0 auto 50px;}
 .step{display:flex;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
 .step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
 .step h4{color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
+.step h3{margin:0;color:#fff;font-size:.92rem;font-weight:800;margin-bottom:4px;}
 .step p{color:rgba(232,224,255,.68);font-size:.84rem;line-height:1.6;}
 .comp-table-wrap{overflow-x:auto;margin-bottom:56px;max-width:900px;margin-left:auto;margin-right:auto;}
 .comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.85rem;}
@@ -141,7 +148,7 @@ img{max-width:100%;}
   "description": "How to set up Smart IPTV with IPTVmojo in minutes. The standard app for Samsung & LG smart TVs. Step-by-step instructions, plus troubleshooting tips.",
   "inLanguage": "en-US",
   "datePublished": "2026-01-01",
-  "dateModified": "2026-09-27",
+  "dateModified": "2026-11-06",
   "isPartOf": {
     "@type": "WebSite",
     "name": "iptvmojo.com",
@@ -216,6 +223,22 @@ img{max-width:100%;}
         "@type": "Answer",
         "text": "Yes — if your TV supports sideloading or has a broader app store, IPTV Smarters Pro is also compatible with many newer Samsung Tizen and LG webOS models."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 'my SIPTV'?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It refers to the Smart IPTV website page where you upload your M3U playlist against your TV's MAC address."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Smart IPTV the same as SS IPTV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They're different apps from different developers. SS IPTV is free and uses a connection code; Smart IPTV uses MAC-based upload and a one-time activation."
+      }
     }
   ]
 }
@@ -224,56 +247,70 @@ img{max-width:100%;}
 </head>
 <body>
 <nav class="mojo-nav">
-  <a href="/" class="mojo-logo"><img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo IPTV Service"></a>
+  <a href="/" class="mojo-logo"><img src="/images/iptvmojo-logo.png" width="72" height="72" alt="IPTVmojo IPTV Service"></a>
   <div class="mojo-nav-links">
     <a href="/">Home</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/best-iptv.html">Best IPTV</a>
-    <a href="/iptv-devices.html">Devices</a>
-    <a href="/how-it-works.html">How It Works</a>
-    <a href="/about.html">About</a>
-    <a href="/free-trial.html" class="mojo-nav-cta">Free Trial 24H</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/best-iptv">Best IPTV</a>
+    <a href="/iptv-devices">Devices</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/about">About</a>
+    <a href="/free-trial" class="mojo-nav-cta">Free Trial 24H</a>
   </div>
   <div class="mojo-burger" id="burgerBtn" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
 <div class="mojo-mobile-menu" id="mobileMenu">
   <a href="/">Home</a>
-  <a href="/pricing.html">Pricing</a>
-  <a href="/best-iptv.html">Best IPTV</a>
-  <a href="/iptv-devices.html">Devices</a>
-  <a href="/how-it-works.html">How It Works</a>
-  <a href="/about.html">About</a>
-  <a href="/free-trial.html" class="mojo-nav-cta">Free Trial 24H</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/best-iptv">Best IPTV</a>
+  <a href="/iptv-devices">Devices</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/about">About</a>
+  <a href="/free-trial" class="mojo-nav-cta">Free Trial 24H</a>
 </div>
 <main id="content">
 
-<div class="breadcrumb"><a href="index.html">IPTVmojo</a> / <a href="iptv-devices.html">Devices & Apps</a> / <span>Smart IPTV</span></div>
+<div class="breadcrumb"><a href="/">IPTVmojo</a> / <a href="/iptv-devices">Devices & Apps</a> / <span>Smart IPTV</span></div>
 <div class="page-hero wrap">
   <div class="page-hero-kicker">IPTV App</div>
   <h1>Smart IPTV <span>Setup Guide</span> for IPTVmojo</h1>
   <p>Smart IPTV (SIPTV) is the standard app for watching IPTVmojo directly on Samsung and LG smart TVs, without any extra hardware.</p>
   <div class="page-hero-btns">
-    <a href="free-trial.html" class="btn-red">Try Free for 24H</a>
-    <a href="iptv-devices.html" class="btn-outline">All Device Guides</a>
+    <a href="/free-trial" class="btn-red">Try Free for 24H</a>
+    <a href="/iptv-devices" class="btn-outline">All Device Guides</a>
   </div>
 </div>
 <div class="wrap" style="padding-bottom:20px;">
 
 <div class="sec-head"><div class="sec-kicker">Setup</div><h2 class="sec-title">Step-by-Step</h2></div>
 <div class="steps">
-<div class="step"><div class="step-num">1</div><div><h4>Install Smart IPTV from your TV&#39;s app store</h4><p>Search &quot;Smart IPTV&quot; in the Samsung Smart Hub or LG Content Store and install it — it&#39;s free.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><h4>Find your TV&#39;s MAC address</h4><p>Open the app; it displays a unique MAC address on screen. Write this down.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><h4>Register your MAC address online</h4><p>Go to siptv.app on a computer or phone, create a free account, and register the MAC address shown on your TV.</p></div></div>
-<div class="step"><div class="step-num">4</div><div><h4>Add your IPTVmojo M3U playlist</h4><p>In your Smart IPTV account online, paste the M3U playlist URL from your IPTVmojo welcome email, then restart the app on your TV.</p></div></div>
+<div class="step"><div class="step-num">1</div><div><h3>Install Smart IPTV from your TV&#39;s app store</h3><p>Search &quot;Smart IPTV&quot; in the Samsung Smart Hub or LG Content Store and install it — it&#39;s free.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><h3>Find your TV&#39;s MAC address</h3><p>Open the app; it displays a unique MAC address on screen. Write this down.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><h3>Register your MAC address online</h3><p>Go to siptv.app on a computer or phone, create a free account, and register the MAC address shown on your TV.</p></div></div>
+<div class="step"><div class="step-num">4</div><div><h3>Add your IPTVmojo M3U playlist</h3><p>In your Smart IPTV account online, paste the M3U playlist URL from your IPTVmojo welcome email, then restart the app on your TV.</p></div></div>
+</div>
+
+<div class="prose">
+<h2>Smart IPTV, SIPTV, "My SIPTV": names explained</h2>
+<p>Smart IPTV is often shortened to <strong>SIPTV</strong>, and its playlist upload page is what people mean by "my siptv" or "siptv my list". It's not the same app as SS IPTV, SET IPTV or Smart IPTV Pro, which are different developers. If you're comparing them, see our <a href="/smartone-set-iptv-ssiptv-setup-guide">SmartOne, SET IPTV, SS IPTV &amp; IBO guide</a>.</p>
+<h2>Smart IPTV on Firestick, Android and Mac</h2>
+<p>Smart IPTV is mostly used on Samsung and LG TVs. Android and Fire TV versions have existed, but on those devices TiviMate or IPTV Smarters are better choices. There is no Mac or PC version, so use VLC or Smarters there.</p>
 </div>
 
 <div class="related-links">
-<a href="iptv-samsung-smart-tv.html">Samsung / LG TV Setup</a>
-<a href="iptv-smarters-pro-setup-guide.html">IPTV Smarters Pro</a>
-<a href="iptv-firestick-setup.html">Firestick (Alternative)</a>
-<a href="iptv-devices.html">← All Devices</a>
+<a href="/iptv-samsung-smart-tv">Samsung / LG TV Setup</a>
+<a href="/iptv-smarters-pro-setup-guide">IPTV Smarters Pro</a>
+<a href="/iptv-firestick-setup">Firestick (Alternative)</a>
+<a href="/iptv-devices">← All Devices</a>
+<a href="/iptv-lg-smart-tv">LG Smart TV</a>
+<a href="/smartone-set-iptv-ssiptv-setup-guide">IBO, SET &amp; SS IPTV</a>
+<a href="/iptv-smart-tv">Other Smart TV Brands</a>
 </div>
 
+<div class="prose" data-seo="deep"><h2>Smart IPTV vs other smart TV apps</h2>
+<p>Smart IPTV (SIPTV) is one of the oldest TV apps for M3U playlists, but it is no longer the only option. On Samsung and LG TVs, apps such as IBO Player, SET IPTV and SS IPTV use a similar MAC-based setup, and some newer TVs can install IPTV Smarters Pro directly. See the <a href="/smartone-set-iptv-ssiptv-setup-guide">SmartOne, SET IPTV, SS IPTV and IBO guide</a> for those apps.</p>
+<p>The official app and playlist upload page are at <a href="https://siptv.app" target="_blank" rel="noopener">siptv.app</a>. The activation fee is paid to the app developer, separately from your IPTVmojo plan.</p>
+</div>
 <div class="sec-head"><div class="sec-kicker">FAQ</div><h2 class="sec-title">Smart IPTV Questions</h2></div>
 <div class="faq-list">
   <div class="faq-item">
@@ -292,6 +329,14 @@ img{max-width:100%;}
     <div class="faq-q">Can I use a different app on my Samsung/LG TV instead? <span class="faq-icon">+</span></div>
     <div class="faq-a">Yes — if your TV supports sideloading or has a broader app store, IPTV Smarters Pro is also compatible with many newer Samsung Tizen and LG webOS models.</div>
   </div>
+  <div class="faq-item">
+    <div class="faq-q">What is 'my SIPTV'? <span class="faq-icon">+</span></div>
+    <div class="faq-a">It refers to the Smart IPTV website page where you upload your M3U playlist against your TV's MAC address.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Is Smart IPTV the same as SS IPTV? <span class="faq-icon">+</span></div>
+    <div class="faq-a">No. They're different apps from different developers. SS IPTV is free and uses a connection code; Smart IPTV uses MAC-based upload and a one-time activation.</div>
+  </div>
 </div>
 
 </div>
@@ -299,8 +344,8 @@ img{max-width:100%;}
   <h2>Get Your Credentials and Start Watching</h2>
   <p>Try IPTVmojo free for 24 hours, then follow the steps above to get set up on Smart IPTV.</p>
   <div class="cta-btns">
-    <a href="free-trial.html" class="btn-red">Get Free 24H Trial</a>
-    <a href="pricing.html" class="btn-outline">View Pricing</a>
+    <a href="/free-trial" class="btn-red">Get Free 24H Trial</a>
+    <a href="/pricing" class="btn-outline">View Pricing</a>
   </div>
 </section>
 
@@ -309,7 +354,7 @@ img{max-width:100%;}
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img loading="lazy" src="/images/IPTVmojo.png" alt="IPTVmojo">
+        <img loading="lazy" decoding="async" src="/images/iptvmojo-logo.png" width="44" height="44" alt="IPTVmojo">
         <div class="footer-brand-text">
           Premium IPTV Service<br>
           <a href="mailto:support@iptvmojo.com">support@iptvmojo.com</a>
@@ -319,52 +364,55 @@ img{max-width:100%;}
         <div class="footer-col">
           <h5>Service</h5>
           <a href="/">Home</a>
-          <a href="/pricing.html">Pricing</a>
-          <a href="/free-trial.html">Free Trial</a>
-          <a href="/how-it-works.html">How It Works</a>
-          <a href="/reseller.html">Reseller</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/free-trial">Free Trial</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/reseller">Reseller</a>
         </div>
         <div class="footer-col">
           <h5>Popular Guides</h5>
-          <a href="/tivimate-setup-guide.html">TiviMate Setup</a>
-          <a href="/iptv-smarters-pro-setup-guide.html">IPTV Smarters Pro</a>
-          <a href="/iptv-firestick-setup.html">Firestick Setup</a>
-          <a href="/iptv-samsung-smart-tv.html">Samsung &amp; LG TV</a>
-          <a href="/formuler-iptv-boxes-guide.html">Formuler Boxes</a>
-          <a href="/kodi-iptv-setup.html">Kodi Setup</a>
+          <a href="/tivimate-setup-guide">TiviMate Setup</a>
+          <a href="/iptv-smarters-pro-setup-guide">IPTV Smarters Pro</a>
+          <a href="/iptv-firestick-setup">Firestick Setup</a>
+          <a href="/iptv-samsung-smart-tv">Samsung TV</a>
+          <a href="/iptv-lg-smart-tv">LG TV</a>
+          <a href="/formuler-iptv-boxes-guide">Formuler Boxes</a>
+          <a href="/kodi-iptv-setup">Kodi Setup</a>
         </div>
         <div class="footer-col">
           <h5>Compare &amp; Explore</h5>
-          <a href="/best-iptv.html">Best IPTV</a>
-          <a href="/iptv-alternatives.html">IPTV Alternatives</a>
-          <a href="/iptv-canada.html">IPTV Canada</a>
-          <a href="/iptv-quebec.html">IPTV Qu&eacute;bec</a>
-          <a href="/iptv-4k.html">IPTV in 4K</a>
-          <a href="/iptv-near-me.html">IPTV Near Me</a>
+          <a href="/best-iptv">Best IPTV</a>
+          <a href="/iptv-alternatives">IPTV Alternatives</a>
+          <a href="/iptv-providers">IPTV Providers</a>
+          <a href="/cheap-iptv">Cheap IPTV</a>
+          <a href="/iptv-canada">IPTV Canada</a>
+          <a href="/iptv-quebec">IPTV Qu&eacute;bec</a>
+          <a href="/iptv-4k">IPTV in 4K</a>
+          <a href="/iptv-near-me">IPTV Near Me</a>
         </div>
         <div class="footer-col">
           <h5>IPTV Guides</h5>
-          <a href="/blog/what-is-iptv.html">What Is IPTV?</a>
-          <a href="/blog/is-iptv-legal.html">Is IPTV Legal?</a>
-          <a href="/blog/m3u-playlist-explained.html">M3U Explained</a>
-          <a href="/blog/best-free-iptv-apps-2026.html">Best Free IPTV Apps</a>
-          <a href="/blog/fix-iptv-buffering.html">Fix Buffering</a>
-          <a href="/blog/iptv-faq.html">IPTV FAQ</a>
+          <a href="/blog/what-is-iptv">What Is IPTV?</a>
+          <a href="/blog/is-iptv-legal">Is IPTV Legal?</a>
+          <a href="/blog/m3u-playlist-explained">M3U Explained</a>
+          <a href="/blog/best-free-iptv-apps-2026">Best Free IPTV Apps</a>
+          <a href="/blog/fix-iptv-buffering">Fix Buffering</a>
+          <a href="/blog/iptv-faq">IPTV FAQ</a>
         </div>
         <div class="footer-col">
           <h5>Company</h5>
-          <a href="/about.html">About Us</a>
-          <a href="/contact.html">Contact Us</a>
-          <a href="/blog.html">Blog</a>
-          <a href="/referral.html">Referral Program</a>
+          <a href="/about">About Us</a>
+          <a href="/contact">Contact Us</a>
+          <a href="/blog">Blog</a>
+          <a href="/referral">Referral Program</a>
           <a href="/go/wa?msg=Hi%2C+I%27m+interested+in+IPTVmojo">WhatsApp Support</a>
         </div>
         <div class="footer-col">
           <h5>Legal</h5>
-          <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
-          <a href="/refund-policy.html">Refund Policy</a>
-          <a href="/dmca.html">DMCA Notice</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+          <a href="/refund-policy">Refund Policy</a>
+          <a href="/dmca">DMCA Notice</a>
         </div>
       </div>
     </div>
