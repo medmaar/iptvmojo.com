@@ -1,3 +1,8 @@
+# Excluded-market pages removed (SEO market filter, 2026-11-25)
+/iptv-arabic / 301
+/iptv-arabic/ / 301
+/iptv-arabic.html / 301
+
 # Retired WhatsApp callback-form page -> direct WhatsApp redirect
 /whatsapp-contact.html  /go/wa  301
 /whatsapp-contact       /go/wa  301
@@ -79,7 +84,7 @@
 /android-box  /iptv-android-tv-box  301
 /vlc  /iptv-pc-mac-vlc  301
 /4k  /iptv-4k  301
-/arabic  /iptv-arabic  301
+/arabic / 301
 /alternatives  /iptv-alternatives  301
 /best  /best-iptv  301
 /best-iptv-service  /best-iptv  301
